@@ -78,18 +78,18 @@ jobs:
       - name: Send Discord message
         uses: hugoalh/send-discord-webhook-ghaction@v7.0.5
         with:
-        key: ${{ secrets.discord_webhook }}
-        username: "Core Mod"
-        avatar_url: "https://media.forgecdn.net/avatars/thumbnails/798/822/64/64/638160732420962168.png"
-        content_links_no_embed: .+
-        content: |
-          **Release**: `${{ steps.version.outputs.version }}`
-          **Game Version**: `1.20.1`
+          key: ${{ secrets.discord_webhook }}
+          username: "Core Mod"
+          avatar_url: "https://media.forgecdn.net/avatars/thumbnails/798/822/64/64/638160732420962168.png"
+          content_links_no_embed: .+
+          content: |
+            **Release**: `${{ steps.version.outputs.version }}`
+            **Game Version**: `1.20.1`
 
-          [GitHub](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }}) • [Issues](https://github.com/${{ github.repository }}/issues)
+            [GitHub](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }}) • [Issues](https://github.com/${{ github.repository }}/issues)
 
-          ```markdown
-          ${{ steps.changelog.outputs.text }}
-          ```
+            ```markdown
+            ${{ steps.changelog.outputs.text }}
+            ```
 
-          **[Read more](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }})**
+            **[Read more](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }})**
