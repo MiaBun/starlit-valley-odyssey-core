@@ -34,11 +34,62 @@ jobs:
           name: Package
           path: build/libs
 
+      - name: Get version from changelog
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(grep -m 1 -oP '(?<=## \[)[^]]+' CHANGELOG.md | head -n 1)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+      - name: Rename artifact
+        shell: bash
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+
+          cd build/libs
+
+          FILE=$(ls *.jar | head -n 1)
+
+          mv "$FILE" "svo-${VERSION}.jar"
+
+          echo "Renamed to svo-${VERSION}.jar"
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: build-${{ github.run_number }}
-          name: Build ${{ github.run_number }}
-          files: build/libs/*
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          files: build/libs/svo-${{ steps.version.outputs.version }}.jar
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract changelog section
+        id: changelog
+        shell: bash
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+
+          awk "/## \[$VERSION\]/ {flag=1; next} /## \[/ && flag==1 {flag=0} flag" CHANGELOG.md > changelog.txt
+
+          echo "text<<EOF" >> $GITHUB_OUTPUT
+          cat changelog.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send Discord message
+        uses: hugoalh/send-discord-webhook-ghaction@v7.0.5
+        with:
+        key: ${{ secrets.discord_webhook }}
+        username: "Core Mod"
+        avatar_url: "https://media.forgecdn.net/avatars/thumbnails/798/822/64/64/638160732420962168.png"
+        content_links_no_embed: .+
+        content: |
+          **Release**: `${{ steps.version.outputs.version }}`
+          **Game Version**: `1.20.1`
+
+          [GitHub](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }}) • [Issues](https://github.com/${{ github.repository }}/issues)
+
+          ```markdown
+          ${{ steps.changelog.outputs.text }}
+          ```
+
+          **[Read more](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }})**
