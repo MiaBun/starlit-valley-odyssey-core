@@ -38,4 +38,4 @@ jobs:
           name: Build ${{ github.run_number }}
           files: build/libs/*
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
