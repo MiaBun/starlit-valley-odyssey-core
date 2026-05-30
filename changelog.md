@@ -1,3 +1,7 @@
+## [0.0.3]
+### Changes
+- fixed changelog fetch
+
 ## [0.0.2]
 ### Changes
 - fixed discord webook
