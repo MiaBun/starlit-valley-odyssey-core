@@ -39,7 +39,7 @@ jobs:
         id: version
         shell: bash
         run: |
-          VERSION=$(grep -m 1 -oP '(?<=## \[)[^]]+' CHANGELOG.md | head -n 1)
+          VERSION=$(grep -m 1 -oP '(?<=## \[)[^]]+' changelog.md | head -n 1)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           
       - name: Rename artifact
