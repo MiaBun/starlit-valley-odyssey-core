@@ -1,10 +1,14 @@
 package org.CuteNekoDragon.svo_core;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.IExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.NetworkConstants;
+import org.CuteNekoDragon.svo_core.client.ClientProxy;
+import org.CuteNekoDragon.svo_core.common.CommonProxy;
+import org.CuteNekoDragon.svo_core.config.SVOConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +24,12 @@ public class Main {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 
-    public Main() {
 
+    public Main() {
+        setupFixForGlobalServerConfig();
+        SVOConfig.init();
+
+        DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
     }
 
     @SuppressWarnings("removal")
