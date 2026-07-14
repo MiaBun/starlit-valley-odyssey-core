@@ -1,3 +1,8 @@
+## [0.0.4]
+### Changes
+- general mod template cleanup & preparation
+
+
 ## [0.0.3]
 ### Changes
 - fixed changelog fetch
