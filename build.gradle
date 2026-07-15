@@ -60,9 +60,9 @@ repositories {
     }
     maven {
         // EMI
-        name = "TerraformersMC"
-        url = "https://maven.terraformersmc.com/"
-    }
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
     maven {
         url = "https://thedarkcolour.github.io/KotlinForForge/"
     }
@@ -132,6 +132,8 @@ jar {
             "MixinConfigs": "examplemod.mixins.json"
     ])
 }
+
+apply from: "$rootDir/gradle/scripts/spotless.gradle"
 
 dependencies {
     compileOnly("org.jetbrains:annotations:26.0.1")
