@@ -1,3 +1,7 @@
+## [0.0.8]
+### Changes
+- fixed mixin error
+
 ## [0.0.7]
 ### Changes
 - changed to gt addon
