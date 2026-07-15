@@ -16,6 +16,12 @@ public class SvoLanguageProvider extends LanguageProvider {
             "diamond", "Diamond"
     );
 
+    private static final Map<String, String> APPLIES_TO_LABELS = Map.of(
+            "iron", "Stone, Leather and Cotton",
+            "gold", "Iron",
+            "diamond", "Gold"
+    );
+
     public SvoLanguageProvider (PackOutput output) {
         super(output, Main.MOD_ID, "en_us");
     }
@@ -27,11 +33,12 @@ public class SvoLanguageProvider extends LanguageProvider {
 
         SvoItems.UPGRADE_TEMPLATES.forEach((tier, itemRegistryObject) -> {
             String label = TIER_LABELS.getOrDefault(tier, capitalize(tier));
+            String appliesToLabel = APPLIES_TO_LABELS.getOrDefault(tier, capitalize(tier));
             String ingredientWord = tier.equals("diamond") ? label + "s" : label + " Ingots";
 
             add(itemRegistryObject.get(), "Smithing Template");
             add("item.svo." + tier + "_upgrade_smithing_template.upgrade", label + " Upgrade");
-            add("item.svo." + tier + "_upgrade_smithing_template.applies_to", label + " Equipment");
+            add("item.svo." + tier + "_upgrade_smithing_template.applies_to", appliesToLabel + " Equipment");
             add("item.svo." + tier + "_upgrade_smithing_template.ingredients", ingredientWord);
         });
     }

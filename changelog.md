@@ -1,3 +1,8 @@
+## [0.0.6]
+### Changes
+- fixed applies to labels not having the appropriate equipment language key
+
+
 ## [0.0.5]
 ### Changes
 - ported smithing templates for iron, gold and diamond over to core mod
