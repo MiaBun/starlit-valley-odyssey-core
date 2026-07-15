@@ -6,6 +6,7 @@ import org.CuteNekoDragon.svo_core.common.data.SvoCreativeTab;
 import org.CuteNekoDragon.svo_core.common.data.SvoItems;
 import org.CuteNekoDragon.svo_core.config.SVOConfig;
 
+
 public class CommonProxy {
 
     public CommonProxy() {
