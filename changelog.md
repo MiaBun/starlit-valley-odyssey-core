@@ -1,3 +1,7 @@
+## [0.0.9]
+### Changes
+- some GTexampleMod cleanup
+
 ## [0.0.8]
 ### Changes
 - fixed mixin error
