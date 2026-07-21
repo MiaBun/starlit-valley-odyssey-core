@@ -1,4 +1,4 @@
-package com.CuteNekoDragon.svo_core;
+package com.CuteNekoDragon.Core;
 
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;

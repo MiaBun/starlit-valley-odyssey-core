@@ -1,6 +1,7 @@
 ## [0.0.10]
 ### Changes
 - added config system
+- added commonproxy and clientproxy
 
 ## [0.0.9]
 ### Changes

@@ -1,4 +1,4 @@
-package com.CuteNekoDragon.svo_core.mixin;
+package com.CuteNekoDragon.Core.mixin;
 
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 
