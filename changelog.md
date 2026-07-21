@@ -1,3 +1,7 @@
+## [0.0.10]
+### Changes
+- added config system
+
 ## [0.0.9]
 ### Changes
 - some GTexampleMod cleanup
