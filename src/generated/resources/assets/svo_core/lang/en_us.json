@@ -1,0 +1,16 @@
+{
+  "creative_tab.svo_core.svo": "Starlit Valley: Odyssey",
+  "item.svo.diamond_upgrade_smithing_template.applies_to": "Gold Equipment",
+  "item.svo.diamond_upgrade_smithing_template.ingredients": "Diamonds",
+  "item.svo.diamond_upgrade_smithing_template.upgrade": "Diamond Upgrade",
+  "item.svo.gold_upgrade_smithing_template.applies_to": "Iron Equipment",
+  "item.svo.gold_upgrade_smithing_template.ingredients": "Gold Ingots",
+  "item.svo.gold_upgrade_smithing_template.upgrade": "Gold Upgrade",
+  "item.svo.iron_upgrade_smithing_template.applies_to": "Stone, Leather and Cotton Equipment",
+  "item.svo.iron_upgrade_smithing_template.ingredients": "Iron Ingots",
+  "item.svo.iron_upgrade_smithing_template.upgrade": "Iron Upgrade",
+  "item.svo_core.diamond_upgrade_smithing_template": "Smithing Template",
+  "item.svo_core.gold_upgrade_smithing_template": "Smithing Template",
+  "item.svo_core.iron_upgrade_smithing_template": "Smithing Template",
+  "itemGroup.svo_core": "Svo Core"
+}

@@ -1,3 +1,9 @@
+## [0.0.11]
+### Changes
+- added iron smithing template
+- added gold smithing template
+- added diamond smithing template
+
 ## [0.0.10]
 ### Changes
 - added config system
