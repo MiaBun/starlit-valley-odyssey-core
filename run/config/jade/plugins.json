@@ -50,6 +50,9 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
+  "ars_nouveau": {
+    "mob_jar": true
+  },
   "gtceu": {
     "auto_output_info": true,
     "primitive_pump": true,
@@ -59,6 +62,8 @@
     "controllable_provider": true,
     "energy_converter_provider": true,
     "exhaust_vent_info": true,
+    "me_pattern_buffer": true,
+    "me_pattern_buffer_proxy": true,
     "multiblock_structure": true,
     "recipe_logic_provider": true,
     "maintenance_info": true,
@@ -80,5 +85,17 @@
     "coordinates": false,
     "registry_name": "OFF",
     "mod_name": true
+  },
+  "ae2": {
+    "part_icon": true,
+    "charger": true,
+    "debug": true,
+    "part_tooltip": true,
+    "grid_node_state": true,
+    "pattern_provider": true,
+    "part_mod_name": true,
+    "power_storage": true,
+    "crafting_monitor": true,
+    "part_name": true
   }
 }

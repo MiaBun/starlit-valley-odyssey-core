@@ -1,3 +1,7 @@
+## [0.0.12]
+### Changes
+- A SHIT TON OF DEPENDENCIES ADDED tho not required
+
 ## [0.0.11]
 ### Changes
 - added iron smithing template

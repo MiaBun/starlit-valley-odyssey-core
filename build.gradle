@@ -58,13 +58,61 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    maven {
+    //maven {
         // EMI
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com/"
-	}
+	//	name = "TerraformersMC"
+	//	url = "https://maven.terraformersmc.com/"
+	//}
+    maven {
+        url = "https://maven.gnomecraft.net/"
+    }
+
     maven {
         url = "https://thedarkcolour.github.io/KotlinForForge/"
+    }
+
+    maven {
+        name = "Illusive Soulworks maven"
+        url = "https://maven.theillusivec4.top/"
+    }
+
+
+    maven { url "https://maven.teamresourceful.com/repository/maven-public/" }
+
+    maven {
+        name "Modmaven"
+        url "https://modmaven.dev/"
+        // For Gradle 5.1 and above, limit it to just AE2
+        content {
+            includeGroup('appeng')
+        }
+    }
+
+    maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
+
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+
+    maven {
+        // Shedaniel's maven (Architectury API)
+        url = "https://maven.architectury.dev"
+        content {
+            includeGroup "dev.architectury"
+        }
+    }
+
+    maven {
+        // saps.dev Maven (KubeJS and Rhino)
+        url = "https://maven.saps.dev/minecraft"
+        content {
+            includeGroup "dev.latvian.mods"
+        }
     }
 
 }
@@ -146,13 +194,49 @@ dependencies {
     modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     modRuntimeOnly("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
     modRuntimeOnly("dev.emi:emi-forge:${emi_version}+${minecraft_version}")
-    modRuntimeOnly("curse.maven:jade-324717:5390389")
+    modImplementation("curse.maven:jade-324717:5390389")
 
     // GregTech and dependencies
     modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtceu_version}:slim") { transitive = false }
     modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
+
+    modCompileOnly("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    modRuntimeOnly("top.theillusivec4.curios:curios-forge:${curios_version}")
+
+    modImplementation("curse.maven:blood-magic-224791:7956981")
+
+    modCompileOnly("vazkii.botania:Botania:${botania_version}:api")
+    modRuntimeOnly("vazkii.botania:Botania:${botania_version}")
+
+    modImplementation("com.hollingsworth.ars_nouveau:ars_nouveau-${minecraft_version}:${ars_version}")
+
+    modImplementation("earth.terrarium.adastra:ad_astra-forge-1.20.1:1.15.20")
+
+    modCompileOnly("appeng:appliedenergistics2-forge:15.4.10:api")
+    modRuntimeOnly("appeng:appliedenergistics2-forge:15.4.10")
+
+    modCompileOnly "org.appliedenergistics:guideme:${guideme_version}:api"
+    modRuntimeOnly "org.appliedenergistics:guideme:${guideme_version}"
+
+    modImplementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim")
+    modImplementation("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")
+    modCompileOnly("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")
+    modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
+
+    modImplementation("curse.maven:numismatics-889722:6264591")
+
+    modCompileOnly("dev.latvian.mods:kubejs-forge:${kubejs_version}")
+
+    modRuntimeOnly("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
+    modRuntimeOnly("com.eliotlash.mclib:mclib:20")
+
+    modRuntimeOnly("com.teamresourceful.resourcefulconfig:resourcefulconfig-forge-${minecraft_version}:${resourcefulConfigVersion}")
+    modRuntimeOnly("com.teamresourceful.resourcefullib:resourcefullib-forge-${minecraft_version}:${resourcefulLibVersion}")
+    modRuntimeOnly("earth.terrarium.botarium:botarium-forge-${minecraft_version}:${botariumVersion}")
+    modRuntimeOnly("vazkii.patchouli:Patchouli:1.20.1-85-FORGE")
+
 
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'

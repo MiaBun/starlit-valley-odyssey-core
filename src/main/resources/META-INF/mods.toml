@@ -22,6 +22,9 @@ license = "${mod_license}"
 Core mod for the Starlit Valley: Odyssey modpack, sadly it doesn't do much currently...
 '''
 
+[[mixins]]
+config = "svo_core.mixins.json"
+
     [[dependencies.${mod_id}]]
         modId = "forge"
         mandatory = true
