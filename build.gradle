@@ -232,6 +232,13 @@ dependencies {
     modRuntimeOnly("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
     modRuntimeOnly("com.eliotlash.mclib:mclib:20")
 
+    modImplementation("curse.maven:hexerei-548599:6314111")
+    modImplementation("curse.maven:draconic-evolution-223565:6793843")
+    modImplementation("curse.maven:embeddium-908741:5681725")
+    modImplementation("curse.maven:oculus-581495:6020952")
+    modImplementation("curse.maven:codechicken-lib-1-8-242818:5753868")
+    modImplementation("curse.maven:brandons-core-231382:5422013")
+
     modRuntimeOnly("com.teamresourceful.resourcefulconfig:resourcefulconfig-forge-${minecraft_version}:${resourcefulConfigVersion}")
     modRuntimeOnly("com.teamresourceful.resourcefullib:resourcefullib-forge-${minecraft_version}:${resourcefulLibVersion}")
     modRuntimeOnly("earth.terrarium.botarium:botarium-forge-${minecraft_version}:${botariumVersion}")

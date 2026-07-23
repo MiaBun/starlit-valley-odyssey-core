@@ -1,3 +1,25 @@
+## [0.0.13]
+### Changes
+- added even more dependencies, below is a list of the dependencies added:
+- curios api
+- blood magic
+- botania
+- ars nouveau
+- ad astra
+- applied energistics 2
+- guideME
+- create
+- ponder
+- flywheel
+- numismatics
+- kubeJS
+- geckolib
+- hexerei
+- draconic evolution
+- embeddium
+- oculuc
+- patchouli
+
 ## [0.0.12]
 ### Changes
 - A SHIT TON OF DEPENDENCIES ADDED tho not required
