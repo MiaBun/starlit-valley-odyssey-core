@@ -23,5 +23,9 @@ public class DataGen {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
+        REGISTRATE.addRawLang("tooltip.svo_core.quartz", "A clear crystal commonly found in caves and mines.");
+        REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
+        REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");
     }
 }

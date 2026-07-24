@@ -1,3 +1,9 @@
+## [0.0.14]
+### Changes
+- added tooltip builder, utility class for easy tooltips management
+- added price util, utility class for easy price management within the mod
+- added Quartz item
+
 ## [0.0.13]
 ### Changes
 - added even more dependencies, below is a list of the dependencies added:

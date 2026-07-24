@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.common.data;
 
+import net.minecraft.world.item.Item;
+
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
@@ -49,4 +51,9 @@ public class SVOItems {
             REGISTRATE.addRawLang("item.svo." + id + ".ingredients", ingredientWord);
         }
     }
+
+    public static ItemEntry<Item> QUARTZ = REGISTRATE.item("quartz", Item::new)
+            .lang("Quartz")
+            .defaultModel()
+            .register();
 }

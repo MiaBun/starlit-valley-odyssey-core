@@ -12,5 +12,9 @@
   "item.svo_core.diamond_upgrade_smithing_template": "ǝʇɐןdɯǝ⟘ buıɥʇıɯS",
   "item.svo_core.gold_upgrade_smithing_template": "ǝʇɐןdɯǝ⟘ buıɥʇıɯS",
   "item.svo_core.iron_upgrade_smithing_template": "ǝʇɐןdɯǝ⟘ buıɥʇıɯS",
-  "itemGroup.svo_core": "ǝɹoƆ oʌS"
+  "item.svo_core.quartz": "zʇɹɐnὉ",
+  "itemGroup.svo_core": "ǝɹoƆ oʌS",
+  "tooltip.svo_core.coins": "%s",
+  "tooltip.svo_core.mineral_product": "ʇɔnpoɹԀ ןɐɹǝuıW",
+  "tooltip.svo_core.quartz": "˙sǝuıɯ puɐ sǝʌɐɔ uı punoɟ ʎןuoɯɯoɔ ןɐʇsʎɹɔ ɹɐǝןɔ Ɐ"
 }

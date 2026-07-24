@@ -12,5 +12,9 @@
   "item.svo_core.diamond_upgrade_smithing_template": "Smithing Template",
   "item.svo_core.gold_upgrade_smithing_template": "Smithing Template",
   "item.svo_core.iron_upgrade_smithing_template": "Smithing Template",
-  "itemGroup.svo_core": "Svo Core"
+  "item.svo_core.quartz": "Quartz",
+  "itemGroup.svo_core": "Svo Core",
+  "tooltip.svo_core.coins": "%s",
+  "tooltip.svo_core.mineral_product": "Mineral Product",
+  "tooltip.svo_core.quartz": "A clear crystal commonly found in caves and mines."
 }
