@@ -110,8 +110,11 @@ public final class TooltipBuilder {
         List<Function<ItemStack, Component>> providers = REGISTRY.get(event.getItemStack().getItem());
         if (providers == null || providers.isEmpty()) return;
 
+        int insertIndex = 1;
+        List<Component> tooltip = event.getToolTip();
+
         for (Function<ItemStack, Component> provider : providers) {
-            event.getToolTip().add(provider.apply(event.getItemStack()));
+            tooltip.add(insertIndex++, provider.apply(event.getItemStack()));
         }
     }
 }

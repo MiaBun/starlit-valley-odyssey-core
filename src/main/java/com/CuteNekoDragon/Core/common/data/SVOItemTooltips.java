@@ -7,5 +7,11 @@ public class SVOItemTooltips {
     public static void ProvideTooltips() {
         TooltipBuilder.addTooltip(SVOItems.QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.quartz");
+        TooltipBuilder.addTooltip(SVOItems.EARTH_CRYSTAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.earth_crystal");
+        TooltipBuilder.addTooltip(SVOItems.FROZEN_TEAR).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.frozen_tear");
+        TooltipBuilder.addTooltip(SVOItems.FIRE_QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.fire_quartz");
     }
 }

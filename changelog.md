@@ -1,3 +1,10 @@
+## [0.0.15]
+### Changes
+- fixed some tooltip builder bugs (mostly with ordering of tooltips)
+- added earth crystal
+- added frozen tear
+- added fire quartz
+
 ## [0.0.14]
 ### Changes
 - added tooltip builder, utility class for easy tooltips management
