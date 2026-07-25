@@ -5,8 +5,7 @@ import com.CuteNekoDragon.Core.utils.TooltipBuilder;
 public class SVOItemTooltips {
 
     public static void ProvideTooltips() {
-
-        //Foraged Minerals
+        // Foraged Minerals
         TooltipBuilder.addTooltip(SVOItems.QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.quartz");
         TooltipBuilder.addTooltip(SVOItems.EARTH_CRYSTAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
@@ -16,7 +15,7 @@ public class SVOItemTooltips {
         TooltipBuilder.addTooltip(SVOItems.FIRE_QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.fire_quartz");
 
-        //Gemstones
+        // Gemstones
         TooltipBuilder.addTooltip(SVOItems.EMERALD).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
                 .addInfo("tooltip.svo_core.emerald");
     }

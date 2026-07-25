@@ -52,7 +52,7 @@ public class SVOItems {
         }
     }
 
-    //Foraged Minerals
+    // Foraged Minerals
     public static ItemEntry<Item> QUARTZ = REGISTRATE.item("quartz", Item::new).lang("Quartz")
             .defaultModel().register();
     public static ItemEntry<Item> EARTH_CRYSTAL = REGISTRATE.item("earth_crystal", Item::new).lang("Earth Crystal")
@@ -62,7 +62,7 @@ public class SVOItems {
     public static ItemEntry<Item> FIRE_QUARTZ = REGISTRATE.item("fire_quartz", Item::new).lang("Fire Quartz")
             .defaultModel().register();
 
-    //Gemstones
+    // Gemstones
     public static ItemEntry<Item> EMERALD = REGISTRATE.item("emerald", Item::new).lang("Emerald")
             .defaultModel().register();
 }
