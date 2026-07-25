@@ -11,6 +11,7 @@
   "item.svo.iron_upgrade_smithing_template.upgrade": "Iron Upgrade",
   "item.svo_core.diamond_upgrade_smithing_template": "Smithing Template",
   "item.svo_core.earth_crystal": "Earth Crystal",
+  "item.svo_core.emerald": "Emerald",
   "item.svo_core.fire_quartz": "Fire Quartz",
   "item.svo_core.frozen_tear": "Frozen Tear",
   "item.svo_core.gold_upgrade_smithing_template": "Smithing Template",
@@ -19,8 +20,10 @@
   "itemGroup.svo_core": "Svo Core",
   "tooltip.svo_core.coins": "%s",
   "tooltip.svo_core.earth_crystal": "A resinous substance found near the surface.",
+  "tooltip.svo_core.emerald": "A precious stone with a brilliant green color.",
   "tooltip.svo_core.fire_quartz": "A glowing red crystal commonly found near hot lava.",
   "tooltip.svo_core.frozen_tear": "A crystal fabled to be the frozen tears of a yeti.",
+  "tooltip.svo_core.gemstone_product": "Gemstone Product",
   "tooltip.svo_core.mineral_product": "Mineral Product",
   "tooltip.svo_core.quartz": "A clear crystal commonly found in caves and mines."
 }

@@ -28,7 +28,8 @@ public final class TooltipBuilder {
 
     public enum SVOTypes {
 
-        MINERAL("\uE001", "tooltip.svo_core.mineral_product");
+        MINERAL("\uE001", "tooltip.svo_core.mineral_product"),
+        GEMSTONE("\uE002", "tooltip.svo_core.gemstone_product");
 
         private final String glyph;
         private final String product_type;
