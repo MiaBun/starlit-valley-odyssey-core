@@ -86,7 +86,7 @@ public final class TooltipBuilder {
         return addLine(stack -> Component.empty()
                 .append(Component.literal(type.getGlyph()).withStyle(style -> style.withFont(ICON_FONT)))
                 .append(Component.literal(" ")
-                        .append(Component.translatable(type.getProduct_type()).withStyle(ChatFormatting.YELLOW))));
+                        .append(Component.translatable(type.getProduct_type()).withStyle(ChatFormatting.GOLD))));
     }
 
     public TooltipBuilder addInfo(Component component) {

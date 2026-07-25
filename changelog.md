@@ -1,3 +1,7 @@
+## [Unreleased]
+### Changes
+- changed tooltip color for item types to gold/orange instead of yellow (thanks Randomouse)
+
 ## [0.0.16]
 ### Changes
 - fixed some build script stuff hopefully
