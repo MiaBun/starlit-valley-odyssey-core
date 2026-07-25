@@ -18,5 +18,7 @@ public class SVOItemTooltips {
         // Gemstones
         TooltipBuilder.addTooltip(SVOItems.EMERALD).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
                 .addInfo("tooltip.svo_core.emerald");
+        TooltipBuilder.addTooltip(SVOItems.AQUAMARINE).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.aquamarine");
     }
 }

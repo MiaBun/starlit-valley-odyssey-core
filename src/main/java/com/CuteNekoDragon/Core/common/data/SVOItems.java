@@ -65,4 +65,6 @@ public class SVOItems {
     // Gemstones
     public static ItemEntry<Item> EMERALD = REGISTRATE.item("emerald", Item::new).lang("Emerald")
             .defaultModel().register();
+    public static ItemEntry<Item> AQUAMARINE = REGISTRATE.item("aquamarine", Item::new).lang("Aquamarine")
+            .defaultModel().register();
 }
