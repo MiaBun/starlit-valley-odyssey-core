@@ -9,7 +9,30 @@ permissions:
   contents: write
 
 jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      should_release: ${{ steps.version.outputs.should_release }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version from changelog
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(grep -m 1 -oP '(?<=## \[)[^]]+' changelog.md | head -n 1)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+          if [ "$VERSION" = "Unreleased" ]; then
+            echo "should_release=false" >> $GITHUB_OUTPUT
+          else
+            echo "should_release=true" >> $GITHUB_OUTPUT
+          fi
+
   build:
+    needs: check-version
+    if: needs.check-version.outputs.should_release == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -35,17 +58,10 @@ jobs:
           name: Package
           path: build/libs
 
-      - name: Get version from changelog
-        id: version
-        shell: bash
-        run: |
-          VERSION=$(grep -m 1 -oP '(?<=## \[)[^]]+' changelog.md | head -n 1)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          
       - name: Rename artifact
         shell: bash
         run: |
-          VERSION=${{ steps.version.outputs.version }}
+          VERSION=${{ needs.check-version.outputs.version }}
 
           cd build/libs
 
@@ -58,9 +74,9 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.version }}
-          name: Release ${{ steps.version.outputs.version }}
-          files: build/libs/svo-${{ steps.version.outputs.version }}.jar
+          tag_name: ${{ needs.check-version.outputs.version }}
+          name: Release ${{ needs.check-version.outputs.version }}
+          files: build/libs/svo-${{ needs.check-version.outputs.version }}.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -68,7 +84,7 @@ jobs:
         id: changelog
         shell: bash
         run: |
-          VERSION=${{ steps.version.outputs.version }}
+          VERSION=${{ needs.check-version.outputs.version }}
 
           awk "/## \[$VERSION\]/ {flag=1; next} /## \[/ && flag==1 {flag=0} flag" changelog.md > changelog.txt
 
@@ -84,13 +100,13 @@ jobs:
           avatar_url: "https://media.forgecdn.net/avatars/thumbnails/798/822/64/64/638160732420962168.png"
           content_links_no_embed: .+
           content: |
-            **Release**: `${{ steps.version.outputs.version }}`
+            **Release**: `${{ needs.check-version.outputs.version }}`
             **Game Version**: `1.20.1`
 
-            [GitHub](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }}) • [Issues](https://github.com/${{ github.repository }}/issues)
+            [GitHub](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ needs.check-version.outputs.version }}) • [Issues](https://github.com/${{ github.repository }}/issues)
 
-            ```markdown
-            ${{ steps.changelog.outputs.text }}
-            ```
+  ```markdown
+  ${{ steps.changelog.outputs.text }}
+  ```
 
-            **[Read more](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }})**
+  **[Read more](${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ needs.check-version.outputs.version }})**
