@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.16]
 ### Changes
 - fixed some build script stuff hopefully
 
