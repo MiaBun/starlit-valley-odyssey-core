@@ -82,8 +82,10 @@ public class SVOItems {
             .defaultModel().register();
     public static ItemEntry<Item> JADE = REGISTRATE.item("jade", Item::new).lang("Jade").tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
-    public static ItemEntry<Item> DIAMOND = REGISTRATE.item("diamond", Item::new).lang("Diamond").tag(SVOTags.Items.Gemstones)
+    public static ItemEntry<Item> DIAMOND = REGISTRATE.item("diamond", Item::new).lang("Diamond")
+            .tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
-    public static ItemEntry<Item> PRISMATIC_SHARD = REGISTRATE.item("prismatic_shard", Item::new).lang("Prismatic Shard").tag(SVOTags.Items.Gemstones)
+    public static ItemEntry<Item> PRISMATIC_SHARD = REGISTRATE.item("prismatic_shard", Item::new)
+            .lang("Prismatic Shard").tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
 }
