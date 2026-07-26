@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.17]
 ### Changes
 - changed tooltip color for item types to gold/orange instead of yellow (thanks Randomouse)
 - added gemstone tooltip glyph
