@@ -14,5 +14,6 @@ public class SVOItemPrices {
         // Gemstones
         PriceUtil.setPrice(SVOItems.EMERALD, 250, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.AQUAMARINE, 180, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.RUBY, 250, PriceUtil.PriceType.GEMOLOGIST);
     }
 }

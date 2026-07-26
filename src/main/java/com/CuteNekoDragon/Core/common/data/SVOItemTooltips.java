@@ -20,5 +20,7 @@ public class SVOItemTooltips {
                 .addInfo("tooltip.svo_core.emerald");
         TooltipBuilder.addTooltip(SVOItems.AQUAMARINE).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
                 .addInfo("tooltip.svo_core.aquamarine");
+        TooltipBuilder.addTooltip(SVOItems.RUBY).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.ruby");
     }
 }

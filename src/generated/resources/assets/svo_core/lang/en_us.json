@@ -18,6 +18,7 @@
   "item.svo_core.gold_upgrade_smithing_template": "Smithing Template",
   "item.svo_core.iron_upgrade_smithing_template": "Smithing Template",
   "item.svo_core.quartz": "Quartz",
+  "item.svo_core.ruby": "Ruby",
   "itemGroup.svo_core": "Svo Core",
   "tooltip.svo_core.aquamarine": "A shimmery blue-green gem.",
   "tooltip.svo_core.coins": "%s",
@@ -27,5 +28,6 @@
   "tooltip.svo_core.frozen_tear": "A crystal fabled to be the frozen tears of a yeti.",
   "tooltip.svo_core.gemstone_product": "Gemstone Product",
   "tooltip.svo_core.mineral_product": "Mineral Product",
-  "tooltip.svo_core.quartz": "A clear crystal commonly found in caves and mines."
+  "tooltip.svo_core.quartz": "A clear crystal commonly found in caves and mines.",
+  "tooltip.svo_core.ruby": "A precious stone that is sought after for its rich color and beautiful luster."
 }

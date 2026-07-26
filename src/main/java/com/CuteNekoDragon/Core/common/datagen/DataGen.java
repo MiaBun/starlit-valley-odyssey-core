@@ -30,6 +30,7 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.fire_quartz", "A glowing red crystal commonly found near hot lava.");
         REGISTRATE.addRawLang("tooltip.svo_core.emerald", "A precious stone with a brilliant green color.");
         REGISTRATE.addRawLang("tooltip.svo_core.aquamarine", "A shimmery blue-green gem.");
+        REGISTRATE.addRawLang("tooltip.svo_core.ruby", "A precious stone that is sought after for its rich color and beautiful luster.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

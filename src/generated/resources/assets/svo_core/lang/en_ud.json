@@ -18,6 +18,7 @@
   "item.svo_core.gold_upgrade_smithing_template": "ǝʇɐןdɯǝ⟘ buıɥʇıɯS",
   "item.svo_core.iron_upgrade_smithing_template": "ǝʇɐןdɯǝ⟘ buıɥʇıɯS",
   "item.svo_core.quartz": "zʇɹɐnὉ",
+  "item.svo_core.ruby": "ʎqnᴚ",
   "itemGroup.svo_core": "ǝɹoƆ oʌS",
   "tooltip.svo_core.aquamarine": "˙ɯǝb uǝǝɹb-ǝnןq ʎɹǝɯɯıɥs Ɐ",
   "tooltip.svo_core.coins": "%s",
@@ -27,5 +28,6 @@
   "tooltip.svo_core.frozen_tear": "˙ıʇǝʎ ɐ ɟo sɹɐǝʇ uǝzoɹɟ ǝɥʇ ǝq oʇ pǝןqɐɟ ןɐʇsʎɹɔ Ɐ",
   "tooltip.svo_core.gemstone_product": "ʇɔnpoɹԀ ǝuoʇsɯǝ⅁",
   "tooltip.svo_core.mineral_product": "ʇɔnpoɹԀ ןɐɹǝuıW",
-  "tooltip.svo_core.quartz": "˙sǝuıɯ puɐ sǝʌɐɔ uı punoɟ ʎןuoɯɯoɔ ןɐʇsʎɹɔ ɹɐǝןɔ Ɐ"
+  "tooltip.svo_core.quartz": "˙sǝuıɯ puɐ sǝʌɐɔ uı punoɟ ʎןuoɯɯoɔ ןɐʇsʎɹɔ ɹɐǝןɔ Ɐ",
+  "tooltip.svo_core.ruby": "˙ɹǝʇsnן ןnɟıʇnɐǝq puɐ ɹoןoɔ ɥɔıɹ sʇı ɹoɟ ɹǝʇɟɐ ʇɥbnos sı ʇɐɥʇ ǝuoʇs snoıɔǝɹd Ɐ"
 }

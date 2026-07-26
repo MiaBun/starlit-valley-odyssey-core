@@ -67,4 +67,6 @@ public class SVOItems {
             .defaultModel().register();
     public static ItemEntry<Item> AQUAMARINE = REGISTRATE.item("aquamarine", Item::new).lang("Aquamarine")
             .defaultModel().register();
+    public static ItemEntry<Item> RUBY = REGISTRATE.item("ruby", Item::new).lang("Ruby")
+            .defaultModel().register();
 }
