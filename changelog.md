@@ -3,7 +3,14 @@
 - changed tooltip color for item types to gold/orange instead of yellow (thanks Randomouse)
 - added gemstone tooltip glyph
 - refactored priceutil to include price types (will be used for price modifiers)
+- added item tags for minerals and gemstones
 - added emerald
+- added ruby
+- added amethyst
+- added topaz
+- added jade
+- added diamond
+- added prismatic shard
 
 ## [0.0.16]
 ### Changes

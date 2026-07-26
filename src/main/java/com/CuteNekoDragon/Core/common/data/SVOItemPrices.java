@@ -15,5 +15,10 @@ public class SVOItemPrices {
         PriceUtil.setPrice(SVOItems.EMERALD, 250, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.AQUAMARINE, 180, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.RUBY, 250, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.AMETHYST, 100, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.TOPAZ, 80, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.JADE, 200, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.DIAMOND, 750, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.PRISMATIC_SHARD, 2000, PriceUtil.PriceType.GEMOLOGIST);
     }
 }

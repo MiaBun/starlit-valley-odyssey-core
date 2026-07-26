@@ -22,5 +22,15 @@ public class SVOItemTooltips {
                 .addInfo("tooltip.svo_core.aquamarine");
         TooltipBuilder.addTooltip(SVOItems.RUBY).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
                 .addInfo("tooltip.svo_core.ruby");
+        TooltipBuilder.addTooltip(SVOItems.AMETHYST).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.amethyst");
+        TooltipBuilder.addTooltip(SVOItems.TOPAZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.topaz");
+        TooltipBuilder.addTooltip(SVOItems.JADE).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.jade");
+        TooltipBuilder.addTooltip(SVOItems.DIAMOND).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.diamond");
+        TooltipBuilder.addTooltip(SVOItems.PRISMATIC_SHARD).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
+                .addInfo("tooltip.svo_core.prismatic_shard");
     }
 }

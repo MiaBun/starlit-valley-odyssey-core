@@ -31,6 +31,11 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.emerald", "A precious stone with a brilliant green color.");
         REGISTRATE.addRawLang("tooltip.svo_core.aquamarine", "A shimmery blue-green gem.");
         REGISTRATE.addRawLang("tooltip.svo_core.ruby", "A precious stone that is sought after for its rich color and beautiful luster.");
+        REGISTRATE.addRawLang("tooltip.svo_core.amethyst", "A purple variant of quartz.");
+        REGISTRATE.addRawLang("tooltip.svo_core.topaz", "Fairly common but still prized for its beauty.");
+        REGISTRATE.addRawLang("tooltip.svo_core.jade", "A pale green ornamental stone.");
+        REGISTRATE.addRawLang("tooltip.svo_core.diamond", "A rare and valuable gem.");
+        REGISTRATE.addRawLang("tooltip.svo_core.prismatic_shard", "A very rare and powerful substance with unknown origins.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

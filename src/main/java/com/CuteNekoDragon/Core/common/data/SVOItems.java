@@ -54,19 +54,36 @@ public class SVOItems {
 
     // Foraged Minerals
     public static ItemEntry<Item> QUARTZ = REGISTRATE.item("quartz", Item::new).lang("Quartz")
+            .tag(SVOTags.Items.Minerals)
             .defaultModel().register();
     public static ItemEntry<Item> EARTH_CRYSTAL = REGISTRATE.item("earth_crystal", Item::new).lang("Earth Crystal")
+            .tag(SVOTags.Items.Minerals)
             .defaultModel().register();
     public static ItemEntry<Item> FROZEN_TEAR = REGISTRATE.item("frozen_tear", Item::new).lang("Frozen Tear")
+            .tag(SVOTags.Items.Minerals)
             .defaultModel().register();
     public static ItemEntry<Item> FIRE_QUARTZ = REGISTRATE.item("fire_quartz", Item::new).lang("Fire Quartz")
+            .tag(SVOTags.Items.Minerals)
             .defaultModel().register();
 
     // Gemstones
     public static ItemEntry<Item> EMERALD = REGISTRATE.item("emerald", Item::new).lang("Emerald")
+            .tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
     public static ItemEntry<Item> AQUAMARINE = REGISTRATE.item("aquamarine", Item::new).lang("Aquamarine")
+            .tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
-    public static ItemEntry<Item> RUBY = REGISTRATE.item("ruby", Item::new).lang("Ruby")
+    public static ItemEntry<Item> RUBY = REGISTRATE.item("ruby", Item::new).lang("Ruby").tag(SVOTags.Items.Gemstones)
+            .defaultModel().register();
+    public static ItemEntry<Item> AMETHYST = REGISTRATE.item("amethyst", Item::new).lang("Amethyst")
+            .tag(SVOTags.Items.Gemstones)
+            .defaultModel().register();
+    public static ItemEntry<Item> TOPAZ = REGISTRATE.item("topaz", Item::new).lang("Topaz").tag(SVOTags.Items.Gemstones)
+            .defaultModel().register();
+    public static ItemEntry<Item> JADE = REGISTRATE.item("jade", Item::new).lang("Jade").tag(SVOTags.Items.Gemstones)
+            .defaultModel().register();
+    public static ItemEntry<Item> DIAMOND = REGISTRATE.item("diamond", Item::new).lang("Diamond").tag(SVOTags.Items.Gemstones)
+            .defaultModel().register();
+    public static ItemEntry<Item> PRISMATIC_SHARD = REGISTRATE.item("prismatic_shard", Item::new).lang("Prismatic Shard").tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
 }
