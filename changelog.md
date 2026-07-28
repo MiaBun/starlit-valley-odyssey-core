@@ -5,6 +5,11 @@
 - added fire opal
 - added alamite
 - added bixite
+- added baryte
+- added aerinite
+- added calcite
+- added dolomite
+- added esperite
 
 ## [0.0.17]
 ### Changes

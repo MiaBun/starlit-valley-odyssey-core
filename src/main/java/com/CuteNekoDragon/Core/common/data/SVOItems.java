@@ -97,4 +97,9 @@ public class SVOItems {
     public static ItemEntry<Item> FIRE_OPAL = REGISTRATE.item("fire_opal", Item::new).lang("Fire Opal").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> ALAMITE = REGISTRATE.item("alamite", Item::new).lang("Alamite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> BIXITE = REGISTRATE.item("bixite", Item::new).lang("Bixite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> BARYTE = REGISTRATE.item("baryte", Item::new).lang("Baryte").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> AERINITE = REGISTRATE.item("aerinite", Item::new).lang("Aerinite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> CAlCITE = REGISTRATE.item("calcite", Item::new).lang("Calcite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> DOLOMITE = REGISTRATE.item("dolomite", Item::new).lang("Dolomite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> ESPERITE = REGISTRATE.item("esperite", Item::new).lang("Esperite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
 }

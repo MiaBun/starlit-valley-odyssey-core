@@ -40,5 +40,10 @@ public class SVOItemTooltips {
         TooltipBuilder.addTooltip(SVOItems.FIRE_OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.fire_opal");
         TooltipBuilder.addTooltip(SVOItems.ALAMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.alamite");
         TooltipBuilder.addTooltip(SVOItems.BIXITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.bixite");
+        TooltipBuilder.addTooltip(SVOItems.BARYTE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.baryte");
+        TooltipBuilder.addTooltip(SVOItems.AERINITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.aerinite");
+        TooltipBuilder.addTooltip(SVOItems.CAlCITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.calcite");
+        TooltipBuilder.addTooltip(SVOItems.DOLOMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.dolomite");
+        TooltipBuilder.addTooltip(SVOItems.ESPERITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.esperite");
     }
 }

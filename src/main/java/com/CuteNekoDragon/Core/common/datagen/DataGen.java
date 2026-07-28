@@ -43,6 +43,11 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.fire_opal", "A rare variety of opal, named for its red spots.");
         REGISTRATE.addRawLang("tooltip.svo_core.alamite", "Its distinctive fluorescence makes it a favorite among rock collectors.");
         REGISTRATE.addRawLang("tooltip.svo_core.bixite", "A dark metallic Mineral sought after for its cubic structure.");
+        REGISTRATE.addRawLang("tooltip.svo_core.baryte", "The best specimens resemble a desert rose.");
+        REGISTRATE.addRawLang("tooltip.svo_core.aerinite", "These crystals are curiously light.");
+        REGISTRATE.addRawLang("tooltip.svo_core.calcite", "This yellow crystal is speckled with shimmering nodules.");
+        REGISTRATE.addRawLang("tooltip.svo_core.dolomite", "It can occur in coral reefs, often near an underwater volcano.");
+        REGISTRATE.addRawLang("tooltip.svo_core.esperite", "The crystals glow bright green when stimulated.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

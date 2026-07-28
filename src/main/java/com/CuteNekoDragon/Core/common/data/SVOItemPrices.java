@@ -27,5 +27,10 @@ public class SVOItemPrices {
         PriceUtil.setPrice(SVOItems.FIRE_OPAL, 350, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.ALAMITE, 150, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.BIXITE, 300, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.BARYTE, 50, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.AERINITE, 125, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.CAlCITE, 75, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.DOLOMITE, 300, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.ESPERITE, 100, PriceUtil.PriceType.GEMOLOGIST);
     }
 }

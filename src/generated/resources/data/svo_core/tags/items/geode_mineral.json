@@ -4,6 +4,11 @@
     "svo_core:opal",
     "svo_core:fire_opal",
     "svo_core:alamite",
-    "svo_core:bixite"
+    "svo_core:bixite",
+    "svo_core:baryte",
+    "svo_core:aerinite",
+    "svo_core:calcite",
+    "svo_core:dolomite",
+    "svo_core:esperite"
   ]
 }
