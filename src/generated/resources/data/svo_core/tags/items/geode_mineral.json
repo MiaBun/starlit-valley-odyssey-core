@@ -1,5 +1,9 @@
 {
   "values": [
-    "svo_core:tigerseye"
+    "svo_core:tigerseye",
+    "svo_core:opal",
+    "svo_core:fire_opal",
+    "svo_core:alamite",
+    "svo_core:bixite"
   ]
 }

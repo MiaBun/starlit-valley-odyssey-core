@@ -1,6 +1,10 @@
 ## [Unreleased]
 ### Changes
 - added tigerseye
+- added opal
+- added fire opal
+- added alamite
+- added bixite
 
 ## [0.0.17]
 ### Changes

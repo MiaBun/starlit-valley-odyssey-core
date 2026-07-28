@@ -36,5 +36,9 @@ public class SVOItemTooltips {
         // Geode Minerals
         TooltipBuilder.addTooltip(SVOItems.TIGERSEYE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.tigerseye");
+        TooltipBuilder.addTooltip(SVOItems.OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.opal");
+        TooltipBuilder.addTooltip(SVOItems.FIRE_OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.fire_opal");
+        TooltipBuilder.addTooltip(SVOItems.ALAMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.alamite");
+        TooltipBuilder.addTooltip(SVOItems.BIXITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.bixite");
     }
 }

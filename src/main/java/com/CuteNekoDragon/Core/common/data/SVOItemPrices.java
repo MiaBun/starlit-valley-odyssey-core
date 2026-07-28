@@ -23,5 +23,9 @@ public class SVOItemPrices {
 
         // Geode Minerals
         PriceUtil.setPrice(SVOItems.TIGERSEYE, 275, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.OPAL, 150, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.FIRE_OPAL, 350, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.ALAMITE, 150, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.BIXITE, 300, PriceUtil.PriceType.GEMOLOGIST);
     }
 }

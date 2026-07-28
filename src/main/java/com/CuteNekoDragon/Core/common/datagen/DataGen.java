@@ -39,6 +39,10 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.prismatic_shard",
                 "A very rare and powerful substance with unknown origins.");
         REGISTRATE.addRawLang("tooltip.svo_core.tigerseye", "A stripe of shimmering gold gives this gem a warm luster.");
+        REGISTRATE.addRawLang("tooltip.svo_core.opal", "Its internal structure causes it to reflect a rainbow of light.");
+        REGISTRATE.addRawLang("tooltip.svo_core.fire_opal", "A rare variety of opal, named for its red spots.");
+        REGISTRATE.addRawLang("tooltip.svo_core.alamite", "Its distinctive fluorescence makes it a favorite among rock collectors.");
+        REGISTRATE.addRawLang("tooltip.svo_core.bixite", "A dark metallic Mineral sought after for its cubic structure.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");
