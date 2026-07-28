@@ -36,14 +36,23 @@ public class SVOItemTooltips {
         // Geode Minerals
         TooltipBuilder.addTooltip(SVOItems.TIGERSEYE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.tigerseye");
-        TooltipBuilder.addTooltip(SVOItems.OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.opal");
-        TooltipBuilder.addTooltip(SVOItems.FIRE_OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.fire_opal");
-        TooltipBuilder.addTooltip(SVOItems.ALAMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.alamite");
-        TooltipBuilder.addTooltip(SVOItems.BIXITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.bixite");
-        TooltipBuilder.addTooltip(SVOItems.BARYTE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.baryte");
-        TooltipBuilder.addTooltip(SVOItems.AERINITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.aerinite");
-        TooltipBuilder.addTooltip(SVOItems.CAlCITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.calcite");
-        TooltipBuilder.addTooltip(SVOItems.DOLOMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.dolomite");
-        TooltipBuilder.addTooltip(SVOItems.ESPERITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.esperite");
+        TooltipBuilder.addTooltip(SVOItems.OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.opal");
+        TooltipBuilder.addTooltip(SVOItems.FIRE_OPAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.fire_opal");
+        TooltipBuilder.addTooltip(SVOItems.ALAMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.alamite");
+        TooltipBuilder.addTooltip(SVOItems.BIXITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.bixite");
+        TooltipBuilder.addTooltip(SVOItems.BARYTE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.baryte");
+        TooltipBuilder.addTooltip(SVOItems.AERINITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.aerinite");
+        TooltipBuilder.addTooltip(SVOItems.CAlCITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.calcite");
+        TooltipBuilder.addTooltip(SVOItems.DOLOMITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.dolomite");
+        TooltipBuilder.addTooltip(SVOItems.ESPERITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.esperite");
     }
 }
