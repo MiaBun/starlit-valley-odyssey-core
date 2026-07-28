@@ -20,5 +20,8 @@ public class SVOItemPrices {
         PriceUtil.setPrice(SVOItems.JADE, 200, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.DIAMOND, 750, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.PRISMATIC_SHARD, 2000, PriceUtil.PriceType.GEMOLOGIST);
+
+        // Geode Minerals
+        PriceUtil.setPrice(SVOItems.TIGERSEYE, 275, PriceUtil.PriceType.GEMOLOGIST);
     }
 }

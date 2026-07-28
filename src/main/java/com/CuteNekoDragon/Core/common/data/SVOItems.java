@@ -88,4 +88,9 @@ public class SVOItems {
     public static ItemEntry<Item> PRISMATIC_SHARD = REGISTRATE.item("prismatic_shard", Item::new)
             .lang("Prismatic Shard").tag(SVOTags.Items.Gemstones)
             .defaultModel().register();
+
+    // Geode Minerals
+    public static ItemEntry<Item> TIGERSEYE = REGISTRATE.item("tigerseye", Item::new)
+            .lang("Tigerseye").tag(SVOTags.Items.Geode_Mineral)
+            .defaultModel().register();
 }

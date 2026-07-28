@@ -23,6 +23,7 @@
   "item.svo_core.prismatic_shard": "Prismatic Shard",
   "item.svo_core.quartz": "Quartz",
   "item.svo_core.ruby": "Ruby",
+  "item.svo_core.tigerseye": "Tigerseye",
   "item.svo_core.topaz": "Topaz",
   "itemGroup.svo_core": "Svo Core",
   "tooltip.svo_core.amethyst": "A purple variant of quartz.",
@@ -39,5 +40,6 @@
   "tooltip.svo_core.prismatic_shard": "A very rare and powerful substance with unknown origins.",
   "tooltip.svo_core.quartz": "A clear crystal commonly found in caves and mines.",
   "tooltip.svo_core.ruby": "A precious stone that is sought after for its rich color and beautiful luster.",
+  "tooltip.svo_core.tigerseye": "A stripe of shimmering gold gives this gem a warm luster.",
   "tooltip.svo_core.topaz": "Fairly common but still prized for its beauty."
 }

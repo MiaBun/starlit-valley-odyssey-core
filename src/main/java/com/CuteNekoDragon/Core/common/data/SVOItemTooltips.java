@@ -32,5 +32,9 @@ public class SVOItemTooltips {
                 .addInfo("tooltip.svo_core.diamond");
         TooltipBuilder.addTooltip(SVOItems.PRISMATIC_SHARD).addCoins().addGlyph(TooltipBuilder.SVOTypes.GEMSTONE)
                 .addInfo("tooltip.svo_core.prismatic_shard");
+
+        // Geode Minerals
+        TooltipBuilder.addTooltip(SVOItems.TIGERSEYE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
+                .addInfo("tooltip.svo_core.tigerseye");
     }
 }

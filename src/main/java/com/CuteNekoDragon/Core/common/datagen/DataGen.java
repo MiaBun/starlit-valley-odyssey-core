@@ -38,6 +38,7 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.diamond", "A rare and valuable gem.");
         REGISTRATE.addRawLang("tooltip.svo_core.prismatic_shard",
                 "A very rare and powerful substance with unknown origins.");
+        REGISTRATE.addRawLang("tooltip.svo_core.tigerseye", "A stripe of shimmering gold gives this gem a warm luster.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");
