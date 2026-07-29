@@ -111,4 +111,9 @@ public class SVOItems {
             .tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> ESPERITE = REGISTRATE.item("esperite", Item::new).lang("Esperite")
             .tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> FLUORAPATITE = REGISTRATE.item("fluorapatite", Item::new).lang("Fluorapatite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> GEMINITE = REGISTRATE.item("geminite", Item::new).lang("Geminite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> HELVITE = REGISTRATE.item("helvite", Item::new).lang("Helvite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> JAMBORITE = REGISTRATE.item("jamborite", Item::new).lang("Jamborite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> JAGOITE = REGISTRATE.item("jagoite", Item::new).lang("Jagoite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
 }

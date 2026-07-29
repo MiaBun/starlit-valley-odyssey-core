@@ -53,6 +53,11 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.dolomite",
                 "It can occur in coral reefs, often near an underwater volcano.");
         REGISTRATE.addRawLang("tooltip.svo_core.esperite", "The crystals glow bright green when stimulated.");
+        REGISTRATE.addRawLang("tooltip.svo_core.fluorapatite", "Small amounts are found in human teeth.");
+        REGISTRATE.addRawLang("tooltip.svo_core.geminite", "Occurs in brilliant clusters.");
+        REGISTRATE.addRawLang("tooltip.svo_core.helvite", "It grows in a triangular column.");
+        REGISTRATE.addRawLang("tooltip.svo_core.jamborite", "The crystals are so tightly packed it almost looks fuzzy.");
+        REGISTRATE.addRawLang("tooltip.svo_core.jagoite", "A high volume of tiny crystals makes it very glittery.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

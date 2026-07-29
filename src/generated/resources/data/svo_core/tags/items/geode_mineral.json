@@ -9,6 +9,11 @@
     "svo_core:aerinite",
     "svo_core:calcite",
     "svo_core:dolomite",
-    "svo_core:esperite"
+    "svo_core:esperite",
+    "svo_core:fluorapatite",
+    "svo_core:geminite",
+    "svo_core:helvite",
+    "svo_core:jamborite",
+    "svo_core:jagoite"
   ]
 }

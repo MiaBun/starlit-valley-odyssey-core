@@ -54,5 +54,10 @@ public class SVOItemTooltips {
                 .addInfo("tooltip.svo_core.dolomite");
         TooltipBuilder.addTooltip(SVOItems.ESPERITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.esperite");
+        TooltipBuilder.addTooltip(SVOItems.FLUORAPATITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.fluorapatite");
+        TooltipBuilder.addTooltip(SVOItems.GEMINITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.geminite");
+        TooltipBuilder.addTooltip(SVOItems.HELVITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.helvite");
+        TooltipBuilder.addTooltip(SVOItems.JAMBORITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.jamborite");
+        TooltipBuilder.addTooltip(SVOItems.JAGOITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.jagoite");
     }
 }

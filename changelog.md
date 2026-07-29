@@ -10,6 +10,7 @@
 - added calcite
 - added dolomite
 - added esperite
+- added fluorapatite
 
 ## [0.0.17]
 ### Changes
