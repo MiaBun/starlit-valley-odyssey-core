@@ -116,4 +116,9 @@ public class SVOItems {
     public static ItemEntry<Item> HELVITE = REGISTRATE.item("helvite", Item::new).lang("Helvite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> JAMBORITE = REGISTRATE.item("jamborite", Item::new).lang("Jamborite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> JAGOITE = REGISTRATE.item("jagoite", Item::new).lang("Jagoite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> KYANITE = REGISTRATE.item("kyanite", Item::new).lang("Kyanite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> LUNARITE = REGISTRATE.item("lunarite", Item::new).lang("Lunarite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> MALACHITE = REGISTRATE.item("malachite", Item::new).lang("Malachite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> NEPTUNITE = REGISTRATE.item("neptunite", Item::new).lang("Neptunite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> LEMON_STONE = REGISTRATE.item("lemon_stone", Item::new).lang("Lemon Stone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
 }

@@ -58,6 +58,11 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.helvite", "It grows in a triangular column.");
         REGISTRATE.addRawLang("tooltip.svo_core.jamborite", "The crystals are so tightly packed it almost looks fuzzy.");
         REGISTRATE.addRawLang("tooltip.svo_core.jagoite", "A high volume of tiny crystals makes it very glittery.");
+        REGISTRATE.addRawLang("tooltip.svo_core.kyanite", "The geometric faces are as smooth as glass.");
+        REGISTRATE.addRawLang("tooltip.svo_core.lunarite", "The cratered white orbs form a tight cluster.");
+        REGISTRATE.addRawLang("tooltip.svo_core.malachite", "A popular ornamental stone, used in sculpture and to make green paint.");
+        REGISTRATE.addRawLang("tooltip.svo_core.neptunite", "A jet-black crystal that is unusually reflective.");
+        REGISTRATE.addRawLang("tooltip.svo_core.lemon_stone", "Some claim the powdered crystal is a dwarvish delicacy.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

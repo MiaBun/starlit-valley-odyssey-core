@@ -59,5 +59,10 @@ public class SVOItemTooltips {
         TooltipBuilder.addTooltip(SVOItems.HELVITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.helvite");
         TooltipBuilder.addTooltip(SVOItems.JAMBORITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.jamborite");
         TooltipBuilder.addTooltip(SVOItems.JAGOITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.jagoite");
+        TooltipBuilder.addTooltip(SVOItems.KYANITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.kyanite");
+        TooltipBuilder.addTooltip(SVOItems.LUNARITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.lunarite");
+        TooltipBuilder.addTooltip(SVOItems.MALACHITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.malachite");
+        TooltipBuilder.addTooltip(SVOItems.NEPTUNITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.neptunite");
+        TooltipBuilder.addTooltip(SVOItems.LEMON_STONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.lemon_stone");
     }
 }

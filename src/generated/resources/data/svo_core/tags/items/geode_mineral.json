@@ -14,6 +14,11 @@
     "svo_core:geminite",
     "svo_core:helvite",
     "svo_core:jamborite",
-    "svo_core:jagoite"
+    "svo_core:jagoite",
+    "svo_core:kyanite",
+    "svo_core:lunarite",
+    "svo_core:malachite",
+    "svo_core:neptunite",
+    "svo_core:lemon_stone"
   ]
 }

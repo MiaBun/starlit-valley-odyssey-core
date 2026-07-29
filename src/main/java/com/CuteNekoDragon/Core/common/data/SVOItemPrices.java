@@ -37,5 +37,10 @@ public class SVOItemPrices {
         PriceUtil.setPrice(SVOItems.HELVITE, 450, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.JAMBORITE, 150, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.JAGOITE, 115, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.KYANITE, 250, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.LUNARITE, 200, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.MALACHITE, 100, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.NEPTUNITE, 400, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.LEMON_STONE, 200, PriceUtil.PriceType.GEMOLOGIST);
     }
 }
