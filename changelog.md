@@ -11,6 +11,16 @@
 - added dolomite
 - added esperite
 - added fluorapatite
+- added geminite
+- added helvite
+- added jamborite
+- added jagoite
+- added kyanite
+- added lunarite
+- added malachite
+- added neptunite
+- added lemon_stone
+- added nekoite
 
 ## [0.0.17]
 ### Changes

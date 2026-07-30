@@ -121,4 +121,5 @@ public class SVOItems {
     public static ItemEntry<Item> MALACHITE = REGISTRATE.item("malachite", Item::new).lang("Malachite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> NEPTUNITE = REGISTRATE.item("neptunite", Item::new).lang("Neptunite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> LEMON_STONE = REGISTRATE.item("lemon_stone", Item::new).lang("Lemon Stone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> NEKOITE = REGISTRATE.item("nekoite", Item::new).lang("Nekoite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
 }

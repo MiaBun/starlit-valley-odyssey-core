@@ -63,6 +63,7 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.malachite", "A popular ornamental stone, used in sculpture and to make green paint.");
         REGISTRATE.addRawLang("tooltip.svo_core.neptunite", "A jet-black crystal that is unusually reflective.");
         REGISTRATE.addRawLang("tooltip.svo_core.lemon_stone", "Some claim the powdered crystal is a dwarvish delicacy.");
+        REGISTRATE.addRawLang("tooltip.svo_core.nekoite", "The delicate shards form a tiny pink meadow.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

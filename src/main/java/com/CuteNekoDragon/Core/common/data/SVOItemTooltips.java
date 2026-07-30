@@ -64,5 +64,6 @@ public class SVOItemTooltips {
         TooltipBuilder.addTooltip(SVOItems.MALACHITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.malachite");
         TooltipBuilder.addTooltip(SVOItems.NEPTUNITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.neptunite");
         TooltipBuilder.addTooltip(SVOItems.LEMON_STONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.lemon_stone");
+        TooltipBuilder.addTooltip(SVOItems.NEKOITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.nekoite");
     }
 }
