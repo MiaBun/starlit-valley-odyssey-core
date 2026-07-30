@@ -43,5 +43,15 @@ public class SVOItemPrices {
         PriceUtil.setPrice(SVOItems.NEPTUNITE, 400, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.LEMON_STONE, 200, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.NEKOITE, 80, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.ORPIMENT, 80, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.PETRIFIED_SLIME, 120, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.THUNDER_EGG, 100, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.PYRITE, 120, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.OCEAN_STONE, 220, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.GHOST_CRYSTAL, 200, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.JASPER, 150, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.CELESTINE, 125, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.MARBLE, 110, PriceUtil.PriceType.GEMOLOGIST);
+        PriceUtil.setPrice(SVOItems.SANDSTONE, 60, PriceUtil.PriceType.GEMOLOGIST);
     }
 }

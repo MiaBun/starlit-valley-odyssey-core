@@ -20,6 +20,16 @@
     "svo_core:malachite",
     "svo_core:neptunite",
     "svo_core:lemon_stone",
-    "svo_core:nekoite"
+    "svo_core:nekoite",
+    "svo_core:orpiment",
+    "svo_core:petrified_slime",
+    "svo_core:thunder_egg",
+    "svo_core:pyrite",
+    "svo_core:ocean_stone",
+    "svo_core:ghost_crystal",
+    "svo_core:jasper",
+    "svo_core:celestine",
+    "svo_core:marble",
+    "svo_core:sandstone"
   ]
 }

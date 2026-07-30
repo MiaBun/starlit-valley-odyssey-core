@@ -122,4 +122,14 @@ public class SVOItems {
     public static ItemEntry<Item> NEPTUNITE = REGISTRATE.item("neptunite", Item::new).lang("Neptunite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> LEMON_STONE = REGISTRATE.item("lemon_stone", Item::new).lang("Lemon Stone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> NEKOITE = REGISTRATE.item("nekoite", Item::new).lang("Nekoite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> ORPIMENT = REGISTRATE.item("orpiment", Item::new).lang("Orpiment").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> PETRIFIED_SLIME = REGISTRATE.item("petrified_slime", Item::new).lang("Petrified Slime").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> THUNDER_EGG = REGISTRATE.item("thunder_egg", Item::new).lang("Thunder Egg").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> PYRITE = REGISTRATE.item("pyrite", Item::new).lang("Pyrite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> OCEAN_STONE = REGISTRATE.item("ocean_stone", Item::new).lang("Ocean Stone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> GHOST_CRYSTAL = REGISTRATE.item("ghost_crystal", Item::new).lang("Ghost Crystal").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> JASPER = REGISTRATE.item("jasper", Item::new).lang("Jasper").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> CELESTINE = REGISTRATE.item("celestine", Item::new).lang("Celestine").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> MARBLE = REGISTRATE.item("marble", Item::new).lang("Marble").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> SANDSTONE = REGISTRATE.item("sandstone", Item::new).lang("Sandstone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
 }

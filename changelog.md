@@ -21,6 +21,16 @@
 - added neptunite
 - added lemon_stone
 - added nekoite
+- added orpiment
+- added Petrified Slime
+- added Thunder Egg
+- added pyrite
+- added Ocean Stone
+- added Ghost Crystal
+- added jasper
+- added celestine
+- added marble
+- added sandstone
 
 ## [0.0.17]
 ### Changes
