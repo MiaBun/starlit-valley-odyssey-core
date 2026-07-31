@@ -74,6 +74,16 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.celestine", "Some early life forms had bones made from this.");
         REGISTRATE.addRawLang("tooltip.svo_core.marble", "A very popular material for sculptures and construction.");
         REGISTRATE.addRawLang("tooltip.svo_core.sandstone", "A common type of stone with red and brown striations.");
+        REGISTRATE.addRawLang("tooltip.svo_core.granite", "A speckled Mineral that is commonly used in construction.");
+        REGISTRATE.addRawLang("tooltip.svo_core.basalt", "Forms near searing hot magma.");
+        REGISTRATE.addRawLang("tooltip.svo_core.limestone", "A very common type of stone. It's not worth very much.");
+        REGISTRATE.addRawLang("tooltip.svo_core.soapstone", "Because of its relatively soft consistency, this stone is very popular for carving.");
+        REGISTRATE.addRawLang("tooltip.svo_core.hermatite", "An iron-based Mineral with interesting magnetic properties.");
+        REGISTRATE.addRawLang("tooltip.svo_core.mudstone", "A fine-grained rock made from ancient clay or mud.");
+        REGISTRATE.addRawLang("tooltip.svo_core.obsidian", "A volcanic glass that forms when lava cools rapidly.");
+        REGISTRATE.addRawLang("tooltip.svo_core.slate", "It's extremely resistant to water, making it a good roofing material.");
+        REGISTRATE.addRawLang("tooltip.svo_core.fairy_stone", "An old miner's song suggests these are made from the bones of ancient fairies.");
+        REGISTRATE.addRawLang("tooltip.svo_core.star_shards", "No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

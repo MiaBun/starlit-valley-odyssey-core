@@ -75,5 +75,15 @@ public class SVOItemTooltips {
         TooltipBuilder.addTooltip(SVOItems.CELESTINE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.celestine");
         TooltipBuilder.addTooltip(SVOItems.MARBLE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.marble");
         TooltipBuilder.addTooltip(SVOItems.SANDSTONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.sandstone");
+        TooltipBuilder.addTooltip(SVOItems.GRANITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.granite");
+        TooltipBuilder.addTooltip(SVOItems.BASALT).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.basalt");
+        TooltipBuilder.addTooltip(SVOItems.LIMESTONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.limestone");
+        TooltipBuilder.addTooltip(SVOItems.SOAPSTONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.soapstone");
+        TooltipBuilder.addTooltip(SVOItems.HERMATITE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.hermatite");
+        TooltipBuilder.addTooltip(SVOItems.MUDSTONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.mudstone");
+        TooltipBuilder.addTooltip(SVOItems.OBSIDIAN).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.obsidian");
+        TooltipBuilder.addTooltip(SVOItems.SLATE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.slate");
+        TooltipBuilder.addTooltip(SVOItems.FAIRY_STONE).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.fairy_stone");
+        TooltipBuilder.addTooltip(SVOItems.STAR_SHARDS).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL).addInfo("tooltip.svo_core.star_shards");
     }
 }

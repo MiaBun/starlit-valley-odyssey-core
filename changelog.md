@@ -31,6 +31,16 @@
 - added celestine
 - added marble
 - added sandstone
+- added granite
+- added basalt
+- added limestone
+- added soapstone
+- added hermatite
+- added mudstone
+- added obsidian
+- added slate
+- added fairy stone
+- added star shards
 
 ## [0.0.17]
 ### Changes

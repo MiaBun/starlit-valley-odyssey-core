@@ -132,4 +132,14 @@ public class SVOItems {
     public static ItemEntry<Item> CELESTINE = REGISTRATE.item("celestine", Item::new).lang("Celestine").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> MARBLE = REGISTRATE.item("marble", Item::new).lang("Marble").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> SANDSTONE = REGISTRATE.item("sandstone", Item::new).lang("Sandstone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> GRANITE = REGISTRATE.item("granite", Item::new).lang("Granite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> BASALT = REGISTRATE.item("basalt", Item::new).lang("Basalt").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> LIMESTONE = REGISTRATE.item("limestone", Item::new).lang("Limestone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> SOAPSTONE = REGISTRATE.item("soapstone", Item::new).lang("Soapstone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> HERMATITE = REGISTRATE.item("hermatite", Item::new).lang("Hermatite").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> MUDSTONE = REGISTRATE.item("mudstone", Item::new).lang("Mudstone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> OBSIDIAN = REGISTRATE.item("obsidian", Item::new).lang("Obsidian").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> SLATE = REGISTRATE.item("slate", Item::new).lang("Slate").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> FAIRY_STONE = REGISTRATE.item("fairy_stone", Item::new).lang("Fairy Stone").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+    public static ItemEntry<Item> STAR_SHARDS = REGISTRATE.item("star_shards", Item::new).lang("Star Shards").tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
 }

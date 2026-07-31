@@ -30,6 +30,16 @@
     "svo_core:jasper",
     "svo_core:celestine",
     "svo_core:marble",
-    "svo_core:sandstone"
+    "svo_core:sandstone",
+    "svo_core:granite",
+    "svo_core:basalt",
+    "svo_core:limestone",
+    "svo_core:soapstone",
+    "svo_core:hermatite",
+    "svo_core:mudstone",
+    "svo_core:obsidian",
+    "svo_core:slate",
+    "svo_core:fairy_stone",
+    "svo_core:star_shards"
   ]
 }
