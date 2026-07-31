@@ -173,4 +173,8 @@ public class SVOItems {
             .tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
     public static ItemEntry<Item> STAR_SHARDS = REGISTRATE.item("star_shards", Item::new).lang("Star Shards")
             .tag(SVOTags.Items.Geode_Mineral).defaultModel().register();
+
+    // Special Items
+
+    public static ItemEntry<Item> GALAXY_SOUL = REGISTRATE.item("galaxy_soul", Item::new).lang("Galaxy Soul").tag(SVOTags.Items.Special_Items).defaultModel().register();
 }

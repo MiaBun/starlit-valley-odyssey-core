@@ -9,10 +9,8 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.NumberFormat;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -29,7 +27,8 @@ public final class TooltipBuilder {
     public enum SVOTypes {
 
         MINERAL("\uE001", "tooltip.svo_core.mineral_product"),
-        GEMSTONE("\uE002", "tooltip.svo_core.gemstone_product");
+        GEMSTONE("\uE002", "tooltip.svo_core.gemstone_product"),
+        SPECIAL_ITEM("\uE003", "tooltip.svo_core.special_item");
 
         private final String glyph;
         private final String product_type;
@@ -69,7 +68,7 @@ public final class TooltipBuilder {
     }
 
     public TooltipBuilder addCoins() {
-        return addIcon("\uE000", Component.translatable("tooltip.svo_core.coins", PriceUtil.getPrice(item))
+        return addIcon("\uE000", Component.translatable("tooltip.svo_core.coins", NumberFormat.getIntegerInstance(Locale.US).format(PriceUtil.getPrice(item)))
                 .withStyle(ChatFormatting.WHITE));
     }
 

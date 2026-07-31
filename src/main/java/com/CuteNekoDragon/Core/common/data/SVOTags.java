@@ -14,6 +14,7 @@ public final class SVOTags {
         public static final TagKey<Item> Minerals = createItemTag("minerals");
         public static final TagKey<Item> Gemstones = createItemTag("gemstones");
         public static final TagKey<Item> Geode_Mineral = createItemTag("geode_mineral");
+        public static final TagKey<Item> Special_Items = createItemTag("special_items");
 
         private static TagKey<Item> createItemTag(String path) {
             return createItemTag(SVOCore.id(path));

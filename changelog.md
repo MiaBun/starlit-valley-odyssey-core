@@ -1,6 +1,8 @@
 ## [Unreleased]
 ### Changes
--
+- added the Galaxy Soul
+- fixed number formatting, now they comma seperate per 000 so 1,000 etc.
+- added special item type
 
 ## [0.0.18]
 ### Changes

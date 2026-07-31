@@ -10,7 +10,8 @@ import java.util.function.Supplier;
 public class PriceUtil {
 
     public enum PriceType {
-        GEMOLOGIST
+        GEMOLOGIST,
+        NONE
     }
 
     private record PriceEntry(int price, PriceType type) {}

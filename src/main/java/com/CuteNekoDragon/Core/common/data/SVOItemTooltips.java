@@ -116,5 +116,8 @@ public class SVOItemTooltips {
                 .addInfo("tooltip.svo_core.fairy_stone");
         TooltipBuilder.addTooltip(SVOItems.STAR_SHARDS).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo("tooltip.svo_core.star_shards");
+
+        // Special Items
+        TooltipBuilder.addTooltip(SVOItems.GALAXY_SOUL).addCoins().addGlyph(TooltipBuilder.SVOTypes.SPECIAL_ITEM).addInfo("tooltip.svo_core.galaxy_soul");
     }
 }

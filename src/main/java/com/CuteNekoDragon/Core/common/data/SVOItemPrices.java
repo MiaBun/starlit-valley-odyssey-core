@@ -63,5 +63,8 @@ public class SVOItemPrices {
         PriceUtil.setPrice(SVOItems.SLATE, 85, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.FAIRY_STONE, 250, PriceUtil.PriceType.GEMOLOGIST);
         PriceUtil.setPrice(SVOItems.STAR_SHARDS, 500, PriceUtil.PriceType.GEMOLOGIST);
+
+        // Special Items
+        PriceUtil.setPrice(SVOItems.GALAXY_SOUL, 5000, PriceUtil.PriceType.NONE);
     }
 }
