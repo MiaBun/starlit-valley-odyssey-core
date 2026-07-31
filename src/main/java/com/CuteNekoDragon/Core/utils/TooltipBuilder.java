@@ -28,7 +28,8 @@ public final class TooltipBuilder {
 
         MINERAL("\uE001", "tooltip.svo_core.mineral_product"),
         GEMSTONE("\uE002", "tooltip.svo_core.gemstone_product"),
-        SPECIAL_ITEM("\uE003", "tooltip.svo_core.special_item");
+        SPECIAL_ITEM("\uE003", "tooltip.svo_core.special_item"),
+        BLACKSMITH_ITEM("\uE004", "tooltip.svo_core.blacksmith_item");
 
         private final String glyph;
         private final String product_type;

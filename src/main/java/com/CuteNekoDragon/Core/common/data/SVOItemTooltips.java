@@ -119,5 +119,8 @@ public class SVOItemTooltips {
 
         // Special Items
         TooltipBuilder.addTooltip(SVOItems.GALAXY_SOUL).addCoins().addGlyph(TooltipBuilder.SVOTypes.SPECIAL_ITEM).addInfo("tooltip.svo_core.galaxy_soul");
+
+        // Ingots and Blacksmith Items
+        TooltipBuilder.addTooltip(SVOItems.IRIDIUM_INGOT).addCoins().addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM).addInfo("tooltip.svo_core.iridium_ingot");
     }
 }

@@ -66,5 +66,8 @@ public class SVOItemPrices {
 
         // Special Items
         PriceUtil.setPrice(SVOItems.GALAXY_SOUL, 5000, PriceUtil.PriceType.NONE);
+
+        // Ingots and Blacksmith Items
+        PriceUtil.setPrice(SVOItems.IRIDIUM_INGOT, 1000, PriceUtil.PriceType.BLACKSMITH);
     }
 }

@@ -11,7 +11,8 @@ public class PriceUtil {
 
     public enum PriceType {
         GEMOLOGIST,
-        NONE
+        NONE,
+        BLACKSMITH
     }
 
     private record PriceEntry(int price, PriceType type) {}

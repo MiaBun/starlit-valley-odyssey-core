@@ -97,10 +97,12 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.star_shards",
                 "No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.");
         REGISTRATE.addRawLang("tooltip.svo_core.galaxy_soul", "Forge 3 of these into a Galaxy weapon to unleash its final form.");
+        REGISTRATE.addRawLang("tooltip.svo_core.iridium_ingot", "A ingot of pure iridium");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");
         REGISTRATE.addRawLang("tooltip.svo_core.gemstone_product", "Gemstone Product");
         REGISTRATE.addRawLang("tooltip.svo_core.special_item", "Special Item");
+        REGISTRATE.addRawLang("tooltip.svo_core.blacksmith_item", "Blacksmith Product");
     }
 }

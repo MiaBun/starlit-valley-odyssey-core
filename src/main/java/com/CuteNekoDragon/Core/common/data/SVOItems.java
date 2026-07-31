@@ -177,4 +177,7 @@ public class SVOItems {
     // Special Items
 
     public static ItemEntry<Item> GALAXY_SOUL = REGISTRATE.item("galaxy_soul", Item::new).lang("Galaxy Soul").tag(SVOTags.Items.Special_Items).defaultModel().register();
+
+    // Ingots and Blacksmith items
+    public static ItemEntry<Item> IRIDIUM_INGOT = REGISTRATE.item("iridium_ingot", Item::new).lang("Iridium Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
 }
