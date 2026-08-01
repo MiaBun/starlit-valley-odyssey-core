@@ -9,7 +9,7 @@ import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOCreativeTab;
 import com.CuteNekoDragon.Core.common.data.SVOItemPrices;
 import com.CuteNekoDragon.Core.common.data.SVOItemTooltips;
-import com.CuteNekoDragon.Core.common.data.SVOItems;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.config.SVOConfig;
 
 public class CommonProxy {

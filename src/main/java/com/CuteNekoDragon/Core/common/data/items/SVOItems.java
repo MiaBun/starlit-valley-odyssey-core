@@ -1,5 +1,6 @@
-package com.CuteNekoDragon.Core.common.data;
+package com.CuteNekoDragon.Core.common.data.items;
 
+import com.CuteNekoDragon.Core.common.data.SVOTags;
 import net.minecraft.world.item.Item;
 
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;

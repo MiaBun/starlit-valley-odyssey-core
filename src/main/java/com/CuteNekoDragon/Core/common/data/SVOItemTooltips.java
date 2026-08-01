@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.data;
 
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.utils.TooltipBuilder;
 
 public class SVOItemTooltips {

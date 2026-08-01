@@ -1,6 +1,6 @@
 ## [Unreleased]
 ### Changes
-- 
+- changed common/data/SVOItems to common/data/items/SVOItems
 
 ## [0.0.19]
 ### Changes
