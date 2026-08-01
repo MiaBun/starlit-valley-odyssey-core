@@ -1,6 +1,7 @@
 ## [Unreleased]
 ### Changes
 - changed common/data/SVOItems to common/data/items/SVOItems
+- added a quartz -> refined quartz smelting and blasting recipe
 
 ## [0.0.19]
 ### Changes

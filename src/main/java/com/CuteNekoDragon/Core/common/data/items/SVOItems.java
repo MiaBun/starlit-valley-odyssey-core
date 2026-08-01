@@ -1,10 +1,14 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
+import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.Item;
 
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -188,7 +192,15 @@ public class SVOItems {
     public static ItemEntry<Item> IRIDIUM_INGOT = REGISTRATE.item("iridium_ingot", Item::new).lang("Iridium Ingot")
             .tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
     public static ItemEntry<Item> REFINED_QUARTZ = REGISTRATE.item("refined_quartz", Item::new).lang("Refined Quartz")
-            .tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
+            .tag(SVOTags.Items.Blacksmith_Items).defaultModel().recipe((ctx, provider) -> {
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(QUARTZ), RecipeCategory.MISC, ctx.get(), 0.7f, 200)
+                        .unlockedBy("has_svo_quartz",  provider.has(QUARTZ))
+                        .save(provider, SVOCore.id("smelting/refined_quartz"));
+
+                SimpleCookingRecipeBuilder.blasting(Ingredient.of(QUARTZ), RecipeCategory.MISC, ctx.get(), 0.7f, 100)
+                        .unlockedBy("has_svo_quartz",  provider.has(QUARTZ))
+                        .save(provider, SVOCore.id("blasting/refined_quartz"));
+            }).register();
     public static ItemEntry<Item> RADIOACTIVE_INGOT = REGISTRATE.item("radioactive_ingot", Item::new)
             .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
 }
