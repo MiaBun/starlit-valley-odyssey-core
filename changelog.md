@@ -3,6 +3,7 @@
 - changed common/data/SVOItems to common/data/items/SVOItems
 - added a quartz -> refined quartz smelting and blasting recipe
 - added a custom advancements tab for chapter 1
+- removed minecraft/story advancements
 
 ## [0.0.19]
 ### Changes
