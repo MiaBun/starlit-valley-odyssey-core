@@ -1,5 +1,7 @@
 {
   "values": [
-    "svo_core:iridium_ingot"
+    "svo_core:iridium_ingot",
+    "svo_core:refined_quartz",
+    "svo_core:radioactive_ingot"
   ]
 }

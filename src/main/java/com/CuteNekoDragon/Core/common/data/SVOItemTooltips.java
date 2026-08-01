@@ -119,8 +119,12 @@ public class SVOItemTooltips {
 
         // Special Items
         TooltipBuilder.addTooltip(SVOItems.GALAXY_SOUL).addCoins().addGlyph(TooltipBuilder.SVOTypes.SPECIAL_ITEM).addInfo("tooltip.svo_core.galaxy_soul");
+        TooltipBuilder.addTooltip(SVOItems.DRAGON_TOOTH).addCoins().addGlyph(TooltipBuilder.SVOTypes.SPECIAL_ITEM).addInfo("tooltip.svo_core.dragon_tooth");
+        TooltipBuilder.addTooltip(SVOItems.CINDER_SHARD).addCoins().addGlyph(TooltipBuilder.SVOTypes.SPECIAL_ITEM).addInfo("tooltip.svo_core.cinder_shard");
 
         // Ingots and Blacksmith Items
         TooltipBuilder.addTooltip(SVOItems.IRIDIUM_INGOT).addCoins().addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM).addInfo("tooltip.svo_core.iridium_ingot");
+        TooltipBuilder.addTooltip(SVOItems.REFINED_QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM).addInfo("tooltip.svo_core.refined_quartz");
+        TooltipBuilder.addTooltip(SVOItems.RADIOACTIVE_INGOT).addCoins().addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM).addInfo("tooltip.svo_core.radioactive_ingot");
     }
 }

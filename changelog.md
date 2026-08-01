@@ -5,6 +5,10 @@
 - added special item type
 - added blacksmith items type
 - added iridium ingot
+- added dragon tooth
+- added refined quartz
+- added radioactive ingot
+- added cinder shard
 
 ## [0.0.18]
 ### Changes
