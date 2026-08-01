@@ -1,0 +1,38 @@
+{
+  "parent": "svo_core:chapter1",
+  "criteria": {
+    "has_other_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crafting_table"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.svo_core.chapter1.advancement1.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:crafting_table"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.svo_core.chapter1.advancement1.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_other_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

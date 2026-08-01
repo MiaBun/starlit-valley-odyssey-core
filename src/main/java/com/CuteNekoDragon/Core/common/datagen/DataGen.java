@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
+import com.CuteNekoDragon.Core.common.datagen.advancements.SVOAdvancementsProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -9,6 +11,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import com.CuteNekoDragon.Core.SVOCore;
+
+import java.util.concurrent.CompletableFuture;
 
 import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
 
@@ -23,6 +27,14 @@ public class DataGen {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        generator.addProvider(event.includeServer(), new SVOAdvancementsProvider(packOutput, lookupProvider, existingFileHelper));
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.title", "Chapter 1");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.description", "Grandpa's Letter");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.advancement1.title", "Craft a Crafting Table");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.advancement1.description", "The start of your adventures");
 
         REGISTRATE.addRawLang("tooltip.svo_core.quartz", "A clear crystal commonly found in caves and mines.");
         REGISTRATE.addRawLang("tooltip.svo_core.earth_crystal", "A resinous substance found near the surface.");

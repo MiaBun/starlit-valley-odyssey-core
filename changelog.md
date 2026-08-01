@@ -2,6 +2,7 @@
 ### Changes
 - changed common/data/SVOItems to common/data/items/SVOItems
 - added a quartz -> refined quartz smelting and blasting recipe
+- added a custom advancements tab for chapter 1
 
 ## [0.0.19]
 ### Changes

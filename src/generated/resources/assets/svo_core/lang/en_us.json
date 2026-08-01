@@ -1,4 +1,8 @@
 {
+  "advancement.svo_core.chapter1.advancement1.description": "The start of your adventures",
+  "advancement.svo_core.chapter1.advancement1.title": "Craft a Crafting Table",
+  "advancement.svo_core.chapter1.description": "Grandpa's Letter",
+  "advancement.svo_core.chapter1.title": "Chapter 1",
   "creative_tab.svo_core.svo": "Starlit Valley: Odyssey",
   "item.svo.diamond_upgrade_smithing_template.applies_to": "Gold Equipment",
   "item.svo.diamond_upgrade_smithing_template.ingredients": "Diamonds",
