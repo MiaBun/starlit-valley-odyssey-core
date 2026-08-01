@@ -69,8 +69,11 @@ public final class TooltipBuilder {
     }
 
     public TooltipBuilder addCoins() {
-        return addIcon("\uE000", Component.translatable("tooltip.svo_core.coins", NumberFormat.getIntegerInstance(Locale.US).format(PriceUtil.getPrice(item)))
-                .withStyle(ChatFormatting.WHITE));
+        return addIcon("\uE000",
+                Component
+                        .translatable("tooltip.svo_core.coins",
+                                NumberFormat.getIntegerInstance(Locale.US).format(PriceUtil.getPrice(item)))
+                        .withStyle(ChatFormatting.WHITE));
     }
 
     public TooltipBuilder addDamage(double value) {

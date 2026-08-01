@@ -176,12 +176,18 @@ public class SVOItems {
 
     // Special Items
 
-    public static ItemEntry<Item> GALAXY_SOUL = REGISTRATE.item("galaxy_soul", Item::new).lang("Galaxy Soul").tag(SVOTags.Items.Special_Items).defaultModel().register();
-    public static ItemEntry<Item> DRAGON_TOOTH = REGISTRATE.item("dragon_tooth", Item::new).lang("Dragon Tooth").tag(SVOTags.Items.Special_Items).defaultModel().register();
-    public static ItemEntry<Item> CINDER_SHARD = REGISTRATE.item("cinder_shard", Item::new).lang("Cinder Shard").tag(SVOTags.Items.Special_Items).defaultModel().register();
+    public static ItemEntry<Item> GALAXY_SOUL = REGISTRATE.item("galaxy_soul", Item::new).lang("Galaxy Soul")
+            .tag(SVOTags.Items.Special_Items).defaultModel().register();
+    public static ItemEntry<Item> DRAGON_TOOTH = REGISTRATE.item("dragon_tooth", Item::new).lang("Dragon Tooth")
+            .tag(SVOTags.Items.Special_Items).defaultModel().register();
+    public static ItemEntry<Item> CINDER_SHARD = REGISTRATE.item("cinder_shard", Item::new).lang("Cinder Shard")
+            .tag(SVOTags.Items.Special_Items).defaultModel().register();
 
     // Ingots and Blacksmith items
-    public static ItemEntry<Item> IRIDIUM_INGOT = REGISTRATE.item("iridium_ingot", Item::new).lang("Iridium Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
-    public static ItemEntry<Item> REFINED_QUARTZ = REGISTRATE.item("refined_quartz", Item::new).lang("Refined Quartz").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
-    public static ItemEntry<Item> RADIOACTIVE_INGOT = REGISTRATE.item("radioactive_ingot", Item::new).lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
+    public static ItemEntry<Item> IRIDIUM_INGOT = REGISTRATE.item("iridium_ingot", Item::new).lang("Iridium Ingot")
+            .tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
+    public static ItemEntry<Item> REFINED_QUARTZ = REGISTRATE.item("refined_quartz", Item::new).lang("Refined Quartz")
+            .tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
+    public static ItemEntry<Item> RADIOACTIVE_INGOT = REGISTRATE.item("radioactive_ingot", Item::new)
+            .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
 }

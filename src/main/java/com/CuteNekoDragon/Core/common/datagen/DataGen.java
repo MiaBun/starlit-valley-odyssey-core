@@ -96,11 +96,14 @@ public class DataGen {
                 "An old miner's song suggests these are made from the bones of ancient fairies.");
         REGISTRATE.addRawLang("tooltip.svo_core.star_shards",
                 "No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.");
-        REGISTRATE.addRawLang("tooltip.svo_core.galaxy_soul", "Forge 3 of these into a Galaxy weapon to unleash its final form.");
+        REGISTRATE.addRawLang("tooltip.svo_core.galaxy_soul",
+                "Forge 3 of these into a Galaxy weapon to unleash its final form.");
         REGISTRATE.addRawLang("tooltip.svo_core.iridium_ingot", "A ingot of pure iridium.");
-        REGISTRATE.addRawLang("tooltip.svo_core.dragon_tooth", "These are rumored to be the teeth of ancient serpents. The enamel is made of pure iridium!");
+        REGISTRATE.addRawLang("tooltip.svo_core.dragon_tooth",
+                "These are rumored to be the teeth of ancient serpents. The enamel is made of pure iridium!");
         REGISTRATE.addRawLang("tooltip.svo_core.refined_quartz", "A more pure form of quartz.");
-        REGISTRATE.addRawLang("tooltip.svo_core.radioactive_ingot", "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.");
+        REGISTRATE.addRawLang("tooltip.svo_core.radioactive_ingot",
+                "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.");
         REGISTRATE.addRawLang("tooltip.svo_core.cinder_shard", "You can feel a warm glow from within this stone.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
