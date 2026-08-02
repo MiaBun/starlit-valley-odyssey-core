@@ -1,3 +1,8 @@
+## [Unreleased]
+### Changes
+- removed golden sword recipe
+- added golden sword smithing recipe
+
 ## [0.0.21]
 ### Changes
 - hotfix: fixed mixins not loading and crashing the game
