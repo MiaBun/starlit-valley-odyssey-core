@@ -1,3 +1,7 @@
+## [0.0.21]
+### Changes
+- hotfix: fixed mixins not loading and crashing the game
+
 ## [0.0.20]
 ### Changes
 - changed common/data/SVOItems to common/data/items/SVOItems

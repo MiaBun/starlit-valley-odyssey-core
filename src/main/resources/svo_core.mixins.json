@@ -3,6 +3,7 @@
   "package": "com.CuteNekoDragon.Core.mixins",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
+  "refmap": "mixins.svo_core.refmap.json",
   "mixins": [
 
   ],
