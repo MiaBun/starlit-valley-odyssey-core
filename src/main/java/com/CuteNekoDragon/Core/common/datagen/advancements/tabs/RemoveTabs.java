@@ -9,8 +9,10 @@ import net.minecraftforge.common.data.ForgeAdvancementProvider;
 import java.util.function.Consumer;
 
 public class RemoveTabs implements ForgeAdvancementProvider.AdvancementGenerator {
+
     @Override
-    public void generate(HolderLookup.Provider provider, Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper) {
+    public void generate(HolderLookup.Provider provider, Consumer<Advancement> consumer,
+                         ExistingFileHelper existingFileHelper) {
         Advancement.Builder.advancement()
                 .save(consumer, ResourceLocation.parse("minecraft:story/root"), existingFileHelper);
     }

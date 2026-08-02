@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
-import com.CuteNekoDragon.Core.common.datagen.advancements.SVOAdvancementsProvider;
-import com.CuteNekoDragon.Core.common.datagen.recipes.recipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -12,6 +10,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.datagen.advancements.SVOAdvancementsProvider;
+import com.CuteNekoDragon.Core.common.datagen.recipes.recipeProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -30,7 +30,8 @@ public class DataGen {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new SVOAdvancementsProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(),
+                new SVOAdvancementsProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new recipeProvider(packOutput));
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.title", "Chapter 1");

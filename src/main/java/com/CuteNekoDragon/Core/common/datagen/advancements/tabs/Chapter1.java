@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -13,13 +11,16 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
+import com.CuteNekoDragon.Core.SVOCore;
+
 import java.util.function.Consumer;
 
 @SuppressWarnings("removal")
 public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
 
     @Override
-    public void generate(HolderLookup.Provider provider, Consumer<Advancement> consumer, ExistingFileHelper existingFileHelper) {
+    public void generate(HolderLookup.Provider provider, Consumer<Advancement> consumer,
+                         ExistingFileHelper existingFileHelper) {
         Advancement root = Advancement.Builder.advancement()
                 .display(
                         new ItemStack(Items.STICK),
@@ -29,8 +30,7 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         FrameType.TASK,
                         true,
                         true,
-                        false
-                )
+                        false)
                 .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(Items.STICK))
                 .save(consumer, SVOCore.id("chapter1"), existingFileHelper);
 
@@ -42,8 +42,7 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         Component.translatable("advancement.svo_core.chapter1.advancement1.description"),
                         null,
                         FrameType.TASK,
-                        true, true, false
-                )
+                        true, true, false)
                 .addCriterion("has_other_item", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CRAFTING_TABLE))
                 .save(consumer, SVOCore.id("crafting_table_advancement"), existingFileHelper);
     }
