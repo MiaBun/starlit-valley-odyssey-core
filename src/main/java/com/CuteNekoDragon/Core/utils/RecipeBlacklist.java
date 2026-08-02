@@ -1,14 +1,15 @@
 package com.CuteNekoDragon.Core.utils;
 
-import com.CuteNekoDragon.Core.common.datagen.recipes.removeRecipes.RecipeRemovals;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+
+import com.CuteNekoDragon.Core.common.datagen.recipes.removeRecipes.RecipeRemovals;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -53,15 +54,16 @@ public class RecipeBlacklist {
 
     @SuppressWarnings("deprecation")
     public static boolean shouldRemoveParsed(ResourceLocation id, Recipe<?> recipe) {
-        if(BY_ID.contains(id) || BY_MOD.contains(id.getNamespace())) return true;
+        if (BY_ID.contains(id) || BY_MOD.contains(id.getNamespace())) return true;
 
-        String outputID = BuiltInRegistries.ITEM.getKey(recipe.getResultItem(RegistryAccess.EMPTY).getItem()).toString();
+        String outputID = BuiltInRegistries.ITEM.getKey(recipe.getResultItem(RegistryAccess.EMPTY).getItem())
+                .toString();
         if (BY_OUTPUT.contains(outputID)) return true;
 
-        for(Ingredient ingredient : recipe.getIngredients()) {
-            for(ItemStack stack : ingredient.getItems()) {
+        for (Ingredient ingredient : recipe.getIngredients()) {
+            for (ItemStack stack : ingredient.getItems()) {
                 String itemId = BuiltInRegistries.ITEM.getKey(stack.getItem()).toString();
-                if(BY_INPUT.contains(itemId)) return true;
+                if (BY_INPUT.contains(itemId)) return true;
             }
         }
         return false;

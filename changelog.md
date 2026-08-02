@@ -2,6 +2,8 @@
 ### Changes
 - removed golden sword recipe
 - added golden sword smithing recipe
+- added smithing recipes for chainmail armor
+- removed gregtech chainmail armor recipes
 
 ## [0.0.21]
 ### Changes

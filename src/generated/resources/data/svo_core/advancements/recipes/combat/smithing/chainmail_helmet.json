@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gold_ingot": {
+    "has_chain": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:gold_ingot"
+              "minecraft:chain"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:golden_sword_smithing"
+        "recipe": "svo_core:smithing/chainmail_helmet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_gold_ingot",
+      "has_chain",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "svo_core:golden_sword_smithing"
+      "svo_core:smithing/chainmail_helmet"
     ]
   },
   "sends_telemetry_event": false

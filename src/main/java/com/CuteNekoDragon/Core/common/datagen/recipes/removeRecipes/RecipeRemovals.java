@@ -6,5 +6,10 @@ public class RecipeRemovals {
 
     public static void register() {
         RecipeBlacklist.blacklistId("minecraft:golden_sword");
+
+        RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_helmet");
+        RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_chestplate");
+        RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_leggings");
+        RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_boots");
     }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:chain"
+  },
+  "base": {
+    "item": "minecraft:leather_chestplate"
+  },
+  "result": {
+    "item": "minecraft:chainmail_chestplate"
+  },
+  "template": {
+    "item": "numismatics:cog"
+  }
+}
