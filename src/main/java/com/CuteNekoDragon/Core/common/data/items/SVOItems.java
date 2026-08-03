@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
+import com.CuteNekoDragon.Core.common.item.SVOArmorMaterials;
 import com.CuteNekoDragon.Core.common.item.SVOTiers;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
@@ -205,7 +206,6 @@ public class SVOItems {
     public static ItemEntry<Item> RADIOACTIVE_INGOT = REGISTRATE.item("radioactive_ingot", Item::new)
             .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
 
-    //
     // gear
     public static final ItemEntry<SwordItem>  COPPER_SWORD = REGISTRATE.item("copper_sword", p -> new SwordItem(SVOTiers.COPPER_TIER, 3, -2.4f, p))
             .properties(p -> p.stacksTo(1))
@@ -224,6 +224,24 @@ public class SVOItems {
             .register();
 
     public static final ItemEntry<HoeItem>  COPPER_HOE = REGISTRATE.item("copper_hoe", p -> new HoeItem(SVOTiers.COPPER_TIER, 1, -1.0f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    // armor sets
+
+    public static final ItemEntry<ArmorItem> COPPER_HELMET = REGISTRATE.item("copper_helmet", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.HELMET, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> COPPER_CHESTPLATE = REGISTRATE.item("copper_chestplate", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> COPPER_LEGGINGS = REGISTRATE.item("copper_leggings", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> COPPER_BOOTS = REGISTRATE.item("copper_boots", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.BOOTS, p))
             .properties(p -> p.stacksTo(1))
             .register();
 }
