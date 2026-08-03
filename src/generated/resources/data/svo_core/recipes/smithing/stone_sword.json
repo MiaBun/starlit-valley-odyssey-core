@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "base": {
+    "item": "minecraft:wooden_sword"
+  },
+  "result": {
+    "item": "minecraft:stone_sword"
+  },
+  "template": {
+    "item": "numismatics:cog"
+  }
+}

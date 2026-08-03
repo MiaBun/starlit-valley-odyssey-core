@@ -5,6 +5,7 @@
 - added smithing recipes for chainmail armor
 - removed gregtech chainmail armor recipes
 - ported over copper tools
+- ported over copper armor
 
 ## [0.0.21]
 ### Changes

@@ -1,21 +1,19 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes;
 
-import com.CuteNekoDragon.Core.utils.recipes.SmithingRecipeHelper;
-import dev.ithundxr.createnumismatics.content.backend.Coin;
-import dev.ithundxr.createnumismatics.registry.NumismaticsItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
-import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
+import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
+import com.CuteNekoDragon.Core.utils.recipes.SmithingRecipeHelper;
+import com.tterrag.registrate.util.entry.ItemEntry;
+import dev.ithundxr.createnumismatics.content.backend.Coin;
+import dev.ithundxr.createnumismatics.registry.NumismaticsItems;
 
 import java.util.List;
 import java.util.Map;
@@ -35,17 +33,82 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Items.LEATHER_LEGGINGS, Items.CHAINMAIL_LEGGINGS,
             Items.LEATHER_BOOTS, Items.CHAINMAIL_BOOTS);
 
+    private static final Map<ItemLike, Item> STONE_RECIPES = Map.of(
+            Items.WOODEN_AXE, Items.STONE_AXE,
+            Items.WOODEN_HOE, Items.STONE_HOE,
+            Items.WOODEN_PICKAXE, Items.STONE_PICKAXE,
+            Items.WOODEN_SHOVEL, Items.STONE_SHOVEL,
+            Items.WOODEN_SWORD, Items.STONE_SWORD);
+
+    private static final Map<ItemLike, Item> REMAINING_RECIPES = Map.of(
+            Items.STONE_AXE, SVOItems.COPPER_AXE.asItem(),
+            Items.STONE_PICKAXE, SVOItems.COPPER_PICKAXE.asItem(),
+            Items.STONE_HOE, SVOItems.COPPER_HOE.asItem(),
+            Items.STONE_SHOVEL, SVOItems.COPPER_SHOVEL.asItem(),
+            Items.STONE_SWORD, SVOItems.COPPER_SWORD.asItem(),
+            Items.CHAINMAIL_HELMET, SVOItems.COPPER_HELMET.asItem(),
+            Items.CHAINMAIL_CHESTPLATE, SVOItems.COPPER_CHESTPLATE.asItem(),
+            Items.CHAINMAIL_LEGGINGS, SVOItems.COPPER_LEGGINGS.asItem(),
+            Items.CHAINMAIL_BOOTS, SVOItems.COPPER_BOOTS.asItem()
+    );
+
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        ItemEntry<SVOSmithingTemplate> copperTemplate = UPGRADE_TEMPLATES.get("copper");
+        ItemEntry<SVOSmithingTemplate> ironTemplate = UPGRADE_TEMPLATES.get("iron");
         ItemEntry<SVOSmithingTemplate> goldTemplate = UPGRADE_TEMPLATES.get("gold");
-
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), Items.IRON_SWORD, Items.GOLD_INGOT, Items.GOLDEN_SWORD);
+        ItemEntry<SVOSmithingTemplate> diamondTemplate = UPGRADE_TEMPLATES.get("diamond");
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
             ItemLike baseItem = entry.getKey();
             Item resultItem = entry.getValue();
 
-            SmithingRecipeHelper.makeSmithingRecipe(consumer, NumismaticsItems.getCoin(Coin.COG), baseItem, Items.CHAIN, resultItem);
+            SmithingRecipeHelper.makeSmithingRecipe(consumer, NumismaticsItems.getCoin(Coin.COG), baseItem, Items.CHAIN,
+                    resultItem);
         }
+
+        for (Map.Entry<ItemLike, Item> entry : STONE_RECIPES.entrySet()) {
+            ItemLike baseItem = entry.getKey();
+            Item resultItem = entry.getValue();
+
+            SmithingRecipeHelper.makeSmithingRecipe(consumer, NumismaticsItems.getCoin(Coin.COG), baseItem,
+                    Items.COBBLESTONE, resultItem);
+        }
+
+        for (Map.Entry<ItemLike, Item> entry : REMAINING_RECIPES.entrySet()) {
+            ItemLike baseItem = entry.getKey();
+            Item resultItem = entry.getValue();
+            String itemTier = getMaterialPrefix(resultItem);
+
+            if (itemTier.equals("copper")) {
+                SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), baseItem, Items.COPPER_INGOT,
+                        resultItem);
+            }
+            if (itemTier.equals("iron")) {
+                SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), baseItem, Items.IRON_INGOT,
+                        resultItem);
+            }
+            if (itemTier.equals("golden")) {
+                SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), baseItem, Items.GOLD_INGOT,
+                        resultItem);
+            }
+            if (itemTier.equals("diamond")) {
+                SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), baseItem, Items.DIAMOND,
+                        resultItem);
+            }
+        }
+    }
+
+    private static final List<String> GEAR_SUFFIXES = List.of(
+            "sword", "pickaxe", "axe", "shovel", "hoe",
+            "helmet", "chestplate", "leggings", "boots");
+
+    public static String getMaterialPrefix(ItemLike item) {
+        String path = ForgeRegistries.ITEMS.getKey(item.asItem()).getPath();
+        return GEAR_SUFFIXES.stream()
+                .filter(suffix -> path.endsWith("_" + suffix))
+                .findFirst()
+                .map(suffix -> path.substring(0, path.length() - suffix.length() - 1))
+                .orElse(path); // no known suffix matched, return whole path as fallback
     }
 }

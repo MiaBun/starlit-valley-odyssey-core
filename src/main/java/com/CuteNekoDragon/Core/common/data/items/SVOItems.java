@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
-import com.CuteNekoDragon.Core.common.item.SVOArmorMaterials;
-import com.CuteNekoDragon.Core.common.item.SVOTiers;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.*;
@@ -9,7 +7,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
+import com.CuteNekoDragon.Core.common.item.SVOArmorMaterials;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
+import com.CuteNekoDragon.Core.common.item.SVOTiers;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 import java.util.LinkedHashMap;
@@ -22,15 +22,17 @@ public class SVOItems {
 
     public static void init() {}
 
-    private static final List<String> UPGRADE_TIERS = List.of("iron", "gold", "diamond");
+    private static final List<String> UPGRADE_TIERS = List.of("copper", "iron", "gold", "diamond");
 
     private static final Map<String, String> TIER_LABELS = Map.of(
+            "copper", "Copper",
             "iron", "Iron",
             "gold", "Gold",
             "diamond", "Diamond");
 
     private static final Map<String, String> APPLIES_TO_LABELS = Map.of(
-            "iron", "Stone, Leather and Cotton",
+            "copper", "Stone, Leather and Cotton",
+            "iron", "Copper",
             "gold", "Iron",
             "diamond", "Gold");
 
@@ -207,41 +209,50 @@ public class SVOItems {
             .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
 
     // gear
-    public static final ItemEntry<SwordItem>  COPPER_SWORD = REGISTRATE.item("copper_sword", p -> new SwordItem(SVOTiers.COPPER_TIER, 3, -2.4f, p))
+    public static final ItemEntry<SwordItem> COPPER_SWORD = REGISTRATE
+            .item("copper_sword", p -> new SwordItem(SVOTiers.COPPER_TIER, 3, -2.4f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<PickaxeItem>  COPPER_PICKAXE = REGISTRATE.item("copper_pickaxe", p -> new PickaxeItem(SVOTiers.COPPER_TIER, 1, -2.8f, p))
+    public static final ItemEntry<PickaxeItem> COPPER_PICKAXE = REGISTRATE
+            .item("copper_pickaxe", p -> new PickaxeItem(SVOTiers.COPPER_TIER, 1, -2.8f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<ShovelItem>  COPPER_SHOVEL = REGISTRATE.item("copper_shovel", p -> new ShovelItem(SVOTiers.COPPER_TIER, 1, -3.0f, p))
+    public static final ItemEntry<ShovelItem> COPPER_SHOVEL = REGISTRATE
+            .item("copper_shovel", p -> new ShovelItem(SVOTiers.COPPER_TIER, 1, -3.0f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<AxeItem>  COPPER_AXE = REGISTRATE.item("copper_axe", p -> new AxeItem(SVOTiers.COPPER_TIER, 6, -3.1f, p))
+    public static final ItemEntry<AxeItem> COPPER_AXE = REGISTRATE
+            .item("copper_axe", p -> new AxeItem(SVOTiers.COPPER_TIER, 6, -3.1f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<HoeItem>  COPPER_HOE = REGISTRATE.item("copper_hoe", p -> new HoeItem(SVOTiers.COPPER_TIER, 1, -1.0f, p))
+    public static final ItemEntry<HoeItem> COPPER_HOE = REGISTRATE
+            .item("copper_hoe", p -> new HoeItem(SVOTiers.COPPER_TIER, 1, -1.0f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
     // armor sets
 
-    public static final ItemEntry<ArmorItem> COPPER_HELMET = REGISTRATE.item("copper_helmet", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.HELMET, p))
+    public static final ItemEntry<ArmorItem> COPPER_HELMET = REGISTRATE
+            .item("copper_helmet", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.HELMET, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<ArmorItem> COPPER_CHESTPLATE = REGISTRATE.item("copper_chestplate", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, p))
+    public static final ItemEntry<ArmorItem> COPPER_CHESTPLATE = REGISTRATE
+            .item("copper_chestplate", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<ArmorItem> COPPER_LEGGINGS = REGISTRATE.item("copper_leggings", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, p))
+    public static final ItemEntry<ArmorItem> COPPER_LEGGINGS = REGISTRATE
+            .item("copper_leggings", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<ArmorItem> COPPER_BOOTS = REGISTRATE.item("copper_boots", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.BOOTS, p))
+    public static final ItemEntry<ArmorItem> COPPER_BOOTS = REGISTRATE
+            .item("copper_boots", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.BOOTS, p))
             .properties(p -> p.stacksTo(1))
             .register();
 }

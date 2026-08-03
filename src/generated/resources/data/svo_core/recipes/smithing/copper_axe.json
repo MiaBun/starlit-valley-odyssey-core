@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "base": {
+    "item": "minecraft:stone_axe"
+  },
+  "result": {
+    "item": "svo_core:copper_axe"
+  },
+  "template": {
+    "item": "svo_core:copper_upgrade_smithing_template"
+  }
+}

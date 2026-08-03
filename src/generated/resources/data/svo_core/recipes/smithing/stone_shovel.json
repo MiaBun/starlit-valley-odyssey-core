@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "base": {
+    "item": "minecraft:wooden_shovel"
+  },
+  "result": {
+    "item": "minecraft:stone_shovel"
+  },
+  "template": {
+    "item": "numismatics:cog"
+  }
+}
