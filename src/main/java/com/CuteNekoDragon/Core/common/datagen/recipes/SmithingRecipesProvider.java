@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes;
 
+import com.CuteNekoDragon.Core.utils.recipes.SmithingRecipeHelper;
 import dev.ithundxr.createnumismatics.content.backend.Coin;
 import dev.ithundxr.createnumismatics.registry.NumismaticsItems;
 import net.minecraft.data.PackOutput;
@@ -7,13 +8,17 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.world.level.ItemLike;
 
+import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 import static com.CuteNekoDragon.Core.common.data.items.SVOItems.UPGRADE_TEMPLATES;
@@ -24,55 +29,23 @@ public class SmithingRecipesProvider extends RecipeProvider {
         super(output);
     }
 
+    private static final Map<ItemLike, Item> CHAINMAIL_RECIPES = Map.of(
+            Items.LEATHER_HELMET, Items.CHAINMAIL_HELMET,
+            Items.LEATHER_CHESTPLATE, Items.CHAINMAIL_CHESTPLATE,
+            Items.LEATHER_LEGGINGS, Items.CHAINMAIL_LEGGINGS,
+            Items.LEATHER_BOOTS, Items.CHAINMAIL_BOOTS);
+
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         ItemEntry<SVOSmithingTemplate> goldTemplate = UPGRADE_TEMPLATES.get("gold");
 
-        SmithingTransformRecipeBuilder.smithing(
-                Ingredient.of(goldTemplate.get()),
-                Ingredient.of(Items.IRON_SWORD),
-                Ingredient.of(Items.GOLD_INGOT),
-                RecipeCategory.COMBAT,
-                Items.GOLDEN_SWORD)
-                .unlocks("has_gold_ingot", has(Items.GOLD_INGOT))
-                .save(consumer, SVOCore.id("smithing/golden_sword"));
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), Items.IRON_SWORD, Items.GOLD_INGOT, Items.GOLDEN_SWORD);
 
-        // Chainmail
+        for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
+            ItemLike baseItem = entry.getKey();
+            Item resultItem = entry.getValue();
 
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(NumismaticsItems.getCoin(Coin.COG)),
-                        Ingredient.of(Items.LEATHER_HELMET),
-                        Ingredient.of(Items.CHAIN),
-                        RecipeCategory.COMBAT,
-                        Items.CHAINMAIL_HELMET)
-                .unlocks("has_chain", has(Items.CHAIN))
-                .save(consumer, SVOCore.id("smithing/chainmail_helmet"));
-
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(NumismaticsItems.getCoin(Coin.COG)),
-                        Ingredient.of(Items.LEATHER_CHESTPLATE),
-                        Ingredient.of(Items.CHAIN),
-                        RecipeCategory.COMBAT,
-                        Items.CHAINMAIL_CHESTPLATE)
-                .unlocks("has_chain", has(Items.CHAIN))
-                .save(consumer, SVOCore.id("smithing/chainmail_chestplate"));
-
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(NumismaticsItems.getCoin(Coin.COG)),
-                        Ingredient.of(Items.LEATHER_LEGGINGS),
-                        Ingredient.of(Items.CHAIN),
-                        RecipeCategory.COMBAT,
-                        Items.CHAINMAIL_LEGGINGS)
-                .unlocks("has_chain", has(Items.CHAIN))
-                .save(consumer, SVOCore.id("smithing/chainmail_leggings"));
-
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(NumismaticsItems.getCoin(Coin.COG)),
-                        Ingredient.of(Items.LEATHER_BOOTS),
-                        Ingredient.of(Items.CHAIN),
-                        RecipeCategory.COMBAT,
-                        Items.CHAINMAIL_BOOTS)
-                .unlocks("has_chain", has(Items.CHAIN))
-                .save(consumer, SVOCore.id("smithing/chainmail_boots"));
+            SmithingRecipeHelper.makeSmithingRecipe(consumer, NumismaticsItems.getCoin(Coin.COG), baseItem, Items.CHAIN, resultItem);
+        }
     }
 }

@@ -1,8 +1,9 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
+import com.CuteNekoDragon.Core.common.item.SVOTiers;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import com.CuteNekoDragon.Core.SVOCore;
@@ -203,4 +204,26 @@ public class SVOItems {
             }).register();
     public static ItemEntry<Item> RADIOACTIVE_INGOT = REGISTRATE.item("radioactive_ingot", Item::new)
             .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).defaultModel().register();
+
+    //
+    // gear
+    public static final ItemEntry<SwordItem>  COPPER_SWORD = REGISTRATE.item("copper_sword", p -> new SwordItem(SVOTiers.COPPER_TIER, 3, -2.4f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<PickaxeItem>  COPPER_PICKAXE = REGISTRATE.item("copper_pickaxe", p -> new PickaxeItem(SVOTiers.COPPER_TIER, 1, -2.8f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ShovelItem>  COPPER_SHOVEL = REGISTRATE.item("copper_shovel", p -> new ShovelItem(SVOTiers.COPPER_TIER, 1, -3.0f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<AxeItem>  COPPER_AXE = REGISTRATE.item("copper_axe", p -> new AxeItem(SVOTiers.COPPER_TIER, 6, -3.1f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<HoeItem>  COPPER_HOE = REGISTRATE.item("copper_hoe", p -> new HoeItem(SVOTiers.COPPER_TIER, 1, -1.0f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
 }

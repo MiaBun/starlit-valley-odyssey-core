@@ -1,4 +1,4 @@
-package com.CuteNekoDragon.Core.utils;
+package com.CuteNekoDragon.Core.utils.recipes;
 
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;

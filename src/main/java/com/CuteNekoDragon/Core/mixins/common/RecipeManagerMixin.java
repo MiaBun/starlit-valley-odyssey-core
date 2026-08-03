@@ -5,7 +5,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.crafting.RecipeManager;
 
-import com.CuteNekoDragon.Core.utils.RecipeBlacklist;
+import com.CuteNekoDragon.Core.utils.recipes.RecipeBlacklist;
 import com.google.gson.JsonElement;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

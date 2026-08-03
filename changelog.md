@@ -4,6 +4,7 @@
 - added golden sword smithing recipe
 - added smithing recipes for chainmail armor
 - removed gregtech chainmail armor recipes
+- ported over copper tools
 
 ## [0.0.21]
 ### Changes
