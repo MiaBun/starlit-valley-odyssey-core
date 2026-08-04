@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "svo_core:copper_boots"
+  },
+  "result": {
+    "item": "minecraft:iron_boots"
+  },
+  "template": {
+    "item": "svo_core:iron_upgrade_smithing_template"
+  }
+}

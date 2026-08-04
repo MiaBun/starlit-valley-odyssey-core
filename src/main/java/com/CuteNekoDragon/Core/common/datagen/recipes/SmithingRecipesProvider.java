@@ -40,16 +40,25 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Items.WOODEN_SHOVEL, Items.STONE_SHOVEL,
             Items.WOODEN_SWORD, Items.STONE_SWORD);
 
-    private static final Map<ItemLike, Item> REMAINING_RECIPES = Map.of(
-            Items.STONE_AXE, SVOItems.COPPER_AXE.asItem(),
-            Items.STONE_PICKAXE, SVOItems.COPPER_PICKAXE.asItem(),
-            Items.STONE_HOE, SVOItems.COPPER_HOE.asItem(),
-            Items.STONE_SHOVEL, SVOItems.COPPER_SHOVEL.asItem(),
-            Items.STONE_SWORD, SVOItems.COPPER_SWORD.asItem(),
-            Items.CHAINMAIL_HELMET, SVOItems.COPPER_HELMET.asItem(),
-            Items.CHAINMAIL_CHESTPLATE, SVOItems.COPPER_CHESTPLATE.asItem(),
-            Items.CHAINMAIL_LEGGINGS, SVOItems.COPPER_LEGGINGS.asItem(),
-            Items.CHAINMAIL_BOOTS, SVOItems.COPPER_BOOTS.asItem()
+    private static final Map<ItemLike, Item> REMAINING_RECIPES = Map.ofEntries(
+            Map.entry(Items.STONE_AXE, SVOItems.COPPER_AXE.asItem()),
+            Map.entry(Items.STONE_PICKAXE, SVOItems.COPPER_PICKAXE.asItem()),
+            Map.entry(Items.STONE_HOE, SVOItems.COPPER_HOE.asItem()),
+            Map.entry(Items.STONE_SHOVEL, SVOItems.COPPER_SHOVEL.asItem()),
+            Map.entry(Items.STONE_SWORD, SVOItems.COPPER_SWORD.asItem()),
+            Map.entry(Items.CHAINMAIL_HELMET, SVOItems.COPPER_HELMET.asItem()),
+            Map.entry(Items.CHAINMAIL_CHESTPLATE, SVOItems.COPPER_CHESTPLATE.asItem()),
+            Map.entry(Items.CHAINMAIL_LEGGINGS, SVOItems.COPPER_LEGGINGS.asItem()),
+            Map.entry(Items.CHAINMAIL_BOOTS, SVOItems.COPPER_BOOTS.asItem()),
+            Map.entry(SVOItems.COPPER_AXE.asItem(), Items.IRON_AXE),
+            Map.entry(SVOItems.COPPER_PICKAXE.asItem(), Items.IRON_PICKAXE),
+            Map.entry(SVOItems.COPPER_HOE.asItem(), Items.IRON_HOE),
+            Map.entry(SVOItems.COPPER_SHOVEL.asItem(), Items.IRON_SHOVEL),
+            Map.entry(SVOItems.COPPER_SWORD.asItem(), Items.IRON_SWORD),
+            Map.entry(SVOItems.COPPER_HELMET.asItem(), Items.IRON_HELMET),
+            Map.entry(SVOItems.COPPER_CHESTPLATE.asItem(), Items.IRON_CHESTPLATE),
+            Map.entry(SVOItems.COPPER_LEGGINGS.asItem(), Items.IRON_LEGGINGS),
+            Map.entry(SVOItems.COPPER_BOOTS.asItem(), Items.IRON_BOOTS)
     );
 
     @Override
