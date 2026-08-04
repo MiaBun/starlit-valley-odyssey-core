@@ -6,6 +6,7 @@
 - ported over copper armor
 - removed all vanilla gear and armor recipes
 - added smithing recipes for gear and armor
+- YEET netherite tier
 
 ## [0.0.21]
 ### Changes

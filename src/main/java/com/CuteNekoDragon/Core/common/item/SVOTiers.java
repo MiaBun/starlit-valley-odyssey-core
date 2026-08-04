@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.item;
 
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
@@ -28,4 +29,17 @@ public class SVOTiers {
             new ResourceLocation(SVOCore.MOD_ID, "copper"),
             List.of(Tiers.STONE),
             List.of(Tiers.IRON));
+
+    public static final Tier IRIDIUM_TIER = TierSortingRegistry.registerTier(
+            new ForgeTier(
+                    4,
+                    2031,
+                    9.0f,
+                    4.0f,
+                    15,
+                    BlockTags.MINEABLE_WITH_PICKAXE,
+                    () -> Ingredient.of(SVOItems.IRIDIUM_INGOT)),
+            new ResourceLocation(SVOCore.MOD_ID, "iridium"),
+            List.of(Tiers.DIAMOND),
+            List.of(Tiers.NETHERITE));
 }

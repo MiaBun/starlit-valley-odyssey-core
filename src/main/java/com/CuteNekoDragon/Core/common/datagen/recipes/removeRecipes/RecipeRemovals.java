@@ -45,5 +45,16 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("minecraft:diamond_chestplate");
         RecipeBlacklist.blacklistId("minecraft:diamond_leggings");
         RecipeBlacklist.blacklistId("minecraft:diamond_boots");
+
+        RecipeBlacklist.blacklistId("minecraft:netherite_sword_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_axe_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_pickaxe_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_shovel_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_hoe_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_helmet_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_chestplate_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_leggings_smithing");
+        RecipeBlacklist.blacklistId("minecraft:netherite_boots_smithing");
+
     }
 }
