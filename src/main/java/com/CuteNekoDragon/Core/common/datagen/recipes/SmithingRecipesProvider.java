@@ -58,7 +58,17 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Map.entry(SVOItems.COPPER_HELMET.asItem(), Items.IRON_HELMET),
             Map.entry(SVOItems.COPPER_CHESTPLATE.asItem(), Items.IRON_CHESTPLATE),
             Map.entry(SVOItems.COPPER_LEGGINGS.asItem(), Items.IRON_LEGGINGS),
-            Map.entry(SVOItems.COPPER_BOOTS.asItem(), Items.IRON_BOOTS)
+            Map.entry(SVOItems.COPPER_BOOTS.asItem(), Items.IRON_BOOTS),
+
+            Map.entry(Items.IRON_AXE, Items.GOLDEN_AXE),
+            Map.entry(Items.IRON_PICKAXE, Items.GOLDEN_PICKAXE),
+            Map.entry(Items.IRON_HOE, Items.GOLDEN_HOE),
+            Map.entry(Items.IRON_SHOVEL, Items.GOLDEN_SHOVEL),
+            Map.entry(Items.IRON_SWORD, Items.GOLDEN_SWORD),
+            Map.entry(Items.IRON_HELMET, Items.GOLDEN_HELMET),
+            Map.entry(Items.IRON_CHESTPLATE, Items.GOLDEN_CHESTPLATE),
+            Map.entry(Items.IRON_LEGGINGS, Items.GOLDEN_LEGGINGS),
+            Map.entry(Items.IRON_BOOTS, Items.GOLDEN_BOOTS)
     );
 
     @Override

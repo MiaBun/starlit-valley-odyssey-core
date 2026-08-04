@@ -5,7 +5,6 @@ import com.CuteNekoDragon.Core.utils.recipes.RecipeBlacklist;
 public class RecipeRemovals {
 
     public static void register() {
-
         RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_helmet");
         RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_chestplate");
         RecipeBlacklist.blacklistId("gtceu:shaped/chainmail_leggings");
@@ -26,5 +25,15 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("minecraft:iron_chestplate");
         RecipeBlacklist.blacklistId("minecraft:iron_leggings");
         RecipeBlacklist.blacklistId("minecraft:iron_boots");
+
+        RecipeBlacklist.blacklistId("minecraft:golden_sword");
+        RecipeBlacklist.blacklistId("minecraft:golden_axe");
+        RecipeBlacklist.blacklistId("minecraft:golden_pickaxe");
+        RecipeBlacklist.blacklistId("minecraft:golden_shovel");
+        RecipeBlacklist.blacklistId("minecraft:golden_hoe");
+        RecipeBlacklist.blacklistId("minecraft:golden_helmet");
+        RecipeBlacklist.blacklistId("minecraft:golden_chestplate");
+        RecipeBlacklist.blacklistId("minecraft:golden_leggings");
+        RecipeBlacklist.blacklistId("minecraft:golden_boots");
     }
 }
