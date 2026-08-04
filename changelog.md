@@ -1,11 +1,11 @@
 ## [Unreleased]
 ### Changes
-- removed golden sword recipe
-- added golden sword smithing recipe
 - added smithing recipes for chainmail armor
 - removed gregtech chainmail armor recipes
 - ported over copper tools
 - ported over copper armor
+- removed all vanilla gear and armor recipes
+- added smithing recipes for gear and armor
 
 ## [0.0.21]
 ### Changes

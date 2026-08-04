@@ -76,8 +76,7 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Map.entry(Items.GOLDEN_HELMET, Items.DIAMOND_HELMET),
             Map.entry(Items.GOLDEN_CHESTPLATE, Items.DIAMOND_CHESTPLATE),
             Map.entry(Items.GOLDEN_LEGGINGS, Items.DIAMOND_LEGGINGS),
-            Map.entry(Items.GOLDEN_BOOTS, Items.DIAMOND_BOOTS)
-    );
+            Map.entry(Items.GOLDEN_BOOTS, Items.DIAMOND_BOOTS));
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
