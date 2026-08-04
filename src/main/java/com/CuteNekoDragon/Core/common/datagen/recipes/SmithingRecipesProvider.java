@@ -59,7 +59,6 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Map.entry(SVOItems.COPPER_CHESTPLATE.asItem(), Items.IRON_CHESTPLATE),
             Map.entry(SVOItems.COPPER_LEGGINGS.asItem(), Items.IRON_LEGGINGS),
             Map.entry(SVOItems.COPPER_BOOTS.asItem(), Items.IRON_BOOTS),
-
             Map.entry(Items.IRON_AXE, Items.GOLDEN_AXE),
             Map.entry(Items.IRON_PICKAXE, Items.GOLDEN_PICKAXE),
             Map.entry(Items.IRON_HOE, Items.GOLDEN_HOE),
@@ -68,7 +67,16 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Map.entry(Items.IRON_HELMET, Items.GOLDEN_HELMET),
             Map.entry(Items.IRON_CHESTPLATE, Items.GOLDEN_CHESTPLATE),
             Map.entry(Items.IRON_LEGGINGS, Items.GOLDEN_LEGGINGS),
-            Map.entry(Items.IRON_BOOTS, Items.GOLDEN_BOOTS)
+            Map.entry(Items.IRON_BOOTS, Items.GOLDEN_BOOTS),
+            Map.entry(Items.GOLDEN_AXE, Items.DIAMOND_AXE),
+            Map.entry(Items.GOLDEN_PICKAXE, Items.DIAMOND_PICKAXE),
+            Map.entry(Items.GOLDEN_HOE, Items.DIAMOND_HOE),
+            Map.entry(Items.GOLDEN_SHOVEL, Items.DIAMOND_SHOVEL),
+            Map.entry(Items.GOLDEN_SWORD, Items.DIAMOND_SWORD),
+            Map.entry(Items.GOLDEN_HELMET, Items.DIAMOND_HELMET),
+            Map.entry(Items.GOLDEN_CHESTPLATE, Items.DIAMOND_CHESTPLATE),
+            Map.entry(Items.GOLDEN_LEGGINGS, Items.DIAMOND_LEGGINGS),
+            Map.entry(Items.GOLDEN_BOOTS, Items.DIAMOND_BOOTS)
     );
 
     @Override
