@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.item;
 
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -9,6 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 
 import java.util.function.Supplier;
 
@@ -20,16 +20,14 @@ public enum SVOArmorMaterials implements ArmorMaterial {
             SoundEvents.ARMOR_EQUIP_IRON,
             1.0f,                     // toughness
             0.0f,                     // knockback resistance
-            () -> Ingredient.of(Items.COPPER_INGOT)
-            ),
+            () -> Ingredient.of(Items.COPPER_INGOT)),
     IRIDIUM("iridium", 37,
             new int[] { 3, 6, 8, 3 },   // boots, leggings, chestplate, helmet
             15,                        // enchantability
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             3.0f,                     // toughness
             1.0f,                     // knockback resistance
-            () -> Ingredient.of(SVOItems.IRIDIUM_INGOT)
-            );
+            () -> Ingredient.of(SVOItems.IRIDIUM_INGOT));
 
     private static final int[] HEALTH_PER_SLOT = { 13, 15, 16, 11 };
     private final String name;

@@ -55,6 +55,5 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("minecraft:netherite_chestplate_smithing");
         RecipeBlacklist.blacklistId("minecraft:netherite_leggings_smithing");
         RecipeBlacklist.blacklistId("minecraft:netherite_boots_smithing");
-
     }
 }

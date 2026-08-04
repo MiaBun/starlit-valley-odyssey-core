@@ -137,7 +137,8 @@ public class SmithingRecipesProvider extends RecipeProvider {
                         resultItem);
             }
             if (itemTier.equals("iridium")) {
-                SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), baseItem, SVOItems.IRIDIUM_INGOT,
+                SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), baseItem,
+                        SVOItems.IRIDIUM_INGOT,
                         resultItem);
             }
         }

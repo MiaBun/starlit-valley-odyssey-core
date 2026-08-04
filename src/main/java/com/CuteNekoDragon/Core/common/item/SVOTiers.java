@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.item;
 
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Items;
@@ -11,6 +10,7 @@ import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.TierSortingRegistry;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 
 import java.util.List;
 
