@@ -76,7 +76,20 @@ public class SmithingRecipesProvider extends RecipeProvider {
             Map.entry(Items.GOLDEN_HELMET, Items.DIAMOND_HELMET),
             Map.entry(Items.GOLDEN_CHESTPLATE, Items.DIAMOND_CHESTPLATE),
             Map.entry(Items.GOLDEN_LEGGINGS, Items.DIAMOND_LEGGINGS),
-            Map.entry(Items.GOLDEN_BOOTS, Items.DIAMOND_BOOTS));
+            Map.entry(Items.GOLDEN_BOOTS, Items.DIAMOND_BOOTS),
+
+            Map.entry(Items.DIAMOND_AXE, SVOItems.IRIDIUM_AXE.asItem()),
+            Map.entry(Items.DIAMOND_HOE, SVOItems.IRIDIUM_HOE.asItem()),
+            Map.entry(Items.DIAMOND_PICKAXE, SVOItems.IRIDIUM_PICKAXE.asItem()),
+            Map.entry(Items.DIAMOND_SHOVEL, SVOItems.IRIDIUM_SHOVEL.asItem()),
+            Map.entry(Items.DIAMOND_SWORD, SVOItems.IRIDIUM_SWORD.asItem()),
+
+            Map.entry(Items.DIAMOND_HELMET, SVOItems.IRIDIUM_HELMET.asItem()),
+            Map.entry(Items.DIAMOND_CHESTPLATE, SVOItems.IRIDIUM_CHESTPLATE.asItem()),
+            Map.entry(Items.DIAMOND_LEGGINGS, SVOItems.IRIDIUM_LEGGINGS.asItem()),
+            Map.entry(Items.DIAMOND_BOOTS, SVOItems.IRIDIUM_BOOTS.asItem())
+
+    );
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
@@ -84,6 +97,7 @@ public class SmithingRecipesProvider extends RecipeProvider {
         ItemEntry<SVOSmithingTemplate> ironTemplate = UPGRADE_TEMPLATES.get("iron");
         ItemEntry<SVOSmithingTemplate> goldTemplate = UPGRADE_TEMPLATES.get("gold");
         ItemEntry<SVOSmithingTemplate> diamondTemplate = UPGRADE_TEMPLATES.get("diamond");
+        ItemEntry<SVOSmithingTemplate> iridiumTemplate = UPGRADE_TEMPLATES.get("iridium");
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
             ItemLike baseItem = entry.getKey();
@@ -120,6 +134,10 @@ public class SmithingRecipesProvider extends RecipeProvider {
             }
             if (itemTier.equals("diamond")) {
                 SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), baseItem, Items.DIAMOND,
+                        resultItem);
+            }
+            if (itemTier.equals("iridium")) {
+                SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), baseItem, SVOItems.IRIDIUM_INGOT,
                         resultItem);
             }
         }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "svo_core:iridium_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_pickaxe"
+  },
+  "result": {
+    "item": "svo_core:iridium_pickaxe"
+  },
+  "template": {
+    "item": "svo_core:iridium_upgrade_smithing_template"
+  }
+}

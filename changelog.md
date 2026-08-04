@@ -4,9 +4,10 @@
 - removed gregtech chainmail armor recipes
 - ported over copper tools
 - ported over copper armor
-- removed all vanilla gear and armor recipes
-- added smithing recipes for gear and armor
+- removed all vanilla armor and tools recipes
+- added smithing recipes for armor and armor
 - YEET netherite tier
+- added iridium tier tools and armor
 
 ## [0.0.21]
 ### Changes

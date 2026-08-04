@@ -22,19 +22,21 @@ public class SVOItems {
 
     public static void init() {}
 
-    private static final List<String> UPGRADE_TIERS = List.of("copper", "iron", "gold", "diamond");
+    private static final List<String> UPGRADE_TIERS = List.of("copper", "iron", "gold", "diamond", "iridium");
 
     private static final Map<String, String> TIER_LABELS = Map.of(
             "copper", "Copper",
             "iron", "Iron",
             "gold", "Gold",
-            "diamond", "Diamond");
+            "diamond", "Diamond",
+            "iridium", "Iridium");
 
     private static final Map<String, String> APPLIES_TO_LABELS = Map.of(
             "copper", "Stone, Leather and Cotton",
             "iron", "Copper",
             "gold", "Iron",
-            "diamond", "Gold");
+            "diamond", "Gold",
+            "iridium", "Diamond");
 
     public static final Map<String, ItemEntry<SVOSmithingTemplate>> UPGRADE_TEMPLATES = new LinkedHashMap<>();
 
@@ -214,8 +216,18 @@ public class SVOItems {
             .properties(p -> p.stacksTo(1))
             .register();
 
+    public static final ItemEntry<SwordItem> IRIDIUM_SWORD = REGISTRATE
+            .item("iridium_sword", p -> new SwordItem(SVOTiers.IRIDIUM_TIER, 3, -2.4f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
     public static final ItemEntry<PickaxeItem> COPPER_PICKAXE = REGISTRATE
             .item("copper_pickaxe", p -> new PickaxeItem(SVOTiers.COPPER_TIER, 1, -2.8f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<PickaxeItem> IRIDIUM_PICKAXE = REGISTRATE
+            .item("iridium_pickaxe", p -> new PickaxeItem(SVOTiers.IRIDIUM_TIER, 1, -2.8f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
@@ -224,13 +236,28 @@ public class SVOItems {
             .properties(p -> p.stacksTo(1))
             .register();
 
+    public static final ItemEntry<ShovelItem> IRIDIUM_SHOVEL = REGISTRATE
+            .item("iridium_shovel", p -> new ShovelItem(SVOTiers.IRIDIUM_TIER, 1, -3.0f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
     public static final ItemEntry<AxeItem> COPPER_AXE = REGISTRATE
             .item("copper_axe", p -> new AxeItem(SVOTiers.COPPER_TIER, 6, -3.1f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
+    public static final ItemEntry<AxeItem> IRIDIUM_AXE = REGISTRATE
+            .item("iridium_axe", p -> new AxeItem(SVOTiers.IRIDIUM_TIER, 5, -3.0f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
     public static final ItemEntry<HoeItem> COPPER_HOE = REGISTRATE
             .item("copper_hoe", p -> new HoeItem(SVOTiers.COPPER_TIER, 1, -1.0f, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<HoeItem> IRIDIUM_HOE = REGISTRATE
+            .item("iridium_hoe", p -> new HoeItem(SVOTiers.IRIDIUM_TIER, -4, 0.0f, p))
             .properties(p -> p.stacksTo(1))
             .register();
 
@@ -253,6 +280,26 @@ public class SVOItems {
 
     public static final ItemEntry<ArmorItem> COPPER_BOOTS = REGISTRATE
             .item("copper_boots", p -> new ArmorItem(SVOArmorMaterials.COPPER, ArmorItem.Type.BOOTS, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> IRIDIUM_HELMET = REGISTRATE
+            .item("iridium_helmet", p -> new ArmorItem(SVOArmorMaterials.IRIDIUM, ArmorItem.Type.HELMET, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> IRIDIUM_CHESTPLATE = REGISTRATE
+            .item("iridium_chestplate", p -> new ArmorItem(SVOArmorMaterials.IRIDIUM, ArmorItem.Type.CHESTPLATE, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> IRIDIUM_LEGGINGS = REGISTRATE
+            .item("iridium_leggings", p -> new ArmorItem(SVOArmorMaterials.IRIDIUM, ArmorItem.Type.LEGGINGS, p))
+            .properties(p -> p.stacksTo(1))
+            .register();
+
+    public static final ItemEntry<ArmorItem> IRIDIUM_BOOTS = REGISTRATE
+            .item("iridium_boots", p -> new ArmorItem(SVOArmorMaterials.IRIDIUM, ArmorItem.Type.BOOTS, p))
             .properties(p -> p.stacksTo(1))
             .register();
 }

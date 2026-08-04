@@ -26,8 +26,8 @@ public enum SVOArmorMaterials implements ArmorMaterial {
             new int[] { 3, 6, 8, 3 },   // boots, leggings, chestplate, helmet
             15,                        // enchantability
             SoundEvents.ARMOR_EQUIP_NETHERITE,
-            0.0f,                     // toughness
-            0.0f,                     // knockback resistance
+            3.0f,                     // toughness
+            1.0f,                     // knockback resistance
             () -> Ingredient.of(SVOItems.IRIDIUM_INGOT)
             );
 
