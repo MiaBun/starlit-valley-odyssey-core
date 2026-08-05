@@ -21,11 +21,7 @@ import java.util.function.Consumer;
 
 import static com.CuteNekoDragon.Core.common.data.items.SVOItems.UPGRADE_TEMPLATES;
 
-public class SmithingRecipesProvider extends RecipeProvider {
-
-    public SmithingRecipesProvider(PackOutput output) {
-        super(output);
-    }
+public class SmithingRecipesProvider {
 
     private static final Map<ItemLike, Item> CHAINMAIL_RECIPES = Map.of(
             Items.LEATHER_HELMET, Items.CHAINMAIL_HELMET,
@@ -91,8 +87,7 @@ public class SmithingRecipesProvider extends RecipeProvider {
 
     );
 
-    @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    public static void buildRecipes(Consumer<FinishedRecipe> consumer) {
         ItemEntry<SVOSmithingTemplate> copperTemplate = UPGRADE_TEMPLATES.get("copper");
         ItemEntry<SVOSmithingTemplate> ironTemplate = UPGRADE_TEMPLATES.get("iron");
         ItemEntry<SVOSmithingTemplate> goldTemplate = UPGRADE_TEMPLATES.get("gold");

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
+import com.CuteNekoDragon.Core.common.datagen.recipes.ShapedRecipesProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -32,7 +33,7 @@ public class DataGen {
 
         generator.addProvider(event.includeServer(),
                 new SVOAdvancementsProvider(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new SmithingRecipesProvider(packOutput));
+        generator.addProvider(event.includeServer(), new SVORecipeProvider(packOutput));
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.title", "Chapter 1");
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.description", "Grandpa's Letter");
@@ -126,5 +127,6 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.gemstone_product", "Gemstone Product");
         REGISTRATE.addRawLang("tooltip.svo_core.special_item", "Special Item");
         REGISTRATE.addRawLang("tooltip.svo_core.blacksmith_item", "Blacksmith Product");
+        REGISTRATE.addRawLang("gtceu.charcoal_kiln", "Charcoal Kiln");
     }
 }

@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "svo_core:charcoal_kiln",
+  "variants": {
+    "recipe_logic_status=idle": {
+      "model": "svo_core:block/machine/charkoal_kiln"
+    },
+    "recipe_logic_status=suspend": {
+      "model": "svo_core:block/machine/charkoal_kiln"
+    },
+    "recipe_logic_status=waiting": {
+      "model": "svo_core:block/machine/charkoal_kiln"
+    },
+    "recipe_logic_status=working": {
+      "model": "svo_core:block/machine/charkoal_kiln"
+    }
+  }
+}

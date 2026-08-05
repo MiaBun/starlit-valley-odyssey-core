@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svo_core:block/machine/charcoal_kiln",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "svo_core:block/machine/charcoal_kiln"
+    },
+    "facing=south": {
+      "model": "svo_core:block/machine/charcoal_kiln",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "svo_core:block/machine/charcoal_kiln",
+      "y": 270
+    }
+  }
+}
