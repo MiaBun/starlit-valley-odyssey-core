@@ -1,6 +1,6 @@
 ## [Unreleased]
 ### Changes
-- 
+- added the charcoal kiln
 
 ## [0.0.22]
 ### Changes

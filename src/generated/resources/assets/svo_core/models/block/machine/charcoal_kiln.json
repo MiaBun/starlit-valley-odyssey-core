@@ -13,7 +13,7 @@
       "model": "svo_core:block/machine/charkoal_kiln"
     },
     "recipe_logic_status=working": {
-      "model": "svo_core:block/machine/charkoal_kiln"
+      "model": "svo_core:block/machine/charkoal_kiln_working"
     }
   }
 }

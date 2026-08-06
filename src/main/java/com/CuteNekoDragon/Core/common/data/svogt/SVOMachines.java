@@ -2,6 +2,7 @@ package com.CuteNekoDragon.Core.common.data.svogt;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan.CharkoalKiln;
+import com.CuteNekoDragon.Core.utils.ModelUtils;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
@@ -22,10 +23,11 @@ public class SVOMachines {
             .langValue("Charcoal Kiln")
             .shape(Shapes.block())
             .blockProp(BlockBehaviour.Properties::noOcclusion)
-            .model(createBasicMachineModel(SVOCore.id("block/machine/charkoal_kiln")))
+            .model(ModelUtils.createBasicMachineModel(SVOCore.id("block/machine/charkoal_kiln")))
             .register();
 
     public static void init() {
 
     }
+
 }
