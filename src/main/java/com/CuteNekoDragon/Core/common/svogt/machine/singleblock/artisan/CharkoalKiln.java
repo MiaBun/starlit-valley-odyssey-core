@@ -24,9 +24,11 @@ import com.lowdragmc.lowdraglib.utils.Position;
 import lombok.Getter;
 import lombok.Setter;
 
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
@@ -124,9 +126,18 @@ public class CharkoalKiln extends MetaMachine implements IRecipeLogicMachine, IU
 
         if (GTValues.RNG.nextFloat() < 0.2F) {
             var pos = getPos();
-            double x = pos.getX() + 0.3 + GTValues.RNG.nextFloat() * 0.4;
-            double y = pos.getY() + 1.0;
-            double z = pos.getZ() + 0.3 + GTValues.RNG.nextFloat() * 0.4;
+            double dx = 0.3 - 0.5;
+            double dz = 0.3 - 0.5;
+
+            double forwardAmt = -dz;
+            double rightAmt = dx;
+
+            Direction facing = getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING);
+            Direction right = facing.getClockWise();
+
+            double x = pos.getX() + 0.5 + facing.getStepX() * forwardAmt + right.getStepX() * rightAmt;
+            double y = pos.getY() + 1.3;
+            double z = pos.getZ() + 0.5 + facing.getStepZ() * forwardAmt + right.getStepZ() * rightAmt;
 
             double vx = (GTValues.RNG.nextFloat() - 0.5) * 0.02;
             double vy = 0.05 + GTValues.RNG.nextFloat() * 0.03;
