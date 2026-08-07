@@ -1,0 +1,42 @@
+{
+  "parent": "svo_core:chapter1/getting_an_upgrade",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:chainmail_helmet",
+              "minecraft:chainmail_chestplate",
+              "minecraft:chainmail_leggings",
+              "minecraft:chainmail_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.svo_core.chapter1.chainmail_armor.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:chainmail_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.svo_core.chapter1.chainmail_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

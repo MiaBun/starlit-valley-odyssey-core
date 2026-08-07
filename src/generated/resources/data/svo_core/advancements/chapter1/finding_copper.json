@@ -1,0 +1,38 @@
+{
+  "parent": "svo_core:chapter1/getting_an_upgrade",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.svo_core.chapter1.finding_copper.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:copper_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.svo_core.chapter1.finding_copper.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

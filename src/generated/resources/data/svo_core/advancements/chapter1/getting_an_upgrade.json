@@ -1,12 +1,12 @@
 {
-  "parent": "svo_core:chapter1",
+  "parent": "svo_core:chapter1/mine_stone",
   "criteria": {
-    "has_other_item": {
+    "has_item": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:crafting_table"
+              "minecraft:stone_pickaxe"
             ]
           }
         ]
@@ -17,21 +17,22 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.svo_core.chapter1.advancement1.description"
+      "translate": "advancement.svo_core.chapter1.getting_an_upgrade.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:crafting_table"
+      "item": "minecraft:stone_pickaxe",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.svo_core.chapter1.advancement1.title"
+      "translate": "advancement.svo_core.chapter1.getting_an_upgrade.title"
     }
   },
   "requirements": [
     [
-      "has_other_item"
+      "has_item"
     ]
   ],
   "sends_telemetry_event": true

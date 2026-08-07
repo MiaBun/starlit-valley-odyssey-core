@@ -4,9 +4,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:stick"
-            ]
+            "tag": "minecraft:logs"
           }
         ]
       },

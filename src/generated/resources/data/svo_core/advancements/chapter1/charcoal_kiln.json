@@ -1,0 +1,38 @@
+{
+  "parent": "svo_core:chapter1/finding_copper",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "svo_core:charcoal_kiln"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.svo_core.chapter1.charcoal_kiln.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "svo_core:charcoal_kiln"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.svo_core.chapter1.charcoal_kiln.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

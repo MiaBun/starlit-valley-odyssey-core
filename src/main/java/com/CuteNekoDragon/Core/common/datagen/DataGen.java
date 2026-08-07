@@ -36,9 +36,31 @@ public class DataGen {
         generator.addProvider(event.includeServer(), new SVORecipeProvider(packOutput));
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.title", "Chapter 1");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.description", "Grandpa's Letter");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.advancement1.title", "Craft a Crafting Table");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.advancement1.description", "The start of your adventures");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.description", "Welcome to Starlit Valley!");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.title", "Craft a Crafting Table");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.description", "The Beginning of your crafting journey");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.title", "Stone Age");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.description", "Mine Stone with your new Pickaxe");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.title", "Suit Up");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.description", "Have any type of leather armor in the inventory");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.title", "Getting an Upgrade");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.description", "Construct a better Pickaxe");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.title", "Cover me with Chains");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.description", "Have any type of chainmail armor in the inventory");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_copper.title", "Copper!");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_copper.description", "Acquire Copper");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.furnace.title", "Smelt me some ores");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.furnace.description", "Construct a furnace");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.charcoal_kiln.title", "Kiln me some Coal!");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.charcoal_kiln.description", "Construct a Charcoal Kiln");
 
         REGISTRATE.addRawLang("tooltip.svo_core.quartz", "A clear crystal commonly found in caves and mines.");
         REGISTRATE.addRawLang("tooltip.svo_core.earth_crystal", "A resinous substance found near the surface.");
@@ -121,6 +143,8 @@ public class DataGen {
         REGISTRATE.addRawLang("tooltip.svo_core.radioactive_ingot",
                 "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.");
         REGISTRATE.addRawLang("tooltip.svo_core.cinder_shard", "You can feel a warm glow from within this stone.");
+
+        REGISTRATE.addRawLang("tooltip.svo_core.charcoal_kiln", "Turns 1 piece of log into one piece of coal.");
 
         REGISTRATE.addRawLang("tooltip.svo_core.coins", "%s");
         REGISTRATE.addRawLang("tooltip.svo_core.mineral_product", "Mineral Product");

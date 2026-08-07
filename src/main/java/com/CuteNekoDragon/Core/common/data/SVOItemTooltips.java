@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.common.data;
 
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
+import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import com.CuteNekoDragon.Core.utils.TooltipBuilder;
 
 public class SVOItemTooltips {
@@ -133,5 +134,8 @@ public class SVOItemTooltips {
                 .addInfo("tooltip.svo_core.refined_quartz");
         TooltipBuilder.addTooltip(SVOItems.RADIOACTIVE_INGOT).addCoins()
                 .addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM).addInfo("tooltip.svo_core.radioactive_ingot");
+
+        // Artisan Machines
+        TooltipBuilder.addTooltip(SVOMachines.CHARKOAL_KILN.getItem()).addInfo("tooltip.svo_core.charcoal_kiln");
     }
 }
