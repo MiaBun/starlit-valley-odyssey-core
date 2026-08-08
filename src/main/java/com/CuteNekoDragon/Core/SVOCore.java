@@ -3,6 +3,8 @@ package com.CuteNekoDragon.Core;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
+import guideme.Guide;
+import guideme.GuideItemSettings;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.IExtensionPoint;
@@ -34,6 +36,11 @@ public class SVOCore {
     public SVOCore() {
         setupFixForGlobalServerConfig();
         SVOConfig.init();
+
+        var guide = Guide.builder(ResourceLocation.fromNamespaceAndPath("svo_core", "guide"))
+                .itemSettings(GuideItemSettings.DEFAULT)
+                .startPage(ResourceLocation.fromNamespaceAndPath("svo_core", "index.md"))
+                .build();
 
         DistExecutor.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
     }
