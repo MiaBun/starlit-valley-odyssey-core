@@ -1,10 +1,9 @@
 package com.CuteNekoDragon.Core.common;
 
-import com.CuteNekoDragon.Core.common.data.svogt.SVOGTRecipeTypes;
-import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,6 +15,8 @@ import com.CuteNekoDragon.Core.common.data.SVOCreativeTab;
 import com.CuteNekoDragon.Core.common.data.SVOItemPrices;
 import com.CuteNekoDragon.Core.common.data.SVOItemTooltips;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
+import com.CuteNekoDragon.Core.common.data.svogt.SVOGTRecipeTypes;
+import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import com.CuteNekoDragon.Core.config.SVOConfig;
 
 public class CommonProxy {
@@ -47,7 +48,7 @@ public class CommonProxy {
         SVOMachines.init();
     }
 
-    public void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event)  {
+    public void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         SVOGTRecipeTypes.init();
     }
 }

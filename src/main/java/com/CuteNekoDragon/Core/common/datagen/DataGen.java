@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
-import com.CuteNekoDragon.Core.common.datagen.recipes.ShapedRecipesProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -12,7 +11,6 @@ import net.minecraftforge.fml.common.Mod;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.datagen.advancements.SVOAdvancementsProvider;
-import com.CuteNekoDragon.Core.common.datagen.recipes.SmithingRecipesProvider;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -39,19 +37,24 @@ public class DataGen {
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.description", "Welcome to Starlit Valley!");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.title", "Craft a Crafting Table");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.description", "The Beginning of your crafting journey");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.description",
+                "The Beginning of your crafting journey");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.title", "Stone Age");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.description", "Mine Stone with your new Pickaxe");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.description",
+                "Mine Stone with your new Pickaxe");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.title", "Suit Up");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.description", "Have any type of leather armor in the inventory");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.description",
+                "Have any type of leather armor in the inventory");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.title", "Getting an Upgrade");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.description", "Construct a better Pickaxe");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.description",
+                "Construct a better Pickaxe");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.title", "Cover me with Chains");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.description", "Have any type of chainmail armor in the inventory");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.description",
+                "Have any type of chainmail armor in the inventory");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_copper.title", "Copper!");
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_copper.description", "Acquire Copper");

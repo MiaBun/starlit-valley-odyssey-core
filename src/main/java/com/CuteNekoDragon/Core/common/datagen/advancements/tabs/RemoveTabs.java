@@ -131,7 +131,6 @@ public class RemoveTabs implements ForgeAdvancementProvider.AdvancementGenerator
     @Override
     public void generate(HolderLookup.Provider provider, Consumer<Advancement> consumer,
                          ExistingFileHelper existingFileHelper) {
-
         for (String s : removed) {
             Advancement.Builder.advancement()
                     .addCriterion("impossible", new ImpossibleTrigger.TriggerInstance())

@@ -2,6 +2,7 @@ package com.CuteNekoDragon.Core.utils;
 
 import com.gregtechceu.gtceu.api.machine.trait.RecipeLogic;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -13,7 +14,8 @@ public class ModelUtils {
     public static MachineBuilder.ModelInitializer createBasicMachineModel(ResourceLocation baseModel) {
         return (ctx, prov, builder) -> {
             ModelFile.ExistingModelFile model = prov.models().getExistingFile(baseModel);
-            ModelFile.ExistingModelFile modelWorking = prov.models().getExistingFile(ResourceLocation.parse(baseModel + "_working"));
+            ModelFile.ExistingModelFile modelWorking = prov.models()
+                    .getExistingFile(ResourceLocation.parse(baseModel + "_working"));
             builder.partialState()
                     .with(RECIPE_LOGIC_STATUS, RecipeLogic.Status.WORKING)
                     .setModels(ConfiguredModel.builder().modelFile(modelWorking).build());

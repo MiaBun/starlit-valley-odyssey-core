@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan;
 
-import com.google.common.collect.Tables;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.IRecipeHandler;
@@ -15,14 +14,13 @@ import com.gregtechceu.gtceu.api.machine.feature.IRecipeLogicMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IUIMachine;
 import com.gregtechceu.gtceu.api.machine.trait.*;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
+
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.syncdata.ISubscription;
 import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import com.lowdragmc.lowdraglib.utils.Position;
-import lombok.Getter;
-import lombok.Setter;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -31,15 +29,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import com.google.common.collect.Tables;
+import lombok.Getter;
+import lombok.Setter;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-
 public class CharkoalKiln extends MetaMachine implements IRecipeLogicMachine, IUIMachine {
 
-    protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER =
-            new ManagedFieldHolder(CharkoalKiln.class, MetaMachine.MANAGED_FIELD_HOLDER);
+    protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(CharkoalKiln.class,
+            MetaMachine.MANAGED_FIELD_HOLDER);
 
     @Getter
     @Persisted
@@ -65,7 +66,8 @@ public class CharkoalKiln extends MetaMachine implements IRecipeLogicMachine, IU
     @Getter
     protected final Map<IO, List<RecipeHandlerList>> capabilitiesProxy = new EnumMap<>(IO.class);
     @Getter
-    protected final Map<IO, Map<RecipeCapability<?>, List<IRecipeHandler<?>>>> capabilitiesFlat = new EnumMap<>(IO.class);
+    protected final Map<IO, Map<RecipeCapability<?>, List<IRecipeHandler<?>>>> capabilitiesFlat = new EnumMap<>(
+            IO.class);
 
     private final List<ISubscription> traitSubscriptions = new ArrayList<>();
 
@@ -122,7 +124,7 @@ public class CharkoalKiln extends MetaMachine implements IRecipeLogicMachine, IU
     @OnlyIn(Dist.CLIENT)
     public void clientTick() {
         super.clientTick();
-        if(getLevel() == null || !getLevel().isClientSide || !isActive()) return;
+        if (getLevel() == null || !getLevel().isClientSide || !isActive()) return;
 
         if (GTValues.RNG.nextFloat() < 0.2F) {
             var pos = getPos();
@@ -153,9 +155,11 @@ public class CharkoalKiln extends MetaMachine implements IRecipeLogicMachine, IU
         storages.put(IO.IN, ItemRecipeCapability.CAP, importItems.storage);
         storages.put(IO.OUT, ItemRecipeCapability.CAP, exportItems.storage);
 
-        var group = getRecipeType().getRecipeUI().createUITemplate(recipeLogic::getProgressPercent, storages, new CompoundTag(), Collections.emptyList());
+        var group = getRecipeType().getRecipeUI().createUITemplate(recipeLogic::getProgressPercent, storages,
+                new CompoundTag(), Collections.emptyList());
 
-        Position pos = new Position((Math.max(group.getSize().width + 4 + 8, 176) - 4 - group.getSize().width) / 2 + 4, 32);
+        Position pos = new Position((Math.max(group.getSize().width + 4 + 8, 176) - 4 - group.getSize().width) / 2 + 4,
+                32);
         group.setSelfPosition(pos);
 
         return new ModularUI(176, 166, this, entityPlayer)
@@ -163,5 +167,4 @@ public class CharkoalKiln extends MetaMachine implements IRecipeLogicMachine, IU
                 .widget(group)
                 .widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT, 7, 84, true));
     }
-
 }

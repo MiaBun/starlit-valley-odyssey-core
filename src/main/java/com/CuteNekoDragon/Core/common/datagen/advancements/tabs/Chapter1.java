@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
-import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -15,6 +14,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 
 import java.util.function.Consumer;
 
@@ -34,9 +34,10 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         true,
                         true,
                         false)
-                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(ItemTags.LOGS).build()))
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance
+                                .hasItems(ItemPredicate.Builder.item().of(ItemTags.LOGS).build()))
                 .save(consumer, SVOCore.id("chapter1/root"), existingFileHelper);
-
 
         Advancement crafting_table = Advancement.Builder.advancement()
                 .parent(root)
@@ -59,7 +60,11 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         null,
                         FrameType.TASK,
                         true, true, false)
-                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(Items.LEATHER_HELMET, Items.LEATHER_CHESTPLATE, Items.LEATHER_LEGGINGS, Items.LEATHER_BOOTS).build()))
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(Items.LEATHER_HELMET, Items.LEATHER_CHESTPLATE, Items.LEATHER_LEGGINGS,
+                                        Items.LEATHER_BOOTS)
+                                .build()))
                 .save(consumer, SVOCore.id("chapter1/leather_armor"), existingFileHelper);
 
         Advancement mine_stone = Advancement.Builder.advancement()
@@ -71,7 +76,9 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         null,
                         FrameType.TASK,
                         true, true, false)
-                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(ItemTags.STONE_TOOL_MATERIALS).build()))
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance
+                                .hasItems(ItemPredicate.Builder.item().of(ItemTags.STONE_TOOL_MATERIALS).build()))
                 .save(consumer, SVOCore.id("chapter1/mine_stone"), existingFileHelper);
 
         Advancement getting_an_upgrade = Advancement.Builder.advancement()
@@ -95,7 +102,11 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         null,
                         FrameType.TASK,
                         true, true, false)
-                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(Items.CHAINMAIL_HELMET, Items.CHAINMAIL_CHESTPLATE, Items.CHAINMAIL_LEGGINGS, Items.CHAINMAIL_BOOTS).build()))
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(Items.CHAINMAIL_HELMET, Items.CHAINMAIL_CHESTPLATE, Items.CHAINMAIL_LEGGINGS,
+                                        Items.CHAINMAIL_BOOTS)
+                                .build()))
                 .save(consumer, SVOCore.id("chapter1/chainmail_armor"), existingFileHelper);
 
         Advancement finding_copper = Advancement.Builder.advancement()
@@ -131,8 +142,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         null,
                         FrameType.TASK,
                         true, true, false)
-                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(SVOMachines.CHARKOAL_KILN.getItem()))
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(SVOMachines.CHARKOAL_KILN.getItem()))
                 .save(consumer, SVOCore.id("chapter1/charcoal_kiln"), existingFileHelper);
-
     }
 }

@@ -4,17 +4,16 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.GTRegistries;
-import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.common.data.GTSoundEntries;
+
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 
 @SuppressWarnings("deprecation")
 public class SVOGTRecipeTypes {
 
-    public static void init() {
-
-    }
+    public static void init() {}
 
     public static final GTRecipeType CHARKOAL_KILN_RECIPES = register("charcoal_kiln")
             .setMaxIOSize(1, 1, 0, 0)

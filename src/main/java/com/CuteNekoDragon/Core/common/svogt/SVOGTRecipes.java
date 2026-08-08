@@ -1,9 +1,10 @@
 package com.CuteNekoDragon.Core.common.svogt;
 
-import com.CuteNekoDragon.Core.common.data.svogt.SVOGTRecipeTypes;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+
+import com.CuteNekoDragon.Core.common.data.svogt.SVOGTRecipeTypes;
 
 import java.util.function.Consumer;
 
