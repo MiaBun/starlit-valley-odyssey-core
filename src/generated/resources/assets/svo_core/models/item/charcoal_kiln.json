@@ -1,3 +1,6 @@
 {
-  "parent": "svo_core:block/machine/charcoal_kiln"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "svo_core:item/machine/charcoal_kiln"
+  }
 }

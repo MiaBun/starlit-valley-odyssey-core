@@ -1,6 +1,8 @@
 ## [Unreleased]
 ### Changes
 - added the charcoal kiln
+- removed vanilla advancements
+- added custom advancements for chapter 1
 
 ## [0.0.22]
 ### Changes

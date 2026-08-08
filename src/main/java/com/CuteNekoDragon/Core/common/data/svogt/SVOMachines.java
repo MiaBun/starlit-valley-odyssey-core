@@ -24,6 +24,8 @@ public class SVOMachines {
             .shape(Shapes.block())
             .blockProp(BlockBehaviour.Properties::noOcclusion)
             .model(ModelUtils.createBasicMachineModel(SVOCore.id("block/machine/charkoal_kiln")))
+            .itemBuilder(ib -> ib.model((ctx, prov) ->
+                    prov.generated(ctx::getEntry, SVOCore.id(("item/machine/charcoal_kiln")))))
             .register();
 
     public static void init() {
