@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.24]
 ### Changes
 - fixed charcoal recipe being registered under gtceu: instead of svo_core:
 - added guideme wiki
