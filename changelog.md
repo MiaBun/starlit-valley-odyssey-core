@@ -1,6 +1,6 @@
 ## [Unreleased]
 ### Changes
-- 
+- made durability only be lost on death
 
 ## [0.0.24]
 ### Changes

@@ -5,7 +5,8 @@
   "minVersion": "0.8",
   "refmap": "mixins.svo_core.refmap.json",
   "mixins": [
-    "common.RecipeManagerMixin"
+    "common.RecipeManagerMixin",
+    "common.ItemStackMixin"
   ],
   "client": [
     "client.CreateWorldScreenMixin",

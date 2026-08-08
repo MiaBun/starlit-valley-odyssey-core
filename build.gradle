@@ -158,7 +158,7 @@ legacyForge {
 
             systemProperty('guideme.svo_core.guide.sources', file("src/main/resources/assets/svo_core/guides/svo_core/guide").absolutePath)
             systemProperty('guideme.svo_core.guide.sourcesNamespace', "svo_core")
-            systemProperty('guideme.showOnStartup', "svo_core:guide")
+            systemProperty('guideme.showOnStartup', "svo_core:guide!svo_core:index.md")
         }
         server {
             server()
