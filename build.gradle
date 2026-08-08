@@ -150,6 +150,16 @@ legacyForge {
             programArguments.addAll('--refresh-dependencies')
             systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
         }
+        guide {
+            client()
+            sourceSet = sourceSets.main
+            programArguments.addAll('--refresh-dependencies')
+            systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
+
+            systemProperty('guideme.svo_core.guide.sources', file("src/main/resources/assets/svo_core/guides/svo_core/guide").absolutePath)
+            systemProperty('guideme.svo_core.guide.sourcesNamespace', "svo_core")
+            systemProperty('guideme.showOnStartup', "svo_core:guide")
+        }
         server {
             server()
             sourceSet = sourceSets.main

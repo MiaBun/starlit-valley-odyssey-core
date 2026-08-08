@@ -2,6 +2,8 @@
 ### Changes
 - fixed charcoal recipe being registered under gtceu: instead of svo_core:
 - added guideme wiki
+- added guideME page for charcoal kiln
+- removed wooden items from being burnable
 
 ## [0.0.23]
 ### Changes

@@ -6,4 +6,6 @@ navigation:
 
 # Artisan Machines
 
-Artisan Machines are unique machines that don't use electricity, they are heavily based on Stardew Valley
+Artisan Machine's are machines directly taken from Stardew Valley.
+
+<CategoryIndex category="Artisan Machines" />
