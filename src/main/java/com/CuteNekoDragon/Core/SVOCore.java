@@ -3,8 +3,6 @@ package com.CuteNekoDragon.Core;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 
-import guideme.Guide;
-import guideme.GuideItemSettings;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.IExtensionPoint;
@@ -15,6 +13,8 @@ import net.minecraftforge.network.NetworkConstants;
 import com.CuteNekoDragon.Core.client.ClientProxy;
 import com.CuteNekoDragon.Core.common.CommonProxy;
 import com.CuteNekoDragon.Core.config.SVOConfig;
+import guideme.Guide;
+import guideme.GuideItemSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
