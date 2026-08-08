@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.23]
 ### Changes
 - added the charcoal kiln
 - removed vanilla advancements
