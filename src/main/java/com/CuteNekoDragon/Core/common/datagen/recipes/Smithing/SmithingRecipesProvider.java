@@ -1,4 +1,4 @@
-package com.CuteNekoDragon.Core.common.datagen.recipes;
+package com.CuteNekoDragon.Core.common.datagen.recipes.Smithing;
 
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Item;

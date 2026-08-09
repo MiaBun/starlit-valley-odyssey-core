@@ -1,6 +1,7 @@
 ## [Unreleased]
 ### Changes
 - made durability only be lost on death
+- hid netherite tools and armor from EMI
 
 ## [0.0.24]
 ### Changes

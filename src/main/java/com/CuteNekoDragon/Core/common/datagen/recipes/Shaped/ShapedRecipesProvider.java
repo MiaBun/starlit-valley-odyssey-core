@@ -1,4 +1,4 @@
-package com.CuteNekoDragon.Core.common.datagen.recipes;
+package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;

@@ -212,47 +212,69 @@ dependencies {
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
 
+    // Curios
     modCompileOnly("top.theillusivec4.curios:curios-forge:${curios_version}:api")
     modRuntimeOnly("top.theillusivec4.curios:curios-forge:${curios_version}")
 
+    // Blood Magic
     modImplementation("curse.maven:blood-magic-224791:7956981")
 
+    // Botania
     modCompileOnly("vazkii.botania:Botania:${botania_version}:api")
     modRuntimeOnly("vazkii.botania:Botania:${botania_version}")
 
+    // Ars Nouveau
     modImplementation("com.hollingsworth.ars_nouveau:ars_nouveau-${minecraft_version}:${ars_version}")
 
+    // Ad Astra
     modImplementation("earth.terrarium.adastra:ad_astra-forge-1.20.1:1.15.20")
 
+    // Ae2 & GuideME
     modCompileOnly("appeng:appliedenergistics2-forge:15.4.10:api")
     modRuntimeOnly("appeng:appliedenergistics2-forge:15.4.10")
 
     modCompileOnly "org.appliedenergistics:guideme:${guideme_version}:api"
     modRuntimeOnly "org.appliedenergistics:guideme:${guideme_version}"
 
+    // Create
     modImplementation("com.simibubi.create:create-${minecraft_version}:${create_version}:slim")
     modImplementation("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}")
     modCompileOnly("dev.engine-room.flywheel:flywheel-forge-api-${minecraft_version}:${flywheel_version}")
     modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
 
+    // Create Addons
     modImplementation("curse.maven:numismatics-889722:6264591")
 
+    // KubeJS
     modCompileOnly("dev.latvian.mods:kubejs-forge:${kubejs_version}")
 
+    // Geckolib and MCLib
     modRuntimeOnly("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
     modRuntimeOnly("com.eliotlash.mclib:mclib:20")
 
+    // Hexerei
     modImplementation("curse.maven:hexerei-548599:6314111")
+
+    // Draconic Evolution
     modImplementation("curse.maven:draconic-evolution-223565:6793843")
-    modImplementation("curse.maven:embeddium-908741:5681725")
-    modImplementation("curse.maven:oculus-581495:6020952")
     modImplementation("curse.maven:codechicken-lib-1-8-242818:5753868")
     modImplementation("curse.maven:brandons-core-231382:5422013")
 
+    // Embeddium
+    modImplementation("curse.maven:embeddium-908741:5681725")
+
+    // Oculus
+    modImplementation("curse.maven:oculus-581495:6020952")
+
+    // Some other library mods
     modRuntimeOnly("com.teamresourceful.resourcefulconfig:resourcefulconfig-forge-${minecraft_version}:${resourcefulConfigVersion}")
     modRuntimeOnly("com.teamresourceful.resourcefullib:resourcefullib-forge-${minecraft_version}:${resourcefulLibVersion}")
     modRuntimeOnly("earth.terrarium.botarium:botarium-forge-${minecraft_version}:${botariumVersion}")
     modRuntimeOnly("vazkii.patchouli:Patchouli:1.20.1-85-FORGE")
+
+    // Sophisticated
+    modImplementation("curse.maven:sophisticated-core-618298:8593869")
+    modImplementation("curse.maven:sophisticated-backpacks-422301:8596644")
 
 
     // lombok
