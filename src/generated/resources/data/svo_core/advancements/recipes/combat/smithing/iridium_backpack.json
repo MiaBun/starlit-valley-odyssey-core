@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:smithing/netherite_backpack"
+        "recipe": "svo_core:smithing/iridium_backpack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "svo_core:smithing/netherite_backpack"
+      "svo_core:smithing/iridium_backpack"
     ]
   },
   "sends_telemetry_event": false

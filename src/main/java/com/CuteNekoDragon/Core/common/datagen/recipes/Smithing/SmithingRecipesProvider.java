@@ -99,7 +99,7 @@ public class SmithingRecipesProvider {
         SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), ModItems.IRON_BACKPACK.get(), Items.GOLD_INGOT, ModItems.GOLD_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
         SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), ModItems.GOLD_BACKPACK.get(), Items.DIAMOND, ModItems.DIAMOND_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(), SVOItems.IRIDIUM_INGOT, ModItems.NETHERITE_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(), SVOItems.IRIDIUM_INGOT, SVOItems.IRIDIUM_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
             ItemLike baseItem = entry.getKey();
