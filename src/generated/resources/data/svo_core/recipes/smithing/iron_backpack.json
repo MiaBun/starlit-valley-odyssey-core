@@ -1,0 +1,15 @@
+{
+  "type": "sophisticatedbackpacks:smithing_backpack_upgrade",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "sophisticatedbackpacks:copper_backpack"
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:iron_backpack"
+  },
+  "template": {
+    "item": "svo_core:iron_upgrade_smithing_template"
+  }
+}

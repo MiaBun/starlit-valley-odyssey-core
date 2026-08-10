@@ -55,5 +55,16 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("minecraft:netherite_chestplate_smithing");
         RecipeBlacklist.blacklistId("minecraft:netherite_leggings_smithing");
         RecipeBlacklist.blacklistId("minecraft:netherite_boots_smithing");
+
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:copper_backpack");
+
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:iron_backpack");
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:iron_backpack_from_copper");
+
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:gold_backpack");
+
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:diamond_backpack");
+
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:netherite_backpack");
     }
 }

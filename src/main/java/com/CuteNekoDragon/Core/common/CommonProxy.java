@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.common;
 
+import com.CuteNekoDragon.Core.common.data.SVOBlockEntities;
+import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -29,6 +31,8 @@ public class CommonProxy {
 
         SVOCore.REGISTRATE.registerEventListeners(bus);
 
+        SVOBlocks.init();
+        SVOBlockEntities.init();
         SVOItems.init();
         SVOCreativeTab.init();
 

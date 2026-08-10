@@ -1,0 +1,15 @@
+{
+  "type": "sophisticatedbackpacks:smithing_backpack_upgrade",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "sophisticatedbackpacks:iron_backpack"
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:gold_backpack"
+  },
+  "template": {
+    "item": "svo_core:gold_upgrade_smithing_template"
+  }
+}

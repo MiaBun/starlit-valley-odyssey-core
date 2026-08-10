@@ -1,0 +1,15 @@
+{
+  "type": "sophisticatedbackpacks:smithing_backpack_upgrade",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "sophisticatedbackpacks:gold_backpack"
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:diamond_backpack"
+  },
+  "template": {
+    "item": "svo_core:diamond_upgrade_smithing_template"
+  }
+}

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
+import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.*;
@@ -11,6 +12,7 @@ import com.CuteNekoDragon.Core.common.item.SVOArmorMaterials;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.CuteNekoDragon.Core.common.item.SVOTiers;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -302,4 +304,11 @@ public class SVOItems {
             .item("iridium_boots", p -> new ArmorItem(SVOArmorMaterials.IRIDIUM, ArmorItem.Type.BOOTS, p))
             .properties(p -> p.stacksTo(1))
             .register();
+
+    public static final ItemEntry<BackpackItem> IRIDIUM_BACKPACK = REGISTRATE.item("iridium_backpack", p -> new BackpackItem(
+            () -> 36,
+            () -> 4,
+            SVOBlocks.IRIDIUM_BACKPACK
+    ))
+            .model((ctx, prov) -> {}).register();
 }

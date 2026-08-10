@@ -1,0 +1,6 @@
+{
+  "parent": "sophisticatedbackpacks:block/backpack",
+  "textures": {
+    "clips": "core:block/iridium_clips"
+  }
+}
