@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
+import com.CuteNekoDragon.Core.common.item.SackItem;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.*;
@@ -311,4 +312,6 @@ public class SVOItems {
             SVOBlocks.IRIDIUM_BACKPACK
     ))
             .model((ctx, prov) -> {}).register();
+
+    public static ItemEntry<SackItem> SACK = REGISTRATE.item("sack", p -> new SackItem(new Item.Properties().stacksTo(1))).register();
 }
