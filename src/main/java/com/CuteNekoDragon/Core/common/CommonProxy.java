@@ -2,6 +2,7 @@ package com.CuteNekoDragon.Core.common;
 
 import com.CuteNekoDragon.Core.common.data.SVOBlockEntities;
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -31,6 +32,7 @@ public class CommonProxy {
 
         SVOCore.REGISTRATE.registerEventListeners(bus);
 
+        SVONetworkHandler.init();
         SVOBlocks.init();
         SVOBlockEntities.init();
         SVOItems.init();

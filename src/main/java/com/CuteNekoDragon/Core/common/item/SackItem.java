@@ -36,6 +36,8 @@ public class SackItem extends Item {
     public static final int MAX_WEIGHT = 64;
     private static final int BUNDLE_IN_BUNDLE_WEIGHT = 4;
     private static final int BAR_COLOR = Mth.color(0.4F, 0.4F, 1.0F);
+    private static ItemStack trackedSelectionStack = ItemStack.EMPTY;
+    private static int Current_Selected = 0;
 
     public SackItem(Properties properties) {
         super(properties);
@@ -54,7 +56,7 @@ public class SackItem extends Item {
             ItemStack itemStack = slot.getItem();
             if (itemStack.isEmpty()) {
                 this.playRemoveOneSound(player);
-                removeOne(itemStack).ifPresent(stackItem -> add(stack, slot.safeInsert(stackItem)));
+                removeOne(stack).ifPresent(stackItem -> add(stack, slot.safeInsert(stackItem))); // was itemStack, now stack
             } else if (itemStack.getItem().canFitInsideContainerItems()) {
                 int i = (MAX_WEIGHT - getContentWeight(stack) / getWeight(itemStack));
                 int j = add(stack, slot.safeTake(itemStack.getCount(), i, player));
@@ -184,17 +186,16 @@ public class SackItem extends Item {
             return Optional.empty();
         } else {
             ListTag listTag = compoundTag.getList(TAG_ITEMS, 10);
-            if(listTag.isEmpty()) {
+            if (listTag.isEmpty()) {
                 return Optional.empty();
             } else {
-                int index = 0;
+                int index = Mth.clamp(getSelectedItem(itemStack), 0, listTag.size() - 1);
                 CompoundTag compoundTag1 = listTag.getCompound(index);
                 ItemStack itemStack1 = ItemStack.of(compoundTag1);
                 listTag.remove(index);
                 if (listTag.isEmpty()) {
                     itemStack.removeTagKey(TAG_ITEMS);
                 }
-
                 return Optional.of(itemStack1);
             }
         }
@@ -219,6 +220,31 @@ public class SackItem extends Item {
         }
     }
 
+
+    public static void toggleSelectedItem(final ItemStack stack, final int selectedItem) {
+        if (!ItemStack.isSameItemSameTags(stack, trackedSelectionStack)) {
+            trackedSelectionStack = stack;
+        }
+        Current_Selected = selectedItem;
+    }
+
+    public static int getSelectedItem(final ItemStack stack) {
+        if (!ItemStack.isSameItemSameTags(stack, trackedSelectionStack)) {
+            return 0; // different sack — always reads as unselected/first
+        }
+        int count = getNumberOfItemsToShow(stack);
+        return count == 0 ? 0 : Mth.clamp(Current_Selected, 0, count - 1);
+    }
+
+    public static void resetSelection() {
+        trackedSelectionStack = ItemStack.EMPTY;
+        Current_Selected = 0;
+    }
+
+    public static int getNumberOfItemsToShow(final ItemStack stack) {
+        return (int) getContent(stack).count();
+    }
+
     private static Stream<ItemStack> getContent(ItemStack itemStack) {
         CompoundTag compoundTag = itemStack.getTag();
         if (compoundTag == null) {
@@ -233,7 +259,7 @@ public class SackItem extends Item {
     public Optional<TooltipComponent> getTooltipImage(ItemStack itemStack) {
         NonNullList<ItemStack> nonNullList = NonNullList.create();
         getContent(itemStack).forEach(nonNullList::add);
-        return Optional.of(new SackTooltip(nonNullList, getContentWeight(itemStack)));
+        return Optional.of(new SackTooltip(itemStack, nonNullList, getContentWeight(itemStack)));
     }
 
     @Override

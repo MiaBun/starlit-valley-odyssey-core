@@ -1,13 +1,17 @@
 package com.CuteNekoDragon.Core.client.components;
 
 import com.CuteNekoDragon.Core.common.component.SackTooltip;
+import com.CuteNekoDragon.Core.common.item.SackItem;
+import lombok.Getter;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 @SuppressWarnings("removal")
 public class ClientSackTooltip implements ClientTooltipComponent {
@@ -18,16 +22,50 @@ public class ClientSackTooltip implements ClientTooltipComponent {
     private static final int TEX_SIZE = 128;
     private static final int SLOT_SIZE_X = 18;
     private static final int SLOT_SIZE_Y = 20;
+
+    @Getter
+    private static ItemStack trackedStack = ItemStack.EMPTY;
+    @Getter
+    private static int selectedIndex = 0;
+    private static int trackedItemCount = 0;
+    @Getter
+    private static boolean hoveredThisFrame = false;
+
     private final NonNullList<ItemStack> items;
     private final int weight;
+    private final int selected;
 
     public ClientSackTooltip(SackTooltip bundleTooltip) {
         this.items = bundleTooltip.getItems();
         this.weight = bundleTooltip.getWeight();
+
+        ItemStack newStack = bundleTooltip.getContainerStack();
+        if (bundleTooltip.getContainerStack() != trackedStack) {
+            trackedStack = bundleTooltip.getContainerStack();
+            selectedIndex = 0;
+        }
+        if (!ItemStack.isSameItemSameTags(newStack, trackedStack)) {
+            SackItem.resetSelection();
+        }
+        trackedStack = newStack;
+        trackedItemCount = items.size();
+        selectedIndex = items.isEmpty() ? 0 : Mth.clamp(selectedIndex, 0, items.size() - 1);
+        this.selected = SackItem.getSelectedItem(trackedStack);
     }
+
+    public static void scroll(double delta) {
+        if (!hoveredThisFrame || trackedItemCount == 0) return;
+        selectedIndex = Mth.clamp(selectedIndex - (int) Math.signum(delta), 0, trackedItemCount - 1);
+    }
+
+    public static void resetHoverFlag() {
+        hoveredThisFrame = false;
+    }
+
 
     @Override
     public int getHeight() {
+        hoveredThisFrame = true;
         return this.gridSizeY() * SLOT_SIZE_Y + 2 + MARGIN_Y;
     }
 
@@ -62,7 +100,7 @@ public class ClientSackTooltip implements ClientTooltipComponent {
             this.blit(guiGraphics, i, j, ClientSackTooltip.Texture.SLOT);
             guiGraphics.renderItem(itemStack, i + BORDER_WIDTH, j + BORDER_WIDTH, k);
             guiGraphics.renderItemDecorations(font, itemStack, i + 1, j + 1);
-            if (k == 0) {
+            if (k == this.selected) {
                 AbstractContainerScreen.renderSlotHighlight(guiGraphics, i + BORDER_WIDTH, j + BORDER_WIDTH, 0);
             }
         }

@@ -8,11 +8,14 @@ import net.minecraft.world.item.ItemStack;
 public class SackTooltip implements TooltipComponent {
 
     @Getter
+    private final ItemStack containerStack;
+    @Getter
     private final NonNullList<ItemStack> items;
     @Getter
     private final int weight;
 
-    public SackTooltip(NonNullList<ItemStack> items, int weight) {
+    public SackTooltip(ItemStack containerStack, NonNullList<ItemStack> items, int weight) {
+        this.containerStack = containerStack;
         this.items = items;
         this.weight = weight;
     }
