@@ -1,11 +1,12 @@
 package com.CuteNekoDragon.Core.common.event;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.utils.DurabilityUtil;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.utils.DurabilityUtil;
 
 @Mod.EventBusSubscriber(modid = SVOCore.MOD_ID)
 public class PlayerDeathHandler {

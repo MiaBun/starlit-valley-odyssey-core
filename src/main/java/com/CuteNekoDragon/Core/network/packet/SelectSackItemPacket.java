@@ -45,6 +45,11 @@ public class SelectSackItemPacket {
         ctx.setPacketHandled(true);
     }
 
-    public int getSlotId() { return slotId; }
-    public int getSelectedItemIndex() { return selectedItemIndex; }
+    public int getSlotId() {
+        return slotId;
+    }
+
+    public int getSelectedItemIndex() {
+        return selectedItemIndex;
+    }
 }

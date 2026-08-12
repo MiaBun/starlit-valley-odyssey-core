@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
-import com.CuteNekoDragon.Core.common.data.SVOTags;
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -16,6 +14,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.SVOTags;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 
 import java.util.function.Consumer;

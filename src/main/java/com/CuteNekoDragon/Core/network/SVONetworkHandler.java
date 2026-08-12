@@ -1,10 +1,11 @@
 package com.CuteNekoDragon.Core.network;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.network.packet.SelectSackItemPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.network.packet.SelectSackItemPacket;
 
 public class SVONetworkHandler {
 

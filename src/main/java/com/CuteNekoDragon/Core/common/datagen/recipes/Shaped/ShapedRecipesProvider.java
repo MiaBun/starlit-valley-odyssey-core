@@ -1,23 +1,23 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
-import com.CuteNekoDragon.Core.common.item.SackItem;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-import com.tterrag.registrate.util.entry.ItemEntry;
+
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-
-import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.p3pp3rf1y.sophisticatedcore.util.ColorHelper;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
+import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
+import com.CuteNekoDragon.Core.common.item.SackItem;
+import com.tterrag.registrate.util.entry.ItemEntry;
 
 import java.util.Map;
 import java.util.function.Consumer;

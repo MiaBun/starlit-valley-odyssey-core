@@ -1,8 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
-import com.CuteNekoDragon.Core.common.datagen.Tags.SVOItemTagsProvider;
-import com.CuteNekoDragon.Core.common.datagen.lang.SVOLangProvider;
-import com.CuteNekoDragon.Core.common.datagen.recipes.SVORecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -13,7 +10,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.datagen.Tags.SVOItemTagsProvider;
 import com.CuteNekoDragon.Core.common.datagen.advancements.SVOAdvancementsProvider;
+import com.CuteNekoDragon.Core.common.datagen.lang.SVOLangProvider;
+import com.CuteNekoDragon.Core.common.datagen.recipes.SVORecipeProvider;
 
 import java.util.concurrent.CompletableFuture;
 

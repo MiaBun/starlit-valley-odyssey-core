@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
@@ -12,8 +13,6 @@ import com.CuteNekoDragon.Core.utils.recipes.SmithingRecipeHelper;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.ithundxr.createnumismatics.content.backend.Coin;
 import dev.ithundxr.createnumismatics.registry.NumismaticsItems;
-import net.p3pp3rf1y.sophisticatedbackpacks.SophisticatedBackpacks;
-import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 
 import java.util.List;
 import java.util.Map;
@@ -94,12 +93,22 @@ public class SmithingRecipesProvider {
         ItemEntry<SVOSmithingTemplate> diamondTemplate = UPGRADE_TEMPLATES.get("diamond");
         ItemEntry<SVOSmithingTemplate> iridiumTemplate = UPGRADE_TEMPLATES.get("iridium");
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), ModItems.BACKPACK.get(), Items.COPPER_INGOT, ModItems.COPPER_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), ModItems.COPPER_BACKPACK.get(), Items.IRON_INGOT, ModItems.IRON_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), ModItems.IRON_BACKPACK.get(), Items.GOLD_INGOT, ModItems.GOLD_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), ModItems.GOLD_BACKPACK.get(), Items.DIAMOND, ModItems.DIAMOND_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), ModItems.BACKPACK.get(),
+                Items.COPPER_INGOT, ModItems.COPPER_BACKPACK.get(),
+                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), ModItems.COPPER_BACKPACK.get(),
+                Items.IRON_INGOT, ModItems.IRON_BACKPACK.get(),
+                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), ModItems.IRON_BACKPACK.get(),
+                Items.GOLD_INGOT, ModItems.GOLD_BACKPACK.get(),
+                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), ModItems.GOLD_BACKPACK.get(),
+                Items.DIAMOND, ModItems.DIAMOND_BACKPACK.get(),
+                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(), SVOItems.IRIDIUM_INGOT, SVOItems.IRIDIUM_BACKPACK.get(), ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(),
+                SVOItems.IRIDIUM_INGOT, SVOItems.IRIDIUM_BACKPACK.get(),
+                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
             ItemLike baseItem = entry.getKey();

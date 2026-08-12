@@ -1,12 +1,10 @@
 package com.CuteNekoDragon.Core.common.item;
 
-import com.CuteNekoDragon.Core.common.component.SackTooltip;
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
@@ -22,11 +20,12 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.network.chat.Component;
+
+import com.CuteNekoDragon.Core.common.component.SackTooltip;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 @SuppressWarnings("deprecation")
@@ -47,7 +46,6 @@ public class SackItem extends Item {
         return getContentWeight(itemStack) / 64.0F;
     }
 
-
     @Override
     public boolean overrideStackedOnOther(ItemStack stack, Slot slot, ClickAction action, Player player) {
         if (action != ClickAction.SECONDARY) {
@@ -56,7 +54,8 @@ public class SackItem extends Item {
             ItemStack itemStack = slot.getItem();
             if (itemStack.isEmpty()) {
                 this.playRemoveOneSound(player);
-                removeOne(stack).ifPresent(stackItem -> add(stack, slot.safeInsert(stackItem))); // was itemStack, now stack
+                removeOne(stack).ifPresent(stackItem -> add(stack, slot.safeInsert(stackItem))); // was itemStack, now
+                                                                                                 // stack
             } else if (itemStack.getItem().canFitInsideContainerItems()) {
                 int i = (MAX_WEIGHT - getContentWeight(stack) / getWeight(itemStack));
                 int j = add(stack, slot.safeTake(itemStack.getCount(), i, player));
@@ -69,9 +68,10 @@ public class SackItem extends Item {
     }
 
     @Override
-    public boolean overrideOtherStackedOnMe(ItemStack itemStack, ItemStack itemStack1, Slot slot, ClickAction clickAction, Player player, SlotAccess slotAccess) {
+    public boolean overrideOtherStackedOnMe(ItemStack itemStack, ItemStack itemStack1, Slot slot,
+                                            ClickAction clickAction, Player player, SlotAccess slotAccess) {
         if (clickAction == ClickAction.SECONDARY && slot.allowModification(player)) {
-            if(itemStack1.isEmpty()) {
+            if (itemStack1.isEmpty()) {
                 removeOne(itemStack).ifPresent(stack -> {
                     this.playRemoveOneSound(player);
                     slotAccess.set(stack);
@@ -153,9 +153,7 @@ public class SackItem extends Item {
     }
 
     private static Optional<CompoundTag> getMatchingItem(ItemStack itemStack, ListTag listTag) {
-        return itemStack.is(SVOItems.SACK.get())
-                ? Optional.empty()
-                : listTag.stream()
+        return itemStack.is(SVOItems.SACK.get()) ? Optional.empty() : listTag.stream()
                 .filter(CompoundTag.class::isInstance)
                 .map(CompoundTag.class::cast)
                 .filter(compoundTag -> ItemStack.isSameItemSameTags(ItemStack.of(compoundTag), itemStack))
@@ -220,7 +218,6 @@ public class SackItem extends Item {
         }
     }
 
-
     public static void toggleSelectedItem(final ItemStack stack, final int selectedItem) {
         if (!ItemStack.isSameItemSameTags(stack, trackedSelectionStack)) {
             trackedSelectionStack = stack;
@@ -264,7 +261,8 @@ public class SackItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack itemStack, Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.translatable("item.minecraft.bundle.fullness", getContentWeight(itemStack), MAX_WEIGHT).withStyle(ChatFormatting.GRAY));
+        list.add(Component.translatable("item.minecraft.bundle.fullness", getContentWeight(itemStack), MAX_WEIGHT)
+                .withStyle(ChatFormatting.GRAY));
     }
 
     @Override

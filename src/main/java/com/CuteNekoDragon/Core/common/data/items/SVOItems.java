@@ -1,23 +1,21 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
-import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
-import com.CuteNekoDragon.Core.common.item.SackItem;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
+import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.CuteNekoDragon.Core.common.item.SVOArmorMaterials;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.CuteNekoDragon.Core.common.item.SVOTiers;
+import com.CuteNekoDragon.Core.common.item.SackItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.minecraft.world.item.crafting.ShapelessRecipe;
-import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -310,15 +308,15 @@ public class SVOItems {
             .properties(p -> p.stacksTo(1))
             .register();
 
-    public static final ItemEntry<BackpackItem> IRIDIUM_BACKPACK = REGISTRATE.item("iridium_backpack", p -> new BackpackItem(
-            () -> 36,
-            () -> 4,
-            SVOBlocks.IRIDIUM_BACKPACK
-    ))
+    public static final ItemEntry<BackpackItem> IRIDIUM_BACKPACK = REGISTRATE
+            .item("iridium_backpack", p -> new BackpackItem(
+                    () -> 36,
+                    () -> 4,
+                    SVOBlocks.IRIDIUM_BACKPACK))
             .model((ctx, prov) -> {}).register();
 
-
-    public static ItemEntry<SackItem> SACK = REGISTRATE.item("sack", p -> new SackItem(new Item.Properties().stacksTo(1)))
+    public static ItemEntry<SackItem> SACK = REGISTRATE
+            .item("sack", p -> new SackItem(new Item.Properties().stacksTo(1)))
             .tag(SVOTags.Items.SACK)
             .recipe((ctx, provider) -> {
                 ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.get())
@@ -347,7 +345,8 @@ public class SVOItems {
                                         .pattern("   ")
                                         .define('A', SVOItems.SACK)
                                         .define('B', DyeItem.byColor(color).asItem())
-                                        .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
+                                        .unlockedBy("has_sack",
+                                                InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
                                         .save(provider, SVOCore.id("shaped/" + color + "_sack"));
                             })
                             .register());

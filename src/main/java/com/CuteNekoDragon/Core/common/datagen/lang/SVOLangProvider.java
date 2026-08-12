@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.common.datagen.lang;
 
 import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
+
 public class SVOLangProvider {
 
     public static void gatherData() {

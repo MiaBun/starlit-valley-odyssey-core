@@ -1,8 +1,5 @@
 package com.CuteNekoDragon.Core.common;
 
-import com.CuteNekoDragon.Core.common.data.*;
-import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
-import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -14,10 +11,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.*;
+import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOGTRecipeTypes;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import com.CuteNekoDragon.Core.config.SVOConfig;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 
 public class CommonProxy {
 

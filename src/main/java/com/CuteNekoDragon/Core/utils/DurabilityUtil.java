@@ -6,7 +6,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.ArrayList;
@@ -38,7 +37,7 @@ public class DurabilityUtil {
         List<ItemStack> hotbarItems = new ArrayList<>();
         for (int i = 0; i < inventory.getContainerSize() && i < 9; i++) {
             var item = inventory.getItem(i);
-            if(!item.isEmpty()) {
+            if (!item.isEmpty()) {
                 hotbarItems.add(item);
             }
         }
@@ -48,13 +47,13 @@ public class DurabilityUtil {
         return hotbarItems;
     }
 
-    public static List<ItemStack> getArmorItems (Inventory inventory) {
+    public static List<ItemStack> getArmorItems(Inventory inventory) {
         List<ItemStack> armorItems = new ArrayList<>();
         for (int i = 0; i < inventory.armor.size(); i++) {
             var item = inventory.armor.get(i);
-            if(!item.isEmpty())
+            if (!item.isEmpty())
                 armorItems.add(item);
         }
-        return  armorItems;
+        return armorItems;
     }
 }

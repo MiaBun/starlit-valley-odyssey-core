@@ -1,8 +1,5 @@
 package com.CuteNekoDragon.Core.client.components;
 
-import com.CuteNekoDragon.Core.common.component.SackTooltip;
-import com.CuteNekoDragon.Core.common.item.SackItem;
-import lombok.Getter;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -11,12 +8,16 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+
+import com.CuteNekoDragon.Core.common.component.SackTooltip;
+import com.CuteNekoDragon.Core.common.item.SackItem;
+import lombok.Getter;
 
 @SuppressWarnings("removal")
 public class ClientSackTooltip implements ClientTooltipComponent {
 
-    public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("minecraft", "textures/gui/container/bundle.png");
+    public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("minecraft",
+            "textures/gui/container/bundle.png");
     private static final int MARGIN_Y = 4;
     private static final int BORDER_WIDTH = 1;
     private static final int TEX_SIZE = 128;
@@ -61,7 +62,6 @@ public class ClientSackTooltip implements ClientTooltipComponent {
     public static void resetHoverFlag() {
         hoveredThisFrame = false;
     }
-
 
     @Override
     public int getHeight() {
@@ -111,17 +111,21 @@ public class ClientSackTooltip implements ClientTooltipComponent {
         this.blit(guiGraphics, i + k * SLOT_SIZE_X + 1, j, ClientSackTooltip.Texture.BORDER_CORNER_TOP);
 
         for (int m = 0; m < k; m++) {
-            this.blit(guiGraphics, i + BORDER_WIDTH + m * SLOT_SIZE_X, j, ClientSackTooltip.Texture.BORDER_HORIZONTAL_TOP);
-            this.blit(guiGraphics, i + BORDER_WIDTH + m * SLOT_SIZE_X, j + l * SLOT_SIZE_Y, ClientSackTooltip.Texture.BORDER_HORIZONTAL_BOTTOM);
+            this.blit(guiGraphics, i + BORDER_WIDTH + m * SLOT_SIZE_X, j,
+                    ClientSackTooltip.Texture.BORDER_HORIZONTAL_TOP);
+            this.blit(guiGraphics, i + BORDER_WIDTH + m * SLOT_SIZE_X, j + l * SLOT_SIZE_Y,
+                    ClientSackTooltip.Texture.BORDER_HORIZONTAL_BOTTOM);
         }
 
         for (int m = 0; m < l; m++) {
             this.blit(guiGraphics, i, j + m * SLOT_SIZE_Y + BORDER_WIDTH, ClientSackTooltip.Texture.BORDER_VERTICAL);
-            this.blit(guiGraphics, i + k * SLOT_SIZE_X + BORDER_WIDTH, j + m * SLOT_SIZE_Y + BORDER_WIDTH, ClientSackTooltip.Texture.BORDER_VERTICAL);
+            this.blit(guiGraphics, i + k * SLOT_SIZE_X + BORDER_WIDTH, j + m * SLOT_SIZE_Y + BORDER_WIDTH,
+                    ClientSackTooltip.Texture.BORDER_VERTICAL);
         }
 
         this.blit(guiGraphics, i, j + l * SLOT_SIZE_Y, ClientSackTooltip.Texture.BORDER_CORNER_BOTTOM);
-        this.blit(guiGraphics, i + k * SLOT_SIZE_X + BORDER_WIDTH, j + l * SLOT_SIZE_Y, ClientSackTooltip.Texture.BORDER_CORNER_BOTTOM);
+        this.blit(guiGraphics, i + k * SLOT_SIZE_X + BORDER_WIDTH, j + l * SLOT_SIZE_Y,
+                ClientSackTooltip.Texture.BORDER_CORNER_BOTTOM);
     }
 
     private void blit(GuiGraphics guiGraphics, int i, int j, ClientSackTooltip.Texture texture) {
@@ -129,14 +133,15 @@ public class ClientSackTooltip implements ClientTooltipComponent {
     }
 
     private int gridSizeX() {
-        return Math.max(2, (int)Math.ceil(Math.sqrt(this.items.size() + 1.0)));
+        return Math.max(2, (int) Math.ceil(Math.sqrt(this.items.size() + 1.0)));
     }
 
     private int gridSizeY() {
-        return (int)Math.ceil((this.items.size() + 1.0) / this.gridSizeX());
+        return (int) Math.ceil((this.items.size() + 1.0) / this.gridSizeX());
     }
 
     static enum Texture {
+
         SLOT(0, 0, 18, 20),
         BLOCKED_SLOT(0, 40, 18, 20),
         BORDER_VERTICAL(0, 18, 1, 20),

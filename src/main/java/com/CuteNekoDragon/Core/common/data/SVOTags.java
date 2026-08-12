@@ -13,7 +13,8 @@ public final class SVOTags {
 
     public static final class Items {
 
-        public static final TagKey<Item> HIDDEN_FROM_RECIPE_VIEWERS = TagKey.create(Registries.ITEM, new ResourceLocation("c", "hidden_from_recipe_viewers"));
+        public static final TagKey<Item> HIDDEN_FROM_RECIPE_VIEWERS = TagKey.create(Registries.ITEM,
+                new ResourceLocation("c", "hidden_from_recipe_viewers"));
 
         public static final TagKey<Item> Minerals = createItemTag("minerals");
         public static final TagKey<Item> Gemstones = createItemTag("gemstones");

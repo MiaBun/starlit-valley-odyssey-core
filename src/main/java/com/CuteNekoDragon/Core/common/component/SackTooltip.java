@@ -1,9 +1,10 @@
 package com.CuteNekoDragon.Core.common.component;
 
-import lombok.Getter;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
+
+import lombok.Getter;
 
 public class SackTooltip implements TooltipComponent {
 
@@ -19,5 +20,4 @@ public class SackTooltip implements TooltipComponent {
         this.items = items;
         this.weight = weight;
     }
-
 }
