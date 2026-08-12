@@ -3,6 +3,9 @@
 - made durability only be lost on death
 - hid netherite tools and armor from EMI
 - sacks!
+- backpacks inherit the dye color of the sack they were crafted with.
+- fully custom achievements for backpacks, still have to remove some upgrades however.
+- sacks have a scrollable tooltip to select the item you want to take out.
 
 ## [0.0.24]
 ### Changes

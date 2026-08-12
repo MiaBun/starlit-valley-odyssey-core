@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
+import com.CuteNekoDragon.Core.common.data.SVOTags;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -50,6 +52,21 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                         true, true, false)
                 .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CRAFTING_TABLE))
                 .save(consumer, SVOCore.id("chapter1/crafting_table"), existingFileHelper);
+
+        Advancement sacks = Advancement.Builder.advancement()
+                .parent(crafting_table)
+                .display(
+                        new ItemStack(SVOItems.SACK),
+                        Component.translatable("advancement.svo_core.chapter1.sack.title"),
+                        Component.translatable("advancement.svo_core.chapter1.sack.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(SVOTags.Items.SACK)
+                                .build()))
+                .save(consumer, SVOCore.id("chapter1/sacks"), existingFileHelper);
 
         Advancement leather_armor = Advancement.Builder.advancement()
                 .parent(crafting_table)
