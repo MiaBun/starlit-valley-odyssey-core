@@ -1,0 +1,21 @@
+{
+  "values": [
+    "svo_core:sack",
+    "svo_core:white_sack",
+    "svo_core:orange_sack",
+    "svo_core:magenta_sack",
+    "svo_core:light_blue_sack",
+    "svo_core:yellow_sack",
+    "svo_core:lime_sack",
+    "svo_core:pink_sack",
+    "svo_core:gray_sack",
+    "svo_core:light_gray_sack",
+    "svo_core:cyan_sack",
+    "svo_core:purple_sack",
+    "svo_core:blue_sack",
+    "svo_core:brown_sack",
+    "svo_core:green_sack",
+    "svo_core:red_sack",
+    "svo_core:black_sack"
+  ]
+}

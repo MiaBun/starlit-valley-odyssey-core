@@ -1,6 +1,6 @@
 package com.CuteNekoDragon.Core.common;
 
-import com.CuteNekoDragon.Core.common.data.SVOBlockEntities;
+import com.CuteNekoDragon.Core.common.data.*;
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
@@ -14,9 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.common.data.SVOCreativeTab;
-import com.CuteNekoDragon.Core.common.data.SVOItemPrices;
-import com.CuteNekoDragon.Core.common.data.SVOItemTooltips;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOGTRecipeTypes;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
@@ -37,6 +34,7 @@ public class CommonProxy {
         SVOBlockEntities.init();
         SVOItems.init();
         SVOCreativeTab.init();
+        SVORecipeSeralizers.RECIPE_SERIALIZERS.register(bus);
 
         bus.addGenericListener(MachineDefinition.class, this::registerMachines);
         bus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);

@@ -2,7 +2,10 @@ package com.CuteNekoDragon.Core.common.data.items;
 
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.CuteNekoDragon.Core.common.item.SackItem;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -13,6 +16,7 @@ import com.CuteNekoDragon.Core.common.item.SVOArmorMaterials;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.CuteNekoDragon.Core.common.item.SVOTiers;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 
 import java.util.LinkedHashMap;
@@ -313,5 +317,41 @@ public class SVOItems {
     ))
             .model((ctx, prov) -> {}).register();
 
-    public static ItemEntry<SackItem> SACK = REGISTRATE.item("sack", p -> new SackItem(new Item.Properties().stacksTo(1))).register();
+
+    public static ItemEntry<SackItem> SACK = REGISTRATE.item("sack", p -> new SackItem(new Item.Properties().stacksTo(1)))
+            .tag(SVOTags.Items.SACK)
+            .recipe((ctx, provider) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.get())
+                        .pattern(" A ")
+                        .pattern(" B ")
+                        .pattern("   ")
+                        .define('A', Items.STRING)
+                        .define('B', Items.LEATHER)
+                        .unlockedBy("has_leather", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LEATHER))
+                        .save(provider, SVOCore.id("sack"));
+            })
+            .register();
+
+    public static final Map<DyeColor, ItemEntry<SackItem>> DYED_SACKS = new LinkedHashMap<>();
+    static {
+        for (DyeColor color : DyeColor.values()) {
+            String dyeName = color.getName() + "_sack";
+            DYED_SACKS.put(
+                    color,
+                    REGISTRATE.item(dyeName, p -> new SackItem(new Item.Properties().stacksTo(1)))
+                            .tag(SVOTags.Items.SACK)
+                            .recipe((ctx, provider) -> {
+                                ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.get())
+                                        .pattern("   ")
+                                        .pattern("AB ")
+                                        .pattern("   ")
+                                        .define('A', SVOItems.SACK)
+                                        .define('B', DyeItem.byColor(color).asItem())
+                                        .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
+                                        .save(provider, SVOCore.id(color + "_sack"));
+                            })
+                            .register());
+
+        }
+    }
 }

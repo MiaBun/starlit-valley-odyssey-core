@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "svo_core:sack"
+    },
+    "B": {
+      "item": "gtceu:chemical_light_gray_dye"
+    }
+  },
+  "pattern": [
+    "   ",
+    "AB ",
+    "   "
+  ],
+  "result": {
+    "item": "svo_core:light_gray_sack"
+  },
+  "show_notification": true
+}

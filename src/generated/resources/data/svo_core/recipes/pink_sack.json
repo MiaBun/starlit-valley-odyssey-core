@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "svo_core:sack"
+    },
+    "B": {
+      "item": "gtceu:chemical_pink_dye"
+    }
+  },
+  "pattern": [
+    "   ",
+    "AB ",
+    "   "
+  ],
+  "result": {
+    "item": "svo_core:pink_sack"
+  },
+  "show_notification": true
+}

@@ -21,6 +21,8 @@ public final class SVOTags {
         public static final TagKey<Item> Special_Items = createItemTag("special_items");
         public static final TagKey<Item> Blacksmith_Items = createItemTag("blacksmith_items");
 
+        public static final TagKey<Item> SACK = createItemTag("sack");
+
         private static TagKey<Item> createItemTag(String path) {
             return createItemTag(SVOCore.id(path));
         }
