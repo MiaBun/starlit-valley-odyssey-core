@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:white_sack"
+        "recipe": "svo_core:shaped/light_blue_sack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "svo_core:white_sack"
+      "svo_core:shaped/light_blue_sack"
     ]
   },
   "sends_telemetry_event": false

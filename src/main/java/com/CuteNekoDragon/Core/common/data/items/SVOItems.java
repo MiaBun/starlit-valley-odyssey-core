@@ -328,7 +328,7 @@ public class SVOItems {
                         .define('A', Items.STRING)
                         .define('B', Items.LEATHER)
                         .unlockedBy("has_leather", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LEATHER))
-                        .save(provider, SVOCore.id("sack"));
+                        .save(provider, SVOCore.id("shaped/sack"));
             })
             .register();
 
@@ -348,7 +348,7 @@ public class SVOItems {
                                         .define('A', SVOItems.SACK)
                                         .define('B', DyeItem.byColor(color).asItem())
                                         .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
-                                        .save(provider, SVOCore.id(color + "_sack"));
+                                        .save(provider, SVOCore.id("shaped/" + color + "_sack"));
                             })
                             .register());
 

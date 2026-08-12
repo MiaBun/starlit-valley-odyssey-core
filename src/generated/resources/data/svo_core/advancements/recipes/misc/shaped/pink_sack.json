@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_copper_ingot": {
+    "has_sack": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:copper_ingot"
+              "svo_core:sack"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:charcoal_kiln"
+        "recipe": "svo_core:shaped/pink_sack"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_copper_ingot",
+      "has_sack",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "svo_core:charcoal_kiln"
+      "svo_core:shaped/pink_sack"
     ]
   },
   "sends_telemetry_event": false

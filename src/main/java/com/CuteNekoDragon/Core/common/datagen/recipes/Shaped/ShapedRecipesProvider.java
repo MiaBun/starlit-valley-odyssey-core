@@ -1,15 +1,28 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
+import com.CuteNekoDragon.Core.common.item.SackItem;
+import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
+import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
+import net.p3pp3rf1y.sophisticatedcore.util.ColorHelper;
 
+import java.util.Map;
 import java.util.function.Consumer;
+
+import static com.CuteNekoDragon.Core.common.data.items.SVOItems.DYED_SACKS;
 
 public class ShapedRecipesProvider {
 
@@ -21,6 +34,30 @@ public class ShapedRecipesProvider {
                 .define('A', ItemTags.LOGS)
                 .define('B', Items.COPPER_INGOT)
                 .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
-                .save(consumer);
+                .save(consumer, SVOCore.id("shaped/charcoal_kiln"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', Items.STRING)
+                .define('B', SVOItems.SACK)
+                .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
+                .save(consumer, SVOCore.id("shaped/sack_to_backpack"));
+
+        for (Map.Entry<DyeColor, ItemEntry<SackItem>> entry : DYED_SACKS.entrySet()) {
+            DyeColor color = entry.getKey();
+            ItemEntry<SackItem> sackItem = entry.getValue();
+            ItemStack output = new ItemStack(ModItems.BACKPACK.get(), 1);
+            float[] dyeRgb = color.getTextureDiffuseColors();
+            int clothColor = ColorHelper.getColor(dyeRgb);
+            output.getOrCreateTag().putInt("clothColor", clothColor);
+            VanillaRecipeHelper.addShapedRecipe(consumer, SVOCore.id("sack_to_backpack_" + color.getName()), output,
+                    "AAA",
+                    "ABA",
+                    "AAA",
+                    'A', Items.STRING,
+                    'B', sackItem);
+        }
     }
 }

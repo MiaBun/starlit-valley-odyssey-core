@@ -66,5 +66,7 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("sophisticatedbackpacks:diamond_backpack");
 
         RecipeBlacklist.blacklistId("sophisticatedbackpacks:netherite_backpack");
+
+        RecipeBlacklist.blacklistId("sophisticatedbackpacks:backpack");
     }
 }
