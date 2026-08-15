@@ -19,10 +19,12 @@ import java.util.Objects;
 public class LunchboxItem extends Item {
 
     private final int slots;
+    private final int CooldownLength;
 
-    public LunchboxItem(Properties properties, int slots) {
+    public LunchboxItem(Properties properties, int slots, int CooldownLength) {
         super(properties);
         this.slots = slots;
+        this.CooldownLength = CooldownLength;
     }
 
     @Override
@@ -31,6 +33,9 @@ public class LunchboxItem extends Item {
 
         if (!itemStack.hasTag() || !itemStack.getTag().contains("StorageSize")) {
             itemStack.getOrCreateTag().putInt("StorageSize", slots);
+        }
+        if (!itemStack.hasTag() || !itemStack.getTag().contains("CooldownLength")) {
+            itemStack.getOrCreateTag().putInt("CooldownLength", CooldownLength);
         }
 
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {

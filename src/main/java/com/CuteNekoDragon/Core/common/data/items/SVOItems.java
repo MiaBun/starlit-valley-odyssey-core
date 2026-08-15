@@ -351,16 +351,16 @@ public class SVOItems {
         }
     }
 
-    public static ItemEntry<LunchboxItem> LUNCHBOX = REGISTRATE.item("lunchbox", p -> new LunchboxItem(p.stacksTo(1), 3)).lang("Lunchbox")
+    public static ItemEntry<LunchboxItem> LUNCHBOX = REGISTRATE.item("lunchbox", p -> new LunchboxItem(p.stacksTo(1), 3, 60)).lang("Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> DELUXE_LUNCHBOX = REGISTRATE.item("deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 4)).lang("Deluxe Lunchbox")
+    public static ItemEntry<LunchboxItem> DELUXE_LUNCHBOX = REGISTRATE.item("deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 4, 40)).lang("Deluxe Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> SUPER_DELUXE_LUNCHBOX = REGISTRATE.item("super_deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 5)).lang("Super Deluxe Lunchbox")
+    public static ItemEntry<LunchboxItem> SUPER_DELUXE_LUNCHBOX = REGISTRATE.item("super_deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 5, 30)).lang("Super Deluxe Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> PREMIUM_LUNCHBOX = REGISTRATE.item("premium_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 6)).lang("Premium Lunchbox")
+    public static ItemEntry<LunchboxItem> PREMIUM_LUNCHBOX = REGISTRATE.item("premium_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 6, 20)).lang("Premium Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> ULTIMATE_LUNCHBOX = REGISTRATE.item("ultimate_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 8)).lang("Ultimate Lunchbox")
+    public static ItemEntry<LunchboxItem> ULTIMATE_LUNCHBOX = REGISTRATE.item("ultimate_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 8, 15)).lang("Ultimate Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE.item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9)).lang("Collectors Lunchbox")
+    public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE.item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9, 5)).lang("Collectors Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).defaultModel().register();
 }
