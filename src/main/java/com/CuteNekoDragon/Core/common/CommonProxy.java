@@ -34,6 +34,7 @@ public class CommonProxy {
         SVOBlockEntities.init();
         SVOItems.init();
         SVOCreativeTab.init();
+        SVOContainers.CONTAINERS.register(bus);
         SVORecipeSeralizers.RECIPE_SERIALIZERS.register(bus);
 
         bus.addGenericListener(MachineDefinition.class, this::registerMachines);

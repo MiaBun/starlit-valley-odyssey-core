@@ -24,6 +24,8 @@ public final class SVOTags {
 
         public static final TagKey<Item> SACK = createItemTag("sack");
 
+        public static final TagKey<Item> LUNCHBOX = createItemTag("lunchbox");
+
         private static TagKey<Item> createItemTag(String path) {
             return createItemTag(SVOCore.id(path));
         }

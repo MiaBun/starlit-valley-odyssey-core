@@ -1,0 +1,10 @@
+{
+  "values": [
+    "svo_core:lunchbox",
+    "svo_core:deluxe_lunchbox",
+    "svo_core:super_deluxe_lunchbox",
+    "svo_core:premium_lunchbox",
+    "svo_core:ultimate_lunchbox",
+    "svo_core:collectors_lunchbox"
+  ]
+}

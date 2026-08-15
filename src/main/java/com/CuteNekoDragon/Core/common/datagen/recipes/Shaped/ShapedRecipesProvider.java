@@ -21,6 +21,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 
 import java.util.Map;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 import static com.CuteNekoDragon.Core.common.data.items.SVOItems.DYED_SACKS;
 

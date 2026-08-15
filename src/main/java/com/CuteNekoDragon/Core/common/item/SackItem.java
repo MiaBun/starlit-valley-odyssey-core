@@ -252,6 +252,16 @@ public class SackItem extends Item {
         }
     }
 
+    public static Stream<ItemStack> getContents(ItemStack itemStack) {
+        CompoundTag compoundTag = itemStack.getTag();
+        if (compoundTag == null) {
+            return Stream.empty();
+        } else {
+            ListTag listTag = compoundTag.getList(TAG_ITEMS, 10);
+            return listTag.stream().map(CompoundTag.class::cast).map(ItemStack::of);
+        }
+    }
+
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack itemStack) {
         NonNullList<ItemStack> nonNullList = NonNullList.create();
