@@ -149,18 +149,16 @@ public class LunchboxContainer extends AbstractContainerMenu {
     }
 
     private void addPlayerInventory(Inventory inventory) {
-        for (int i = 0; i < 3; i++) {
-            int y = PLAYER_INV_ROW_1_Y + i * 18;
-            for (int j = 0; j < 9; j++) {
-                this.addSlot(new Slot(inventory, j + i * 9 + 9, GRID_X[j], y));
+        for(int l = 0; l < 3; ++l) {
+            for(int k = 0; k < 9; ++k) {
+                this.addSlot(new Slot(inventory, k + l * 9 + 9, 8 + k * 18, l * 18 + 51));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory inventory) {
-        int y = PLAYER_INV_ROW_1_Y + 3 * 18 + 4; // +4px standard chest gap
-        for (int i = 0; i < 9; i++) {
-            this.addSlot(new Slot(inventory, i, GRID_X[i], y));
+        for(int i1 = 0; i1 < 9; ++i1) {
+            this.addSlot(new Slot(inventory, i1, 8 + i1 * 18, 109));
         }
     }
 

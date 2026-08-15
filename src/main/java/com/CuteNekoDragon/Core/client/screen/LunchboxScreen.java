@@ -30,6 +30,7 @@ public class LunchboxScreen extends AbstractContainerScreen<LunchboxContainer> {
         this.imageWidth = 175;
 
         this.imageHeight = PLAYER_INV_ROW_1_Y + 3 * 18 + 4 + 18 + 6;
+        this.inventoryLabelY = 40;
     }
 
     @Override

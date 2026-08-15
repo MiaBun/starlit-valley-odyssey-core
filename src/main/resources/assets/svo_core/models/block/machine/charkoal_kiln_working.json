@@ -153,7 +153,9 @@
 			"to": [10, 13, 1],
 			"rotation": {"angle": 0, "axis": "y", "origin": [6, 14, 2]},
 			"faces": {
-				"north": {"uv": [5, 0, 2.5, 4.5], "texture": "#13"},
+				"north": {"uv": [5, 0, 2.5, 4.5], "texture": "#13",
+					"forge_data": { "block_light": 15, "sky_light": 15 }
+				},
 				"east": {"uv": [0.5, 4.5, 0, 9], "texture": "#1"},
 				"south": {"uv": [2.5, 0, 0, 4.5], "texture": "#1"},
 				"west": {"uv": [1, 4.5, 0.5, 9], "texture": "#1"},
