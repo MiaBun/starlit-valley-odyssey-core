@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.svogt;
 
+import com.CuteNekoDragon.Core.common.data.SVOTags;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -18,4 +19,5 @@ public class SVOGTRecipes {
                 .duration(400)
                 .save(provider);
     }
+
 }
