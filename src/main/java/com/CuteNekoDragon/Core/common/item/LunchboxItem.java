@@ -13,10 +13,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.registries.ForgeRegistries;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.Objects;
 
-public class LunchboxItem extends Item {
+public class LunchboxItem extends Item implements ICurioItem {
 
     private final int slots;
     private final int CooldownLength;
@@ -56,5 +58,20 @@ public class LunchboxItem extends Item {
             return Math.min(9, Math.max(3, stack.getTag().getInt("StorageSize")));
         }
         return 9;
+    }
+
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+        // ticking logic here
+    }
+
+    @Override
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        return slotContext.identifier().equals("lunchbox");
+    }
+
+    @Override
+    public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
+        return true;
     }
 }

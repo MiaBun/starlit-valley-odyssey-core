@@ -130,5 +130,6 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("tooltip.svo_core.special_item", "Special Item");
         REGISTRATE.addRawLang("tooltip.svo_core.blacksmith_item", "Blacksmith Product");
         REGISTRATE.addRawLang("gtceu.charcoal_kiln", "Charcoal Kiln");
+        REGISTRATE.addRawLang("curios.identifier.lunchbox", "Lunchbox");
     }
 }
