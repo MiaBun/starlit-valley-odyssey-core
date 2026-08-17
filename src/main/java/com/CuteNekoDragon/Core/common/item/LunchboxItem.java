@@ -1,9 +1,13 @@
 package com.CuteNekoDragon.Core.common.item;
 
 import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
+import lombok.Getter;
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
@@ -67,6 +71,28 @@ public class LunchboxItem extends Item implements ICurioItem {
         return 9;
     }
 
+    public static int getCooldownLength(ItemStack stack) {
+        if(stack.hasTag() && stack.getTag().contains(TAG_CooldownLength)) {
+            return stack.getTag().getInt(TAG_CooldownLength);
+        }
+        return 20;
+    }
+
+    public boolean hasStoredItems(ItemStack stack) {
+        if(!stack.hasTag() || !stack.getTag().contains(TAG_Items, Tag.TAG_LIST)) {
+            return false;
+        }
+        NonNullList<ItemStack> items = NonNullList.withSize(getStorageSize(stack), ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(stack.getTag(), items);
+
+        for (ItemStack contained : items) {
+            if (!contained.isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean isSelected) {
 
@@ -78,7 +104,11 @@ public class LunchboxItem extends Item implements ICurioItem {
 
         if (!stack.hasTag() || !stack.getTag().contains(TAG_Items)) return;
 
-        CheckPlayerFeed(stack, level, entity);
+        if ((entity instanceof Player player)) {
+            if (hasStoredItems(stack)) {
+                CheckPlayerFeed(stack, level, player);
+            }
+        }
     }
 
     @Override
@@ -91,34 +121,30 @@ public class LunchboxItem extends Item implements ICurioItem {
         return true;
     }
 
-    private static void CheckPlayerFeed(ItemStack stack, Level level, Entity entity) {
+    private static void CheckPlayerFeed(ItemStack stack, Level level, Player player) {
         long gameTime = level.getGameTime();
         CompoundTag tag = stack.getOrCreateTag();
 
         long nextCheck = tag.getLong(TAG_NextCheck);
+
+        if (gameTime < nextCheck) return;
+
+        int intervalTicks;
+
+        if (player.getFoodData().needsFood()) {
+            FeedPlayer(stack, level, player);
+            intervalTicks = getCooldownLength(stack);
+        } else {
+            intervalTicks = 100;
+        }
+
+        tag.putLong(TAG_NextCheck, gameTime + intervalTicks);
+
+
     }
 
-    //    LivingEntity wearer = slotContext.entity();
-    //    Level level = wearer.level();
-    //   if (level.isClientSide()) return;
+    private static void FeedPlayer(ItemStack stack, Level level, Player player) {
 
-    //     long gameTime = level.getGameTime();
-    //     CompoundTag tag = stack.getOrCreateTag();
-
-    //     long nextCheck = tag.getLong(TAG_NEXT_CHECK); // defaults to 0 if absent
-
-    //      if (gameTime < nextCheck) return; // not time yet
-
-    //      doPeriodicEffect(wearer, stack);
-
-    //     int intervalTicks;
-    //     if (wearer instanceof Player player) {
-    //         boolean hungry = player.getFoodData().getFoodLevel() <= 6; // tweak threshold as you like
-    //         intervalTicks = hungry ? 200 : 2000; // 10s vs 100s (20 ticks/sec)
-    //     } else {
-    //         intervalTicks = 2000; // non-player fallback
-    //     }
-
-    //     tag.putLong(TAG_NEXT_CHECK, gameTime + intervalTicks);
+    }
 
 }
