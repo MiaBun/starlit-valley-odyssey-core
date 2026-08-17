@@ -97,7 +97,7 @@ public class LunchboxContainer extends AbstractContainerMenu {
 
     private void loadFromNBT(ItemStack item) {
         NonNullList<ItemStack> items = NonNullList.withSize(storageSize, ItemStack.EMPTY);
-        if (item.hasTag() && item.getTag().contains("Items", Tag.TAG_LIST)) {
+        if (item.hasTag() && item.getTag().contains(LunchboxItem.TAG_Items, Tag.TAG_LIST)) {
             ContainerHelper.loadAllItems(item.getTag(), items);
         }
         for (int i = 0; i < items.size(); i++) {
@@ -108,7 +108,7 @@ public class LunchboxContainer extends AbstractContainerMenu {
     public void saveToNBT() {
         CompoundTag tag = storageItem.getOrCreateTag();
         ContainerHelper.saveAllItems(tag, getStorageItems());
-        tag.putInt("StorageSize", storageSize);
+        tag.putInt(LunchboxItem.TAG_StorageSize, storageSize);
     }
 
     @Override

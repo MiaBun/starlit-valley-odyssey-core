@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.common.item;
 
 import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -24,6 +25,10 @@ public class LunchboxItem extends Item implements ICurioItem {
 
     private final int slots;
     private final int CooldownLength;
+    public static final String TAG_NextCheck = "NextCheckTick";
+    public static final String TAG_StorageSize = "StorageSize";
+    public static final String TAG_CooldownLength = "CooldownLength";
+    public static final String TAG_Items = "Items";
 
     public LunchboxItem(Properties properties, int slots, int CooldownLength) {
         super(properties);
@@ -35,11 +40,11 @@ public class LunchboxItem extends Item implements ICurioItem {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
-        if (!itemStack.hasTag() || !itemStack.getTag().contains("StorageSize")) {
-            itemStack.getOrCreateTag().putInt("StorageSize", slots);
+        if (!itemStack.hasTag() || !itemStack.getTag().contains(TAG_StorageSize)) {
+            itemStack.getOrCreateTag().putInt(TAG_StorageSize, slots);
         }
-        if (!itemStack.hasTag() || !itemStack.getTag().contains("CooldownLength")) {
-            itemStack.getOrCreateTag().putInt("CooldownLength", CooldownLength);
+        if (!itemStack.hasTag() || !itemStack.getTag().contains(TAG_CooldownLength)) {
+            itemStack.getOrCreateTag().putInt(TAG_CooldownLength, CooldownLength);
         }
 
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
@@ -56,8 +61,8 @@ public class LunchboxItem extends Item implements ICurioItem {
     }
 
     public static int getStorageSize(ItemStack stack) {
-        if(stack.hasTag() && stack.getTag().contains("StorageSize")) {
-            return Math.min(9, Math.max(3, stack.getTag().getInt("StorageSize")));
+        if(stack.hasTag() && stack.getTag().contains(TAG_StorageSize)) {
+            return Math.min(9, Math.max(3, stack.getTag().getInt(TAG_StorageSize)));
         }
         return 9;
     }
@@ -67,11 +72,11 @@ public class LunchboxItem extends Item implements ICurioItem {
 
         if (level.isClientSide()) return;
 
-        if (!stack.hasTag() || !stack.getTag().contains("StorageSize")) return;
+        if (!stack.hasTag() || !stack.getTag().contains(TAG_StorageSize)) return;
 
-        if (!stack.hasTag() || !stack.getTag().contains("CooldownLength")) return;
+        if (!stack.hasTag() || !stack.getTag().contains(TAG_CooldownLength)) return;
 
-        if (!stack.hasTag() || !stack.getTag().contains("Items")) return;
+        if (!stack.hasTag() || !stack.getTag().contains(TAG_Items)) return;
 
         CheckPlayerFeed(stack, level, entity);
     }
@@ -87,7 +92,10 @@ public class LunchboxItem extends Item implements ICurioItem {
     }
 
     private static void CheckPlayerFeed(ItemStack stack, Level level, Entity entity) {
-        System.out.println("test");
+        long gameTime = level.getGameTime();
+        CompoundTag tag = stack.getOrCreateTag();
+
+        long nextCheck = tag.getLong(TAG_NextCheck);
     }
 
     //    LivingEntity wearer = slotContext.entity();
