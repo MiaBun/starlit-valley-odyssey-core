@@ -6,7 +6,9 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Interaction;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -61,8 +63,11 @@ public class LunchboxItem extends Item implements ICurioItem {
     }
 
     @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        // ticking logic here
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean isSelected) {
+
+        if (level.isClientSide()) return;
+
+        CheckPlayerFeed(stack, level, entity);
     }
 
     @Override
@@ -74,4 +79,31 @@ public class LunchboxItem extends Item implements ICurioItem {
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         return true;
     }
+
+    private static void CheckPlayerFeed(ItemStack stack, Level level, Entity entity) {
+    }
+
+    //    LivingEntity wearer = slotContext.entity();
+    //    Level level = wearer.level();
+    //   if (level.isClientSide()) return;
+
+    //     long gameTime = level.getGameTime();
+    //     CompoundTag tag = stack.getOrCreateTag();
+
+    //     long nextCheck = tag.getLong(TAG_NEXT_CHECK); // defaults to 0 if absent
+
+    //      if (gameTime < nextCheck) return; // not time yet
+
+    //      doPeriodicEffect(wearer, stack);
+
+    //     int intervalTicks;
+    //     if (wearer instanceof Player player) {
+    //         boolean hungry = player.getFoodData().getFoodLevel() <= 6; // tweak threshold as you like
+    //         intervalTicks = hungry ? 200 : 2000; // 10s vs 100s (20 ticks/sec)
+    //     } else {
+    //         intervalTicks = 2000; // non-player fallback
+    //     }
+
+    //     tag.putLong(TAG_NEXT_CHECK, gameTime + intervalTicks);
+
 }
