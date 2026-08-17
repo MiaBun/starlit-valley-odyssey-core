@@ -67,6 +67,12 @@ public class LunchboxItem extends Item implements ICurioItem {
 
         if (level.isClientSide()) return;
 
+        if (!stack.hasTag() || !stack.getTag().contains("StorageSize")) return;
+
+        if (!stack.hasTag() || !stack.getTag().contains("CooldownLength")) return;
+
+        if (!stack.hasTag() || !stack.getTag().contains("Items")) return;
+
         CheckPlayerFeed(stack, level, entity);
     }
 
@@ -81,6 +87,7 @@ public class LunchboxItem extends Item implements ICurioItem {
     }
 
     private static void CheckPlayerFeed(ItemStack stack, Level level, Entity entity) {
+        System.out.println("test");
     }
 
     //    LivingEntity wearer = slotContext.entity();

@@ -56,12 +56,6 @@ public class LunchboxContainer extends AbstractContainerMenu {
     @Getter
     private final int rows;
 
-    private static final int[] GRID_X = {8, 26, 44, 62, 80, 98, 116, 134, 152};
-    private static final int STORAGE_ROW_1_Y = 51;
-    private static final int STORAGE_ROW_2_Y = 69;
-    private static final int STORAGE_ROW_3_Y = 87;
-    private static final int PLAYER_INV_ROW_1_Y = 109;
-
     public LunchboxContainer(int containerId, Inventory inventory, FriendlyByteBuf data) {
         this(containerId, inventory, data.readItem());
     }
@@ -85,7 +79,7 @@ public class LunchboxContainer extends AbstractContainerMenu {
             this.addSlot(new Slot(storageInventory, i, x, 20) {
                 @Override
                 public boolean mayPlace(ItemStack stack) {
-                    return !(stack.getItem() instanceof LunchboxItem);
+                    return stack.isEdible() && !(stack.getItem() instanceof LunchboxItem);
                 }
             });
         }
@@ -113,7 +107,7 @@ public class LunchboxContainer extends AbstractContainerMenu {
 
     public void saveToNBT() {
         CompoundTag tag = storageItem.getOrCreateTag();
-        ContainerHelper.saveAllItems(tag, (NonNullList<ItemStack>) getStorageItems());
+        ContainerHelper.saveAllItems(tag, getStorageItems());
         tag.putInt("StorageSize", storageSize);
     }
 
