@@ -17,8 +17,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 public class LunchboxContainer extends AbstractContainerMenu {
@@ -56,6 +55,17 @@ public class LunchboxContainer extends AbstractContainerMenu {
     @Getter
     private final int rows;
 
+    private static final Map<UUID, LunchboxContainer> OPEN_CONTAINERS = new HashMap<>();
+
+    @Nullable
+    public static LunchboxContainer getOpenContainerFor(Player player) {
+        return OPEN_CONTAINERS.get(player.getUUID());
+    }
+
+    public boolean isShowing(ItemStack stack) {
+        return this.storageItem == stack;
+    }
+
     public LunchboxContainer(int containerId, Inventory inventory, FriendlyByteBuf data) {
         this(containerId, inventory, data.readItem());
     }
@@ -85,6 +95,10 @@ public class LunchboxContainer extends AbstractContainerMenu {
         }
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        if (!playerInventory.player.level().isClientSide()) {
+            OPEN_CONTAINERS.put(playerInventory.player.getUUID(), this);
+        }
     }
 
     private NonNullList<ItemStack> getStorageItems() {
@@ -161,6 +175,33 @@ public class LunchboxContainer extends AbstractContainerMenu {
         super.removed(player);
         if (!player.level().isClientSide) {
             saveToNBT();
+            OPEN_CONTAINERS.remove(player.getUUID(), this);
         }
+    }
+
+    public boolean feedMostFillingItem(Player player, net.minecraft.world.level.Level level) {
+        ItemStack bestFood = ItemStack.EMPTY;
+        int bestNutrition = -1;
+
+        for (int i = 0; i < storageSize; i++) {
+            ItemStack candidate = storageInventory.getItem(i);
+            if (candidate.isEmpty() || !candidate.isEdible()) continue;
+
+            net.minecraft.world.food.FoodProperties props = candidate.getFoodProperties(player);
+            if (props == null) continue;
+
+            if (props.getNutrition() > bestNutrition) {
+                bestNutrition = props.getNutrition();
+                bestFood = candidate;
+            }
+        }
+
+        if (bestFood.isEmpty()) return false;
+
+        player.eat(level, bestFood);
+        storageInventory.setChanged();
+        saveToNBT();
+        this.broadcastChanges();
+        return true;
     }
 }

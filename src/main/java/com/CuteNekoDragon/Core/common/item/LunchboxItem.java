@@ -15,6 +15,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.Interaction;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -145,6 +146,38 @@ public class LunchboxItem extends Item implements ICurioItem {
 
     private static void FeedPlayer(ItemStack stack, Level level, Player player) {
 
+        LunchboxContainer openContainer = LunchboxContainer.getOpenContainerFor(player);
+        if (openContainer != null && openContainer.isShowing(stack)) {
+            openContainer.feedMostFillingItem(player, level);
+            return;
+        }
+
+        CompoundTag tag = stack.getOrCreateTag();
+        if (!tag.contains(TAG_Items, Tag.TAG_LIST)) return;
+
+        int storageSize = getStorageSize(stack);
+        NonNullList<ItemStack> items = NonNullList.withSize(storageSize, ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(tag, items);
+
+        ItemStack bestFood = ItemStack.EMPTY;
+        int bestNutrition = -1;
+
+        for (ItemStack candidate : items) {
+            if (candidate.isEmpty() || !candidate.isEdible()) continue;
+
+            FoodProperties props = candidate.getFoodProperties(player);
+            if (props == null) continue;
+
+            if (props.getNutrition() > bestNutrition) {
+                bestNutrition = props.getNutrition();
+                bestFood = candidate;
+            }
+        }
+        if (!bestFood.isEmpty()) {
+            player.eat(level, bestFood);
+        }
+
+        ContainerHelper.saveAllItems(tag, items);
     }
 
 }
