@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "svo_core:deluxe_lunchbox"
+  },
+  "result": {
+    "item": "svo_core:super_deluxe_lunchbox"
+  },
+  "template": {
+    "item": "svo_core:iron_upgrade_smithing_template"
+  }
+}
