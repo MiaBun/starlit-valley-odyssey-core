@@ -47,7 +47,7 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_apple", InventoryChangeTrigger.TriggerInstance.hasItems(Items.APPLE))
                 .save(consumer, SVOCore.id("shaped/sack_to_lunchbox"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get()) //TODO: proper recipe that includes leather and cloth
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
