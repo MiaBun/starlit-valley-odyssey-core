@@ -1,8 +1,9 @@
-## [Unreleased]
+## [0.0.26]
 ### Changes
 - added a lunchbox item, depending on tier it's slots change
 - lunchboxes are compatible with curios slots
 - made lunchbox only accept edibles
+- lunchboxes now autofeed
 
 ## [0.0.25]
 ### Changes
