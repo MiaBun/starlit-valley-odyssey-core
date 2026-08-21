@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
-import com.CuteNekoDragon.Core.common.item.*;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -12,6 +11,7 @@ import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
+import com.CuteNekoDragon.Core.common.item.*;
 import com.tterrag.registrate.util.entry.ItemEntry;
 
 import java.util.LinkedHashMap;
@@ -351,16 +351,22 @@ public class SVOItems {
         }
     }
 
-    public static ItemEntry<LunchboxItem> LUNCHBOX = REGISTRATE.item("lunchbox", p -> new LunchboxItem(p.stacksTo(1), 3, 60)).lang("Lunchbox")
+    public static ItemEntry<LunchboxItem> LUNCHBOX = REGISTRATE
+            .item("lunchbox", p -> new LunchboxItem(p.stacksTo(1), 3, 60)).lang("Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> DELUXE_LUNCHBOX = REGISTRATE.item("deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 4, 40)).lang("Deluxe Lunchbox")
+    public static ItemEntry<LunchboxItem> DELUXE_LUNCHBOX = REGISTRATE
+            .item("deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 4, 40)).lang("Deluxe Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> SUPER_DELUXE_LUNCHBOX = REGISTRATE.item("super_deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 5, 30)).lang("Super Deluxe Lunchbox")
+    public static ItemEntry<LunchboxItem> SUPER_DELUXE_LUNCHBOX = REGISTRATE
+            .item("super_deluxe_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 5, 30)).lang("Super Deluxe Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> PREMIUM_LUNCHBOX = REGISTRATE.item("premium_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 6, 20)).lang("Premium Lunchbox")
+    public static ItemEntry<LunchboxItem> PREMIUM_LUNCHBOX = REGISTRATE
+            .item("premium_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 6, 20)).lang("Premium Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> ULTIMATE_LUNCHBOX = REGISTRATE.item("ultimate_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 8, 15)).lang("Ultimate Lunchbox")
+    public static ItemEntry<LunchboxItem> ULTIMATE_LUNCHBOX = REGISTRATE
+            .item("ultimate_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 8, 15)).lang("Ultimate Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-    public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE.item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9, 5)).lang("Collectors Lunchbox")
+    public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE
+            .item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9, 5)).lang("Collectors Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
 }

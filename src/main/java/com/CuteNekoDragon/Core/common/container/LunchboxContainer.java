@@ -1,8 +1,5 @@
 package com.CuteNekoDragon.Core.common.container;
 
-import com.CuteNekoDragon.Core.common.data.SVOContainers;
-import com.CuteNekoDragon.Core.common.item.LunchboxItem;
-import lombok.Getter;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -12,23 +9,26 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.common.data.SVOContainers;
+import com.CuteNekoDragon.Core.common.item.LunchboxItem;
+import lombok.Getter;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-
 public class LunchboxContainer extends AbstractContainerMenu {
 
     public enum LunchboxTier {
-        TIER_3(3,  new int[]{62, 80, 98}),
-        TIER_4(4,  new int[]{62, 80, 98, 116}),
-        TIER_5(5,  new int[]{44, 62, 80, 98, 116}),
-        TIER_6(6,  new int[]{26, 44, 62, 80, 98, 116}),
-        TIER_8(8,  new int[]{26, 44, 62, 80, 98, 116, 134, 152}),
-        TIER_9(9,  new int[]{8, 26, 44, 62, 80, 98, 116, 134, 152});
+
+        TIER_3(3, new int[] { 62, 80, 98 }),
+        TIER_4(4, new int[] { 62, 80, 98, 116 }),
+        TIER_5(5, new int[] { 44, 62, 80, 98, 116 }),
+        TIER_6(6, new int[] { 26, 44, 62, 80, 98, 116 }),
+        TIER_8(8, new int[] { 26, 44, 62, 80, 98, 116, 134, 152 }),
+        TIER_9(9, new int[] { 8, 26, 44, 62, 80, 98, 116, 134, 152 });
 
         public final int storageSize;
         public final int[] slotX;
@@ -45,7 +45,6 @@ public class LunchboxContainer extends AbstractContainerMenu {
             throw new IllegalArgumentException("No tier for storage size " + size);
         }
     }
-
 
     private final ItemStack storageItem;
     private final SimpleContainer storageInventory;
@@ -87,6 +86,7 @@ public class LunchboxContainer extends AbstractContainerMenu {
         for (int i = 0; i < storageSize; i++) {
             int x = tier.slotX[i];
             this.addSlot(new Slot(storageInventory, i, x, 20) {
+
                 @Override
                 public boolean mayPlace(ItemStack stack) {
                     return stack.isEdible() && !(stack.getItem() instanceof LunchboxItem);
@@ -157,15 +157,15 @@ public class LunchboxContainer extends AbstractContainerMenu {
     }
 
     private void addPlayerInventory(Inventory inventory) {
-        for(int l = 0; l < 3; ++l) {
-            for(int k = 0; k < 9; ++k) {
+        for (int l = 0; l < 3; ++l) {
+            for (int k = 0; k < 9; ++k) {
                 this.addSlot(new Slot(inventory, k + l * 9 + 9, 8 + k * 18, l * 18 + 51));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory inventory) {
-        for(int i1 = 0; i1 < 9; ++i1) {
+        for (int i1 = 0; i1 < 9; ++i1) {
             this.addSlot(new Slot(inventory, i1, 8 + i1 * 18, 109));
         }
     }

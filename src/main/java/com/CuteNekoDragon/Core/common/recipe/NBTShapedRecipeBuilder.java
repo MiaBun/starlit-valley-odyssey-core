@@ -1,9 +1,5 @@
 package com.CuteNekoDragon.Core.common.recipe;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
-import com.google.common.collect.Sets;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -22,6 +18,11 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
+import com.google.common.collect.Sets;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -50,11 +51,11 @@ public class NBTShapedRecipeBuilder implements RecipeBuilder {
         this.count = count;
     }
 
-    public static NBTShapedRecipeBuilder shaped (RecipeCategory category, ItemLike result) {
+    public static NBTShapedRecipeBuilder shaped(RecipeCategory category, ItemLike result) {
         return new NBTShapedRecipeBuilder(category, result, 1);
     }
 
-    public static NBTShapedRecipeBuilder shaped (RecipeCategory category, ItemLike result, int count) {
+    public static NBTShapedRecipeBuilder shaped(RecipeCategory category, ItemLike result, int count) {
         return new NBTShapedRecipeBuilder(category, result, count);
     }
 
@@ -157,8 +158,7 @@ public class NBTShapedRecipeBuilder implements RecipeBuilder {
                 id, this.result, this.count, this.group, this.bookCategory,
                 this.rows, this.key, this.advancement,
                 id.withPrefix("recipes/" + this.category.getFolderName() + "/"),
-                this.baseItem, this.copyTags, this.retargetTags, this.setTag, this.showNotification
-        ));
+                this.baseItem, this.copyTags, this.retargetTags, this.setTag, this.showNotification));
     }
 
     private void ensureValid(ResourceLocation id) {
@@ -275,7 +275,6 @@ public class NBTShapedRecipeBuilder implements RecipeBuilder {
                 json.addProperty("set_tag", this.setTag.toString());
             }
         }
-
 
         @Override
         public ResourceLocation getId() {

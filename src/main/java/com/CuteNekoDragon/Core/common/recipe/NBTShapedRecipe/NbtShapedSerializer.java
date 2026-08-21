@@ -1,13 +1,5 @@
 package com.CuteNekoDragon.Core.common.recipe.NBTShapedRecipe;
 
-import com.CuteNekoDragon.Core.common.recipe.NBTShapedRecipeBuilder;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.TagParser;
@@ -19,6 +11,14 @@ import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.crafting.CraftingHelper;
+
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 import java.util.*;
 
@@ -42,9 +42,7 @@ public class NbtShapedSerializer implements RecipeSerializer<NBTShapedRecipe> {
         ItemStack result = CraftingHelper.getItemStack(GsonHelper.getAsJsonObject(json, "result"), true);
         boolean showNotification = GsonHelper.getAsBoolean(json, "show_notification", true);
 
-        Ingredient baseItem = json.has("base_item")
-                ? Ingredient.fromJson(json.get("base_item"))
-                : Ingredient.EMPTY;
+        Ingredient baseItem = json.has("base_item") ? Ingredient.fromJson(json.get("base_item")) : Ingredient.EMPTY;
 
         List<String> copyTags = new ArrayList<>();
         if (json.has("copy_tags")) {
@@ -168,8 +166,8 @@ public class NbtShapedSerializer implements RecipeSerializer<NBTShapedRecipe> {
         Map<String, Ingredient> map = Maps.newHashMap();
         for (Map.Entry<String, JsonElement> entry : json.entrySet()) {
             if (entry.getKey().length() != 1) {
-                throw new JsonSyntaxException("Invalid key entry: '" + entry.getKey()
-                        + "' is an invalid symbol (must be 1 character only).");
+                throw new JsonSyntaxException(
+                        "Invalid key entry: '" + entry.getKey() + "' is an invalid symbol (must be 1 character only).");
             }
             if (" ".equals(entry.getKey())) {
                 throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
@@ -191,8 +189,8 @@ public class NbtShapedSerializer implements RecipeSerializer<NBTShapedRecipe> {
                 String symbol = pattern[row].substring(col, col + 1);
                 Ingredient ingredient = keys.get(symbol);
                 if (ingredient == null) {
-                    throw new JsonSyntaxException("Pattern references symbol '" + symbol
-                            + "' but it's not defined in the key");
+                    throw new JsonSyntaxException(
+                            "Pattern references symbol '" + symbol + "' but it's not defined in the key");
                 }
                 unused.remove(symbol);
                 ingredients.set(col + width * row, ingredient);

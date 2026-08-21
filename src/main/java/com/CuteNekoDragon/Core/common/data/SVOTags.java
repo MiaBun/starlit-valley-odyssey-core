@@ -65,8 +65,8 @@ public final class SVOTags {
             return TagKey.create(ForgeRegistries.FLUIDS.getRegistryKey(), resLoc);
         }
     }
-    public static final class Entities {
 
+    public static final class Entities {
 
         private static TagKey<EntityType<?>> createEntityTag(String path) {
             return createEntityTag(SVOCore.id(path));
@@ -78,6 +78,7 @@ public final class SVOTags {
     }
 
     public static final class Biomes {
+
         private static TagKey<Biome> createBiomeTag(String path) {
             return createBiomeTag(SVOCore.id(path));
         }

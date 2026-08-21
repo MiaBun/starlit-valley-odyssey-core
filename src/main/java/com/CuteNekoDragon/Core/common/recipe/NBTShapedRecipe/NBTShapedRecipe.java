@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.recipe.NBTShapedRecipe;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
-import earth.terrarium.adastra.common.registry.ModRecipeSerializers;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
@@ -11,9 +9,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-import javax.annotation.Nullable;
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
+
 import java.util.List;
 import java.util.Map;
+
+import javax.annotation.Nullable;
 
 public class NBTShapedRecipe implements CraftingRecipe {
 
@@ -31,7 +32,10 @@ public class NBTShapedRecipe implements CraftingRecipe {
     private final Map<String, String> retargetTags;
     private final CompoundTag setTag;
 
-    public NBTShapedRecipe(ResourceLocation id, String group, CraftingBookCategory category, int width, int height, NonNullList<Ingredient> ingredients, ItemStack result, boolean showNotification, Ingredient baseItem, List<String> copyTags, Map<String, String> retargetTags, CompoundTag setTag) {
+    public NBTShapedRecipe(ResourceLocation id, String group, CraftingBookCategory category, int width, int height,
+                           NonNullList<Ingredient> ingredients, ItemStack result, boolean showNotification,
+                           Ingredient baseItem, List<String> copyTags, Map<String, String> retargetTags,
+                           CompoundTag setTag) {
         this.id = id;
         this.group = group;
         this.category = category;
@@ -45,7 +49,6 @@ public class NBTShapedRecipe implements CraftingRecipe {
         this.retargetTags = retargetTags;
         this.setTag = setTag;
     }
-
 
     @Override
     public boolean matches(CraftingContainer craftingContainer, Level level) {
@@ -65,9 +68,8 @@ public class NBTShapedRecipe implements CraftingRecipe {
                 int l = j - offsetY;
                 Ingredient ingredient = Ingredient.EMPTY;
                 if (k >= 0 && l >= 0 && k < this.width && l < this.height) {
-                    ingredient = mirrored
-                            ? this.ingredients.get(this.width - k - 1 + l * this.width)
-                            : this.ingredients.get(k + l * this.width);
+                    ingredient = mirrored ? this.ingredients.get(this.width - k - 1 + l * this.width) :
+                            this.ingredients.get(k + l * this.width);
                 }
                 if (!ingredient.test(container.getItem(i + j * container.getWidth()))) {
                     return false;
@@ -120,8 +122,7 @@ public class NBTShapedRecipe implements CraftingRecipe {
         ItemStack fallback = null;
         for (int i = 0; i < container.getContainerSize(); i++) {
             ItemStack stack = container.getItem(i);
-            if (stack.isEmpty() || !this.baseItem.test(stack)) continue;
-            ;
+            if (stack.isEmpty() || !this.baseItem.test(stack)) continue;;
 
             if (stack.hasTag()) {
                 return stack.getTag();
@@ -194,6 +195,5 @@ public class NBTShapedRecipe implements CraftingRecipe {
 
     public CompoundTag getSetTag() {
         return this.setTag;
-
     }
 }

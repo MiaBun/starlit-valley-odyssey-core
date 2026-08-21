@@ -1,11 +1,12 @@
 package com.CuteNekoDragon.Core.client.components;
 
-import com.CuteNekoDragon.Core.common.component.LunchboxTooltip;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.common.component.LunchboxTooltip;
 
 public class ClientLunchboxTooltip implements ClientTooltipComponent {
 
@@ -17,7 +18,6 @@ public class ClientLunchboxTooltip implements ClientTooltipComponent {
     public ClientLunchboxTooltip(LunchboxTooltip data) {
         this.items = data.items();
     }
-
 
     @Override
     public int getHeight() {

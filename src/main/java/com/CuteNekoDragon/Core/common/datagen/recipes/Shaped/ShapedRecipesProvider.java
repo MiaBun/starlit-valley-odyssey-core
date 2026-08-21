@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
-import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -15,6 +14,7 @@ import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.p3pp3rf1y.sophisticatedcore.util.ColorHelper;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import com.CuteNekoDragon.Core.common.item.SackItem;
@@ -22,7 +22,6 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 import static com.CuteNekoDragon.Core.common.data.items.SVOItems.DYED_SACKS;
 
@@ -47,7 +46,8 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_apple", InventoryChangeTrigger.TriggerInstance.hasItems(Items.APPLE))
                 .save(consumer, SVOCore.id("shaped/sack_to_lunchbox"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get()) //TODO: proper recipe that includes leather and cloth
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get()) // TODO: proper recipe that includes
+                                                                                 // leather and cloth
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")

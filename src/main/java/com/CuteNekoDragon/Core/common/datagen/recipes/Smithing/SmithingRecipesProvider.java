@@ -113,16 +113,20 @@ public class SmithingRecipesProvider {
         SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), SVOItems.LUNCHBOX, Items.COPPER_INGOT,
                 SVOItems.DELUXE_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), SVOItems.DELUXE_LUNCHBOX, Items.IRON_INGOT,
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), SVOItems.DELUXE_LUNCHBOX,
+                Items.IRON_INGOT,
                 SVOItems.SUPER_DELUXE_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_LUNCHBOX, Items.GOLD_INGOT,
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_LUNCHBOX,
+                Items.GOLD_INGOT,
                 SVOItems.PREMIUM_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), SVOItems.PREMIUM_LUNCHBOX, Items.DIAMOND,
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), SVOItems.PREMIUM_LUNCHBOX,
+                Items.DIAMOND,
                 SVOItems.ULTIMATE_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_LUNCHBOX, SVOItems.IRIDIUM_INGOT,
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_LUNCHBOX,
+                SVOItems.IRIDIUM_INGOT,
                 SVOItems.COLLECTORS_LUNCHBOX.get());
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {

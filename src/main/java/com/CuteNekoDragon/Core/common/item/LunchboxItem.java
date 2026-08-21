@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.item;
 
-import com.CuteNekoDragon.Core.common.component.LunchboxTooltip;
-import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -20,6 +18,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.CuteNekoDragon.Core.common.component.LunchboxTooltip;
+import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -55,32 +56,32 @@ public class LunchboxItem extends Item implements ICurioItem {
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
             NetworkHooks.openScreen(serverPlayer,
                     new SimpleMenuProvider(
-                            (windowId, playerInventory, playerEntity) -> new LunchboxContainer(windowId, playerInventory, itemStack),
-                            Component.translatable("item.svo_core." + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(itemStack.getItem())).getPath())
-                    ),
-                    buffer -> buffer.writeItem(itemStack)
-            );
+                            (windowId, playerInventory, playerEntity) -> new LunchboxContainer(windowId,
+                                    playerInventory, itemStack),
+                            Component.translatable("item.svo_core." + Objects
+                                    .requireNonNull(ForgeRegistries.ITEMS.getKey(itemStack.getItem())).getPath())),
+                    buffer -> buffer.writeItem(itemStack));
             return InteractionResultHolder.success(itemStack);
         }
         return InteractionResultHolder.pass(itemStack);
     }
 
     public static int getStorageSize(ItemStack stack) {
-        if(stack.hasTag() && stack.getTag().contains(TAG_StorageSize)) {
+        if (stack.hasTag() && stack.getTag().contains(TAG_StorageSize)) {
             return Math.min(9, Math.max(3, stack.getTag().getInt(TAG_StorageSize)));
         }
         return 9;
     }
 
     public static int getCooldownLength(ItemStack stack) {
-        if(stack.hasTag() && stack.getTag().contains(TAG_CooldownLength)) {
+        if (stack.hasTag() && stack.getTag().contains(TAG_CooldownLength)) {
             return stack.getTag().getInt(TAG_CooldownLength);
         }
         return 20;
     }
 
     public boolean hasStoredItems(ItemStack stack) {
-        if(!stack.hasTag() || !stack.getTag().contains(TAG_Items, Tag.TAG_LIST)) {
+        if (!stack.hasTag() || !stack.getTag().contains(TAG_Items, Tag.TAG_LIST)) {
             return false;
         }
         NonNullList<ItemStack> items = NonNullList.withSize(getStorageSize(stack), ItemStack.EMPTY);
@@ -96,7 +97,6 @@ public class LunchboxItem extends Item implements ICurioItem {
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean isSelected) {
-
         if (level.isClientSide()) return;
 
         if (!stack.hasTag() || !stack.getTag().contains(TAG_StorageSize)) return;
@@ -140,12 +140,9 @@ public class LunchboxItem extends Item implements ICurioItem {
         }
 
         tag.putLong(TAG_NextCheck, gameTime + intervalTicks);
-
-
     }
 
     private static void FeedPlayer(ItemStack stack, Level level, Player player) {
-
         LunchboxContainer openContainer = LunchboxContainer.getOpenContainerFor(player);
         if (openContainer != null && openContainer.isShowing(stack)) {
             openContainer.feedMostFillingItem(player, level);
@@ -192,5 +189,4 @@ public class LunchboxItem extends Item implements ICurioItem {
 
         return Optional.of(new LunchboxTooltip(items));
     }
-
 }

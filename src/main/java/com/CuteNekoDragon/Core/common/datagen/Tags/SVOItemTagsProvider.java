@@ -1,12 +1,9 @@
 package com.CuteNekoDragon.Core.common.datagen.Tags;
 
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.tterrag.registrate.providers.ProviderType;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
 
@@ -27,11 +24,11 @@ public class SVOItemTagsProvider {
 
         });
 
-        //for (Item item : ForgeRegistries.ITEMS) {
+        // for (Item item : ForgeRegistries.ITEMS) {
 
-        //    REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, prov -> {
-        //        prov.addTag(SVOTags.Items.GARBAGE).add(item);
-        //    });
-        //}
+        // REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, prov -> {
+        // prov.addTag(SVOTags.Items.GARBAGE).add(item);
+        // });
+        // }
     }
 }

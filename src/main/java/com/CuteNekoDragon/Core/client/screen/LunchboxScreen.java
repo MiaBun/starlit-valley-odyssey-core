@@ -1,20 +1,18 @@
 package com.CuteNekoDragon.Core.client.screen;
 
-import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.Slot;
+
+import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
 
 @SuppressWarnings("removal")
 public class LunchboxScreen extends AbstractContainerScreen<LunchboxContainer> {
 
-
-
-    private static final ResourceLocation TEXTURE =
-            new ResourceLocation("minecraft", "textures/gui/container/generic_54.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("minecraft",
+            "textures/gui/container/generic_54.png");
 
     private final ResourceLocation texture;
 
