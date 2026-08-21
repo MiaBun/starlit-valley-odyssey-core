@@ -38,11 +38,14 @@ public class ShapedRecipesProvider {
                 .save(consumer, SVOCore.id("shaped/charcoal_kiln"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOItems.LUNCHBOX)
-                .pattern(" B ")
-                .pattern("BAB")
+                .pattern(" C ")
+                .pattern("DAE")
                 .pattern(" B ")
                 .define('A', SVOTags.Items.SACK)
                 .define('B', Items.APPLE)
+                .define('C', Items.CARROT)
+                .define('D', Items.WHEAT)
+                .define('E', Items.POTATO)
                 .unlockedBy("has_apple", InventoryChangeTrigger.TriggerInstance.hasItems(Items.APPLE))
                 .save(consumer, SVOCore.id("shaped/sack_to_lunchbox"));
 
@@ -55,6 +58,7 @@ public class ShapedRecipesProvider {
                 .define('B', SVOItems.SACK)
                 .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
                 .save(consumer, SVOCore.id("shaped/sack_to_backpack"));
+
 
         for (Map.Entry<DyeColor, ItemEntry<SackItem>> entry : DYED_SACKS.entrySet()) {
             DyeColor color = entry.getKey();

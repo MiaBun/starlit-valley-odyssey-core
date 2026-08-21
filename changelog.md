@@ -1,3 +1,8 @@
+
+## [Unreleased]
+### Changes
+- fixed dye recipes by ensuring that vanilla dyes are always first.
+
 ## [0.0.26]
 ### Changes
 - added a lunchbox item, depending on tier it's slots change

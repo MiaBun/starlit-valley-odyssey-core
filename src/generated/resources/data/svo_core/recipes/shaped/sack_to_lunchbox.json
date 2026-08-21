@@ -7,11 +7,20 @@
     },
     "B": {
       "item": "minecraft:apple"
+    },
+    "C": {
+      "item": "minecraft:carrot"
+    },
+    "D": {
+      "item": "minecraft:wheat"
+    },
+    "E": {
+      "item": "minecraft:potato"
     }
   },
   "pattern": [
-    " B ",
-    "BAB",
+    " C ",
+    "DAE",
     " B "
   ],
   "result": {

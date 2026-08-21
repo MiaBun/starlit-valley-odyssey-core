@@ -6,7 +6,8 @@
   "refmap": "mixins.svo_core.refmap.json",
   "mixins": [
     "common.RecipeManagerMixin",
-    "common.ItemStackMixin"
+    "common.ItemStackMixin",
+    "common.DyeItemMixin"
   ],
   "client": [
     "client.CreateWorldScreenMixin",
