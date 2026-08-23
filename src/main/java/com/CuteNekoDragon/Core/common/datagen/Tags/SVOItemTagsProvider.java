@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.common.datagen.Tags;
 
+import com.CuteNekoDragon.Core.common.datagen.GlobalDatagenArrays;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 import com.CuteNekoDragon.Core.common.data.SVOTags;
@@ -21,14 +23,16 @@ public class SVOItemTagsProvider {
                     .add(Items.NETHERITE_LEGGINGS)
                     .add(Items.NETHERITE_PICKAXE)
                     .add(Items.NETHERITE_SHOVEL)
-                    .add(Items.NETHERITE_SWORD)
-                    .add(ModItems.NETHERITE_BACKPACK.get())
-                    .add(ModItems.FEEDING_UPGRADE.get())
-                    .add(ModItems.ADVANCED_FEEDING_UPGRADE.get())
-                    .add(ModItems.TOOL_SWAPPER_UPGRADE.get())
-                    .add(ModItems.ADVANCED_TOOL_SWAPPER_UPGRADE.get());
+                    .add(Items.NETHERITE_SWORD);
 
         });
+
+        for (Item item : GlobalDatagenArrays.RemovedItems) {
+            REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, prov -> {
+                prov.addTag(SVOTags.Items.HIDDEN_FROM_RECIPE_VIEWERS)
+                        .add(item);
+            });
+        }
 
         // for (Item item : ForgeRegistries.ITEMS) {
 

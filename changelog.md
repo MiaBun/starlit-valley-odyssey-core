@@ -3,6 +3,9 @@
 - fixed dye recipes by ensuring that vanilla dyes are always first.
 - removed feeding upgrades and tool swapping upgrades from sophisticated backpacks
 - removed netherite backpack
+- fixed iridium backpack texture
+- customised stack upgrades recipes from sophisticated backpacks
+- removed stack upgrade from x tier from sophisticated backpacks to make progression more streamlined
 
 ## [0.0.26]
 ### Changes

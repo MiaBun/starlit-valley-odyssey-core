@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "sophisticatedbackpacks:stack_upgrade_tier_2"
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:stack_upgrade_tier_3"
+  },
+  "template": {
+    "item": "svo_core:diamond_upgrade_smithing_template"
+  }
+}

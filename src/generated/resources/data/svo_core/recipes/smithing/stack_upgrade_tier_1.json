@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "sophisticatedbackpacks:stack_upgrade_starter_tier"
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:stack_upgrade_tier_1"
+  },
+  "template": {
+    "item": "svo_core:iron_upgrade_smithing_template"
+  }
+}

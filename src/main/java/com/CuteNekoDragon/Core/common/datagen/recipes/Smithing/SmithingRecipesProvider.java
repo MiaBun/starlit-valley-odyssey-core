@@ -106,10 +106,6 @@ public class SmithingRecipesProvider {
                 Items.DIAMOND, ModItems.DIAMOND_BACKPACK.get(),
                 ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(),
-                SVOItems.IRIDIUM_INGOT, SVOItems.IRIDIUM_BACKPACK.get(),
-                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
-
         SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), SVOItems.LUNCHBOX, Items.COPPER_INGOT,
                 SVOItems.DELUXE_LUNCHBOX.get());
 
@@ -128,6 +124,26 @@ public class SmithingRecipesProvider {
         SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_LUNCHBOX,
                 SVOItems.IRIDIUM_INGOT,
                 SVOItems.COLLECTORS_LUNCHBOX.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(),
+                SVOItems.IRIDIUM_INGOT, SVOItems.IRIDIUM_BACKPACK.get(),
+                ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), ModItems.UPGRADE_BASE.get(), Items.COPPER_INGOT,
+                ModItems.STACK_UPGRADE_STARTER_TIER.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), ModItems.STACK_UPGRADE_STARTER_TIER.get(), Items.IRON_INGOT,
+                ModItems.STACK_UPGRADE_TIER_1.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), ModItems.STACK_UPGRADE_TIER_1.get(), Items.GOLD_INGOT,
+                ModItems.STACK_UPGRADE_TIER_2.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), ModItems.STACK_UPGRADE_TIER_2.get(), Items.DIAMOND,
+                ModItems.STACK_UPGRADE_TIER_3.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.STACK_UPGRADE_TIER_3.get(), SVOItems.IRIDIUM_INGOT,
+                ModItems.STACK_UPGRADE_TIER_4.get());
+
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
             ItemLike baseItem = entry.getKey();

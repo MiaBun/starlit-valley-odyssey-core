@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "base": {
+    "item": "sophisticatedbackpacks:upgrade_base"
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:stack_upgrade_starter_tier"
+  },
+  "template": {
+    "item": "svo_core:copper_upgrade_smithing_template"
+  }
+}
