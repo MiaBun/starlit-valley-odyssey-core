@@ -273,8 +273,9 @@ dependencies {
     modRuntimeOnly("vazkii.patchouli:Patchouli:1.20.1-85-FORGE")
 
     // Sophisticated
-    modImplementation("curse.maven:sophisticated-core-618298:8593869")
-    modImplementation("curse.maven:sophisticated-backpacks-422301:8596644")
+    modImplementation("curse.maven:sophisticated-core-618298:8705513")
+    modImplementation("curse.maven:sophisticated-backpacks-422301:8687830")
+    modImplementation("curse.maven:sophisticated-storage-619320:8687889")
 
 
     // lombok

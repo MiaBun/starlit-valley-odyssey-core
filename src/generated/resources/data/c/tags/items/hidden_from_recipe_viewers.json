@@ -8,6 +8,11 @@
     "minecraft:netherite_leggings",
     "minecraft:netherite_pickaxe",
     "minecraft:netherite_shovel",
-    "minecraft:netherite_sword"
+    "minecraft:netherite_sword",
+    "sophisticatedbackpacks:netherite_backpack",
+    "sophisticatedbackpacks:feeding_upgrade",
+    "sophisticatedbackpacks:advanced_feeding_upgrade",
+    "sophisticatedbackpacks:tool_swapper_upgrade",
+    "sophisticatedbackpacks:advanced_tool_swapper_upgrade"
   ]
 }

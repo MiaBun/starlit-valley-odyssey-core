@@ -1,7 +1,8 @@
-
 ## [Unreleased]
 ### Changes
 - fixed dye recipes by ensuring that vanilla dyes are always first.
+- removed feeding upgrades and tool swapping upgrades from sophisticated backpacks
+- removed netherite backpack
 
 ## [0.0.26]
 ### Changes

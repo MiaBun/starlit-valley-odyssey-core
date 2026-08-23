@@ -4,6 +4,7 @@ import net.minecraft.world.item.Items;
 
 import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.tterrag.registrate.providers.ProviderType;
+import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 
 import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
 
@@ -20,7 +21,12 @@ public class SVOItemTagsProvider {
                     .add(Items.NETHERITE_LEGGINGS)
                     .add(Items.NETHERITE_PICKAXE)
                     .add(Items.NETHERITE_SHOVEL)
-                    .add(Items.NETHERITE_SWORD);
+                    .add(Items.NETHERITE_SWORD)
+                    .add(ModItems.NETHERITE_BACKPACK.get())
+                    .add(ModItems.FEEDING_UPGRADE.get())
+                    .add(ModItems.ADVANCED_FEEDING_UPGRADE.get())
+                    .add(ModItems.TOOL_SWAPPER_UPGRADE.get())
+                    .add(ModItems.ADVANCED_TOOL_SWAPPER_UPGRADE.get());
 
         });
 

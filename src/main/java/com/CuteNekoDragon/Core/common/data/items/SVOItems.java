@@ -328,8 +328,8 @@ public class SVOItems {
 
     public static final ItemEntry<BackpackItem> IRIDIUM_BACKPACK = REGISTRATE
             .item("iridium_backpack", p -> new BackpackItem(
-                    () -> 36,
-                    () -> 4,
+                    () -> 120,
+                    () -> 7,
                     SVOBlocks.IRIDIUM_BACKPACK))
             .model((ctx, prov) -> {}).register();
 
