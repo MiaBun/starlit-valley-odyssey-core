@@ -60,6 +60,9 @@ public class GlobalDatagenArrays {
             net.p3pp3rf1y.sophisticatedstorage.init.ModItems.GOLD_TO_DIAMOND_TIER_UPGRADE.get(),
             net.p3pp3rf1y.sophisticatedstorage.init.ModItems.GOLD_TO_NETHERITE_TIER_UPGRADE.get(),
             net.p3pp3rf1y.sophisticatedstorage.init.ModItems.DIAMOND_TO_NETHERITE_TIER_UPGRADE.get(),
-            ModBlocks.NETHERITE_BARREL_ITEM.get()
+            ModBlocks.LIMITED_BARREL_1_ITEM.get(),
+            ModBlocks.LIMITED_BARREL_2_ITEM.get(),
+            ModBlocks.LIMITED_BARREL_3_ITEM.get(),
+            ModBlocks.LIMITED_BARREL_4_ITEM.get()
     ));
 }

@@ -58,6 +58,9 @@
     "sophisticatedstorage:gold_to_diamond_tier_upgrade",
     "sophisticatedstorage:gold_to_netherite_tier_upgrade",
     "sophisticatedstorage:diamond_to_netherite_tier_upgrade",
-    "sophisticatedstorage:netherite_barrel"
+    "sophisticatedstorage:limited_barrel_1",
+    "sophisticatedstorage:limited_barrel_2",
+    "sophisticatedstorage:limited_barrel_3",
+    "sophisticatedstorage:limited_barrel_4"
   ]
 }
