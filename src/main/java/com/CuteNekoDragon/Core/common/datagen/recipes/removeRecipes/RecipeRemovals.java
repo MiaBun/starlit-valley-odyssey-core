@@ -99,6 +99,12 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("sophisticatedstorage:storage_stack_upgrade_tier_5_from_backpack_stack_upgrade_tier_4");
         RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_5");
 
+        RecipeBlacklist.blacklistId("sophisticatedstorage:copper_barrel");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_barrel");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_barrel_from_copper_barrel");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:gold_barrel");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:diamond_barrel");
+
         for(Item item : GlobalDatagenArrays.RemovedItems) {
             RecipeBlacklist.blacklistOutput(ForgeRegistries.ITEMS.getKey(item.asItem()).toString());
         }

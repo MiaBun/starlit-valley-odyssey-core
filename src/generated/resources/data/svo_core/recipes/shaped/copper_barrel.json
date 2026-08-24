@@ -1,0 +1,25 @@
+{
+  "type": "sophisticatedstorage:storage_tier_upgrade",
+  "conditions": [
+    {
+      "type": "sophisticatedcore:item_enabled",
+      "itemRegistryName": "sophisticatedstorage:copper_barrel"
+    }
+  ],
+  "key": {
+    "A": {
+      "item": "svo_core:copper_upgrade_smithing_template"
+    },
+    "B": {
+      "item": "sophisticatedstorage:barrel"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "sophisticatedstorage:copper_barrel"
+  }
+}

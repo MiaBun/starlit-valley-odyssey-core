@@ -13,6 +13,7 @@ import com.CuteNekoDragon.Core.utils.recipes.SmithingRecipeHelper;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.ithundxr.createnumismatics.content.backend.Coin;
 import dev.ithundxr.createnumismatics.registry.NumismaticsItems;
+import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import java.util.List;
 import java.util.Map;

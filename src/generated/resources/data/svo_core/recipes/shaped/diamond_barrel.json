@@ -1,0 +1,25 @@
+{
+  "type": "sophisticatedstorage:storage_tier_upgrade",
+  "conditions": [
+    {
+      "type": "sophisticatedcore:item_enabled",
+      "itemRegistryName": "sophisticatedstorage:diamond_barrel"
+    }
+  ],
+  "key": {
+    "A": {
+      "item": "svo_core:diamond_upgrade_smithing_template"
+    },
+    "B": {
+      "item": "sophisticatedstorage:gold_barrel"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "sophisticatedstorage:diamond_barrel"
+  }
+}
