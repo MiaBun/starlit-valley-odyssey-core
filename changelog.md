@@ -6,6 +6,10 @@
 - fixed iridium backpack texture
 - customised stack upgrades recipes from sophisticated backpacks
 - removed stack upgrade from x tier from sophisticated backpacks to make progression more streamlined
+- hid sophisticated storage auto feeder upgrades
+- customised stack upgrades recipes from sophisticated storage
+- removed stack upgrade from x tier from sophisticated storage to make progression more streamlined
+- customised sophisticated backpacks tier 4 and sophisticated storage tier 5 stack upgrades textures
 
 ## [0.0.26]
 ### Changes

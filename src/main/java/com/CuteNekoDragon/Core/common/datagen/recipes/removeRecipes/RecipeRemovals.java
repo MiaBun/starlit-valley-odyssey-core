@@ -84,6 +84,21 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("sophisticatedbackpacks:stack_upgrade_tier_4");
         RecipeBlacklist.blacklistId("sophisticatedstorage:backpack_stack_upgrade_tier_4_from_storage_stack_upgrade_tier_5");
 
+        RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_1");
+
+        RecipeBlacklist.blacklistId("sophisticatedstorage:storage_stack_upgrade_tier_2_from_backpack_stack_upgrade_tier_1");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_2");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_2_from_tier_1_plus");
+
+        RecipeBlacklist.blacklistId("sophisticatedstorage:storage_stack_upgrade_tier_3_from_backpack_stack_upgrade_tier_2");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_3");
+
+        RecipeBlacklist.blacklistId("sophisticatedstorage:storage_stack_upgrade_tier_4_from_backpack_stack_upgrade_tier_3");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_4");
+
+        RecipeBlacklist.blacklistId("sophisticatedstorage:storage_stack_upgrade_tier_5_from_backpack_stack_upgrade_tier_4");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:stack_upgrade_tier_5");
+
         for(Item item : GlobalDatagenArrays.RemovedItems) {
             RecipeBlacklist.blacklistOutput(ForgeRegistries.ITEMS.getKey(item.asItem()).toString());
         }

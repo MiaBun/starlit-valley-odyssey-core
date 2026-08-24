@@ -144,6 +144,21 @@ public class SmithingRecipesProvider {
         SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.STACK_UPGRADE_TIER_3.get(), SVOItems.IRIDIUM_INGOT,
                 ModItems.STACK_UPGRADE_TIER_4.get());
 
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), net.p3pp3rf1y.sophisticatedstorage.init.ModItems.UPGRADE_BASE.get(), Items.COPPER_INGOT,
+                net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_1.get(), "storage_stack_upgrade_tier_1");
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_1.get(), Items.IRON_INGOT,
+                net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_2.get(), "storage_stack_upgrade_tier_2");
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_2.get(), Items.GOLD_INGOT,
+                net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_3.get(), "storage_stack_upgrade_tier_3");
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_3.get(), Items.DIAMOND,
+                net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_4.get(), "storage_stack_upgrade_tier_4");
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_4.get(), SVOItems.IRIDIUM_INGOT,
+                net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_5.get(), "storage_stack_upgrade_tier_5");
+
 
         for (Map.Entry<ItemLike, Item> entry : CHAINMAIL_RECIPES.entrySet()) {
             ItemLike baseItem = entry.getKey();

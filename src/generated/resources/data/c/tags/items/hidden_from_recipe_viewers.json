@@ -23,6 +23,9 @@
     "sophisticatedbackpacks:feeding_upgrade",
     "sophisticatedbackpacks:advanced_feeding_upgrade",
     "sophisticatedbackpacks:tool_swapper_upgrade",
-    "sophisticatedbackpacks:advanced_tool_swapper_upgrade"
+    "sophisticatedbackpacks:advanced_tool_swapper_upgrade",
+    "sophisticatedstorage:feeding_upgrade",
+    "sophisticatedstorage:advanced_feeding_upgrade",
+    "sophisticatedstorage:stack_upgrade_tier_1_plus"
   ]
 }

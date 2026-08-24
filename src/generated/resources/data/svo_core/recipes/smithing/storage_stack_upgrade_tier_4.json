@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "sophisticatedstorage:stack_upgrade_tier_3"
+  },
+  "result": {
+    "item": "sophisticatedstorage:stack_upgrade_tier_4"
+  },
+  "template": {
+    "item": "svo_core:diamond_upgrade_smithing_template"
+  }
+}

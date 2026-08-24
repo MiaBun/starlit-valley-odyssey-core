@@ -24,6 +24,9 @@ public class GlobalDatagenArrays {
             ModItems.FEEDING_UPGRADE.get(),
             ModItems.ADVANCED_FEEDING_UPGRADE.get(),
             ModItems.TOOL_SWAPPER_UPGRADE.get(),
-            ModItems.ADVANCED_TOOL_SWAPPER_UPGRADE.get()
+            ModItems.ADVANCED_TOOL_SWAPPER_UPGRADE.get(),
+            net.p3pp3rf1y.sophisticatedstorage.init.ModItems.FEEDING_UPGRADE.get(),
+            net.p3pp3rf1y.sophisticatedstorage.init.ModItems.ADVANCED_FEEDING_UPGRADE.get(),
+            net.p3pp3rf1y.sophisticatedstorage.init.ModItems.STACK_UPGRADE_TIER_1_PLUS.get()
     ));
 }

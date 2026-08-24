@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "sophisticatedstorage:stack_upgrade_tier_2"
+  },
+  "result": {
+    "item": "sophisticatedstorage:stack_upgrade_tier_3"
+  },
+  "template": {
+    "item": "svo_core:gold_upgrade_smithing_template"
+  }
+}
