@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
+import com.hollingsworth.arsnouveau.common.block.ModBlock;
 import net.minecraft.world.item.Item;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
@@ -60,9 +61,30 @@ public class GlobalDatagenArrays {
             net.p3pp3rf1y.sophisticatedstorage.init.ModItems.GOLD_TO_DIAMOND_TIER_UPGRADE.get(),
             net.p3pp3rf1y.sophisticatedstorage.init.ModItems.GOLD_TO_NETHERITE_TIER_UPGRADE.get(),
             net.p3pp3rf1y.sophisticatedstorage.init.ModItems.DIAMOND_TO_NETHERITE_TIER_UPGRADE.get(),
+            ModBlocks.NETHERITE_BARREL_ITEM.get(),
             ModBlocks.LIMITED_BARREL_1_ITEM.get(),
             ModBlocks.LIMITED_BARREL_2_ITEM.get(),
             ModBlocks.LIMITED_BARREL_3_ITEM.get(),
-            ModBlocks.LIMITED_BARREL_4_ITEM.get()
+            ModBlocks.LIMITED_BARREL_4_ITEM.get(),
+            ModBlocks.LIMITED_COPPER_BARREL_1_ITEM.get(),
+            ModBlocks.LIMITED_COPPER_BARREL_2_ITEM.get(),
+            ModBlocks.LIMITED_COPPER_BARREL_3_ITEM.get(),
+            ModBlocks.LIMITED_COPPER_BARREL_4_ITEM.get(),
+            ModBlocks.LIMITED_IRON_BARREL_1_ITEM.get(),
+            ModBlocks.LIMITED_IRON_BARREL_2_ITEM.get(),
+            ModBlocks.LIMITED_IRON_BARREL_3_ITEM.get(),
+            ModBlocks.LIMITED_IRON_BARREL_4_ITEM.get(),
+            ModBlocks.LIMITED_GOLD_BARREL_1_ITEM.get(),
+            ModBlocks.LIMITED_GOLD_BARREL_2_ITEM.get(),
+            ModBlocks.LIMITED_GOLD_BARREL_3_ITEM.get(),
+            ModBlocks.LIMITED_GOLD_BARREL_4_ITEM.get(),
+            ModBlocks.LIMITED_DIAMOND_BARREL_1_ITEM.get(),
+            ModBlocks.LIMITED_DIAMOND_BARREL_2_ITEM.get(),
+            ModBlocks.LIMITED_DIAMOND_BARREL_3_ITEM.get(),
+            ModBlocks.LIMITED_DIAMOND_BARREL_4_ITEM.get(),
+            ModBlocks.LIMITED_NETHERITE_BARREL_1_ITEM.get(),
+            ModBlocks.LIMITED_NETHERITE_BARREL_2_ITEM.get(),
+            ModBlocks.LIMITED_NETHERITE_BARREL_3_ITEM.get(),
+            ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get()
     ));
 }

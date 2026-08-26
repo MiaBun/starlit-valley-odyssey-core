@@ -11,7 +11,13 @@
 - removed stack upgrade from x tier from sophisticated storage to make progression more streamlined
 - customised sophisticated backpacks tier 4 and sophisticated storage tier 5 stack upgrades textures
 - custom sophisticated storage barrel recipes
-- hid netherite barrels
+- removed netherite barrels
+- removed limited barrels
+- removed limited copper barrels
+- removed limited iron barrels
+- removed limited gold barrels
+- removed limited diamond barrels
+- removed limited netherite barrels
 
 ## [0.0.26]
 ### Changes
