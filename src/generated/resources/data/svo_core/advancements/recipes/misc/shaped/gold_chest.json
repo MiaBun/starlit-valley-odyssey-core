@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_barrel": {
+    "has_chest": {
       "conditions": {
         "items": [
           {
             "items": [
-              "sophisticatedstorage:iron_barrel"
+              "sophisticatedstorage:iron_chest"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:shaped/gold_barrel"
+        "recipe": "svo_core:shaped/gold_chest"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_barrel",
+      "has_chest",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "svo_core:shaped/gold_barrel"
+      "svo_core:shaped/gold_chest"
     ]
   },
   "sends_telemetry_event": true

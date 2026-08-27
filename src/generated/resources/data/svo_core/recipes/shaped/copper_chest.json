@@ -1,0 +1,25 @@
+{
+  "type": "sophisticatedstorage:storage_tier_upgrade",
+  "conditions": [
+    {
+      "type": "sophisticatedcore:item_enabled",
+      "itemRegistryName": "sophisticatedstorage:copper_chest"
+    }
+  ],
+  "key": {
+    "A": {
+      "item": "svo_core:copper_upgrade_smithing_template"
+    },
+    "B": {
+      "item": "sophisticatedstorage:chest"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "sophisticatedstorage:copper_chest"
+  }
+}

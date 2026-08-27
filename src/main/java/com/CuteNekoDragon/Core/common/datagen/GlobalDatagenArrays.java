@@ -85,6 +85,7 @@ public class GlobalDatagenArrays {
             ModBlocks.LIMITED_NETHERITE_BARREL_1_ITEM.get(),
             ModBlocks.LIMITED_NETHERITE_BARREL_2_ITEM.get(),
             ModBlocks.LIMITED_NETHERITE_BARREL_3_ITEM.get(),
-            ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get()
+            ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get(),
+            ModBlocks.NETHERITE_CHEST_ITEM.get()
     ));
 }

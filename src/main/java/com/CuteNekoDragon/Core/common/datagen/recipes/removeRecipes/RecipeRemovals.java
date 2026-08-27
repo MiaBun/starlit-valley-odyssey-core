@@ -105,6 +105,12 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("sophisticatedstorage:gold_barrel");
         RecipeBlacklist.blacklistId("sophisticatedstorage:diamond_barrel");
 
+        RecipeBlacklist.blacklistId("sophisticatedstorage:copper_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_chest_from_copper_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:gold_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:diamond_chest");
+
         for(Item item : GlobalDatagenArrays.RemovedItems) {
             RecipeBlacklist.blacklistOutput(ForgeRegistries.ITEMS.getKey(item.asItem()).toString());
         }

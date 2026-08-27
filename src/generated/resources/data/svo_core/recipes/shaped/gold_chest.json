@@ -1,0 +1,25 @@
+{
+  "type": "sophisticatedstorage:storage_tier_upgrade",
+  "conditions": [
+    {
+      "type": "sophisticatedcore:item_enabled",
+      "itemRegistryName": "sophisticatedstorage:gold_chest"
+    }
+  ],
+  "key": {
+    "A": {
+      "item": "svo_core:gold_upgrade_smithing_template"
+    },
+    "B": {
+      "item": "sophisticatedstorage:iron_chest"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "item": "sophisticatedstorage:gold_chest"
+  }
+}
