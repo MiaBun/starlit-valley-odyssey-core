@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.27]
 ### Changes
 - fixed dye recipes by ensuring that vanilla dyes are always first.
 - removed feeding upgrades and tool swapping upgrades from sophisticated backpacks
