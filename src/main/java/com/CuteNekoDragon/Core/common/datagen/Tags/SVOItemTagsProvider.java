@@ -1,12 +1,11 @@
 package com.CuteNekoDragon.Core.common.datagen.Tags;
 
-import com.CuteNekoDragon.Core.common.datagen.GlobalDatagenArrays;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
 import com.CuteNekoDragon.Core.common.data.SVOTags;
+import com.CuteNekoDragon.Core.common.datagen.GlobalDatagenArrays;
 import com.tterrag.registrate.providers.ProviderType;
-import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 
 import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
 

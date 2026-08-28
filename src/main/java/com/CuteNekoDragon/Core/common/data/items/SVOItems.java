@@ -390,6 +390,4 @@ public class SVOItems {
     public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE
             .item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9, 5)).lang("Collectors Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-
-
 }

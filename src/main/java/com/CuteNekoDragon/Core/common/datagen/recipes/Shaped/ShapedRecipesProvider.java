@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
-import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -11,19 +10,18 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.p3pp3rf1y.sophisticatedcore.crafting.ShapeBasedRecipeBuilder;
 import net.p3pp3rf1y.sophisticatedcore.util.ColorHelper;
+import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
+import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.CuteNekoDragon.Core.common.item.SackItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
-import net.p3pp3rf1y.sophisticatedstorage.crafting.StorageTierUpgradeRecipe;
-import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -34,7 +32,6 @@ import static com.CuteNekoDragon.Core.common.data.items.SVOItems.UPGRADE_TEMPLAT
 public class ShapedRecipesProvider {
 
     public static void buildRecipes(Consumer<FinishedRecipe> consumer) {
-
         ItemEntry<SVOSmithingTemplate> copperTemplate = UPGRADE_TEMPLATES.get("copper");
         ItemEntry<SVOSmithingTemplate> ironTemplate = UPGRADE_TEMPLATES.get("iron");
         ItemEntry<SVOSmithingTemplate> goldTemplate = UPGRADE_TEMPLATES.get("gold");
@@ -72,7 +69,8 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
                 .save(consumer, SVOCore.id("shaped/sack_to_backpack"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.COPPER_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.COPPER_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -81,34 +79,41 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.BARREL_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/copper_barrel"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.IRON_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.IRON_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', ironTemplate.get())
                 .define('B', ModBlocks.COPPER_BARREL_ITEM.get())
-                .unlockedBy("has_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_BARREL_ITEM.get()))
+                .unlockedBy("has_barrel",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_BARREL_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/iron_barrel"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.GOLD_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.GOLD_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', goldTemplate.get())
                 .define('B', ModBlocks.IRON_BARREL_ITEM.get())
-                .unlockedBy("has_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_BARREL_ITEM.get()))
+                .unlockedBy("has_barrel",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_BARREL_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/gold_barrel"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.DIAMOND_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.DIAMOND_BARREL_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', diamondTemplate.get())
                 .define('B', ModBlocks.GOLD_BARREL_ITEM.get())
-                .unlockedBy("has_barrel", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_BARREL_ITEM.get()))
+                .unlockedBy("has_barrel",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_BARREL_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/diamond_barrel"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.COPPER_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.COPPER_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
@@ -117,71 +122,83 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_chest", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.CHEST_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/copper_chest"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.IRON_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.IRON_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', ironTemplate.get())
                 .define('B', ModBlocks.COPPER_CHEST_ITEM.get())
-                .unlockedBy("has_chest", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_CHEST_ITEM.get()))
+                .unlockedBy("has_chest",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_CHEST_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/iron_chest"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.GOLD_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.GOLD_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', goldTemplate.get())
                 .define('B', ModBlocks.IRON_CHEST_ITEM.get())
-                .unlockedBy("has_chest", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_CHEST_ITEM.get()))
+                .unlockedBy("has_chest",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_CHEST_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/gold_chest"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.DIAMOND_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.DIAMOND_CHEST_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', diamondTemplate.get())
                 .define('B', ModBlocks.GOLD_CHEST_ITEM.get())
-                .unlockedBy("has_chest", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_CHEST_ITEM.get()))
+                .unlockedBy("has_chest",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_CHEST_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/diamond_chest"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.COPPER_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.COPPER_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', copperTemplate.get())
                 .define('B', ModBlocks.SHULKER_BOX_ITEM.get())
-                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.SHULKER_BOX_ITEM.get()))
+                .unlockedBy("has_shulker",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.SHULKER_BOX_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/copper_shulker"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.IRON_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.IRON_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', ironTemplate.get())
                 .define('B', ModBlocks.COPPER_SHULKER_BOX_ITEM.get())
-                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_SHULKER_BOX_ITEM.get()))
+                .unlockedBy("has_shulker",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_SHULKER_BOX_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/iron_shulker"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.GOLD_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.GOLD_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', goldTemplate.get())
                 .define('B', ModBlocks.IRON_SHULKER_BOX_ITEM.get())
-                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_SHULKER_BOX_ITEM.get()))
+                .unlockedBy("has_shulker",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_SHULKER_BOX_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/gold_shulker"));
 
-        ShapeBasedRecipeBuilder.shaped(ModBlocks.DIAMOND_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+        ShapeBasedRecipeBuilder
+                .shaped(ModBlocks.DIAMOND_SHULKER_BOX_ITEM.get(),
+                        ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', diamondTemplate.get())
                 .define('B', ModBlocks.GOLD_SHULKER_BOX_ITEM.get())
-                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_SHULKER_BOX_ITEM.get()))
+                .unlockedBy("has_shulker",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_SHULKER_BOX_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/diamond_shulker"));
-
-
-
 
         for (Map.Entry<DyeColor, ItemEntry<SackItem>> entry : DYED_SACKS.entrySet()) {
             DyeColor color = entry.getKey();

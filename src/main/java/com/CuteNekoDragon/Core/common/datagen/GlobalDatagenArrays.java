@@ -1,11 +1,9 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
-import com.hollingsworth.arsnouveau.common.block.ModBlock;
 import net.minecraft.world.item.Item;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,6 +85,5 @@ public class GlobalDatagenArrays {
             ModBlocks.LIMITED_NETHERITE_BARREL_3_ITEM.get(),
             ModBlocks.LIMITED_NETHERITE_BARREL_4_ITEM.get(),
             ModBlocks.NETHERITE_CHEST_ITEM.get(),
-            ModBlocks.NETHERITE_SHULKER_BOX_ITEM.get()
-    ));
+            ModBlocks.NETHERITE_SHULKER_BOX_ITEM.get()));
 }
