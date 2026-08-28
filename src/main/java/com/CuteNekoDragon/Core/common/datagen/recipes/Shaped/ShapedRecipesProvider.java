@@ -144,6 +144,42 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_chest", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_CHEST_ITEM.get()))
                 .save(consumer, SVOCore.id("shaped/diamond_chest"));
 
+        ShapeBasedRecipeBuilder.shaped(ModBlocks.COPPER_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', copperTemplate.get())
+                .define('B', ModBlocks.SHULKER_BOX_ITEM.get())
+                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.SHULKER_BOX_ITEM.get()))
+                .save(consumer, SVOCore.id("shaped/copper_shulker"));
+
+        ShapeBasedRecipeBuilder.shaped(ModBlocks.IRON_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', ironTemplate.get())
+                .define('B', ModBlocks.COPPER_SHULKER_BOX_ITEM.get())
+                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_SHULKER_BOX_ITEM.get()))
+                .save(consumer, SVOCore.id("shaped/iron_shulker"));
+
+        ShapeBasedRecipeBuilder.shaped(ModBlocks.GOLD_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', goldTemplate.get())
+                .define('B', ModBlocks.IRON_SHULKER_BOX_ITEM.get())
+                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.IRON_SHULKER_BOX_ITEM.get()))
+                .save(consumer, SVOCore.id("shaped/gold_shulker"));
+
+        ShapeBasedRecipeBuilder.shaped(ModBlocks.DIAMOND_SHULKER_BOX_ITEM.get(), ModBlocks.STORAGE_TIER_UPGRADE_RECIPE_SERIALIZER.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', diamondTemplate.get())
+                .define('B', ModBlocks.GOLD_SHULKER_BOX_ITEM.get())
+                .unlockedBy("has_shulker", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_SHULKER_BOX_ITEM.get()))
+                .save(consumer, SVOCore.id("shaped/diamond_shulker"));
+
 
 
 

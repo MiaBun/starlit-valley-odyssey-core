@@ -111,6 +111,17 @@ public class RecipeRemovals {
         RecipeBlacklist.blacklistId("sophisticatedstorage:gold_chest");
         RecipeBlacklist.blacklistId("sophisticatedstorage:diamond_chest");
 
+        RecipeBlacklist.blacklistId("sophisticatedstorage:copper_shulker_box");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_shulker_box");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_shulker_box_from_copper_shulker_box");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:gold_shulker_box");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:diamond_shulker_box");
+
+        RecipeBlacklist.blacklistId("sophisticatedstorage:copper_shulker_from_copper_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:iron_shulker_from_iron_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:gold_shulker_from_gold_chest");
+        RecipeBlacklist.blacklistId("sophisticatedstorage:diamond_shulker_from_diamond_chest");
+
         for(Item item : GlobalDatagenArrays.RemovedItems) {
             RecipeBlacklist.blacklistOutput(ForgeRegistries.ITEMS.getKey(item.asItem()).toString());
         }
