@@ -40,6 +40,12 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.sack.title", "Sack them up!");
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.sack.description", "Construct a Sack");
 
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chests.title", "Store them up!");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chests.description", "Construct a Chest");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.title", "Improved chests!");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.description", "Construct a Sophisticated Storage Chest");
+
         REGISTRATE.addRawLang("tooltip.svo_core.quartz", "A clear crystal commonly found in caves and mines.");
         REGISTRATE.addRawLang("tooltip.svo_core.earth_crystal", "A resinous substance found near the surface.");
         REGISTRATE.addRawLang("tooltip.svo_core.frozen_tear", "A crystal fabled to be the frozen tears of a yeti.");

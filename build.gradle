@@ -277,6 +277,8 @@ dependencies {
     modImplementation("curse.maven:sophisticated-backpacks-422301:8687830")
     modImplementation("curse.maven:sophisticated-storage-619320:8687889")
 
+    modRuntimeOnly("curse.maven:better-advancements-272515:8569648")
+
 
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'

@@ -1,6 +1,6 @@
 ## [Unreleased]
 ### Changes
-- 
+- added advancements for chests and sophisticated storage chests
 
 ## [0.0.27]
 ### Changes

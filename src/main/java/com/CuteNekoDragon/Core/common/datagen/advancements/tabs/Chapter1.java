@@ -17,6 +17,7 @@ import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
+import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import java.util.function.Consumer;
 
@@ -83,6 +84,36 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                                         Items.LEATHER_BOOTS)
                                 .build()))
                 .save(consumer, SVOCore.id("chapter1/leather_armor"), existingFileHelper);
+
+        Advancement chests = Advancement.Builder.advancement()
+                .parent(crafting_table)
+                .display(
+                        new ItemStack(Items.CHEST),
+                        Component.translatable("advancement.svo_core.chapter1.chests.title"),
+                        Component.translatable("advancement.svo_core.chapter1.chests.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(Items.CHEST)
+                                .build()))
+                .save(consumer, SVOCore.id("chapter1/chests"), existingFileHelper);
+
+        Advancement chest_upgrades = Advancement.Builder.advancement()
+                .parent(chests)
+                .display(
+                        new ItemStack(ModBlocks.CHEST_ITEM.get()),
+                        Component.translatable("advancement.svo_core.chapter1.chest_upgraded.title"),
+                        Component.translatable("advancement.svo_core.chapter1.chest_upgraded.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(ModBlocks.CHEST_ITEM.get())
+                                .build()))
+                .save(consumer, SVOCore.id("chapter1/chest_upgrades"), existingFileHelper);
 
         Advancement mine_stone = Advancement.Builder.advancement()
                 .parent(crafting_table)
