@@ -3,9 +3,13 @@ package com.CuteNekoDragon.Core.common.data.blocks;
 import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
 import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
 import com.tterrag.registrate.util.entry.ItemEntry;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Direction;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -41,7 +45,6 @@ public final class SVOBlocks {
             .blockstate((ctx, prov) -> {
                 ResourceLocation headModel = prov.modLoc("block/sleeping_bag_head");
                 ResourceLocation footModel = prov.modLoc("block/sleeping_bag_foot");
-
                 prov.getVariantBuilder(ctx.getEntry()).forAllStates(state -> {
                     Direction facing = state.getValue(BedBlock.FACING);
                     BedPart part = state.getValue(BedBlock.PART);
@@ -66,6 +69,14 @@ public final class SVOBlocks {
             ))
             .item()
             .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/sleeping_bag_foot")))
+            .recipe((ctx, provider) -> {
+                ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.get())
+                        .pattern(" A ")
+                        .pattern(" A ")
+                        .define('A', Items.WHITE_WOOL)
+                        .unlockedBy("has_wool", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_WOOL))
+                        .save(provider, SVOCore.id("shaped/white_sleeping_bag"));
+            })
             .build()
             .register();
 }

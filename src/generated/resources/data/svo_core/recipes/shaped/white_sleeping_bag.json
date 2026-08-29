@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    " A ",
+    " A "
+  ],
+  "result": {
+    "item": "svo_core:sleeping_bag"
+  },
+  "show_notification": true
+}
