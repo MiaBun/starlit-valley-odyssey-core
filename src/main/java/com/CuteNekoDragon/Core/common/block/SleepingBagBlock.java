@@ -42,8 +42,8 @@ public class SleepingBagBlock extends BedBlock {
     });
 
 
-    public SleepingBagBlock(Properties properties) {
-        super(DyeColor.WHITE, properties);
+    public SleepingBagBlock(Properties properties, DyeColor color) {
+        super(color, properties);
     }
 
     @Override

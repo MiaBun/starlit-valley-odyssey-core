@@ -9,6 +9,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Blocks;
@@ -39,7 +40,7 @@ public final class SVOBlocks {
             .register();
 
     public static BlockEntry<SleepingBagBlock> WHITE_SLEEPING_BAG = REGISTRATE
-            .block("sleeping_bag", SleepingBagBlock::new)
+            .block("sleeping_bag", (properties) -> new SleepingBagBlock(properties, DyeColor.WHITE))
             .initialProperties(() -> Blocks.WHITE_WOOL)
             .properties(p -> p.noOcclusion().strength(0.1F).sound(SoundType.WOOL))
             .blockstate((ctx, prov) -> {
@@ -49,7 +50,6 @@ public final class SVOBlocks {
                     Direction facing = state.getValue(BedBlock.FACING);
                     BedPart part = state.getValue(BedBlock.PART);
                     int rotY = (int) facing.toYRot();
-
                     return ConfiguredModel.builder()
                             .modelFile(prov.models().getExistingFile(part == BedPart.HEAD ? headModel : footModel))
                             .rotationY(rotY)

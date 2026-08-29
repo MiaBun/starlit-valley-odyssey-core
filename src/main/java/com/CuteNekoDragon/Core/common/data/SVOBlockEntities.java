@@ -2,6 +2,7 @@ package com.CuteNekoDragon.Core.common.data;
 
 import com.CuteNekoDragon.Core.common.blockentity.SleepingBagBlockEntity;
 import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorBlockEntity;
+import net.minecraft.world.item.DyeColor;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlockEntity;
 
 import com.CuteNekoDragon.Core.SVOCore;
@@ -22,7 +23,7 @@ public class SVOBlockEntities {
 
     public static final BlockEntityEntry<SleepingBagBlockEntity> SLEEPING_BAG_ENTITY = REGISTRATE
             .<SleepingBagBlockEntity>blockEntity("sleeping_bag",
-                    (type, pos, state) -> new SleepingBagBlockEntity(pos, state))
+                    (type, pos, state) -> new SleepingBagBlockEntity(pos, state, type, DyeColor.WHITE))
             .validBlock(SVOBlocks.WHITE_SLEEPING_BAG)
             .register();
 }
