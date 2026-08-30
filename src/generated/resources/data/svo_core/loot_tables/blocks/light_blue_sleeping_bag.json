@@ -13,18 +13,18 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "block": "svo_core:sleeping_bag",
+              "block": "svo_core:light_blue_sleeping_bag",
               "condition": "minecraft:block_state_property",
               "properties": {
                 "part": "head"
               }
             }
           ],
-          "name": "svo_core:sleeping_bag"
+          "name": "svo_core:light_blue_sleeping_bag"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "svo_core:blocks/sleeping_bag"
+  "random_sequence": "svo_core:blocks/light_blue_sleeping_bag"
 }

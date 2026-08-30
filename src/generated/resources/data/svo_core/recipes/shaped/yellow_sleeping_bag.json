@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": {
-      "item": "minecraft:white_wool"
+      "item": "minecraft:yellow_wool"
     }
   },
   "pattern": [
@@ -11,7 +11,7 @@
     " A "
   ],
   "result": {
-    "item": "svo_core:white_sleeping_bag"
+    "item": "svo_core:yellow_sleeping_bag"
   },
   "show_notification": true
 }
