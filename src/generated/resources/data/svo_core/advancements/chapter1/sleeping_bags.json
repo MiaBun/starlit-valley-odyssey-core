@@ -1,0 +1,36 @@
+{
+  "parent": "svo_core:chapter1/crafting_table",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "svo_core:sleeping_bags"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.svo_core.chapter1.sleeping_bag.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "svo_core:white_sleeping_bag"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.svo_core.chapter1.sleeping_bag.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

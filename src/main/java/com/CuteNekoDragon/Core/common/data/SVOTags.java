@@ -33,6 +33,8 @@ public final class SVOTags {
 
         public static final TagKey<Item> LUNCHBOX = createItemTag("lunchbox");
 
+        public static final TagKey<Item> Sleeping_Bags = createItemTag("sleeping_bags");
+
         public static final TagKey<Item> GARBAGE = createItemTag("garbage");
 
         private static TagKey<Item> createItemTag(String path) {
@@ -45,6 +47,8 @@ public final class SVOTags {
     }
 
     public static final class Blocks {
+
+        public static final TagKey<Block> Sleeping_Bags = createBlockTag("sleeping_bags");
 
         private static TagKey<Block> createBlockTag(String path) {
             return createBlockTag(SVOCore.id(path));

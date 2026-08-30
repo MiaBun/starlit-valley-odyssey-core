@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.common.data.blocks;
 
 import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
+import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -55,6 +56,7 @@ public final class SVOBlocks {
 
             BlockEntry<SleepingBagBlock> entry = REGISTRATE
                     .block(name, (properties) -> new SleepingBagBlock(properties, color))
+                    .tag(SVOTags.Blocks.Sleeping_Bags)
                     .initialProperties(() -> woolBlock)
                     .properties(p -> p.noOcclusion().strength(0.1F).sound(SoundType.WOOL))
                     .blockstate((ctx, prov) -> {
@@ -92,6 +94,7 @@ public final class SVOBlocks {
                                 .save(provider, SVOCore.id("shaped/" + name));
                     })
                     .properties(p -> p.stacksTo(1))
+                    .tag(SVOTags.Items.Sleeping_Bags)
                     .build()
                     .register();
 

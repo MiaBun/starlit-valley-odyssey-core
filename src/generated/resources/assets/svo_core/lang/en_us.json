@@ -1,4 +1,6 @@
 {
+  "advancement.svo_core.chapter1.bed.description": "Construct a Bed",
+  "advancement.svo_core.chapter1.bed.title": "Goodnight!",
   "advancement.svo_core.chapter1.chainmail_armor.description": "Have any type of chainmail armor in the inventory",
   "advancement.svo_core.chapter1.chainmail_armor.title": "Cover me with Chains",
   "advancement.svo_core.chapter1.charcoal_kiln.description": "Construct a Charcoal Kiln",
@@ -22,6 +24,8 @@
   "advancement.svo_core.chapter1.mine_stone.title": "Stone Age",
   "advancement.svo_core.chapter1.sack.description": "Construct a Sack",
   "advancement.svo_core.chapter1.sack.title": "Sack them up!",
+  "advancement.svo_core.chapter1.sleeping_bag.description": "Construct a Sleeping Bag",
+  "advancement.svo_core.chapter1.sleeping_bag.title": "Where are my pj's?!",
   "advancement.svo_core.chapter1.title": "Chapter 1",
   "block.svo_core.black_sleeping_bag": "Black Sleeping Bag",
   "block.svo_core.blue_sleeping_bag": "Blue Sleeping Bag",

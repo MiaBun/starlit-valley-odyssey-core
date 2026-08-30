@@ -2,6 +2,8 @@
 ### Changes
 - added advancements for chests and sophisticated storage chests
 - added sleeping bags! they come in every wool color and allow you to sleep for the night without setting your spawn point
+- added tags for sleeping bags
+- added advancements for sleeping bags and beds
 
 ## [0.0.27]
 ### Changes

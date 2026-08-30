@@ -1,5 +1,10 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
+import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
+import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
+import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -8,6 +13,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,6 +26,8 @@ import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import java.util.function.Consumer;
+
+import static com.CuteNekoDragon.Core.common.data.items.SVOItems.UPGRADE_TEMPLATES;
 
 @SuppressWarnings("removal")
 public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
@@ -84,6 +92,38 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                                         Items.LEATHER_BOOTS)
                                 .build()))
                 .save(consumer, SVOCore.id("chapter1/leather_armor"), existingFileHelper);
+
+        BlockEntry<SleepingBagBlock> WHITE_SLEEPING_BAG = SVOBlocks.SLEEPING_BAGS.get(DyeColor.WHITE);
+
+        Advancement sleeping_bags = Advancement.Builder.advancement()
+                .parent(crafting_table)
+                .display(
+                        new ItemStack(WHITE_SLEEPING_BAG.asItem()),
+                        Component.translatable("advancement.svo_core.chapter1.sleeping_bag.title"),
+                        Component.translatable("advancement.svo_core.chapter1.sleeping_bag.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(SVOTags.Items.Sleeping_Bags)
+                                .build()))
+                .save(consumer, SVOCore.id("chapter1/sleeping_bags"), existingFileHelper);
+
+        Advancement beds = Advancement.Builder.advancement()
+                .parent(sleeping_bags)
+                .display(
+                        new ItemStack(Items.WHITE_BED),
+                        Component.translatable("advancement.svo_core.chapter1.bed.title"),
+                        Component.translatable("advancement.svo_core.chapter1.bed.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(ItemTags.BEDS)
+                                .build()))
+                .save(consumer, SVOCore.id("chapter1/beds"), existingFileHelper);
 
         Advancement chests = Advancement.Builder.advancement()
                 .parent(crafting_table)
