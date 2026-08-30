@@ -243,7 +243,7 @@ dependencies {
     modRuntimeOnly("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
 
     // Create Addons
-    modImplementation("curse.maven:numismatics-889722:6264591")
+    modImplementation("curse.maven:numismatics-889722:8749545")
 
     // KubeJS
     modCompileOnly("dev.latvian.mods:kubejs-forge:${kubejs_version}")
