@@ -34,6 +34,10 @@ public class SVOCore {
     }
 
     public SVOCore() {
+        System.out.println("  //");
+        System.out.println(" ('>");
+        System.out.println(" /rr");
+        System.out.println("*\\))_");
         setupFixForGlobalServerConfig();
         SVOConfig.init();
 
