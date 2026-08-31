@@ -44,7 +44,8 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.chests.description", "Construct a Chest");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.title", "Improved chests!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.description", "Construct a Sophisticated Storage Chest");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.description",
+                "Construct a Sophisticated Storage Chest");
 
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.sleeping_bag.title", "Where are my pj's?!");
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.sleeping_bag.description", "Construct a Sleeping Bag");

@@ -1,11 +1,9 @@
 package com.CuteNekoDragon.Core.common.data;
 
-import com.CuteNekoDragon.Core.common.blockentity.SleepingBagBlockEntity;
-import com.simibubi.create.content.decoration.slidingDoor.SlidingDoorBlockEntity;
 import net.minecraft.world.item.DyeColor;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlockEntity;
 
-import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.blockentity.SleepingBagBlockEntity;
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
@@ -24,7 +22,8 @@ public class SVOBlockEntities {
             .validBlock(SVOBlocks.IRIDIUM_BACKPACK)
             .register();
 
-    public static final Map<DyeColor, BlockEntityEntry<SleepingBagBlockEntity>> SLEEPING_BAG_ENTITIES = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, BlockEntityEntry<SleepingBagBlockEntity>> SLEEPING_BAG_ENTITIES = new EnumMap<>(
+            DyeColor.class);
 
     static {
         for (DyeColor color : DyeColor.values()) {

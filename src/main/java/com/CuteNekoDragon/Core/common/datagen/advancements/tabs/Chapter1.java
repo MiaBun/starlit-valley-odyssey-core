@@ -1,10 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
-import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
-import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
-import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
-import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -18,16 +13,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.ForgeAdvancementProvider;
-
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.common.data.SVOTags;
-import com.CuteNekoDragon.Core.common.data.items.SVOItems;
-import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
-import java.util.function.Consumer;
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
+import com.CuteNekoDragon.Core.common.data.SVOTags;
+import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
+import com.CuteNekoDragon.Core.common.data.items.SVOItems;
+import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
+import com.tterrag.registrate.util.entry.BlockEntry;
 
-import static com.CuteNekoDragon.Core.common.data.items.SVOItems.UPGRADE_TEMPLATES;
+import java.util.function.Consumer;
 
 @SuppressWarnings("removal")
 public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {

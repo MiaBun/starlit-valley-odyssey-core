@@ -7,23 +7,15 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BedPart;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.EnumMap;
@@ -40,7 +32,6 @@ public class SleepingBagBlock extends BedBlock {
             map.put(dir, rotateShape(Direction.NORTH, dir, SHAPE_NORTH));
         }
     });
-
 
     public SleepingBagBlock(Properties properties, DyeColor color) {
         super(color, properties);
@@ -62,7 +53,8 @@ public class SleepingBagBlock extends BedBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
+                                 BlockHitResult hit) {
         if (level.isClientSide || !(player instanceof ServerPlayer serverPlayer)) {
             return super.use(state, level, pos, player, hand, hit);
         }
@@ -84,5 +76,3 @@ public class SleepingBagBlock extends BedBlock {
         return result;
     }
 }
-
-

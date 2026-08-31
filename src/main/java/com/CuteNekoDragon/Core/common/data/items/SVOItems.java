@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
-import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -391,6 +390,4 @@ public class SVOItems {
     public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE
             .item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9, 5)).lang("Collectors Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
-
-
 }

@@ -1,9 +1,5 @@
 package com.CuteNekoDragon.Core.common.data.blocks;
 
-import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
-import com.CuteNekoDragon.Core.common.data.SVOTags;
-import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
-import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Direction;
@@ -28,6 +24,8 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlock;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.block.SleepingBagBlock;
+import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import java.util.EnumMap;
@@ -37,8 +35,7 @@ import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
 
 public final class SVOBlocks {
 
-    public static void init() {
-    }
+    public static void init() {}
 
     public static final BlockEntry<BackpackBlock> IRIDIUM_BACKPACK = SVOCore.REGISTRATE
             .block("iridium_backpack", p -> new BackpackBlock())
@@ -67,7 +64,8 @@ public final class SVOBlocks {
                             BedPart part = state.getValue(BedBlock.PART);
                             int rotY = (int) facing.toYRot();
                             return ConfiguredModel.builder()
-                                    .modelFile(prov.models().getExistingFile(part == BedPart.HEAD ? headModel : footModel))
+                                    .modelFile(
+                                            prov.models().getExistingFile(part == BedPart.HEAD ? headModel : footModel))
                                     .rotationY(rotY)
                                     .build();
                         });
@@ -77,14 +75,14 @@ public final class SVOBlocks {
                                     LootPool.lootPool()
                                             .setRolls(ConstantValue.exactly(1))
                                             .add(LootItem.lootTableItem(block)
-                                                    .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                    .when(LootItemBlockStatePropertyCondition
+                                                            .hasBlockStateProperties(block)
                                                             .setProperties(StatePropertiesPredicate.Builder.properties()
                                                                     .hasProperty(BedBlock.PART, BedPart.HEAD))))
-                                            .when(ExplosionCondition.survivesExplosion())
-                            )
-                    ))
+                                            .when(ExplosionCondition.survivesExplosion()))))
                     .item()
-                    .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/" + name + "_foot")))
+                    .model((ctx, prov) -> prov.withExistingParent(ctx.getName(),
+                            prov.modLoc("block/" + name + "_foot")))
                     .recipe((ctx, provider) -> {
                         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ctx.get())
                                 .pattern(" A ")
