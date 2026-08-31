@@ -1,0 +1,10 @@
+{
+  "values": [
+    "svo_core:toolbelt",
+    "svo_core:deluxe_toolbelt",
+    "svo_core:super_deluxe_toolbelt",
+    "svo_core:premium_toolbelt",
+    "svo_core:ultimate_toolbelt",
+    "svo_core:collectors_toolbelt"
+  ]
+}
