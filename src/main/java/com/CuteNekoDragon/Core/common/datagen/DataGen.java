@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
+import com.CuteNekoDragon.Core.integration.forks.terrafirmacraft.TFC;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -26,6 +27,9 @@ public class DataGen {
     public static void gatherData(GatherDataEvent event) {
         REGISTRATE.addLang("creative_tab", ResourceLocation.fromNamespaceAndPath(SVOCore.MOD_ID, "svo"),
                 "Starlit Valley: Odyssey");
+
+        REGISTRATE.addLang("creative_tab", ResourceLocation.fromNamespaceAndPath(TFC.MOD_ID, "tfc"),
+                "TerraFirmaCraft - Stardew Fork");
 
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common;
 
+import com.CuteNekoDragon.Core.integration.forks.terrafirmacraft.common.TFCCreativeTab;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
@@ -33,6 +34,7 @@ public class CommonProxy {
         SVOBlocks.init();
         SVOBlockEntities.init();
         SVOItems.init();
+        TFCCreativeTab.init();
         SVOCreativeTab.init();
         SVOContainers.CONTAINERS.register(bus);
         SVORecipeSeralizers.RECIPE_SERIALIZERS.register(bus);
