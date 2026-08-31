@@ -32,6 +32,7 @@ public final class SVOTags {
         public static final TagKey<Item> SACK = createItemTag("sack");
 
         public static final TagKey<Item> LUNCHBOX = createItemTag("lunchbox");
+        public static final TagKey<Item> TOOLBELT = createItemTag("toolbelt");
 
         public static final TagKey<Item> Sleeping_Bags = createItemTag("sleeping_bags");
 

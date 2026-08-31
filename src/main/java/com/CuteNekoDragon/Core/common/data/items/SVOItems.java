@@ -390,4 +390,29 @@ public class SVOItems {
     public static ItemEntry<LunchboxItem> COLLECTORS_LUNCHBOX = REGISTRATE
             .item("collectors_lunchbox", p -> new LunchboxItem(p.stacksTo(1), 9, 5)).lang("Collectors Lunchbox")
             .tag(SVOTags.Items.LUNCHBOX).tag(SVOTags.Items.CURIO_LUNCHBOX).defaultModel().register();
+
+    // base
+    public static ItemEntry<ToolbeltItem> TOOLBELT = REGISTRATE
+            .item("toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Toolbelt")
+            .tag(SVOTags.Items.TOOLBELT).defaultModel().register();
+    // copper
+    public static ItemEntry<ToolbeltItem> DELUXE_TOOLBELT = REGISTRATE
+            .item("deluxe_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Deluxe Toolbelt")
+            .tag(SVOTags.Items.TOOLBELT).defaultModel().register();
+    // iron
+    public static ItemEntry<ToolbeltItem> SUPER_DELUXE_TOOLBELT = REGISTRATE
+            .item("super_deluxe_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Super Deluxe Toolbelt")
+            .tag(SVOTags.Items.TOOLBELT).defaultModel().register();
+    // gold
+    public static ItemEntry<ToolbeltItem> PREMIUM_TOOLBELT = REGISTRATE
+            .item("premium_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Premium Toolbelt")
+            .tag(SVOTags.Items.TOOLBELT).defaultModel().register();
+    // diamond
+    public static ItemEntry<ToolbeltItem> ULTIMATE_TOOLBELT = REGISTRATE
+            .item("ultimate_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Ultimate Toolbelt")
+            .tag(SVOTags.Items.TOOLBELT).defaultModel().register();
+    // iridium
+    public static ItemEntry<ToolbeltItem> COLLECTORS_TOOLBELT = REGISTRATE
+            .item("collectors_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Collectors Toolbelt")
+            .tag(SVOTags.Items.TOOLBELT).defaultModel().register();
 }

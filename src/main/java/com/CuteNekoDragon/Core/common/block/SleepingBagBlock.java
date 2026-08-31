@@ -23,6 +23,7 @@ import java.util.Map;
 
 import static com.CuteNekoDragon.Core.utils.RotationUtil.rotateShape;
 
+@SuppressWarnings("deprecation")
 public class SleepingBagBlock extends BedBlock {
 
     private static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 0, 16, 2, 16);
