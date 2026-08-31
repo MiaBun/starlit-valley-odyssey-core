@@ -44,7 +44,6 @@ public final class SVOBlocks {
             .register();
 
     public static final Map<DyeColor, BlockEntry<SleepingBagBlock>> SLEEPING_BAGS = new EnumMap<>(DyeColor.class);
-
     static {
         for (DyeColor color : DyeColor.values()) {
             String name = color.getSerializedName() + "_sleeping_bag";
@@ -95,7 +94,6 @@ public final class SVOBlocks {
                     .tag(SVOTags.Items.Sleeping_Bags)
                     .build()
                     .register();
-
             SLEEPING_BAGS.put(color, entry);
         }
     }

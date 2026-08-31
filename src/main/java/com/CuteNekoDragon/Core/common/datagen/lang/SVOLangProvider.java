@@ -145,5 +145,6 @@ public class SVOLangProvider {
 
         REGISTRATE.addRawLang("gtceu.charcoal_kiln", "Charcoal Kiln");
         REGISTRATE.addRawLang("curios.identifier.lunchbox", "Lunchbox");
+        REGISTRATE.addRawLang("curios.identifier.toolbelt", "Toolbelt");
     }
 }
