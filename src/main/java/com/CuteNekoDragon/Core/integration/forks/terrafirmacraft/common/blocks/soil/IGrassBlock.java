@@ -7,4 +7,6 @@ package com.CuteNekoDragon.Core.integration.forks.terrafirmacraft.common.blocks.
  * 2. can be converted to dirt
  */
 public interface IGrassBlock {
+
+    //TODO: TFC
 }

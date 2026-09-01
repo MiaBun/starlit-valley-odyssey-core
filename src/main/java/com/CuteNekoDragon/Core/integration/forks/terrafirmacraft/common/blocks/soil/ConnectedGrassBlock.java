@@ -15,6 +15,8 @@ import java.util.function.Supplier;
 
 public class ConnectedGrassBlock extends Block implements IGrassBlock {
 
+    //TODO: TFC
+
     // Used to determine connected textures
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
     public static final BooleanProperty EAST = BlockStateProperties.EAST;
