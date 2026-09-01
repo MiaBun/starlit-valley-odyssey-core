@@ -2,8 +2,12 @@ package com.CuteNekoDragon.Core.common.item;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.Tag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -20,6 +24,26 @@ public class ToolbeltItem extends Item implements ICurioItem {
     public ToolbeltItem(Properties properties, int slots) {
         super(properties);
         this.StorageSize = slots;
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use (Level level, Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+
+        if (!itemStack.hasTag() || !itemStack.getTag().contains(TAG_StorageSize)) {
+            itemStack.getOrCreateTag().putInt(TAG_StorageSize, StorageSize);
+        }
+
+        if (!itemStack.hasTag() || !itemStack.getTag().contains(TAG_Slot)) {
+            itemStack.getOrCreateTag().putInt(TAG_Slot, 1);
+        }
+
+        if(!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
+            // Open Menu
+            return InteractionResultHolder.success(itemStack);
+        }
+
+        return InteractionResultHolder.pass(itemStack);
     }
 
     public static int getStorageSize(ItemStack stack) {

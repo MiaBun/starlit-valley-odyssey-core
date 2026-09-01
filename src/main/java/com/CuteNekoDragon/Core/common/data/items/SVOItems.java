@@ -405,7 +405,7 @@ public class SVOItems {
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // gold
     public static ItemEntry<ToolbeltItem> PREMIUM_TOOLBELT = REGISTRATE
-            .item("premium_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 7)).lang("Premium Toolbelt")
+            .item("premium_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 6)).lang("Premium Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // diamond
     public static ItemEntry<ToolbeltItem> ULTIMATE_TOOLBELT = REGISTRATE
