@@ -1,10 +1,26 @@
 package com.CuteNekoDragon.Core.common.container;
 
+import com.CuteNekoDragon.Core.common.data.SVOContainers;
+import com.CuteNekoDragon.Core.common.item.LunchboxItem;
+import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
+import lombok.Getter;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class ToolbeltContainer extends AbstractContainerMenu {
 
@@ -32,17 +48,136 @@ public class ToolbeltContainer extends AbstractContainerMenu {
         }
     }
 
-    protected ToolbeltContainer(@Nullable MenuType<?> menuType, int containerId) {
-        super(menuType, containerId);
+    private final ItemStack storageitem;
+    private final SimpleContainer storageInventory;
+    @Getter
+    private final int storageSize;
+    private final int cols;
+    @Getter
+    private final int rows;
+
+    private static final Map<UUID, ToolbeltContainer> OPEN_CONTAINERS = new HashMap<>();
+
+    @Nullable
+    public static ToolbeltContainer getOpenContainerFor(Player player) {
+        return  OPEN_CONTAINERS.get(player.getUUID());
+    }
+
+    public boolean isShowing(ItemStack stack) {
+        return this.storageitem == stack;
+    }
+
+    public ToolbeltContainer(int containerId, Inventory inventory, FriendlyByteBuf data) {
+        this(containerId, inventory, data.readItem());
+    }
+
+    private static final int SLOTS_PER_ROW = 9;
+
+    public ToolbeltContainer(int containerId, Inventory playerInventory, ItemStack storItem) {
+        super(SVOContainers.TOOLBELT_CONTAINER.get(), containerId);
+        this.storageitem = storItem;
+
+        this.storageSize = ToolbeltItem.getStorageSize(storageitem);
+        this.cols = Math.min(storageSize, SLOTS_PER_ROW);
+        this.rows = (int) Math.ceil(storageSize / (double) SLOTS_PER_ROW);
+        this.storageInventory = new SimpleContainer(storageSize);
+
+        loadFromNBT(storageitem);
+
+        ToolbeltTier tier = ToolbeltTier.fromStorageSize(storageSize);
+        for (int i = 0; i < storageSize; i++) {
+            int x = tier.slotX[i];
+            this.addSlot(new Slot(storageInventory, i, x, 20) {
+
+                @Override
+                public boolean mayPlace(ItemStack stack) {
+                    return stack.isDamageableItem() && !(stack.getItem() instanceof ToolbeltItem);
+                }
+            });
+        }
+        addPlayerInventory(playerInventory);
+        addPlayerHotbar(playerInventory);
+
+        if (!playerInventory.player.level().isClientSide) {
+            OPEN_CONTAINERS.put(playerInventory.player.getUUID(), this);
+        }
+    }
+
+    private NonNullList<ItemStack> getStorageItems() {
+        NonNullList<ItemStack> items = NonNullList.withSize(storageInventory.getContainerSize(), ItemStack.EMPTY);
+        for (int i = 0; i < storageInventory.getContainerSize(); i++) {
+            items.set(i, storageInventory.getItem(i));
+        }
+        return items;
+    }
+
+    private void loadFromNBT(ItemStack item) {
+        NonNullList<ItemStack> items = NonNullList.withSize(storageSize, ItemStack.EMPTY);
+        if (item.hasTag() && item.getTag().contains(ToolbeltItem.TAG_Items, Tag.TAG_LIST)) {
+            ContainerHelper.loadAllItems(item.getTag(), items);
+        }
+        for (int i = 0; i < items.size(); i++) {
+            storageInventory.setItem(i, items.get(i));
+        }
+    }
+
+    public void saveToNBT() {
+        CompoundTag tag = storageitem.getOrCreateTag();
+        ContainerHelper.saveAllItems(tag, getStorageItems());
+        tag.putInt(ToolbeltItem.TAG_StorageSize, storageSize);
     }
 
     @Override
     public ItemStack quickMoveStack(Player player, int i) {
-        return null;
+        ItemStack itemStack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(i);
+
+        if (slot != null && slot.hasItem()) {
+            ItemStack slotStack = slot.getItem();
+            itemStack = slotStack.copy();
+
+            if (i < storageSize) {
+                if (!this.moveItemStackTo(slotStack, storageSize, this.slots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (!this.moveItemStackTo(slotStack, 0, storageSize, false)) {
+                return ItemStack.EMPTY;
+            }
+            if (slotStack.isEmpty()) {
+                slot.set(ItemStack.EMPTY);
+            } else {
+                slot.setChanged();
+            }
+        }
+        saveToNBT();
+        return itemStack;
     }
 
     @Override
     public boolean stillValid(Player player) {
-        return false;
+        return true;
+    }
+
+    private void addPlayerInventory(Inventory inventory) {
+        for (int l = 0; l < 3; ++l) {
+            for (int k = 0; k < 9; ++k) {
+                this.addSlot(new Slot(inventory, k + l * 9 + 9, 8 + k * 18, l * 18 + 51));
+            }
+        }
+    }
+
+    private void addPlayerHotbar(Inventory inventory) {
+        for (int i1 = 0; i1 < 9; ++i1) {
+            this.addSlot(new Slot(inventory, i1, 8 + i1 * 18, 109));
+        }
+    }
+
+    @Override
+    public void removed(Player player) {
+        super.removed(player);
+        if (!player.level().isClientSide) {
+            saveToNBT();
+            OPEN_CONTAINERS.remove(player.getUUID(), this);
+        }
     }
 }

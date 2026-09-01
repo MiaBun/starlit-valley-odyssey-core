@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.client;
 
+import com.CuteNekoDragon.Core.client.screen.ToolbeltScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +20,7 @@ public class SVOClientScreens {
     public static void onClientSetup(FMLClientSetupEvent e) {
         e.enqueueWork(() -> {
             MenuScreens.register(SVOContainers.STORAGE_CONTAINER.get(), LunchboxScreen::new);
+            MenuScreens.register(SVOContainers.TOOLBELT_CONTAINER.get(), ToolbeltScreen::new);
         });
     }
 }

@@ -1,27 +1,24 @@
 package com.CuteNekoDragon.Core.client.screen;
 
+import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
-
 @SuppressWarnings("removal")
-public class LunchboxScreen extends AbstractContainerScreen<LunchboxContainer> {
+public class ToolbeltScreen extends AbstractContainerScreen<ToolbeltContainer> {
 
     private final ResourceLocation texture;
-
     private static final int PLAYER_INV_ROW_1_Y = 109;
 
-    public LunchboxScreen(LunchboxContainer menu, Inventory playerInventory, Component title) {
+    public ToolbeltScreen(ToolbeltContainer menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
 
         int storageWidth = menu.getStorageSize();
-
         this.texture = new ResourceLocation("svo_core",
-                "textures/gui/container/lunchbox/slots_" + storageWidth + ".png");
+                "textures/gui/container/toolbelt/slots_" + storageWidth + ".png");
         this.imageWidth = 175;
 
         this.imageHeight = PLAYER_INV_ROW_1_Y + 3 * 18 + 4 + 18 + 6;
