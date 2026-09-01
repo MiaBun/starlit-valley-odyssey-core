@@ -397,22 +397,22 @@ public class SVOItems {
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // copper
     public static ItemEntry<ToolbeltItem> DELUXE_TOOLBELT = REGISTRATE
-            .item("deluxe_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Deluxe Toolbelt")
+            .item("deluxe_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 4)).lang("Deluxe Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // iron
     public static ItemEntry<ToolbeltItem> SUPER_DELUXE_TOOLBELT = REGISTRATE
-            .item("super_deluxe_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Super Deluxe Toolbelt")
+            .item("super_deluxe_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 5)).lang("Super Deluxe Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // gold
     public static ItemEntry<ToolbeltItem> PREMIUM_TOOLBELT = REGISTRATE
-            .item("premium_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Premium Toolbelt")
+            .item("premium_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 7)).lang("Premium Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // diamond
     public static ItemEntry<ToolbeltItem> ULTIMATE_TOOLBELT = REGISTRATE
-            .item("ultimate_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Ultimate Toolbelt")
+            .item("ultimate_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 8)).lang("Ultimate Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
     // iridium
     public static ItemEntry<ToolbeltItem> COLLECTORS_TOOLBELT = REGISTRATE
-            .item("collectors_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 3)).lang("Collectors Toolbelt")
+            .item("collectors_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 9)).lang("Collectors Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
 }
