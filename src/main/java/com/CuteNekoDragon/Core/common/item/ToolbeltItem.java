@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.item;
 
+import com.CuteNekoDragon.Core.common.component.ToolbeltTooltip;
 import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
 import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
 import net.minecraft.core.NonNullList;
@@ -12,6 +13,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -21,6 +23,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class ToolbeltItem extends Item implements ICurioItem {
 
@@ -88,6 +91,20 @@ public class ToolbeltItem extends Item implements ICurioItem {
         }
 
         return false;
+    }
+
+    @Override
+    public Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
+
+        if (!hasStoredItems(stack)) {
+            return Optional.empty();
+        }
+
+        int storageSize = getStorageSize(stack);
+        NonNullList<ItemStack> items = NonNullList.withSize(storageSize, ItemStack.EMPTY);
+        ContainerHelper.loadAllItems(stack.getTag(), items);
+
+        return Optional.of(new ToolbeltTooltip(items));
     }
 
     @Override

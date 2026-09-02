@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.client.event;
 
+import com.CuteNekoDragon.Core.client.components.ClientToolbeltTooltip;
+import com.CuteNekoDragon.Core.common.component.ToolbeltTooltip;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,5 +20,6 @@ public class ClientTooltipComponentFactories {
     public static void registerTooltips(RegisterClientTooltipComponentFactoriesEvent e) {
         e.register(SackTooltip.class, ClientSackTooltip::new);
         e.register(LunchboxTooltip.class, ClientLunchboxTooltip::new);
+        e.register(ToolbeltTooltip.class, ClientToolbeltTooltip::new);
     }
 }
