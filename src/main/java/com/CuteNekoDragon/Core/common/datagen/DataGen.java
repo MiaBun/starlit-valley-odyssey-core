@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen;
 
-import com.CuteNekoDragon.Core.integration.forks.terrafirmacraft.TFC;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
