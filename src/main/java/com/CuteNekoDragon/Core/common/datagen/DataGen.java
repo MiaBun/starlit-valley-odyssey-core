@@ -27,9 +27,6 @@ public class DataGen {
         REGISTRATE.addLang("creative_tab", ResourceLocation.fromNamespaceAndPath(SVOCore.MOD_ID, "svo"),
                 "Starlit Valley: Odyssey");
 
-        REGISTRATE.addLang("creative_tab", ResourceLocation.fromNamespaceAndPath(TFC.MOD_ID, "tfc"),
-                "TerraFirmaCraft - Stardew Fork");
-
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
