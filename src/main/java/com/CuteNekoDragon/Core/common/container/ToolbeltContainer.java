@@ -180,4 +180,13 @@ public class ToolbeltContainer extends AbstractContainerMenu {
             OPEN_CONTAINERS.remove(player.getUUID(), this);
         }
     }
+
+    public ItemStack getStorageItemStack() {
+        return storageitem;
+    }
+
+    public void setSelectedSlot(int slot) {
+        slot = Math.min(9, Math.max(1, slot));
+        storageitem.getOrCreateTag().putInt(ToolbeltItem.TAG_Slot, slot);
+    }
 }
