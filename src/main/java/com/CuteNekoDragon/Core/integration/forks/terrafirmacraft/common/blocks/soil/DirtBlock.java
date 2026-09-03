@@ -2,5 +2,5 @@ package com.CuteNekoDragon.Core.integration.forks.terrafirmacraft.common.blocks.
 
 public class DirtBlock {
 
-    //TODO: TFC
+    // TODO: TFC
 }

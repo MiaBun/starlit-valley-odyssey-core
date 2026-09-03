@@ -1,16 +1,16 @@
 package com.CuteNekoDragon.Core.client.screen;
 
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Inventory;
+
 import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
 import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.SetToolbeltSlotPacket;
 import com.CuteNekoDragon.Core.utils.ui.CenteredEditBox;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.player.Inventory;
 
 @SuppressWarnings("removal")
 public class ToolbeltScreen extends AbstractContainerScreen<ToolbeltContainer> {
@@ -18,8 +18,8 @@ public class ToolbeltScreen extends AbstractContainerScreen<ToolbeltContainer> {
     private final ResourceLocation texture;
     private static final int PLAYER_INV_ROW_1_Y = 109;
     private static final int HOTBAR_BOX_BORDER = 0xFFAAAAAA;
-    private static final int HOTBAR_BOX_FILL   = 0xFF000000;
-    private static final int PANEL_FILL   = 0xFFC6C6C6;
+    private static final int HOTBAR_BOX_FILL = 0xFF000000;
+    private static final int PANEL_FILL = 0xFFC6C6C6;
     private static final int PANEL_BORDER = 0xFF373737;
 
     private CenteredEditBox slotInput;
@@ -77,7 +77,6 @@ public class ToolbeltScreen extends AbstractContainerScreen<ToolbeltContainer> {
         int panelY = topPos;
         int panelWidth = 60;
         int panelHeight = 50;
-
 
         guiGraphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, PANEL_BORDER);
         guiGraphics.fill(panelX, panelY + 2, panelX + panelWidth - 2, panelY + panelHeight - 2, PANEL_FILL);

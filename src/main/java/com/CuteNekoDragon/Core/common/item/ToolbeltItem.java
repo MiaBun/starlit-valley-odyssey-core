@@ -1,8 +1,6 @@
 package com.CuteNekoDragon.Core.common.item;
 
-import com.CuteNekoDragon.Core.common.component.ToolbeltTooltip;
-import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
-import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
@@ -19,6 +17,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.CuteNekoDragon.Core.common.component.ToolbeltTooltip;
+import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -38,7 +39,7 @@ public class ToolbeltItem extends Item implements ICurioItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use (Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
         if (!itemStack.hasTag() || !itemStack.getTag().contains(TAG_StorageSize)) {
@@ -49,7 +50,7 @@ public class ToolbeltItem extends Item implements ICurioItem {
             itemStack.getOrCreateTag().putInt(TAG_Slot, 1);
         }
 
-        if(!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
+        if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
             NetworkHooks.openScreen(serverPlayer,
                     new SimpleMenuProvider(
                             (windowId, playerInventory, playerEntity) -> new ToolbeltContainer(windowId,
@@ -95,7 +96,6 @@ public class ToolbeltItem extends Item implements ICurioItem {
 
     @Override
     public Optional<TooltipComponent> getTooltipImage(ItemStack stack) {
-
         if (!hasStoredItems(stack)) {
             return Optional.empty();
         }
@@ -119,7 +119,6 @@ public class ToolbeltItem extends Item implements ICurioItem {
 
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
-
         LivingEntity entity = slotContext.entity();
         Level level = entity.level();
 
@@ -130,5 +129,9 @@ public class ToolbeltItem extends Item implements ICurioItem {
         if (!stack.hasTag() || !stack.getTag().contains(TAG_Slot)) return;
 
         if (!stack.hasTag() || !stack.getTag().contains(TAG_Items)) return;
+
+        if (Screen.hasAltDown()) {
+            // TODO: show radial menu
+        }
     }
 }

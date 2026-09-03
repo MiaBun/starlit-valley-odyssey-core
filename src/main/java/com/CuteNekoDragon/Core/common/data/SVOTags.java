@@ -23,7 +23,7 @@ public final class SVOTags {
         public static final TagKey<Item> CURIO_LUNCHBOX = TagKey.create(Registries.ITEM,
                 new ResourceLocation("curios", "lunchbox"));
 
-        public static final TagKey<Item> CURIO_TOOLBELT= TagKey.create(Registries.ITEM,
+        public static final TagKey<Item> CURIO_TOOLBELT = TagKey.create(Registries.ITEM,
                 new ResourceLocation("curios", "toolbelt"));
 
         public static final TagKey<Item> Minerals = createItemTag("minerals");

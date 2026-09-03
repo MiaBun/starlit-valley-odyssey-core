@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public interface IDirtBlock {
 
-    //TODO: TFC
+    // TODO: TFC
 
     /**
      * Gets the grass state this dirt block may transform into, at the current location.

@@ -1,9 +1,5 @@
 package com.CuteNekoDragon.Core.common.container;
 
-import com.CuteNekoDragon.Core.common.data.SVOContainers;
-import com.CuteNekoDragon.Core.common.item.LunchboxItem;
-import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
-import lombok.Getter;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -13,9 +9,12 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.common.data.SVOContainers;
+import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
+import lombok.Getter;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -25,6 +24,7 @@ import java.util.UUID;
 public class ToolbeltContainer extends AbstractContainerMenu {
 
     public enum ToolbeltTier {
+
         TIER_3(3, new int[] { 62, 80, 98 }),
         TIER_4(4, new int[] { 62, 80, 98, 116 }),
         TIER_5(5, new int[] { 44, 62, 80, 98, 116 }),
@@ -60,7 +60,7 @@ public class ToolbeltContainer extends AbstractContainerMenu {
 
     @Nullable
     public static ToolbeltContainer getOpenContainerFor(Player player) {
-        return  OPEN_CONTAINERS.get(player.getUUID());
+        return OPEN_CONTAINERS.get(player.getUUID());
     }
 
     public boolean isShowing(ItemStack stack) {

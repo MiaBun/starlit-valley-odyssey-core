@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.data;
 
-import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -11,6 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.container.LunchboxContainer;
+import com.CuteNekoDragon.Core.common.container.ToolbeltContainer;
 
 public class SVOContainers {
 

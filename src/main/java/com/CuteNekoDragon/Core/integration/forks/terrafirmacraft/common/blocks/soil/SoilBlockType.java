@@ -2,7 +2,7 @@ package com.CuteNekoDragon.Core.integration.forks.terrafirmacraft.common.blocks.
 
 public enum SoilBlockType {
 
-    //TODO: TFC
+    // TODO: TFC
     DIRT,
     GRASS,
     GRASS_PATH,
@@ -17,5 +17,7 @@ public enum SoilBlockType {
 
     public static final SoilBlockType[] VALUES = values();
 
-    public static SoilBlockType valueOf(int i) { return i >= 0 && i < VALUES.length ? VALUES[i] : DIRT;}
+    public static SoilBlockType valueOf(int i) {
+        return i >= 0 && i < VALUES.length ? VALUES[i] : DIRT;
+    }
 }
