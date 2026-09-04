@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.network;
 
+import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;
+import com.CuteNekoDragon.Core.network.packet.RadialSelectPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
@@ -35,5 +37,17 @@ public class SVONetworkHandler {
                 SetToolbeltSlotPacket::encode,
                 SetToolbeltSlotPacket::new,
                 SetToolbeltSlotPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                OpenToolbeltPacket.class,
+                OpenToolbeltPacket::encode,
+                OpenToolbeltPacket::decode,
+                OpenToolbeltPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                RadialSelectPacket.class,
+                RadialSelectPacket::encode,
+                RadialSelectPacket::decode,
+                RadialSelectPacket::handle);
     }
 }

@@ -38,6 +38,10 @@ public class ToolbeltItem extends Item implements ICurioItem {
         this.StorageSize = slots;
     }
 
+    public int getBaseStorageSize() {
+        return this.StorageSize;
+    }
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
@@ -51,17 +55,21 @@ public class ToolbeltItem extends Item implements ICurioItem {
         }
 
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
-            NetworkHooks.openScreen(serverPlayer,
-                    new SimpleMenuProvider(
-                            (windowId, playerInventory, playerEntity) -> new ToolbeltContainer(windowId,
-                                    playerInventory, itemStack),
-                            Component.translatable("item.svo_core." + Objects
-                                    .requireNonNull(ForgeRegistries.ITEMS.getKey(itemStack.getItem())).getPath())),
-                    buffer -> buffer.writeItem(itemStack));
+            openContainer(serverPlayer, itemStack);
             return InteractionResultHolder.success(itemStack);
         }
 
         return InteractionResultHolder.pass(itemStack);
+    }
+
+    public static void openContainer(ServerPlayer player, ItemStack stack) {
+        NetworkHooks.openScreen(player,
+                new SimpleMenuProvider(
+                        (windowId, playerInventory, playerEntity) -> new ToolbeltContainer(windowId,
+                                playerInventory, stack),
+                        Component.translatable("item.svo_core." + Objects
+                                .requireNonNull(ForgeRegistries.ITEMS.getKey(stack.getItem())).getPath())),
+                buffer -> buffer.writeItem(stack));
     }
 
     public static int getStorageSize(ItemStack stack) {
