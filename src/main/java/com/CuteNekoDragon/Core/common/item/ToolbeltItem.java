@@ -116,22 +116,4 @@ public class ToolbeltItem extends Item implements ICurioItem {
     public boolean canUnequip(SlotContext slotContext, ItemStack stack) {
         return true;
     }
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-        LivingEntity entity = slotContext.entity();
-        Level level = entity.level();
-
-        if (level.isClientSide) return;
-
-        if (!stack.hasTag() || !stack.getTag().contains(TAG_StorageSize)) return;
-
-        if (!stack.hasTag() || !stack.getTag().contains(TAG_Slot)) return;
-
-        if (!stack.hasTag() || !stack.getTag().contains(TAG_Items)) return;
-
-        if (Screen.hasAltDown()) {
-            // TODO: show radial menu
-        }
-    }
 }
