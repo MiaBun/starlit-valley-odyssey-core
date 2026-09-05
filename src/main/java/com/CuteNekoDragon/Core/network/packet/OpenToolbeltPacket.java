@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.network.packet;
 
+import com.CuteNekoDragon.Core.common.component.ToolbeltLogic;
 import earth.terrarium.adastra.common.network.NetworkHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -29,7 +30,7 @@ public class OpenToolbeltPacket {
         ctx.enqueueWork(() -> {
             ServerPlayer player = ctx.getSender();
             if (player != null) {
-                // TODO: Handle open
+                ToolbeltLogic.handleOpen(player);
             }
         });
         ctx.setPacketHandled(true);

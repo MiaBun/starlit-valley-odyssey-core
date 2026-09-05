@@ -177,6 +177,7 @@
   "item.svo_core.white_sack": "White Sack",
   "item.svo_core.yellow_sack": "Yellow Sack",
   "itemGroup.svo_core": "Svo Core",
+  "message.svo_core.toolbelt_inventory_full": "Toolbelt Inventory is full.",
   "tooltip.svo_core.aerinite": "These crystals are curiously light.",
   "tooltip.svo_core.alamite": "Its distinctive fluorescence makes it a favorite among rock collectors.",
   "tooltip.svo_core.amethyst": "A purple variant of quartz.",
