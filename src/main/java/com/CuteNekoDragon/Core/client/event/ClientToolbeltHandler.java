@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.client.event;
 
+import com.CuteNekoDragon.Core.client.screen.ToolbeltRadialScreen;
 import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
@@ -34,7 +35,7 @@ public class ClientToolbeltHandler {
         if (!Screen.hasAltDown()) {
             return;
         }
-
+        @SuppressWarnings({"removal", "deprecation"})
         Optional<SlotResult> curio = CuriosApi.getCuriosHelper().findFirstCurio(mc.player, stack -> stack.getItem() instanceof ToolbeltItem);
 
         if (curio.isEmpty()) {
@@ -46,7 +47,7 @@ public class ClientToolbeltHandler {
             return;
         }
 
-        // TODO: open ToolbeltRadialScreen
+        mc.setScreen(new ToolbeltRadialScreen(stack));
     }
 
     private static boolean hasRequiredTags(ItemStack stack) {

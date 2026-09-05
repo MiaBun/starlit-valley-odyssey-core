@@ -143,7 +143,8 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("tooltip.svo_core.special_item", "Special Item");
         REGISTRATE.addRawLang("tooltip.svo_core.blacksmith_item", "Blacksmith Product");
 
-        REGISTRATE.addRawLang("message.svo_core.toolbelt_inventory_full", "Toolbelt Inventory is full.");
+        REGISTRATE.addRawLang("message.svo_core.toolbelt_invalid_item", "Toolbelt Doesn't accept non-durable items.");
+        REGISTRATE.addRawLang("gui.svo_core.toolbelt_radial", "Toolbelt Radial");
 
         REGISTRATE.addRawLang("gtceu.charcoal_kiln", "Charcoal Kiln");
         REGISTRATE.addRawLang("curios.identifier.lunchbox", "Lunchbox");

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.network.packet;
 
+import com.CuteNekoDragon.Core.common.component.ToolbeltLogic;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
@@ -27,7 +28,7 @@ public class RadialSelectPacket {
         ctx.enqueueWork(() -> {
             ServerPlayer player = ctx.getSender();
             if (player != null) {
-                // TODO: handle radial select
+                ToolbeltLogic.handleRadialSelect(player, msg.slotIndex);
             }
         });
     }

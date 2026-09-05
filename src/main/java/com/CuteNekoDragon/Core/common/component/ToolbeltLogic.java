@@ -16,7 +16,7 @@ public class ToolbeltLogic {
     private ToolbeltLogic() {
 
     }
-
+    @SuppressWarnings({"removal", "deprecation"})
     private static Optional<SlotResult> findRequippedToolbelt(ServerPlayer player) {
         return CuriosApi.getCuriosHelper()
                 .findFirstCurio(player, stack -> stack.getItem() instanceof ToolbeltItem);
@@ -70,19 +70,9 @@ public class ToolbeltLogic {
                 player.getInventory().setItem(hotbarSlot, storedItem);
                 items.set(index, ItemStack.EMPTY);
             } else if (!handItem.isDamageableItem()) {
-                ItemStack toRelocate = handItem.copy();
-                player.getInventory().setItem(hotbarSlot, ItemStack.EMPTY);
-
-                boolean added = player.getInventory().add(toRelocate);
-                if (!added) {
-                    player.getInventory().setItem(hotbarSlot, handItem);
-                    player.displayClientMessage(
-                            Component.translatable("message.svo_core.toolbelt_inventory_full"), true);
-                    return;
-                }
-
-                player.getInventory().setItem(hotbarSlot, storedItem);
-                items.set(index, ItemStack.EMPTY);
+                player.displayClientMessage(
+                        Component.translatable("message.svo_core.toolbelt_invalid_item"), true);
+                return;
             } else {
                 player.getInventory().setItem(hotbarSlot, storedItem);
                 items.set(index, handItem);
