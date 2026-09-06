@@ -1,6 +1,10 @@
-## [Unreleased]
+## [0.0.29]
 ### Changes
-- 
+- added toolbelts, they come in different tiers
+- added advancements for toolbelts
+- added recipes for toolbelts
+- added guideme for toolbelts
+- added some extra information to guideme for lunchboxes
 
 ## [0.0.28]
 ### Changes
