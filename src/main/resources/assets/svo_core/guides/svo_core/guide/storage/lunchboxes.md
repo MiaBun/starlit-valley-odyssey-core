@@ -30,3 +30,5 @@ the tiers are as follows:
 | Premium Lunchbox      | 6     | 20       |
 | Ultimate Lunchbox     | 8     | 15       |
 | Collectors Lunchbox   | 9     | 5        |
+
+*please note that upgrading lunchboxes does not carry over it's contents, removing contents before upgrading is adviced.*

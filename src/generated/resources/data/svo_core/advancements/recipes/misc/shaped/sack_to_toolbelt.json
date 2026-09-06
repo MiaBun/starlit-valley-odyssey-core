@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:shaped/sack_to_backpack"
+        "recipe": "svo_core:shaped/sack_to_toolbelt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "svo_core:shaped/sack_to_backpack"
+      "svo_core:shaped/sack_to_toolbelt"
     ]
   },
   "sends_telemetry_event": false

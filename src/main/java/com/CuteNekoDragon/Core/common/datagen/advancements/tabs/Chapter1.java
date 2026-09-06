@@ -193,6 +193,21 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                                 .build()))
                 .save(consumer, SVOCore.id("chapter1/chainmail_armor"), existingFileHelper);
 
+        Advancement toolbelt = Advancement.Builder.advancement()
+                .parent(getting_an_upgrade)
+                .display(
+                        new ItemStack(SVOItems.TOOLBELT),
+                        Component.translatable("advancement.svo_core.chapter1.toolbelt.title"),
+                        Component.translatable("advancement.svo_core.chapter1.toolbelt.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item",
+                        InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                                .of(SVOItems.TOOLBELT)
+                                .build()))
+                .save(consumer, SVOCore.id("chapter1/toolbelt"), existingFileHelper);
+
         Advancement finding_copper = Advancement.Builder.advancement()
                 .parent(getting_an_upgrade)
                 .display(

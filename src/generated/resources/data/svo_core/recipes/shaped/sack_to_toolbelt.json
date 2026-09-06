@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "svo_core:sack"
+    },
+    "B": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " B ",
+    "BAB",
+    " B "
+  ],
+  "result": {
+    "item": "svo_core:toolbelt"
+  },
+  "show_notification": true
+}

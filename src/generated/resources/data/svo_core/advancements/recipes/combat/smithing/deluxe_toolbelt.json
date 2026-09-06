@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sack": {
+    "has_copper_ingot": {
       "conditions": {
         "items": [
           {
-            "tag": "svo_core:sack"
+            "items": [
+              "minecraft:copper_ingot"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:shaped/sack_to_backpack"
+        "recipe": "svo_core:smithing/deluxe_toolbelt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sack",
+      "has_copper_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "svo_core:shaped/sack_to_backpack"
+      "svo_core:smithing/deluxe_toolbelt"
     ]
   },
   "sends_telemetry_event": false

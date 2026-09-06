@@ -125,6 +125,25 @@ public class SmithingRecipesProvider {
                 SVOItems.IRIDIUM_INGOT,
                 SVOItems.COLLECTORS_LUNCHBOX.get());
 
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), SVOItems.TOOLBELT, Items.COPPER_INGOT,
+                SVOItems.DELUXE_TOOLBELT.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), SVOItems.DELUXE_TOOLBELT,
+                Items.IRON_INGOT,
+                SVOItems.SUPER_DELUXE_TOOLBELT.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_TOOLBELT,
+                Items.GOLD_INGOT,
+                SVOItems.PREMIUM_TOOLBELT.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), SVOItems.PREMIUM_TOOLBELT,
+                Items.DIAMOND,
+                SVOItems.ULTIMATE_TOOLBELT.get());
+
+        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_TOOLBELT,
+                SVOItems.IRIDIUM_INGOT,
+                SVOItems.COLLECTORS_TOOLBELT.get());
+
         SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), ModItems.DIAMOND_BACKPACK.get(),
                 SVOItems.IRIDIUM_INGOT, SVOItems.IRIDIUM_BACKPACK.get(),
                 ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());

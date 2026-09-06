@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_apple": {
+    "has_sack": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:apple"
-            ]
+            "tag": "svo_core:sack"
           }
         ]
       },
@@ -22,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_apple",
+      "has_sack",
       "has_the_recipe"
     ]
   ],

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "svo_core:iridium_ingot"
+  },
+  "base": {
+    "item": "svo_core:ultimate_toolbelt"
+  },
+  "result": {
+    "item": "svo_core:collectors_toolbelt"
+  },
+  "template": {
+    "item": "svo_core:iridium_upgrade_smithing_template"
+  }
+}

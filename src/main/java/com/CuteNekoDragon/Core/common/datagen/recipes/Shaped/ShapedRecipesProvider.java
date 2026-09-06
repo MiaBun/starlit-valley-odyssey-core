@@ -3,6 +3,7 @@ package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -56,8 +57,17 @@ public class ShapedRecipesProvider {
                 .define('C', Items.CARROT)
                 .define('D', Items.WHEAT)
                 .define('E', Items.POTATO)
-                .unlockedBy("has_apple", InventoryChangeTrigger.TriggerInstance.hasItems(Items.APPLE))
+                .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
                 .save(consumer, SVOCore.id("shaped/sack_to_lunchbox"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOItems.TOOLBELT)
+                .pattern(" B ")
+                .pattern("BAB")
+                .pattern(" B ")
+                .define('A', SVOTags.Items.SACK)
+                .define('B', Items.COPPER_INGOT)
+                .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
+                .save(consumer, SVOCore.id("shaped/sack_to_toolbelt"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get()) // TODO: proper recipe that includes
                                                                                  // leather and cloth
@@ -66,7 +76,7 @@ public class ShapedRecipesProvider {
                 .pattern("AAA")
                 .define('A', Items.STRING)
                 .define('B', SVOItems.SACK)
-                .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(SVOItems.SACK))
+                .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
                 .save(consumer, SVOCore.id("shaped/sack_to_backpack"));
 
         ShapeBasedRecipeBuilder
