@@ -1,9 +1,10 @@
 package com.CuteNekoDragon.Core.network.packet;
 
-import com.CuteNekoDragon.Core.common.component.ToolbeltLogic;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
+
+import com.CuteNekoDragon.Core.common.component.ToolbeltLogic;
 
 import java.util.function.Supplier;
 

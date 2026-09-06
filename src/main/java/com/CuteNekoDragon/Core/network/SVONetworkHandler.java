@@ -1,12 +1,12 @@
 package com.CuteNekoDragon.Core.network;
 
-import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;
-import com.CuteNekoDragon.Core.network.packet.RadialSelectPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;
+import com.CuteNekoDragon.Core.network.packet.RadialSelectPacket;
 import com.CuteNekoDragon.Core.network.packet.SelectSackItemPacket;
 import com.CuteNekoDragon.Core.network.packet.SetToolbeltSlotPacket;
 

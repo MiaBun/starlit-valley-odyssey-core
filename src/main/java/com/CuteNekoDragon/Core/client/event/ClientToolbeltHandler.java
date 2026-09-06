@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.client.event;
 
-import com.CuteNekoDragon.Core.client.screen.ToolbeltRadialScreen;
-import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.world.item.ItemStack;
@@ -9,6 +7,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import com.CuteNekoDragon.Core.client.screen.ToolbeltRadialScreen;
+import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
 
@@ -28,22 +29,23 @@ public class ClientToolbeltHandler {
             return;
         }
 
-        if(mc.screen != null) {
+        if (mc.screen != null) {
             return;
         }
 
         if (!Screen.hasAltDown()) {
             return;
         }
-        @SuppressWarnings({"removal", "deprecation"})
-        Optional<SlotResult> curio = CuriosApi.getCuriosHelper().findFirstCurio(mc.player, stack -> stack.getItem() instanceof ToolbeltItem);
+        @SuppressWarnings({ "removal", "deprecation" })
+        Optional<SlotResult> curio = CuriosApi.getCuriosHelper().findFirstCurio(mc.player,
+                stack -> stack.getItem() instanceof ToolbeltItem);
 
         if (curio.isEmpty()) {
             return;
         }
 
         ItemStack stack = curio.get().stack();
-        if(!hasRequiredTags(stack)) {
+        if (!hasRequiredTags(stack)) {
             return;
         }
 
@@ -51,8 +53,7 @@ public class ClientToolbeltHandler {
     }
 
     private static boolean hasRequiredTags(ItemStack stack) {
-        return stack.hasTag()
-                && stack.getTag().contains(ToolbeltItem.TAG_StorageSize)
-                && stack.getTag().contains(ToolbeltItem.TAG_Slot);
+        return stack.hasTag() && stack.getTag().contains(ToolbeltItem.TAG_StorageSize) &&
+                stack.getTag().contains(ToolbeltItem.TAG_Slot);
     }
 }

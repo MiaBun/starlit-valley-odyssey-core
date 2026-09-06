@@ -1,15 +1,16 @@
 package com.CuteNekoDragon.Core.client.screen;
 
-import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
-import com.CuteNekoDragon.Core.network.SVONetworkHandler;
-import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;
-import com.CuteNekoDragon.Core.network.packet.RadialSelectPacket;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
+import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;
+import com.CuteNekoDragon.Core.network.packet.RadialSelectPacket;
 
 public class ToolbeltRadialScreen extends Screen {
 

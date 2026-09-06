@@ -1,11 +1,12 @@
 package com.CuteNekoDragon.Core.common.component;
 
-import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
 
@@ -13,10 +14,9 @@ import java.util.Optional;
 
 public class ToolbeltLogic {
 
-    private ToolbeltLogic() {
+    private ToolbeltLogic() {}
 
-    }
-    @SuppressWarnings({"removal", "deprecation"})
+    @SuppressWarnings({ "removal", "deprecation" })
     private static Optional<SlotResult> findRequippedToolbelt(ServerPlayer player) {
         return CuriosApi.getCuriosHelper()
                 .findFirstCurio(player, stack -> stack.getItem() instanceof ToolbeltItem);
@@ -26,11 +26,11 @@ public class ToolbeltLogic {
         findRequippedToolbelt(player).ifPresent(result -> {
             ItemStack stack = result.stack();
 
-            if(!(stack.getItem() instanceof  ToolbeltItem toolbeltItem)) {
+            if (!(stack.getItem() instanceof ToolbeltItem toolbeltItem)) {
                 return;
             }
 
-            if (!stack.hasTag() || !stack.getTag().contains(ToolbeltItem.TAG_StorageSize))  {
+            if (!stack.hasTag() || !stack.getTag().contains(ToolbeltItem.TAG_StorageSize)) {
                 stack.getOrCreateTag().putInt(ToolbeltItem.TAG_StorageSize, toolbeltItem.getBaseStorageSize());
             }
 

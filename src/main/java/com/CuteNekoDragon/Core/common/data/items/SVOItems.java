@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.data.items;
 
-import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -416,5 +415,4 @@ public class SVOItems {
     public static ItemEntry<ToolbeltItem> COLLECTORS_TOOLBELT = REGISTRATE
             .item("collectors_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 9)).lang("Collectors Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
-
 }
