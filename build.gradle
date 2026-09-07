@@ -279,6 +279,11 @@ dependencies {
 
     modRuntimeOnly("curse.maven:better-advancements-272515:8569648")
 
+    modRuntimeOnly("curse.maven:reliable-emi-1411826:8274201")
+    modRuntimeOnly("curse.maven:mouse-tweaks-60089:5338457")
+    modRuntimeOnly("curse.maven:appleskin-248787:4770828")
+    modRuntimeOnly("curse.maven:kotlin-for-forge-351264:7291067")
+
 
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
