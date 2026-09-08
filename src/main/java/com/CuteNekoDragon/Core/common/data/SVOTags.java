@@ -20,6 +20,9 @@ public final class SVOTags {
         public static final TagKey<Item> HIDDEN_FROM_RECIPE_VIEWERS = TagKey.create(Registries.ITEM,
                 new ResourceLocation("c", "hidden_from_recipe_viewers"));
 
+        public static final TagKey<Item> INGOTS = TagKey.create(Registries.ITEM,
+                new ResourceLocation("forge", "ingots"));
+
         public static final TagKey<Item> CURIO_LUNCHBOX = TagKey.create(Registries.ITEM,
                 new ResourceLocation("curios", "lunchbox"));
 
