@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "svo_core:block/machine/mail_box",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "svo_core:block/machine/mail_box"
+    },
+    "facing=south": {
+      "model": "svo_core:block/machine/mail_box",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "svo_core:block/machine/mail_box",
+      "y": 270
+    }
+  }
+}

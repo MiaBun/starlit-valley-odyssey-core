@@ -1,6 +1,6 @@
 ## [Unreleased]
 ### Changes
-- 
+- added stack groups
 
 ## [0.0.29]
 ### Changes

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.data.svogt;
 
+import com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan.MailBox;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 
@@ -25,6 +26,15 @@ public class SVOMachines {
             .model(ModelUtils.createBasicMachineModel(SVOCore.id("block/machine/charkoal_kiln")))
             .itemBuilder(ib -> ib
                     .model((ctx, prov) -> prov.generated(ctx::getEntry, SVOCore.id(("item/machine/charcoal_kiln")))))
+            .register();
+
+    public static final MachineDefinition MAIL_BOX = REGISTRATE
+            .machine("mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Mail Box")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mail_box_model")))
             .register();
 
     public static void init() {}

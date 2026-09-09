@@ -30,4 +30,22 @@ public class ModelUtils {
                     .setModels(ConfiguredModel.builder().modelFile(model).build());
         };
     }
+
+    public static MachineBuilder.ModelInitializer createSingleMachineModel(ResourceLocation baseModel) {
+        return (ctx, prov, builder) -> {
+            ModelFile.ExistingModelFile model = prov.models().getExistingFile(baseModel);
+            builder.partialState()
+                    .with(RECIPE_LOGIC_STATUS, RecipeLogic.Status.WORKING)
+                    .setModels(ConfiguredModel.builder().modelFile(model).build());
+            builder.partialState()
+                    .with(RECIPE_LOGIC_STATUS, RecipeLogic.Status.IDLE)
+                    .setModels(ConfiguredModel.builder().modelFile(model).build());
+            builder.partialState()
+                    .with(RECIPE_LOGIC_STATUS, RecipeLogic.Status.SUSPEND)
+                    .setModels(ConfiguredModel.builder().modelFile(model).build());
+            builder.partialState()
+                    .with(RECIPE_LOGIC_STATUS, RecipeLogic.Status.WAITING)
+                    .setModels(ConfiguredModel.builder().modelFile(model).build());
+        };
+    }
 }
