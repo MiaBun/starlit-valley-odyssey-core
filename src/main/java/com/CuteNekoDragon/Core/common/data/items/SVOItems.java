@@ -4,11 +4,8 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
-import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.data.ForgeItemTagsProvider;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 
 import com.CuteNekoDragon.Core.SVOCore;
@@ -234,7 +231,8 @@ public class SVOItems {
                         .save(provider, SVOCore.id("blasting/refined_quartz"));
             }).register();
     public static ItemEntry<Item> RADIOACTIVE_INGOT = REGISTRATE.item("radioactive_ingot", Item::new)
-            .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).tag(SVOTags.Items.INGOTS).defaultModel().register();
+            .lang("Radioactive Ingot").tag(SVOTags.Items.Blacksmith_Items).tag(SVOTags.Items.INGOTS).defaultModel()
+            .register();
 
     // gear
     public static final ItemEntry<SwordItem> COPPER_SWORD = REGISTRATE
