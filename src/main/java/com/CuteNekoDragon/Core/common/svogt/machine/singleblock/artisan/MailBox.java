@@ -23,6 +23,6 @@ public class MailBox extends MetaMachine {
       - new letters can be made with a md
       - particle if you have unread mail
       - special render to display mail inside of the mailbox
-      - letters you as a player have received is store on the player
+      - letters you as a player have received and read are stored on the player
      */
 }
