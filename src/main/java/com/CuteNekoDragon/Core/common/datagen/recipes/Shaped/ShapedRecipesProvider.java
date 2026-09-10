@@ -7,6 +7,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -47,6 +48,16 @@ public class ShapedRecipesProvider {
                 .define('B', Items.COPPER_INGOT)
                 .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
                 .save(consumer, SVOCore.id("shaped/charcoal_kiln"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOMachines.MAIL_BOX.getItem())
+                .pattern("ABA")
+                .pattern(" C ")
+                .pattern(" C ")
+                .define('A', ItemTags.WOODEN_BUTTONS)
+                .define('B', Items.BARREL)
+                .define('C', ItemTags.WOODEN_FENCES)
+                .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
+                .save(consumer, SVOCore.id("shaped/mail_box"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOItems.LUNCHBOX)
                 .pattern(" C ")

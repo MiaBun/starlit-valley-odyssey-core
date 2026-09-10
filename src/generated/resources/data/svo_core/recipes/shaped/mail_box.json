@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "minecraft:wooden_buttons"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    },
+    "C": {
+      "tag": "minecraft:wooden_fences"
+    }
+  },
+  "pattern": [
+    "ABA",
+    " C ",
+    " C "
+  ],
+  "result": {
+    "item": "svo_core:mail_box"
+  },
+  "show_notification": true
+}
