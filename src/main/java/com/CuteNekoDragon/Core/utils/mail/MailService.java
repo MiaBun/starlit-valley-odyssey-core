@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.utils.mail;
 
+import com.CuteNekoDragon.Core.common.capability.MailCapability;
+import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,6 +25,10 @@ public final class MailService {
         placeholders.putIfAbsent("player", player.getName().getString());
 
         Letter letter = Letter.create(template, npcId, npcDisplayname, placeholders);
+
+        PlayerMailData data = MailCapability.getOrDefault(player);
+        data.addLetter(letter);
+
         return true;
     }
 }
