@@ -3,6 +3,7 @@ package com.CuteNekoDragon.Core.common;
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.capability.MailCapability;
 import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.common.data.SVOCommands;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
 import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
@@ -13,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,6 +24,11 @@ public class ForgeCommonEventListener {
 
     @SuppressWarnings("removal")
     private static final ResourceLocation CAP_ID = new ResourceLocation(SVOCore.MOD_ID, "mail_data");
+
+    @SubscribeEvent
+    public static void registerCommands(RegisterCommandsEvent event) {
+        SVOCommands.register(event.getDispatcher());
+    }
 
     @SubscribeEvent
     public static void registerCapabilities(RegisterCapabilitiesEvent e) {

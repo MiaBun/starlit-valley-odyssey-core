@@ -45,14 +45,9 @@ public class NewMailToast implements Toast {
         guiGraphics.fill(width - 1, 0, width, height, 0xFFFFD24A);
 
         var font = toastComponent.getMinecraft().font;
-        guiGraphics.drawString(font, Component.translatable("cutenekodragoncore.gui.mailbox.new_mail"),
+        guiGraphics.drawString(font, Component.translatable("gui.svo_core.mailbox.new_mail"),
                 6, 6, 0xFFFFD24A, false);
-        guiGraphics.drawString(font, npcName, 6, 16, 0xFFFFFFFF, false);
-        guiGraphics.drawString(font,
-                letterTitle.getString().length() > 24
-                        ? letterTitle.getString().substring(0, 22) + "..."
-                        : letterTitle.getString(),
-                6, 25, 0xFFAAAAAA, false);
+        guiGraphics.drawString(font, Component.translatable("gui.svo_core.mailbox.from", npcName), 6, 16, 0xFFFFFFFF, false);
 
         return (timeSinceLastVisible - firstRenderTime) < DISPLAY_TIME_MS ? Visibility.SHOW : Visibility.HIDE;
     }

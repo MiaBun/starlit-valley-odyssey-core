@@ -32,6 +32,12 @@ public class MailBox extends MetaMachine implements IUIMachine {
     private static final int CONTENT_WIDTH = 132;
     private static final int ROW_HEIGHT = 16;
 
+    private static final ResourceBorderTexture WOOD_BACKGROUND = new ResourceBorderTexture(
+            "minecraft:textures/block/spruce_planks.png", 16, 16, 0, 0);
+
+    private static final ResourceBorderTexture WOOD_PANEL = new ResourceBorderTexture(
+            "minecraft:textures/block/stripped_spruce_log.png", 16, 16, 0, 0);
+
     public MailBox(IMachineBlockEntity holder) {
         super(holder);
     }
@@ -85,7 +91,7 @@ public class MailBox extends MetaMachine implements IUIMachine {
                 .setHoverTooltips("Settings"));
 
         DraggableScrollableWidgetGroup list = new DraggableScrollableWidgetGroup(7, 20, LIST_WIDTH, PANEL_HEIGHT)
-                .setBackground(GuiTextures.DISPLAY);
+                .setBackground(WOOD_PANEL);
         list.setYScrollBarWidth(6);
         list.setYBarStyle(GuiTextures.SLIDER_BACKGROUND_VERTICAL, GuiTextures.BUTTON);
 
@@ -115,7 +121,7 @@ public class MailBox extends MetaMachine implements IUIMachine {
 
         DraggableScrollableWidgetGroup content = new DraggableScrollableWidgetGroup(
                 7 + LIST_WIDTH + 4, 20, CONTENT_WIDTH, PANEL_HEIGHT)
-                .setBackground(GuiTextures.DISPLAY);
+                .setBackground(WOOD_PANEL);
 
         content.addWidget(new ComponentPanelWidget(4, 4, out -> appendSelectedBody(out, letters, selected))
                 .textSupplier(clientSide ? null : out -> appendSelectedBody(out, letters, selected))
