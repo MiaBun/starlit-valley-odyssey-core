@@ -152,5 +152,13 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("gtceu.charcoal_kiln", "Charcoal Kiln");
         REGISTRATE.addRawLang("curios.identifier.lunchbox", "Lunchbox");
         REGISTRATE.addRawLang("curios.identifier.toolbelt", "Toolbelt");
+
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.toast_setting", "Notification Settings");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.toast_off", "Disabled");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.toast_on", "Enabled");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.select_a_letter", "Select a Letter");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.from", "From: ");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.title", "Mail Box");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.no_letters", "No Letters");
     }
 }
