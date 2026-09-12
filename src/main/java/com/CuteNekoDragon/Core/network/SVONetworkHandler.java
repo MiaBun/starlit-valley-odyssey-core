@@ -1,14 +1,13 @@
 package com.CuteNekoDragon.Core.network;
 
+import com.CuteNekoDragon.Core.network.packet.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 
 import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;
-import com.CuteNekoDragon.Core.network.packet.RadialSelectPacket;
-import com.CuteNekoDragon.Core.network.packet.SelectSackItemPacket;
-import com.CuteNekoDragon.Core.network.packet.SetToolbeltSlotPacket;
 
 public class SVONetworkHandler {
 
@@ -49,5 +48,21 @@ public class SVONetworkHandler {
                 RadialSelectPacket::encode,
                 RadialSelectPacket::decode,
                 RadialSelectPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                SyncMailDataPacket.class,
+                SyncMailDataPacket::write,
+                SyncMailDataPacket::new,
+                SyncMailDataPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                NewMailToastPacket.class,
+                NewMailToastPacket::write,
+                NewMailToastPacket::new,
+                NewMailToastPacket::handle);
+    }
+
+    public static void sendLetterToPlayer(ServerPlayer player, Object packet) {
+        INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), packet);
     }
 }

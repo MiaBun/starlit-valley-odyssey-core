@@ -3,6 +3,8 @@ package com.CuteNekoDragon.Core.common;
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.capability.MailCapability;
 import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
+import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
 import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -40,7 +42,13 @@ public class ForgeCommonEventListener {
         newData.copyFrom(oldData);
     }
 
-    // TODO: player login event
+    @SubscribeEvent
+    public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+        if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+            PlayerMailData data = MailCapability.getOrDefault(serverPlayer);
+            SVONetworkHandler.sendLetterToPlayer(serverPlayer, new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
+        }
+    }
 
     @SubscribeEvent
     public static void registerReloadListeners(AddReloadListenerEvent event) {

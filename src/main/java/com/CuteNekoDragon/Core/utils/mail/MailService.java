@@ -2,6 +2,9 @@ package com.CuteNekoDragon.Core.utils.mail;
 
 import com.CuteNekoDragon.Core.common.capability.MailCapability;
 import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
+import com.CuteNekoDragon.Core.network.packet.NewMailToastPacket;
+import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -28,6 +31,11 @@ public final class MailService {
 
         PlayerMailData data = MailCapability.getOrDefault(player);
         data.addLetter(letter);
+
+        SVONetworkHandler.sendLetterToPlayer(player, new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
+        if (data.isToastEnabled()) {
+            SVONetworkHandler.sendLetterToPlayer(player, new NewMailToastPacket(letter.getNpcName(), letter.getTitle()));
+        }
 
         return true;
     }
