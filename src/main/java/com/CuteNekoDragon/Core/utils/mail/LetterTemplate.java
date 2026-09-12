@@ -1,7 +1,8 @@
 package com.CuteNekoDragon.Core.utils.mail;
 
-import lombok.Getter;
 import net.minecraft.resources.ResourceLocation;
+
+import lombok.Getter;
 
 import java.util.List;
 
@@ -22,5 +23,4 @@ public class LetterTemplate {
         this.title = title;
         this.bodyLines = bodyLines;
     }
-
 }

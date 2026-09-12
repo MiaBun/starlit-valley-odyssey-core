@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.network;
 
-import com.CuteNekoDragon.Core.network.packet.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkRegistry;
@@ -8,6 +7,7 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.network.packet.*;
 
 public class SVONetworkHandler {
 

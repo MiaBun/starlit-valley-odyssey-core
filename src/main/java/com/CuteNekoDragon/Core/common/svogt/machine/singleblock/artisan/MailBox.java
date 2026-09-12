@@ -1,27 +1,30 @@
 package com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan;
 
-import com.CuteNekoDragon.Core.client.util.ClientMailCache;
-import com.CuteNekoDragon.Core.common.capability.MailCapability;
-import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
-import com.CuteNekoDragon.Core.network.SVONetworkHandler;
-import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
-import com.CuteNekoDragon.Core.utils.mail.Letter;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IUIMachine;
+
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.gui.texture.GuiTextureGroup;
 import com.lowdragmc.lowdraglib.gui.texture.ResourceBorderTexture;
 import com.lowdragmc.lowdraglib.gui.texture.TextTexture;
 import com.lowdragmc.lowdraglib.gui.widget.*;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.BlockHitResult;
+
+import com.CuteNekoDragon.Core.client.util.ClientMailCache;
+import com.CuteNekoDragon.Core.common.capability.MailCapability;
+import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
+import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
+import com.CuteNekoDragon.Core.utils.mail.Letter;
 
 import java.util.List;
 
@@ -46,21 +49,20 @@ public class MailBox extends MetaMachine implements IUIMachine {
     public boolean shouldOpenUI(Player player, InteractionHand hand, BlockHitResult hit) {
         if (player instanceof ServerPlayer serverPlayer) {
             PlayerMailData data = MailCapability.getOrDefault(serverPlayer);
-            SVONetworkHandler.sendLetterToPlayer(serverPlayer, new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
+            SVONetworkHandler.sendLetterToPlayer(serverPlayer,
+                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
         }
         return true;
     }
 
     private static List<Letter> getLetters(Player player) {
-        return player.level().isClientSide
-                ? ClientMailCache.getLetters()
-                : MailCapability.getOrDefault(player).getLetters();
+        return player.level().isClientSide ? ClientMailCache.getLetters() :
+                MailCapability.getOrDefault(player).getLetters();
     }
 
     private static boolean getToastEnabled(Player player) {
-        return player.level().isClientSide
-                ? ClientMailCache.isToastEnabled()
-                : MailCapability.getOrDefault(player).isToastEnabled();
+        return player.level().isClientSide ? ClientMailCache.isToastEnabled() :
+                MailCapability.getOrDefault(player).isToastEnabled();
     }
 
     @Override
@@ -85,7 +87,8 @@ public class MailBox extends MetaMachine implements IUIMachine {
                 new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON, new TextTexture("#")),
                 clickData -> {
                     boolean nowVisible = !settingsPanel.isVisible();
-                    settingsPanel.setVisible(nowVisible);settingsPanel.setActive(nowVisible);
+                    settingsPanel.setVisible(nowVisible);
+                    settingsPanel.setActive(nowVisible);
 
                 })
                 .setHoverTooltips("Settings"));
@@ -101,10 +104,11 @@ public class MailBox extends MetaMachine implements IUIMachine {
             boolean unread = !letter.isRead();
 
             String label = (unread ? "* " : "") + letter.getTitle().getString();
-            ButtonWidget row = new ButtonWidget(2, i * ROW_HEIGHT, LIST_WIDTH - 4 , ROW_HEIGHT - 1,
+            ButtonWidget row = new ButtonWidget(2, i * ROW_HEIGHT, LIST_WIDTH - 4, ROW_HEIGHT - 1,
                     new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
                             new TextTexture(label)
-                                    .setColor(unread ? ChatFormatting.WHITE.getColor() : ChatFormatting.GRAY.getColor())),
+                                    .setColor(
+                                            unread ? ChatFormatting.WHITE.getColor() : ChatFormatting.GRAY.getColor())),
                     clickData -> {
                         selected[0] = index;
                         if (!entityPlayer.level().isClientSide) {
@@ -146,13 +150,12 @@ public class MailBox extends MetaMachine implements IUIMachine {
                 MailCapability.getOrDefault(entityPlayer).setToastEnabled(value);
             }
         }).setTexture(
-                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                                new TextTexture("gui.svo_core.mailbox.toast_off")),
-                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                                new TextTexture("gui.svo_core.mailbox.toast_on")))
+                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                        new TextTexture("gui.svo_core.mailbox.toast_off")),
+                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                        new TextTexture("gui.svo_core.mailbox.toast_on")))
                 .setPressed(getToastEnabled(entityPlayer)));
         return panel;
-
     }
 
     private static void appendSelectedBody(List<Component> out, List<Letter> letters, int[] selected) {

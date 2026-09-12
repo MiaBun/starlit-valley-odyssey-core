@@ -1,14 +1,5 @@
 package com.CuteNekoDragon.Core.common.command;
 
-import com.CuteNekoDragon.Core.utils.mail.LetterTemplate;
-import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
-import com.CuteNekoDragon.Core.utils.mail.MailService;
-import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.brigadier.suggestion.Suggestions;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
@@ -18,11 +9,22 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 
-import javax.annotation.Nullable;
+import com.CuteNekoDragon.Core.utils.mail.LetterTemplate;
+import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
+import com.CuteNekoDragon.Core.utils.mail.MailService;
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.suggestion.Suggestions;
+import com.mojang.brigadier.suggestion.SuggestionsBuilder;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
+
+import javax.annotation.Nullable;
 
 public final class MailCommands {
 
@@ -49,7 +51,7 @@ public final class MailCommands {
     }
 
     private static int sendLetter(CommandContext<CommandSourceStack> ctx, @Nullable String npcNameOverride)
-            throws CommandSyntaxException {
+                                                                                                            throws CommandSyntaxException {
         Collection<ServerPlayer> targets = EntityArgument.getPlayers(ctx, "players");
         ResourceLocation letterId = ResourceLocationArgument.getId(ctx, "letter");
 

@@ -1,11 +1,12 @@
 package com.CuteNekoDragon.Core.utils.mail;
 
-import com.CuteNekoDragon.Core.SVOCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
+
+import com.CuteNekoDragon.Core.SVOCore;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,8 +31,8 @@ public class LetterTemplateLoader extends SimplePreparableReloadListener<Map<Res
     }
 
     @Override
-    protected Map<ResourceLocation, LetterTemplate> prepare(ResourceManager resourceManager, ProfilerFiller profilerFiller) {
-
+    protected Map<ResourceLocation, LetterTemplate> prepare(ResourceManager resourceManager,
+                                                            ProfilerFiller profilerFiller) {
         Map<ResourceLocation, LetterTemplate> result = new HashMap<>();
         Map<ResourceLocation, Resource> found = resourceManager.listResources(FOLDER,
                 path -> path.getPath().endsWith(".md"));
@@ -59,7 +60,8 @@ public class LetterTemplateLoader extends SimplePreparableReloadListener<Map<Res
     }
 
     @Override
-    protected void apply(Map<ResourceLocation, LetterTemplate> resourceLocationLetterTemplateMap, ResourceManager resourceManager, ProfilerFiller profilerFiller) {
+    protected void apply(Map<ResourceLocation, LetterTemplate> resourceLocationLetterTemplateMap,
+                         ResourceManager resourceManager, ProfilerFiller profilerFiller) {
         TEMPLATES = Map.copyOf(resourceLocationLetterTemplateMap);
     }
 
@@ -69,6 +71,7 @@ public class LetterTemplateLoader extends SimplePreparableReloadListener<Map<Res
         p = p.substring(FOLDER.length() + 1, p.length() - ".md".length());
         return new ResourceLocation(path.getNamespace(), p);
     }
+
     @SuppressWarnings("removal")
     private static LetterTemplate parse(BufferedReader reader, ResourceLocation fallbackId) throws IOException {
         List<String> lines = new ArrayList<>();
@@ -103,12 +106,10 @@ public class LetterTemplateLoader extends SimplePreparableReloadListener<Map<Res
             bodyStart = closing + 1;
         }
 
-        ResourceLocation id = frontmatter.containsKey("id")
-                ? new ResourceLocation(fallbackId.getNamespace(), frontmatter.get("id"))
-                : fallbackId;
-        ResourceLocation npcId = frontmatter.containsKey("npc")
-                ? ResourceLocation.tryParse(frontmatter.get("npc"))
-                : new ResourceLocation(fallbackId.getNamespace(), "unknown");
+        ResourceLocation id = frontmatter.containsKey("id") ?
+                new ResourceLocation(fallbackId.getNamespace(), frontmatter.get("id")) : fallbackId;
+        ResourceLocation npcId = frontmatter.containsKey("npc") ? ResourceLocation.tryParse(frontmatter.get("npc")) :
+                new ResourceLocation(fallbackId.getNamespace(), "unknown");
         String title = frontmatter.getOrDefault("title", id.getPath());
 
         // trim a single leading/trailing blank line left over from the frontmatter block
@@ -116,7 +117,8 @@ public class LetterTemplateLoader extends SimplePreparableReloadListener<Map<Res
         while (!body.isEmpty() && body.get(0).isBlank()) body.remove(0);
         while (!body.isEmpty() && body.get(body.size() - 1).isBlank()) body.remove(body.size() - 1);
 
-        return new LetterTemplate(id, npcId == null ? new ResourceLocation(fallbackId.getNamespace(), "unknown") : npcId,
+        return new LetterTemplate(id,
+                npcId == null ? new ResourceLocation(fallbackId.getNamespace(), "unknown") : npcId,
                 title, body);
     }
 }

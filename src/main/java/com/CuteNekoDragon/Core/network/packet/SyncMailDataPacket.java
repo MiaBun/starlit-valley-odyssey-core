@@ -1,9 +1,10 @@
 package com.CuteNekoDragon.Core.network.packet;
 
-import com.CuteNekoDragon.Core.client.util.ClientMailCache;
-import com.CuteNekoDragon.Core.utils.mail.Letter;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
+
+import com.CuteNekoDragon.Core.client.util.ClientMailCache;
+import com.CuteNekoDragon.Core.utils.mail.Letter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,6 @@ public class SyncMailDataPacket {
     private final boolean toastEnabled;
 
     public SyncMailDataPacket(List<Letter> letters, boolean toastEnabled) {
-
         this.letters = letters;
         this.toastEnabled = toastEnabled;
     }

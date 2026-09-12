@@ -1,11 +1,12 @@
 package com.CuteNekoDragon.Core.common.capability;
 
-import lombok.Getter;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.capabilities.*;
 import net.minecraftforge.common.util.LazyOptional;
+
+import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

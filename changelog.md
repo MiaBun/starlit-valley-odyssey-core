@@ -1,6 +1,11 @@
 ## [Unreleased]
 ### Changes
-- 
+- added a mail box
+- added the ability to read mail
+- added a mail send command
+- added the ability to make letter templates...
+- why do we need mail in minecraft again?
+- no seriously why do we even need this, it feels kinda pointless...
 
 ## [0.0.30]
 ### Changes

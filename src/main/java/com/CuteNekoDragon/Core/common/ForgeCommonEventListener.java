@@ -1,12 +1,5 @@
 package com.CuteNekoDragon.Core.common;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.common.capability.MailCapability;
-import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
-import com.CuteNekoDragon.Core.common.data.SVOCommands;
-import com.CuteNekoDragon.Core.network.SVONetworkHandler;
-import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
-import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -18,6 +11,14 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.capability.MailCapability;
+import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.common.data.SVOCommands;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
+import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
+import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
 
 @Mod.EventBusSubscriber(modid = SVOCore.MOD_ID)
 public class ForgeCommonEventListener {
@@ -37,7 +38,7 @@ public class ForgeCommonEventListener {
 
     @SubscribeEvent
     public static void attachCapabilities(AttachCapabilitiesEvent<Entity> event) {
-        if(event.getObject() instanceof Player) {
+        if (event.getObject() instanceof Player) {
             event.addCapability(CAP_ID, new MailCapability.Provider());
         }
     }
@@ -51,9 +52,10 @@ public class ForgeCommonEventListener {
 
     @SubscribeEvent
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
-        if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+        if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             PlayerMailData data = MailCapability.getOrDefault(serverPlayer);
-            SVONetworkHandler.sendLetterToPlayer(serverPlayer, new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
+            SVONetworkHandler.sendLetterToPlayer(serverPlayer,
+                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
         }
     }
 

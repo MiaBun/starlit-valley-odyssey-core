@@ -1,17 +1,17 @@
 package com.CuteNekoDragon.Core.utils.mail;
 
-import lombok.Getter;
-import lombok.Setter;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-import net.minecraft.network.chat.Component;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.List;
 
 public class Letter {
 
@@ -33,7 +33,8 @@ public class Letter {
     @Setter
     private boolean read;
 
-    public Letter(UUID letterId, ResourceLocation templateId, ResourceLocation npcId, Component npcName, Component title, List<Component> body, long receivedTime, boolean read) {
+    public Letter(UUID letterId, ResourceLocation templateId, ResourceLocation npcId, Component npcName,
+                  Component title, List<Component> body, long receivedTime, boolean read) {
         this.letterId = letterId;
         this.templateId = templateId;
         this.npcId = npcId;
@@ -44,18 +45,20 @@ public class Letter {
         this.read = read;
     }
 
-    public static Letter create(LetterTemplate template, ResourceLocation npcId, Component npcName, Map<String, String> placeholders) {
+    public static Letter create(LetterTemplate template, ResourceLocation npcId, Component npcName,
+                                Map<String, String> placeholders) {
         String rawTitle = applyPlaceholders(template.getTitle(), placeholders);
         List<Component> body = new ArrayList<>();
         for (String line : template.getBodyLines()) {
             body.add(MailMarkdown.parseLine(applyPlaceholders(line, placeholders)));
         }
-        return new Letter(UUID.randomUUID(), template.getId(), npcId, npcName, Component.literal(rawTitle), body, System.currentTimeMillis(), false);
+        return new Letter(UUID.randomUUID(), template.getId(), npcId, npcName, Component.literal(rawTitle), body,
+                System.currentTimeMillis(), false);
     }
 
     private static String applyPlaceholders(String raw, Map<String, String> placeholders) {
         String result = raw;
-        for (var entry: placeholders.entrySet()) {
+        for (var entry : placeholders.entrySet()) {
             result = result.replace("{" + entry.getKey() + "}", entry.getValue());
         }
         return result;

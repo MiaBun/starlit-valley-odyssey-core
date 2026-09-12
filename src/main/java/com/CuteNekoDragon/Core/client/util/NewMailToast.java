@@ -9,7 +9,6 @@ public class NewMailToast implements Toast {
 
     private static final long DISPLAY_TIME_MS = 5000L;
 
-
     private final Component npcName;
     private final Component letterTitle;
     private long firstRenderTime = -1L;
@@ -47,7 +46,8 @@ public class NewMailToast implements Toast {
         var font = toastComponent.getMinecraft().font;
         guiGraphics.drawString(font, Component.translatable("gui.svo_core.mailbox.new_mail"),
                 6, 6, 0xFFFFD24A, false);
-        guiGraphics.drawString(font, Component.translatable("gui.svo_core.mailbox.from", npcName), 6, 16, 0xFFFFFFFF, false);
+        guiGraphics.drawString(font, Component.translatable("gui.svo_core.mailbox.from", npcName), 6, 16, 0xFFFFFFFF,
+                false);
 
         return (timeSinceLastVisible - firstRenderTime) < DISPLAY_TIME_MS ? Visibility.SHOW : Visibility.HIDE;
     }

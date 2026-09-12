@@ -1,11 +1,12 @@
 package com.CuteNekoDragon.Core.common.capability;
 
-import com.CuteNekoDragon.Core.utils.mail.Letter;
-import lombok.Getter;
-import lombok.Setter;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
+
+import com.CuteNekoDragon.Core.utils.mail.Letter;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +46,7 @@ public class PlayerMailData {
         tag.put("Letters", letterList);
         return tag;
     }
+
     public void deserializeNBT(CompoundTag tag) {
         letters.clear();
         toastEnabled = !tag.contains("ToastEnabled") || tag.getBoolean("ToastEnabled");
@@ -54,5 +56,4 @@ public class PlayerMailData {
             letters.add(Letter.deserializeNBT(letterList.getCompound(i)));
         }
     }
-
 }

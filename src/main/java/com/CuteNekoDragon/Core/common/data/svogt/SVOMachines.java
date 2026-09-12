@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.data.svogt;
 
-import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 
@@ -8,6 +7,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.shapes.Shapes;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan.CharkoalKiln;
 import com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan.MailBox;
 import com.CuteNekoDragon.Core.utils.ModelUtils;
