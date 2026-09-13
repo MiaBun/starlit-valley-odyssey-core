@@ -34,6 +34,9 @@ public class MailBox extends MetaMachine implements IUIMachine {
     private static final int PANEL_HEIGHT = 132;
     private static final int CONTENT_WIDTH = 132;
     private static final int ROW_HEIGHT = 16;
+    private static final int MIN_ROW_HEIGHT = 16;
+    private static final int LINE_HEIGHT = 9;
+    private static final int AVG_CHAR_WIDTH = 5;
 
     private static final ResourceBorderTexture WOOD_BACKGROUND = new ResourceBorderTexture(
             "minecraft:textures/block/spruce_planks.png", 16, 16, 0, 0);
@@ -67,7 +70,8 @@ public class MailBox extends MetaMachine implements IUIMachine {
 
     @Override
     public ModularUI createUI(Player entityPlayer) {
-        List<Letter> letters = getLetters(entityPlayer);
+        List<Letter> letters = new java.util.ArrayList<>(getLetters(entityPlayer));
+        letters.sort(java.util.Comparator.comparingLong(Letter::getReceivedTime).reversed());
         boolean clientSide = entityPlayer.level().isClientSide;
 
         int[] selected = { letters.isEmpty() ? -1 : 0 };
@@ -98,17 +102,24 @@ public class MailBox extends MetaMachine implements IUIMachine {
         list.setYScrollBarWidth(6);
         list.setYBarStyle(GuiTextures.SLIDER_BACKGROUND_VERTICAL, GuiTextures.BUTTON);
 
+        int rowWidth = LIST_WIDTH - 4;
+        int textAreaWidth = rowWidth - 4;
+        int y = 0;
         for (int i = 0; i < letters.size(); i++) {
             Letter letter = letters.get(i);
             int index = i;
             boolean unread = !letter.isRead();
 
             String label = (unread ? "* " : "") + letter.getTitle().getString();
-            ButtonWidget row = new ButtonWidget(2, i * ROW_HEIGHT, LIST_WIDTH - 4, ROW_HEIGHT - 1,
+            int lineCount = estimateLineCount(label, textAreaWidth);
+            int rowHeight = Math.max(MIN_ROW_HEIGHT, lineCount * LINE_HEIGHT + 6);
+
+            ButtonWidget row = new ButtonWidget(2, y, rowWidth, rowHeight - 1,
                     new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
                             new TextTexture(label)
                                     .setColor(
-                                            unread ? ChatFormatting.WHITE.getColor() : ChatFormatting.GRAY.getColor())),
+                                            unread ? ChatFormatting.WHITE.getColor() : ChatFormatting.GRAY.getColor())
+                                    .setWidth(textAreaWidth)),
                     clickData -> {
                         selected[0] = index;
                         if (!entityPlayer.level().isClientSide) {
@@ -116,6 +127,7 @@ public class MailBox extends MetaMachine implements IUIMachine {
                         }
                     });
             list.addWidget(row);
+            y += rowHeight;
         }
 
         if (letters.isEmpty()) {
@@ -169,5 +181,11 @@ public class MailBox extends MetaMachine implements IUIMachine {
                 .withStyle(ChatFormatting.ITALIC, ChatFormatting.GRAY));
         out.add(Component.empty());
         out.addAll(letter.getBody());
+    }
+
+    private static int estimateLineCount(String label, int availableWidth) {
+        int charsPerLine = Math.max(1, availableWidth / AVG_CHAR_WIDTH);
+        int lines = (int) Math.ceil(label.length() / (double) charsPerLine);
+        return Math.max(1, lines);
     }
 }
