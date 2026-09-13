@@ -244,5 +244,29 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .addCriterion("has_item",
                         InventoryChangeTrigger.TriggerInstance.hasItems(SVOMachines.CHARKOAL_KILN.getItem()))
                 .save(consumer, SVOCore.id("chapter1/charcoal_kiln"), existingFileHelper);
+
+        Advancement finding_iron = Advancement.Builder.advancement()
+                .parent(finding_copper)
+                .display(
+                        new ItemStack(Items.IRON_INGOT),
+                        Component.translatable("advancement.svo_core.chapter1.finding_iron.title"),
+                        Component.translatable("advancement.svo_core.chapter1.finding_iron.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RAW_IRON))
+                .save(consumer, SVOCore.id("chapter1/finding_iron"), existingFileHelper);
+
+        Advancement mailbox = Advancement.Builder.advancement()
+                .parent(finding_iron)
+                .display(
+                        new ItemStack(SVOMachines.MAIL_BOX.getItem()),
+                        Component.translatable("advancement.svo_core.chapter1.mailbox.title"),
+                        Component.translatable("advancement.svo_core.chapter1.mailbox.description"),
+                        null,
+                        FrameType.TASK,
+                        true, true, false)
+                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(SVOMachines.MAIL_BOX.getItem()))
+                .save(consumer, SVOCore.id("chapter1/mailbox"), existingFileHelper);
     }
 }

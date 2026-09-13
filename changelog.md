@@ -1,6 +1,8 @@
 ## [Unreleased]
 ### Changes
-- 
+- grandpa's letter
+- mailbox letter overflow fix
+- iron and mailbox advancements
 
 ## [0.0.31]
 ### Changes

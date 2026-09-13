@@ -56,6 +56,12 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.toolbelt.title", "Belt these tools!");
         REGISTRATE.addRawLang("advancement.svo_core.chapter1.toolbelt.description", "Construct a Toolbelt");
 
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_iron.title", "Iron!");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_iron.description", "Acquire Iron");
+
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mailbox.title", "Mail me some Mail!");
+        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mailbox.description", "Construct a Mailbox");
+
         REGISTRATE.addRawLang("tooltip.svo_core.quartz", "A clear crystal commonly found in caves and mines.");
         REGISTRATE.addRawLang("tooltip.svo_core.earth_crystal", "A resinous substance found near the surface.");
         REGISTRATE.addRawLang("tooltip.svo_core.frozen_tear", "A crystal fabled to be the frozen tears of a yeti.");
