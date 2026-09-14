@@ -1,6 +1,8 @@
 package com.CuteNekoDragon.Core.common;
 
+import com.CuteNekoDragon.Core.common.capability.SkillCapability;
 import com.CuteNekoDragon.Core.utils.skills.skill.ISkillData;
+import com.CuteNekoDragon.Core.utils.skills.skill.PlayerSkillData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -42,11 +44,17 @@ public class ForgeCommonEventListener {
     public static void attachCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof Player) {
             event.addCapability(CAP_ID, new MailCapability.Provider());
+            event.addCapability(CAP_ID, new SkillCapability.Provider());
         }
     }
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
+
+        PlayerSkillData oldSkillData = SkillCapability.getOrDefault(event.getOriginal());
+        PlayerSkillData newSkillData = SkillCapability.getOrDefault(event.getEntity());
+        newSkillData.copyFrom(oldSkillData);
+
         PlayerMailData oldData = MailCapability.getOrDefault(event.getOriginal());
         PlayerMailData newData = MailCapability.getOrDefault(event.getEntity());
         newData.copyFrom(oldData);
