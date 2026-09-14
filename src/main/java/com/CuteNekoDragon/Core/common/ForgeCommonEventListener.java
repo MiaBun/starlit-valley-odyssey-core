@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common;
 
+import com.CuteNekoDragon.Core.utils.skills.skill.ISkillData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -34,6 +35,7 @@ public class ForgeCommonEventListener {
     @SubscribeEvent
     public static void registerCapabilities(RegisterCapabilitiesEvent e) {
         e.register(PlayerMailData.class);
+        e.register(ISkillData.class);
     }
 
     @SubscribeEvent
