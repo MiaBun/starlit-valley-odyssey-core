@@ -54,10 +54,9 @@ public class SackItem extends Item {
             ItemStack itemStack = slot.getItem();
             if (itemStack.isEmpty()) {
                 this.playRemoveOneSound(player);
-                removeOne(stack).ifPresent(stackItem -> add(stack, slot.safeInsert(stackItem))); // was itemStack, now
-                                                                                                 // stack
+                removeOne(stack).ifPresent(stackItem -> add(stack, slot.safeInsert(stackItem)));
             } else if (itemStack.getItem().canFitInsideContainerItems()) {
-                int i = (MAX_WEIGHT - getContentWeight(stack) / getWeight(itemStack));
+                int i = (MAX_WEIGHT - getContentWeight(stack)) / getWeight(itemStack);
                 int j = add(stack, slot.safeTake(itemStack.getCount(), i, player));
                 if (j > 0) {
                     this.playInsertSound(player);

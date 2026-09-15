@@ -27,7 +27,9 @@ import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
 public class ForgeCommonEventListener {
 
     @SuppressWarnings("removal")
-    private static final ResourceLocation CAP_ID = new ResourceLocation(SVOCore.MOD_ID, "mail_data");
+    private static final ResourceLocation MAIL_ID = new ResourceLocation(SVOCore.MOD_ID, "mail_data");
+    @SuppressWarnings("removal")
+    private static final ResourceLocation SKILL_ID = new ResourceLocation(SVOCore.MOD_ID, "skill_data");
 
     @SubscribeEvent
     public static void registerCommands(RegisterCommandsEvent event) {
@@ -43,8 +45,8 @@ public class ForgeCommonEventListener {
     @SubscribeEvent
     public static void attachCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof Player) {
-            event.addCapability(CAP_ID, new MailCapability.Provider());
-            event.addCapability(CAP_ID, new SkillCapability.Provider());
+            event.addCapability(MAIL_ID, new MailCapability.Provider());
+            event.addCapability(SKILL_ID, new SkillCapability.Provider());
         }
     }
 

@@ -3,6 +3,7 @@
 - grandpa's letter
 - mailbox letter overflow fix
 - iron and mailbox advancements
+- fixed a bug with sacks that caused items to be deleted
 
 ## [0.0.31]
 ### Changes
