@@ -15,7 +15,6 @@ public class SelectSackItemPacket {
         this.selectedItemIndex = selectedItemIndex;
     }
 
-    // decode constructor — mirrors the vanilla `private ...Packet(FriendlyByteBuf input)`
     public static SelectSackItemPacket decode(FriendlyByteBuf buf) {
         int slotId = buf.readVarInt();
         int selectedItemIndex = buf.readVarInt();
@@ -25,22 +24,17 @@ public class SelectSackItemPacket {
         return new SelectSackItemPacket(slotId, selectedItemIndex);
     }
 
-    // encode — mirrors vanilla's `write(FriendlyByteBuf output)`
     public static void encode(SelectSackItemPacket packet, FriendlyByteBuf buf) {
         buf.writeVarInt(packet.slotId);
         buf.writeVarInt(packet.selectedItemIndex);
     }
 
-    // handle — mirrors vanilla's `handle(ServerGamePacketListener)`
     public static void handle(SelectSackItemPacket packet, Supplier<NetworkEvent.Context> ctxSupplier) {
         NetworkEvent.Context ctx = ctxSupplier.get();
         ctx.enqueueWork(() -> {
-            var player = ctx.getSender(); // ServerPlayer, null-checked below
+            var player = ctx.getSender();
             if (player == null) return;
 
-            // TODO: look up the sack in player.getInventory() (or open container) at packet.slotId,
-            // validate selectedItemIndex against SackItem.getNumberOfItemsToShow(...),
-            // and store/apply the selection server-side.
         });
         ctx.setPacketHandled(true);
     }

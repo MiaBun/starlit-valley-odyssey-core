@@ -60,6 +60,12 @@ public class SVONetworkHandler {
                 NewMailToastPacket::write,
                 NewMailToastPacket::new,
                 NewMailToastPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                SyncMailDataPacket.class,
+                SyncMailDataPacket::write,
+                SyncMailDataPacket::new,
+                SyncMailDataPacket::handle);
     }
 
     public static void sendLetterToPlayer(ServerPlayer player, Object packet) {
