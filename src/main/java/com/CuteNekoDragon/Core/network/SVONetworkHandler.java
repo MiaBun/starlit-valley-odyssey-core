@@ -66,6 +66,20 @@ public class SVONetworkHandler {
                 SyncMailDataPacket::write,
                 SyncMailDataPacket::new,
                 SyncMailDataPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                RequestSyncSkillPacket.class,
+                RequestSyncSkillPacket::encode,
+                RequestSyncSkillPacket::decode,
+                RequestSyncSkillPacket::handle);
+
+        INSTANCE.registerMessage(id(),
+                ChooseAbilityPacket.class,
+                ChooseAbilityPacket::encode,
+                ChooseAbilityPacket::decode,
+                ChooseAbilityPacket::handle);
+
+
     }
 
     public static void sendLetterToPlayer(ServerPlayer player, Object packet) {
