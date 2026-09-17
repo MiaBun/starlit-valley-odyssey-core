@@ -72,4 +72,9 @@ public class SkillXPManager {
             }
         });
     }
+
+    public static void onRecipeOutput(ServerPlayer owner, int recipeTierWeight) {
+        int xp = GlobalSkillData.XP_TECH_TREE_BASE * Math.max(1, recipeTierWeight);
+        addXP(owner, SkillType.TECH_TREE, xp);
+    }
 }

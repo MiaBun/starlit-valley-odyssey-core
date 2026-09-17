@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.data;
 
+import com.CuteNekoDragon.Core.common.command.SkillCommands;
 import net.minecraft.commands.CommandSourceStack;
 
 import com.CuteNekoDragon.Core.common.command.MailCommands;
@@ -9,5 +10,6 @@ public class SVOCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         MailCommands.register(dispatcher);
+        SkillCommands.register(dispatcher);
     }
 }
