@@ -10,7 +10,7 @@ public enum SkillType {
     FISHING("Fishing"),
     COMBAT("Combat"),
     TECH_TREE("Tech Tree"),
-    ELDER_EDA("The Elder Eda");
+    ELDER_EDA("The Elder Edda");
 
     public static final int MAX_LEVEL = 15;
 

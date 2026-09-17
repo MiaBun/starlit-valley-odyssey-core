@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.client.event;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.client.screen.SkillTreeScreen;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.RequestSyncSkillPacket;
 import com.mojang.blaze3d.platform.InputConstants;
@@ -25,6 +26,7 @@ public class ClientSkillsEvents {
 
         while (OPEN_SKILLS.consumeClick()) {
             SVONetworkHandler.INSTANCE.sendToServer(new RequestSyncSkillPacket());
+            mc.setScreen(new SkillTreeScreen());
         }
     }
 
