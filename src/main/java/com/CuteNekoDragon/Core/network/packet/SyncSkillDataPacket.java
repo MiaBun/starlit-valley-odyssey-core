@@ -16,7 +16,7 @@ public class SyncSkillDataPacket {
         this.data = data;
     }
 
-    public static void encade(SyncSkillDataPacket packet, FriendlyByteBuf buf) {
+    public static void encode(SyncSkillDataPacket packet, FriendlyByteBuf buf) {
         buf.writeNbt(packet.data);
     }
 

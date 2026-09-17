@@ -62,10 +62,10 @@ public class SVONetworkHandler {
                 NewMailToastPacket::handle);
 
         INSTANCE.registerMessage(id(),
-                SyncMailDataPacket.class,
-                SyncMailDataPacket::write,
-                SyncMailDataPacket::new,
-                SyncMailDataPacket::handle);
+                SyncSkillDataPacket.class,
+                SyncSkillDataPacket::encode,
+                SyncSkillDataPacket::decode,
+                SyncSkillDataPacket::handle);
 
         INSTANCE.registerMessage(id(),
                 RequestSyncSkillPacket.class,

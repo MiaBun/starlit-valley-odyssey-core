@@ -82,6 +82,8 @@ public final class SVOTags {
 
     public static final class Entities {
 
+        public static final TagKey<EntityType<?>> NORDIC = createEntityTag("nordic");
+
         private static TagKey<EntityType<?>> createEntityTag(String path) {
             return createEntityTag(SVOCore.id(path));
         }
