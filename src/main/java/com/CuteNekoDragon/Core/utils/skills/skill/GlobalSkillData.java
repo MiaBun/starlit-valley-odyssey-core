@@ -2,8 +2,8 @@ package com.CuteNekoDragon.Core.utils.skills.skill;
 
 public class GlobalSkillData {
 
-    public static double CURVE_BASE = 50.0;
-    public static double CURVE_EXPONENT = 1.6;
+    public static double CURVE_BASE = 100.0;
+    public static double CURVE_EXPONENT = 1.8;
 
     public static int XP_FARMING_HARVEST = 5;
     public static int XP_MINING_ORE = 8;

@@ -21,7 +21,7 @@ public class SVOAbilities {
     }
 
     private static void registerFarming() {
-
+        AbilityRegistry.register(SkillType.FARMING, 1, new SimpleAbility("farming_quality_1", "Boosts Crop Quality Frequency by 2%"), new SimpleAbility("farming_double_1", "Boosts Double Crop Chance by 5%"));
     }
 
     private static void registerForaging() {

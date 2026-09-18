@@ -16,8 +16,10 @@ public class SkillTreeScreen extends Screen {
 
     private static final int TAB_Y = 20;
     private static final int TAB_HEIGHT = 22;
-    private static final int LIST_TOP = 62;
+    private static final int LIST_TOP = 70;
     private static final int ROW_HEIGHT = 20;
+    private static final int MIN_TWO_COLUMN_WIDTH = 500;
+    private static final int MIN_COL_WIDTH = 150;
 
     private SkillType selectedTree = SkillType.FARMING;
 
@@ -53,10 +55,22 @@ public class SkillTreeScreen extends Screen {
         }
 
         int level = ClientSkillData.getDATA().getLevel(selectedTree);
-        int colWidth = (this.width - 60) / 2;
-        int colAX = 30;
-        int colBX = 30 + colWidth + 10;
         int rowY = LIST_TOP;
+
+        boolean twoColumn = this.width >= MIN_TWO_COLUMN_WIDTH;
+
+        int colWidth, colAX, colBX;
+        if (twoColumn) {
+            colWidth = Math.max(MIN_COL_WIDTH, (this.width - 550) / 2);
+            int totalContentWidth = colWidth * 2 + 10;
+            colAX = (this.width - totalContentWidth) / 2;
+            colBX = colAX + colWidth + 10;
+        } else {
+            // single-column fallback
+            colWidth = Math.max(MIN_COL_WIDTH, this.width - 60);
+            colAX = (this.width - colWidth) / 2;
+            colBX = colAX; // unused in this branch, but keep defined
+        }
 
         for (int lvl = 1; lvl <= SkillType.MAX_LEVEL; lvl++) {
             if (!AbilityRegistry.hasChoice(selectedTree, lvl)) {
@@ -69,10 +83,16 @@ public class SkillTreeScreen extends Screen {
             int chosen = ClientSkillData.getDATA().getChosenAbility(selectedTree, lvl);
             boolean unlocked = level >= lvl;
 
-            addRenderableWidget(makeAbilityButton(optionA, lvl, 0, chosen, unlocked, colAX, rowY, colWidth));
-            addRenderableWidget(makeAbilityButton(optionB, lvl, 1, chosen, unlocked, colBX, rowY, colWidth));
-
-            rowY += ROW_HEIGHT;
+            if (twoColumn) {
+                addRenderableWidget(makeAbilityButton(optionA, lvl, 0, chosen, unlocked, colAX, rowY, colWidth));
+                addRenderableWidget(makeAbilityButton(optionB, lvl, 1, chosen, unlocked, colBX, rowY, colWidth));
+                rowY += ROW_HEIGHT;
+            } else {
+                addRenderableWidget(makeAbilityButton(optionA, lvl, 0, chosen, unlocked, colAX, rowY, colWidth));
+                rowY += ROW_HEIGHT;
+                addRenderableWidget(makeAbilityButton(optionB, lvl, 1, chosen, unlocked, colAX, rowY, colWidth));
+                rowY += ROW_HEIGHT;
+            }
         }
     }
 
