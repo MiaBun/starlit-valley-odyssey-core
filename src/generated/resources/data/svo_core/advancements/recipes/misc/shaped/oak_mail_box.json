@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:shaped/mail_box"
+        "recipe": "svo_core:shaped/oak_mail_box"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "svo_core:shaped/mail_box"
+      "svo_core:shaped/oak_mail_box"
     ]
   },
   "sends_telemetry_event": false

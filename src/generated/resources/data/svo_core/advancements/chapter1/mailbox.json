@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "svo_core:mail_box"
-            ]
+            "tag": "svo_core:mail_box"
           }
         ]
       },
@@ -22,7 +20,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "svo_core:mail_box"
+      "item": "svo_core:spruce_mail_box"
     },
     "show_toast": true,
     "title": {

@@ -31,15 +31,26 @@ public class SVOMachines {
                     .model((ctx, prov) -> prov.generated(ctx::getEntry, SVOCore.id(("item/machine/charcoal_kiln")))))
             .register();
 
-    public static final MachineDefinition MAIL_BOX = REGISTRATE
-            .machine("mail_box", MailBox::new)
+    public static final MachineDefinition OAK_MAIL_BOX = REGISTRATE
+            .machine("oak_mail_box", MailBox::new)
             .rotationState(RotationState.NON_Y_AXIS)
-            .langValue("Mail Box")
+            .langValue("Oak Mail Box")
             .shape(Shapes.box(0, 0, 0, 1, 2, 1))
             .blockProp(BlockBehaviour.Properties::noOcclusion)
-            .model(createBasicMachineModel(SVOCore.id("block/machine/mail_box_model")))
-            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES))
-            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES))
+            .model(createBasicMachineModel(SVOCore.id("block/machine/oak_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition SPRUCE_MAIL_BOX = REGISTRATE
+            .machine("spruce_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Spruce Mail Box")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/spruce_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
             .register();
 
     public static void init() {}

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
+import com.CuteNekoDragon.Core.utils.WoodTypes;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -9,8 +10,10 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems;
 import net.p3pp3rf1y.sophisticatedcore.crafting.ShapeBasedRecipeBuilder;
 import net.p3pp3rf1y.sophisticatedcore.util.ColorHelper;
@@ -47,16 +50,6 @@ public class ShapedRecipesProvider {
                 .define('B', Items.COPPER_INGOT)
                 .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
                 .save(consumer, SVOCore.id("shaped/charcoal_kiln"));
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOMachines.MAIL_BOX.getItem())
-                .pattern("ABA")
-                .pattern(" C ")
-                .pattern(" C ")
-                .define('A', ItemTags.WOODEN_BUTTONS)
-                .define('B', Items.BARREL)
-                .define('C', ItemTags.WOODEN_FENCES)
-                .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
-                .save(consumer, SVOCore.id("shaped/mail_box"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOItems.LUNCHBOX)
                 .pattern(" C ")
@@ -239,6 +232,21 @@ public class ShapedRecipesProvider {
                     "AAA",
                     'A', Items.STRING,
                     'B', sackItem);
+        }
+
+        for (WoodTypes wood : WoodTypes.values()) {
+            Item button = wood.getButton();
+            Item fence = wood.getFence();
+            Item mailbox = wood.getMail_box();
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, mailbox)
+                    .pattern("ABA")
+                    .pattern(" C ")
+                    .pattern(" C ")
+                    .define('A', button)
+                    .define('B', Items.BARREL)
+                    .define('C', fence)
+                    .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BARREL))
+                    .save(consumer, SVOCore.id("shaped/" + ForgeRegistries.ITEMS.getKey(mailbox).getPath()));
         }
     }
 }

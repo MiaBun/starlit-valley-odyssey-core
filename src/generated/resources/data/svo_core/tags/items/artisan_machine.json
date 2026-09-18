@@ -1,6 +1,7 @@
 {
   "values": [
     "svo_core:charcoal_kiln",
-    "svo_core:mail_box"
+    "svo_core:oak_mail_box",
+    "svo_core:spruce_mail_box"
   ]
 }

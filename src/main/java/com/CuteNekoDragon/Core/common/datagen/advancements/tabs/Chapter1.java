@@ -260,13 +260,15 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
         Advancement mailbox = Advancement.Builder.advancement()
                 .parent(finding_iron)
                 .display(
-                        new ItemStack(SVOMachines.MAIL_BOX.getItem()),
+                        new ItemStack(SVOMachines.SPRUCE_MAIL_BOX.getItem()),
                         Component.translatable("advancement.svo_core.chapter1.mailbox.title"),
                         Component.translatable("advancement.svo_core.chapter1.mailbox.description"),
                         null,
                         FrameType.TASK,
                         true, true, false)
-                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(SVOMachines.MAIL_BOX.getItem()))
+                .addCriterion("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item()
+                        .of(SVOTags.Items.MAIL_BOX)
+                        .build()))
                 .save(consumer, SVOCore.id("chapter1/mailbox"), existingFileHelper);
     }
 }

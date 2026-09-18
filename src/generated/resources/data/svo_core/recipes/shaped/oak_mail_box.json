@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:oak_button"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    },
+    "C": {
+      "item": "minecraft:oak_fence"
+    }
+  },
+  "pattern": [
+    "ABA",
+    " C ",
+    " C "
+  ],
+  "result": {
+    "item": "svo_core:oak_mail_box"
+  },
+  "show_notification": true
+}

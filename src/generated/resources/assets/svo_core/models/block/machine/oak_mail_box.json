@@ -1,10 +1,10 @@
 {
   "parent": "minecraft:block/block",
   "loader": "gtceu:machine",
-  "machine": "svo_core:mail_box",
+  "machine": "svo_core:oak_mail_box",
   "variants": {
     "": {
-      "model": "svo_core:block/machine/mail_box_model"
+      "model": "svo_core:block/machine/oak_mail_box_model"
     }
   }
 }

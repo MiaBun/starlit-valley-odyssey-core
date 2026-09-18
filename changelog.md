@@ -4,6 +4,7 @@
 - mailbox letter overflow fix
 - iron and mailbox advancements
 - fixed a bug with sacks that caused items to be deleted
+- skill trees (no abilities just yet sorry)
 
 ## [0.0.31]
 ### Changes
