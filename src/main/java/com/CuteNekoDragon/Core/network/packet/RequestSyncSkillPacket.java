@@ -1,9 +1,10 @@
 package com.CuteNekoDragon.Core.network.packet;
 
-import com.CuteNekoDragon.Core.utils.skills.skill.SkillXPManager;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
+
+import com.CuteNekoDragon.Core.utils.skills.skill.SkillXPManager;
 
 import java.util.function.Supplier;
 
@@ -17,7 +18,7 @@ public class RequestSyncSkillPacket {
         return new RequestSyncSkillPacket();
     }
 
-    public static void handle (RequestSyncSkillPacket packet, Supplier<NetworkEvent.Context> ctxS) {
+    public static void handle(RequestSyncSkillPacket packet, Supplier<NetworkEvent.Context> ctxS) {
         NetworkEvent.Context ctx = ctxS.get();
         ctx.enqueueWork(() -> {
             ServerPlayer sp = ctx.getSender();

@@ -1,7 +1,6 @@
 package com.CuteNekoDragon.Core.utils.skills.skill;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.util.INBTSerializable;
 
 import java.util.Arrays;
@@ -24,14 +23,35 @@ public class PlayerSkillData implements ISkillData, INBTSerializable<CompoundTag
         }
     }
 
-    @Override public int getXP(SkillType type) { return xpMap.getOrDefault(type, 0); }
-    @Override public void setXP(SkillType type, int xp) { xpMap.put(type, xp); }
+    @Override
+    public int getXP(SkillType type) {
+        return xpMap.getOrDefault(type, 0);
+    }
 
-    @Override public int getLevel(SkillType type) { return levelMap.getOrDefault(type, 0); }
-    @Override public void setLevel(SkillType type, int level) { levelMap.put(type, level); }
+    @Override
+    public void setXP(SkillType type, int xp) {
+        xpMap.put(type, xp);
+    }
 
-    @Override public int getChosenAbility(SkillType type, int level) { return abilityMap.get(type)[level]; }
-    @Override public void setChosenAbility(SkillType type, int level, int option) { abilityMap.get(type)[level] = option; }
+    @Override
+    public int getLevel(SkillType type) {
+        return levelMap.getOrDefault(type, 0);
+    }
+
+    @Override
+    public void setLevel(SkillType type, int level) {
+        levelMap.put(type, level);
+    }
+
+    @Override
+    public int getChosenAbility(SkillType type, int level) {
+        return abilityMap.get(type)[level];
+    }
+
+    @Override
+    public void setChosenAbility(SkillType type, int level, int option) {
+        abilityMap.get(type)[level] = option;
+    }
 
     @Override
     public CompoundTag serializeNBT() {

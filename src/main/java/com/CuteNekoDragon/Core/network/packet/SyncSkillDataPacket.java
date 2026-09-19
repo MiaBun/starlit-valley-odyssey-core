@@ -1,16 +1,16 @@
 package com.CuteNekoDragon.Core.network.packet;
 
-import com.CuteNekoDragon.Core.client.util.ClientSkillData;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
+
+import com.CuteNekoDragon.Core.client.util.ClientSkillData;
 
 import java.util.function.Supplier;
 
 public class SyncSkillDataPacket {
 
     private final CompoundTag data;
-
 
     public SyncSkillDataPacket(CompoundTag data) {
         this.data = data;

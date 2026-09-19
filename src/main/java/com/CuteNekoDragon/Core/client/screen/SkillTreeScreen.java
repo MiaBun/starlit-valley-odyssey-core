@@ -1,5 +1,10 @@
 package com.CuteNekoDragon.Core.client.screen;
 
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
+
 import com.CuteNekoDragon.Core.client.util.ClientSkillData;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.ChooseAbilityPacket;
@@ -7,10 +12,6 @@ import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
 import com.CuteNekoDragon.Core.utils.skills.ability.AbilityRegistry;
 import com.CuteNekoDragon.Core.utils.skills.skill.SkillType;
 import com.CuteNekoDragon.Core.utils.skills.skill.SkillXPManager;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,10 +60,10 @@ public class SkillTreeScreen extends Screen {
             SkillType tree = trees[i];
             int x = startX + i * tabWidth;
             Button tab = Button.builder(Component.literal(tree.getDisplayName()), b -> {
-                        selectedTree = tree;
-                        scrollOffset = 0;
-                        rebuild();
-                    })
+                selectedTree = tree;
+                scrollOffset = 0;
+                rebuild();
+            })
                     .bounds(x, TAB_Y, tabWidth - 2, TAB_HEIGHT)
                     .build();
             tab.active = tree != selectedTree;
@@ -124,7 +125,6 @@ public class SkillTreeScreen extends Screen {
 
     private Button makeAbilityButton(Ability ability, int level, int option, int chosen,
                                      int x, int y, int width) {
-
         String prefix = "Lv" + level + " ";
         String label;
         if (chosen == option) {
@@ -133,14 +133,15 @@ public class SkillTreeScreen extends Screen {
             label = prefix + ability.getDescription();
         }
 
-        Button btn = Button.builder(Component.literal(label), b ->
-                        SVONetworkHandler.INSTANCE.sendToServer(new ChooseAbilityPacket(selectedTree, level, option)))
+        Button btn = Button
+                .builder(Component.literal(label),
+                        b -> SVONetworkHandler.INSTANCE
+                                .sendToServer(new ChooseAbilityPacket(selectedTree, level, option)))
                 .bounds(x, y, width, ROW_HEIGHT - 2)
                 .build();
 
         btn.active = chosen == -1;
         return btn;
-
     }
 
     @Override

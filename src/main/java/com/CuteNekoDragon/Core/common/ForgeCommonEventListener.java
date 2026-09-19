@@ -1,8 +1,5 @@
 package com.CuteNekoDragon.Core.common;
 
-import com.CuteNekoDragon.Core.common.capability.SkillCapability;
-import com.CuteNekoDragon.Core.utils.skills.skill.ISkillData;
-import com.CuteNekoDragon.Core.utils.skills.skill.PlayerSkillData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -18,10 +15,13 @@ import net.minecraftforge.fml.common.Mod;
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.common.capability.MailCapability;
 import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.common.capability.SkillCapability;
 import com.CuteNekoDragon.Core.common.data.SVOCommands;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
 import com.CuteNekoDragon.Core.utils.mail.LetterTemplateLoader;
+import com.CuteNekoDragon.Core.utils.skills.skill.ISkillData;
+import com.CuteNekoDragon.Core.utils.skills.skill.PlayerSkillData;
 
 @Mod.EventBusSubscriber(modid = SVOCore.MOD_ID)
 public class ForgeCommonEventListener {
@@ -52,7 +52,6 @@ public class ForgeCommonEventListener {
 
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
-
         PlayerSkillData oldSkillData = SkillCapability.getOrDefault(event.getOriginal());
         PlayerSkillData newSkillData = SkillCapability.getOrDefault(event.getEntity());
         newSkillData.copyFrom(oldSkillData);

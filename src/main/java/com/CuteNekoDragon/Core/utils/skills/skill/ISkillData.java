@@ -13,5 +13,4 @@ public interface ISkillData {
     int getChosenAbility(SkillType type, int level);
 
     void setChosenAbility(SkillType type, int level, int option);
-
 }

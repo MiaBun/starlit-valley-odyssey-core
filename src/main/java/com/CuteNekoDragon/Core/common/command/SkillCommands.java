@@ -1,5 +1,11 @@
 package com.CuteNekoDragon.Core.common.command;
 
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+
 import com.CuteNekoDragon.Core.common.capability.SkillCapability;
 import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
 import com.CuteNekoDragon.Core.utils.skills.ability.AbilityRegistry;
@@ -10,11 +16,6 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.Commands;
-import net.minecraft.commands.arguments.EntityArgument;
-import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 
 public class SkillCommands {
 
@@ -25,7 +26,8 @@ public class SkillCommands {
                         .requires(source -> source.hasPermission(2))
                         .then(Commands.argument("player", EntityArgument.player())
                                 .then(Commands.argument("tree", StringArgumentType.word())
-                                        .then(Commands.argument("level", IntegerArgumentType.integer(0, SkillType.MAX_LEVEL))
+                                        .then(Commands
+                                                .argument("level", IntegerArgumentType.integer(0, SkillType.MAX_LEVEL))
                                                 .executes(SkillCommands::setLevel))))));
     }
 
@@ -34,8 +36,7 @@ public class SkillCommands {
         player.getCapability(SkillCapability.SKILL_DATA).ifPresent(data -> {
             for (SkillType type : SkillType.values()) {
                 player.sendSystemMessage(Component.literal(
-                        type.getDisplayName() + ": Lv " + data.getLevel(type) + " (" + data.getXP(type) + " xp)"
-                ));
+                        type.getDisplayName() + ": Lv " + data.getLevel(type) + " (" + data.getXP(type) + " xp)"));
             }
         });
         return 1;
@@ -53,14 +54,14 @@ public class SkillCommands {
         int level = IntegerArgumentType.getInteger(ctx, "level");
         String optionStr = StringArgumentType.getString(ctx, "option").toUpperCase();
         int option = optionStr.equals("A") ? 0 : optionStr.equals("B") ? 1 : -1;
-        if(option == -1) {
+        if (option == -1) {
             ctx.getSource().sendFailure(Component.literal("Option must be A or B."));
             return 0;
         }
 
         SkillType finalType = type;
         player.getCapability(SkillCapability.SKILL_DATA).ifPresent(data -> {
-            if(data.getLevel(finalType) < level) {
+            if (data.getLevel(finalType) < level) {
                 ctx.getSource().sendFailure(Component.literal("You have not reached that level yet."));
                 return;
             }
@@ -97,8 +98,8 @@ public class SkillCommands {
         player.getCapability(SkillCapability.SKILL_DATA).ifPresent(data -> {
             data.setLevel(finalType, level);
             ctx.getSource().sendSuccess(() -> Component.literal(
-                    "Set " + player.getName().getString() + "'s " + finalType.getDisplayName() + " to level " + level
-            ), true);
+                    "Set " + player.getName().getString() + "'s " + finalType.getDisplayName() + " to level " + level),
+                    true);
         });
 
         SkillXPManager.sendTo(player);

@@ -1,7 +1,8 @@
 package com.CuteNekoDragon.Core.common.ability;
 
-import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
 import net.minecraft.server.level.ServerPlayer;
+
+import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
 
 import java.util.function.Consumer;
 

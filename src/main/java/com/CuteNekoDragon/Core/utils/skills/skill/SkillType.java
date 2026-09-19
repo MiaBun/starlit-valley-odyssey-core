@@ -20,5 +20,4 @@ public enum SkillType {
     SkillType(String displayName) {
         this.displayName = displayName;
     }
-
 }

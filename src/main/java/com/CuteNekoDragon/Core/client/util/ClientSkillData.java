@@ -1,8 +1,9 @@
 package com.CuteNekoDragon.Core.client.util;
 
+import net.minecraft.nbt.CompoundTag;
+
 import com.CuteNekoDragon.Core.utils.skills.skill.PlayerSkillData;
 import lombok.Getter;
-import net.minecraft.nbt.CompoundTag;
 
 public class ClientSkillData {
 
@@ -12,5 +13,4 @@ public class ClientSkillData {
     public static void updateFrom(CompoundTag tag) {
         DATA.deserializeNBT(tag);
     }
-
 }

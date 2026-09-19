@@ -1,16 +1,16 @@
 package com.CuteNekoDragon.Core.utils.skills.skill;
 
-import com.CuteNekoDragon.Core.common.capability.SkillCapability;
-import com.CuteNekoDragon.Core.network.SVONetworkHandler;
-import com.CuteNekoDragon.Core.network.packet.SyncSkillDataPacket;
-import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
-import com.CuteNekoDragon.Core.utils.skills.ability.AbilityRegistry;
-import earth.terrarium.adastra.common.network.NetworkHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.network.PacketDistributor;
+
+import com.CuteNekoDragon.Core.common.capability.SkillCapability;
+import com.CuteNekoDragon.Core.network.SVONetworkHandler;
+import com.CuteNekoDragon.Core.network.packet.SyncSkillDataPacket;
+import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
+import com.CuteNekoDragon.Core.utils.skills.ability.AbilityRegistry;
 
 public class SkillXPManager {
 
@@ -39,15 +39,14 @@ public class SkillXPManager {
 
     private static void onLevelUp(ServerPlayer player, SkillType type, int newLevel) {
         player.sendSystemMessage(Component.literal(
-                type.getDisplayName() + " leveled up to " + newLevel + "!"
-        ).withStyle(ChatFormatting.GOLD));
+                type.getDisplayName() + " leveled up to " + newLevel + "!").withStyle(ChatFormatting.GOLD));
     }
 
     public static boolean hasAbility(Player player, SkillType type, String abilityID) {
         return player.getCapability(SkillCapability.SKILL_DATA).map(data -> {
             for (int lvl = 1; lvl <= data.getLevel(type); lvl++) {
                 int chosen = data.getChosenAbility(type, lvl);
-                if (chosen ==  -1) continue;
+                if (chosen == -1) continue;
                 Ability ability = AbilityRegistry.getAbility(type, lvl, chosen);
                 if (ability != null && ability.getID().equals(abilityID)) return true;
             }
@@ -55,14 +54,15 @@ public class SkillXPManager {
         }).orElse(false);
     }
 
-    public static int xpForLevel(int level)  {
+    public static int xpForLevel(int level) {
         return (int) Math.round(GlobalSkillData.CURVE_BASE * Math.pow(level, GlobalSkillData.CURVE_EXPONENT));
     }
 
     public static void sendTo(ServerPlayer player) {
         player.getCapability(SkillCapability.SKILL_DATA).ifPresent(data -> {
             if (data instanceof PlayerSkillData psd) {
-                SVONetworkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), new SyncSkillDataPacket(psd.serializeNBT()));
+                SVONetworkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player),
+                        new SyncSkillDataPacket(psd.serializeNBT()));
             }
         });
     }

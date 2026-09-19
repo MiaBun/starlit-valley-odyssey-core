@@ -78,8 +78,6 @@ public class SVONetworkHandler {
                 ChooseAbilityPacket::encode,
                 ChooseAbilityPacket::decode,
                 ChooseAbilityPacket::handle);
-
-
     }
 
     public static void sendLetterToPlayer(ServerPlayer player, Object packet) {

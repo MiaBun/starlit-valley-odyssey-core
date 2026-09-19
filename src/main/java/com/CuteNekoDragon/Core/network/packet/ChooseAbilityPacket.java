@@ -1,13 +1,14 @@
 package com.CuteNekoDragon.Core.network.packet;
 
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.network.NetworkEvent;
+
 import com.CuteNekoDragon.Core.common.capability.SkillCapability;
 import com.CuteNekoDragon.Core.utils.skills.ability.Ability;
 import com.CuteNekoDragon.Core.utils.skills.ability.AbilityRegistry;
 import com.CuteNekoDragon.Core.utils.skills.skill.SkillType;
 import com.CuteNekoDragon.Core.utils.skills.skill.SkillXPManager;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
@@ -37,14 +38,14 @@ public class ChooseAbilityPacket {
         NetworkEvent.Context ctx = contextSupplier.get();
         ctx.enqueueWork(() -> {
             ServerPlayer sp = ctx.getSender();
-            if(sp == null) return;
+            if (sp == null) return;
 
             sp.getCapability(SkillCapability.SKILL_DATA).ifPresent(data -> {
                 if (data.getLevel(packet.type) < packet.level) return;
-                if(data.getChosenAbility(packet.type, packet.level) != -1) return;
+                if (data.getChosenAbility(packet.type, packet.level) != -1) return;
 
                 Ability ability = AbilityRegistry.getAbility(packet.type, packet.level, packet.option);
-                if(ability == null) return;
+                if (ability == null) return;
 
                 data.setChosenAbility(packet.type, packet.level, packet.option);
                 ability.onChosen(sp);

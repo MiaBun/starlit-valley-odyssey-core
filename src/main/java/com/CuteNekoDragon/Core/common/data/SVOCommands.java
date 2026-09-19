@@ -1,9 +1,9 @@
 package com.CuteNekoDragon.Core.common.data;
 
-import com.CuteNekoDragon.Core.common.command.SkillCommands;
 import net.minecraft.commands.CommandSourceStack;
 
 import com.CuteNekoDragon.Core.common.command.MailCommands;
+import com.CuteNekoDragon.Core.common.command.SkillCommands;
 import com.mojang.brigadier.CommandDispatcher;
 
 public class SVOCommands {
