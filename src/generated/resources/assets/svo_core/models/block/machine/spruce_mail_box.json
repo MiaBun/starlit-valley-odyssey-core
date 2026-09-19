@@ -4,7 +4,7 @@
   "machine": "svo_core:spruce_mail_box",
   "variants": {
     "": {
-      "model": "svo_core:block/machine/spruce_mail_box_model"
+      "model": "svo_core:block/machine/mailbox/spruce_mail_box_model"
     }
   }
 }

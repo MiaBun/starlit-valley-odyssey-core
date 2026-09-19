@@ -4,7 +4,7 @@
   "machine": "svo_core:oak_mail_box",
   "variants": {
     "": {
-      "model": "svo_core:block/machine/oak_mail_box_model"
+      "model": "svo_core:block/machine/mailbox/oak_mail_box_model"
     }
   }
 }

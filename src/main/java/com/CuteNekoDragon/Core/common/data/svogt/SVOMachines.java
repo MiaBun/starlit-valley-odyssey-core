@@ -37,7 +37,7 @@ public class SVOMachines {
             .langValue("Oak Mail Box")
             .shape(Shapes.box(0, 0, 0, 1, 2, 1))
             .blockProp(BlockBehaviour.Properties::noOcclusion)
-            .model(createBasicMachineModel(SVOCore.id("block/machine/oak_mail_box_model")))
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/oak_mail_box_model")))
             .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
             .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
             .register();
@@ -48,7 +48,7 @@ public class SVOMachines {
             .langValue("Spruce Mail Box")
             .shape(Shapes.box(0, 0, 0, 1, 2, 1))
             .blockProp(BlockBehaviour.Properties::noOcclusion)
-            .model(createBasicMachineModel(SVOCore.id("block/machine/spruce_mail_box_model")))
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/spruce_mail_box_model")))
             .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
             .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
             .register();

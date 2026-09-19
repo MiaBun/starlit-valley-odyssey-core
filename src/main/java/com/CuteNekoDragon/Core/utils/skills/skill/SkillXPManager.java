@@ -41,12 +41,6 @@ public class SkillXPManager {
         player.sendSystemMessage(Component.literal(
                 type.getDisplayName() + " leveled up to " + newLevel + "!"
         ).withStyle(ChatFormatting.GOLD));
-
-        if (AbilityRegistry.hasChoice(type, newLevel)) {
-            player.sendSystemMessage(Component.literal(
-                    "Choose an ability: /skills choose " + type.name() + " " + newLevel + " <A|B>"
-            ).withStyle(ChatFormatting.YELLOW));
-        }
     }
 
     public static boolean hasAbility(Player player, SkillType type, String abilityID) {

@@ -12,6 +12,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -24,7 +25,13 @@ public class SkillCommands {
                         .then(Commands.argument("tree", StringArgumentType.word())
                                 .then(Commands.argument("level", IntegerArgumentType.integer(1, SkillType.MAX_LEVEL))
                                         .then(Commands.argument("option", StringArgumentType.word())
-                                                .executes(SkillCommands::choose))))));
+                                                .executes(SkillCommands::choose))))
+                        .then(Commands.literal("setlevel")
+                                .requires(source -> source.hasPermission(2))
+                                .then(Commands.argument("player", EntityArgument.player())
+                                        .then(Commands.argument("tree", StringArgumentType.word())
+                                                .then(Commands.argument("level", IntegerArgumentType.integer(0, SkillType.MAX_LEVEL))
+                                                        .executes(SkillCommands::setLevel)))))));
     }
 
     public static int info(CommandContext<CommandSourceStack> ctx) throws CommandSyntaxException {
@@ -74,6 +81,29 @@ public class SkillCommands {
             data.setChosenAbility(finalType, level, option);
             ability.onChosen(player);
             player.sendSystemMessage(Component.literal("Chose: " + ability.getDescription()));
+        });
+
+        SkillXPManager.sendTo(player);
+        return 1;
+    }
+
+    public static int setLevel(CommandContext<CommandSourceStack> ctx) throws CommandSyntaxException {
+        ServerPlayer player = EntityArgument.getPlayer(ctx, "player");
+        SkillType type;
+        try {
+            type = SkillType.valueOf(StringArgumentType.getString(ctx, "tree").toUpperCase());
+        } catch (IllegalArgumentException e) {
+            ctx.getSource().sendFailure(Component.literal("Unknown skill tree."));
+            return 0;
+        }
+        int level = IntegerArgumentType.getInteger(ctx, "level");
+
+        SkillType finalType = type;
+        player.getCapability(SkillCapability.SKILL_DATA).ifPresent(data -> {
+            data.setLevel(finalType, level);
+            ctx.getSource().sendSuccess(() -> Component.literal(
+                    "Set " + player.getName().getString() + "'s " + finalType.getDisplayName() + " to level " + level
+            ), true);
         });
 
         SkillXPManager.sendTo(player);
