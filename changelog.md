@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.32]
 ### Changes
 - grandpa's letter
 - mailbox letter overflow fix
