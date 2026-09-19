@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:mangrove_button"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    },
+    "C": {
+      "item": "minecraft:mangrove_fence"
+    }
+  },
+  "pattern": [
+    "ABA",
+    " C ",
+    " C "
+  ],
+  "result": {
+    "item": "svo_core:mangrove_mail_box"
+  },
+  "show_notification": true
+}

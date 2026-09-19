@@ -34,7 +34,7 @@ public class SVOMachines {
     public static final MachineDefinition OAK_MAIL_BOX = REGISTRATE
             .machine("oak_mail_box", MailBox::new)
             .rotationState(RotationState.NON_Y_AXIS)
-            .langValue("Oak Mail Box")
+            .langValue("Oak Mailbox")
             .shape(Shapes.box(0, 0, 0, 1, 2, 1))
             .blockProp(BlockBehaviour.Properties::noOcclusion)
             .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/oak_mail_box_model")))
@@ -45,10 +45,109 @@ public class SVOMachines {
     public static final MachineDefinition SPRUCE_MAIL_BOX = REGISTRATE
             .machine("spruce_mail_box", MailBox::new)
             .rotationState(RotationState.NON_Y_AXIS)
-            .langValue("Spruce Mail Box")
+            .langValue("Spruce Mailbox")
             .shape(Shapes.box(0, 0, 0, 1, 2, 1))
             .blockProp(BlockBehaviour.Properties::noOcclusion)
             .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/spruce_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition BIRCH_MAIL_BOX = REGISTRATE
+            .machine("birch_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Birch Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/birch_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition JUNGLE_MAIL_BOX = REGISTRATE
+            .machine("jungle_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Jungle Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/jungle_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition ACACIA_MAIL_BOX = REGISTRATE
+            .machine("acacia_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Acacia Mail Box")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/acacia_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition DARK_OAK_MAIL_BOX = REGISTRATE
+            .machine("dark_oak_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Dark Oak Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/dark_oak_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition MANGROVE_MAIL_BOX = REGISTRATE
+            .machine("mangrove_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Mangrove Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/mangrove_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition CHERRY_MAIL_BOX = REGISTRATE
+            .machine("cherry_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Cherry Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/cherry_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition BAMBOO_MAIL_BOX = REGISTRATE
+            .machine("bamboo_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Bamboo Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/bamboo_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition CRIMSON_MAIL_BOX = REGISTRATE
+            .machine("crimson_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Crimson Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/crimson_mail_box_model")))
+            .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
+            .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
+            .register();
+
+    public static final MachineDefinition WARPED_MAIL_BOX = REGISTRATE
+            .machine("warped_mail_box", MailBox::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("Warped Mailbox")
+            .shape(Shapes.box(0, 0, 0, 1, 2, 1))
+            .blockProp(BlockBehaviour.Properties::noOcclusion)
+            .model(createBasicMachineModel(SVOCore.id("block/machine/mailbox/warped_mail_box_model")))
             .itemBuilder(p -> p.tag(SVOTags.Items.ARTISAN_MACHINES).tag(SVOTags.Items.MAIL_BOX))
             .blockBuilder(p -> p.tag(SVOTags.Blocks.ARTISAN_MACHINES).tag(SVOTags.Blocks.MAIL_BOX))
             .register();

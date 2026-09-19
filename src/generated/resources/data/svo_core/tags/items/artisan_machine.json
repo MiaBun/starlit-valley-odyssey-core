@@ -2,6 +2,15 @@
   "values": [
     "svo_core:charcoal_kiln",
     "svo_core:oak_mail_box",
-    "svo_core:spruce_mail_box"
+    "svo_core:spruce_mail_box",
+    "svo_core:birch_mail_box",
+    "svo_core:jungle_mail_box",
+    "svo_core:acacia_mail_box",
+    "svo_core:dark_oak_mail_box",
+    "svo_core:mangrove_mail_box",
+    "svo_core:cherry_mail_box",
+    "svo_core:bamboo_mail_box",
+    "svo_core:crimson_mail_box",
+    "svo_core:warped_mail_box"
   ]
 }

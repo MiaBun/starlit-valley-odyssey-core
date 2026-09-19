@@ -21,17 +21,12 @@ public class SkillCommands {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("skills")
                 .then(Commands.literal("info").executes(SkillCommands::info))
-                .then(Commands.literal("choose")
-                        .then(Commands.argument("tree", StringArgumentType.word())
-                                .then(Commands.argument("level", IntegerArgumentType.integer(1, SkillType.MAX_LEVEL))
-                                        .then(Commands.argument("option", StringArgumentType.word())
-                                                .executes(SkillCommands::choose))))
-                        .then(Commands.literal("setlevel")
-                                .requires(source -> source.hasPermission(2))
-                                .then(Commands.argument("player", EntityArgument.player())
-                                        .then(Commands.argument("tree", StringArgumentType.word())
-                                                .then(Commands.argument("level", IntegerArgumentType.integer(0, SkillType.MAX_LEVEL))
-                                                        .executes(SkillCommands::setLevel)))))));
+                .then(Commands.literal("setlevel")
+                        .requires(source -> source.hasPermission(2))
+                        .then(Commands.argument("player", EntityArgument.player())
+                                .then(Commands.argument("tree", StringArgumentType.word())
+                                        .then(Commands.argument("level", IntegerArgumentType.integer(0, SkillType.MAX_LEVEL))
+                                                .executes(SkillCommands::setLevel))))));
     }
 
     public static int info(CommandContext<CommandSourceStack> ctx) throws CommandSyntaxException {

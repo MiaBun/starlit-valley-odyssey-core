@@ -5,6 +5,17 @@
 - iron and mailbox advancements
 - fixed a bug with sacks that caused items to be deleted
 - skill trees (no abilities just yet sorry)
+- added oak mailbox
+- changed mailbox to spruce mailbox
+- added acacia mailbox
+- added bamboo mailbox
+- added birch mailbox
+- added cherry mailbox
+- added crimson mailbox
+- added dark oak mailbox
+- added jungle mailbox
+- added mangrove mailbox
+- added warped mailbox
 
 ## [0.0.31]
 ### Changes
