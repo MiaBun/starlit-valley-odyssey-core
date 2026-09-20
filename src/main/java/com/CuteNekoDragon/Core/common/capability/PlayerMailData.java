@@ -20,6 +20,9 @@ public class PlayerMailData {
     @Getter
     @Setter
     private boolean toastEnabled = true;
+    @Setter
+    @Getter
+    private boolean indicatorEnabled = true;
 
     public void addLetter(Letter letter) {
         letters.add(letter);
@@ -33,11 +36,13 @@ public class PlayerMailData {
         this.letters.clear();
         this.letters.addAll(other.letters);
         this.toastEnabled = other.toastEnabled;
+        this.indicatorEnabled = other.indicatorEnabled;
     }
 
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putBoolean("ToastEnabled", toastEnabled);
+        tag.putBoolean("IndicatorEnabled", indicatorEnabled);
 
         ListTag letterList = new ListTag();
         for (Letter letter : letters) {
@@ -50,6 +55,7 @@ public class PlayerMailData {
     public void deserializeNBT(CompoundTag tag) {
         letters.clear();
         toastEnabled = !tag.contains("ToastEnabled") || tag.getBoolean("ToastEnabled");
+        indicatorEnabled = !tag.contains("IndicatorEnabled") || tag.getBoolean("IndicatorEnabled");
 
         ListTag letterList = tag.getList("Letters", Tag.TAG_COMPOUND);
         for (int i = 0; i < letterList.size(); i++) {

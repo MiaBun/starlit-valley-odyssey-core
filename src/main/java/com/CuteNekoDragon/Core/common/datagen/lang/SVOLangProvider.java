@@ -168,6 +168,10 @@ public class SVOLangProvider {
         REGISTRATE.addRawLang("gui.svo_core.mailbox.title", "Mail Box");
         REGISTRATE.addRawLang("gui.svo_core.mailbox.no_letters", "No Letters");
 
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.indicator_setting", "Indicator Settings");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.indicator_off", "Disabled");
+        REGISTRATE.addRawLang("gui.svo_core.mailbox.indicator_on", "Enabled");
+
         REGISTRATE.addRawLang("key.categories.svo", "Starlit Valley: Odyssey");
         REGISTRATE.addRawLang("key.svo.skilltree.open", "Opens the Skills Menu");
     }

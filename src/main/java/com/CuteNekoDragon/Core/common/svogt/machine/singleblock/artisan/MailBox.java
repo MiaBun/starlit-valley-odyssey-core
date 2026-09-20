@@ -1,9 +1,11 @@
 package com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan;
 
+import com.CuteNekoDragon.Core.client.util.ClientMailboxTracker;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.machine.feature.IMachineLife;
 import com.gregtechceu.gtceu.api.machine.feature.IUIMachine;
 
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
@@ -28,7 +30,7 @@ import com.CuteNekoDragon.Core.utils.mail.Letter;
 
 import java.util.List;
 
-public class MailBox extends MetaMachine implements IUIMachine {
+public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
 
     private static final int LIST_WIDTH = 84;
     private static final int PANEL_HEIGHT = 132;
@@ -53,7 +55,7 @@ public class MailBox extends MetaMachine implements IUIMachine {
         if (player instanceof ServerPlayer serverPlayer) {
             PlayerMailData data = MailCapability.getOrDefault(serverPlayer);
             SVONetworkHandler.sendLetterToPlayer(serverPlayer,
-                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
+                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled(), data.isIndicatorEnabled()));
         }
         return true;
     }
@@ -66,6 +68,11 @@ public class MailBox extends MetaMachine implements IUIMachine {
     private static boolean getToastEnabled(Player player) {
         return player.level().isClientSide ? ClientMailCache.isToastEnabled() :
                 MailCapability.getOrDefault(player).isToastEnabled();
+    }
+
+    private static boolean getIndicatorEnabled(Player player) {
+        return player.level().isClientSide ? ClientMailCache.isIndicatorEnabled() :
+                MailCapability.getOrDefault(player).isIndicatorEnabled();
     }
 
     @Override
@@ -167,6 +174,21 @@ public class MailBox extends MetaMachine implements IUIMachine {
                 new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
                         new TextTexture("gui.svo_core.mailbox.toast_on")))
                 .setPressed(getToastEnabled(entityPlayer)));
+
+        panel.addWidget(new LabelWidget(6, 44, "gui.svo_core.mailbox.indicator_setting"));
+        panel.addWidget(new SwitchWidget(6, 58, 100, 18, (clickData, value) -> {
+            if (!entityPlayer.level().isClientSide) {
+                MailCapability.getOrDefault(entityPlayer).setIndicatorEnabled(value);
+            } else {
+                ClientMailCache.setIndicatorEnabled(value);
+            }
+        }).setTexture(
+                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                                new TextTexture("gui.svo_core.mailbox.indicator_off")),
+                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                                new TextTexture("gui.svo_core.mailbox.indicator_on")))
+                .setPressed(getIndicatorEnabled(entityPlayer)));
+
         return panel;
     }
 
@@ -187,5 +209,19 @@ public class MailBox extends MetaMachine implements IUIMachine {
         int charsPerLine = Math.max(1, availableWidth / AVG_CHAR_WIDTH);
         int lines = (int) Math.ceil(label.length() / (double) charsPerLine);
         return Math.max(1, lines);
+    }
+
+    @Override
+    public void onLoad() {
+        if (getLevel() != null && getLevel().isClientSide) {
+            ClientMailboxTracker.register(getPos());
+        }
+    }
+
+    @Override
+    public void onUnload() {
+        if (getLevel() != null && getLevel().isClientSide) {
+            ClientMailboxTracker.unregister(getPos());
+        }
     }
 }

@@ -14,10 +14,12 @@ public class SyncMailDataPacket {
 
     private final List<Letter> letters;
     private final boolean toastEnabled;
+    private final boolean indicatorEnabled;
 
-    public SyncMailDataPacket(List<Letter> letters, boolean toastEnabled) {
+    public SyncMailDataPacket(List<Letter> letters, boolean toastEnabled, boolean indicatorEnabled) {
         this.letters = letters;
         this.toastEnabled = toastEnabled;
+        this.indicatorEnabled = indicatorEnabled;
     }
 
     public SyncMailDataPacket(FriendlyByteBuf buf) {
@@ -27,6 +29,7 @@ public class SyncMailDataPacket {
             letters.add(Letter.readFromBuf(buf));
         }
         this.toastEnabled = buf.readBoolean();
+        this.indicatorEnabled = buf.readBoolean();
     }
 
     public void write(FriendlyByteBuf buf) {
@@ -35,11 +38,12 @@ public class SyncMailDataPacket {
             letter.writeToBuf(buf);
         }
         buf.writeBoolean(toastEnabled);
+        buf.writeBoolean(indicatorEnabled);
     }
 
     public void handle(Supplier<NetworkEvent.Context> context) {
         NetworkEvent.Context ctx = context.get();
-        ctx.enqueueWork(() -> ClientMailCache.update(letters, toastEnabled));
+        ctx.enqueueWork(() -> ClientMailCache.update(letters, toastEnabled, indicatorEnabled));
         ctx.setPacketHandled(true);
     }
 }

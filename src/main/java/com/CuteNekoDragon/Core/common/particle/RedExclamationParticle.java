@@ -11,7 +11,7 @@ public class RedExclamationParticle extends TextureSheetParticle {
         this.setSprite(sprites.get(this.random));
         this.gravity = 0.0f;
         this.lifetime = 20;
-        this.quadSize = 0.5f;
+        this.quadSize = 0.35f;
         this.hasPhysics = false;
     }
 

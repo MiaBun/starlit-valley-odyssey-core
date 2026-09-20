@@ -66,7 +66,7 @@ public class ForgeCommonEventListener {
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
             PlayerMailData data = MailCapability.getOrDefault(serverPlayer);
             SVONetworkHandler.sendLetterToPlayer(serverPlayer,
-                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled()));
+                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled(), data.isIndicatorEnabled()));
         }
     }
 
