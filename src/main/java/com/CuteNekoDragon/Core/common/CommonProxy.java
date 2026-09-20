@@ -34,6 +34,7 @@ public class CommonProxy {
         SVOBlockEntities.init();
         SVOItems.init();
         SVOCreativeTab.init();
+        SVOParticles.register(bus);
         SVOContainers.CONTAINERS.register(bus);
         SVORecipeSeralizers.RECIPE_SERIALIZERS.register(bus);
         SVOAbilities.init();
