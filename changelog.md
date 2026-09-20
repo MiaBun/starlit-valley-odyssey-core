@@ -1,6 +1,7 @@
 ## [Unreleased]
 ### Changes
-- 
+- added a indicator setting to mailbox.
+- added a red exclamation mark particle hovering over the mailbox when you have unread mail.
 
 ## [0.0.32]
 ### Changes
