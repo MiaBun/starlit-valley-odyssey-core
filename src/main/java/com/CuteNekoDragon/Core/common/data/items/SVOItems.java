@@ -416,4 +416,6 @@ public class SVOItems {
     public static ItemEntry<ToolbeltItem> COLLECTORS_TOOLBELT = REGISTRATE
             .item("collectors_toolbelt", p -> new ToolbeltItem(p.stacksTo(1), 9)).lang("Collectors Toolbelt")
             .tag(SVOTags.Items.TOOLBELT).tag(SVOTags.Items.CURIO_TOOLBELT).defaultModel().register();
+
+    public static ItemEntry<Item> LETTER = REGISTRATE.item("letter", Item::new).lang("Letter").defaultModel().register();
 }
