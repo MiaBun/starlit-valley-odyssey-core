@@ -2,6 +2,7 @@
 ### Changes
 - added a indicator setting to mailbox.
 - added a red exclamation mark particle hovering over the mailbox when you have unread mail.
+- added letters that render inside of the mailbox when you got unread mail, maximum of 12 to be rendered
 
 ## [0.0.32]
 ### Changes
