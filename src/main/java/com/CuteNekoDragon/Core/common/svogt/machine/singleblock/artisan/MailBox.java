@@ -53,11 +53,15 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
     @Override
     public boolean shouldOpenUI(Player player, InteractionHand hand, BlockHitResult hit) {
         if (player instanceof ServerPlayer serverPlayer) {
-            PlayerMailData data = MailCapability.getOrDefault(serverPlayer);
-            SVONetworkHandler.sendLetterToPlayer(serverPlayer,
-                    new SyncMailDataPacket(data.getLetters(), data.isToastEnabled(), data.isIndicatorEnabled()));
+            syncToClient(serverPlayer);
         }
         return true;
+    }
+
+    private static void syncToClient(ServerPlayer player) {
+        PlayerMailData data = MailCapability.getOrDefault(player);
+        SVONetworkHandler.sendLetterToPlayer(player,
+                new SyncMailDataPacket(data.getLetters(), data.isToastEnabled(), data.isIndicatorEnabled()));
     }
 
     private static List<Letter> getLetters(Player player) {
@@ -100,7 +104,6 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
                     boolean nowVisible = !settingsPanel.isVisible();
                     settingsPanel.setVisible(nowVisible);
                     settingsPanel.setActive(nowVisible);
-
                 })
                 .setHoverTooltips("Settings"));
 
@@ -129,9 +132,7 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
                                     .setWidth(textAreaWidth)),
                     clickData -> {
                         selected[0] = index;
-                        if (!entityPlayer.level().isClientSide) {
-                            letter.setRead(true);
-                        }
+                        letter.setRead(true);
                     });
             list.addWidget(row);
             y += rowHeight;
@@ -157,6 +158,10 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
         ui.widget(UITemplate.bindPlayerInventory(entityPlayer.getInventory(), GuiTextures.SLOT,
                 7, 20 + PANEL_HEIGHT + 10, true));
 
+        if (entityPlayer instanceof ServerPlayer serverPlayer) {
+            ui.registerCloseListener(() -> syncToClient(serverPlayer));
+        }
+
         return ui;
     }
 
@@ -169,10 +174,10 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
                 MailCapability.getOrDefault(entityPlayer).setToastEnabled(value);
             }
         }).setTexture(
-                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                        new TextTexture("gui.svo_core.mailbox.toast_off")),
-                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                        new TextTexture("gui.svo_core.mailbox.toast_on")))
+                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                                new TextTexture("gui.svo_core.mailbox.toast_off")),
+                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                                new TextTexture("gui.svo_core.mailbox.toast_on")))
                 .setPressed(getToastEnabled(entityPlayer)));
 
         panel.addWidget(new LabelWidget(6, 44, "gui.svo_core.mailbox.indicator_setting"));
