@@ -1,6 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "type": "svo_core:sack_to_lunchbox",
   "key": {
     "A": {
       "tag": "svo_core:sack"
@@ -25,6 +24,5 @@
   ],
   "result": {
     "item": "svo_core:lunchbox"
-  },
-  "show_notification": true
+  }
 }

@@ -1,5 +1,7 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
+import com.CuteNekoDragon.Core.common.recipe.builders.SackUpgradeRecipeBuilder;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -51,7 +53,7 @@ public class ShapedRecipesProvider {
                 .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
                 .save(consumer, SVOCore.id("shaped/charcoal_kiln"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOItems.LUNCHBOX)
+        SackUpgradeRecipeBuilder.shaped(SVORecipeSeralizers.SACK_TO_LUNCHBOX.get(), SVOItems.LUNCHBOX)
                 .pattern(" C ")
                 .pattern("DAE")
                 .pattern(" B ")
