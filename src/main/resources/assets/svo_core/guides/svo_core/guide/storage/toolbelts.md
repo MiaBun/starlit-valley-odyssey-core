@@ -34,5 +34,3 @@ the tiers are as follows:
 | Premium Toolbelt      | 6     |
 | Ultimate Toolbelt     | 8     |
 | Collectors Toolbelt   | 9     |
-
-*please note that upgrading toolbelts does not carry over it's contents, removing contents before upgrading is adviced.*
