@@ -24,10 +24,5 @@
       "has_the_recipe"
     ]
   ],
-  "rewards": {
-    "recipes": [
-      "svo_core:shaped/sack_to_toolbelt"
-    ]
-  },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }

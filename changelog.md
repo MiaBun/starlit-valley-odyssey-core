@@ -1,6 +1,6 @@
 ## [Unreleased]
 ### Changes
-- 
+- fixed recipe to upgrade sack into lunchbox, now it properly makes items stay
 
 ## [0.0.33]
 ### Changes

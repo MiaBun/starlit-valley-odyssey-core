@@ -67,7 +67,7 @@ public class ShapedRecipesProvider {
                                 .hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
                 .save(consumer, SVOCore.id("shaped/sack_to_lunchbox"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SVOItems.TOOLBELT)
+        SackUpgradeRecipeBuilder.shaped(SVORecipeSeralizers.SACK_TO_TOOLBELT.get(), SVOItems.TOOLBELT)
                 .pattern(" B ")
                 .pattern("BAB")
                 .pattern(" B ")
