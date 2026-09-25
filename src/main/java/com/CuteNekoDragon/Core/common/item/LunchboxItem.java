@@ -42,6 +42,14 @@ public class LunchboxItem extends Item implements ICurioItem {
         this.CooldownLength = CooldownLength;
     }
 
+    public int getBaseStorageSize() {
+        return this.slots;
+    }
+
+    public int getBaseCooldownLength() {
+        return this.CooldownLength;
+    }
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);

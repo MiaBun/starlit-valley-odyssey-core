@@ -1,6 +1,7 @@
 package com.CuteNekoDragon.Core.common.data;
 
 import com.CuteNekoDragon.Core.common.recipe.serializers.SackToBackpackRecipe;
+import com.CuteNekoDragon.Core.common.recipe.serializers.SackToLunchboxRecipe;
 import com.CuteNekoDragon.Core.common.recipe.serializers.SackUpgradeRecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,4 +16,6 @@ public class SVORecipeSeralizers {
             .create(ForgeRegistries.RECIPE_SERIALIZERS, SVOCore.MOD_ID);
 
     public static final RegistryObject<SackUpgradeRecipeSerializer<SackToBackpackRecipe>> SACK_TO_BACKPACK = RECIPE_SERIALIZERS.register("sack_to_backpack", () -> new SackUpgradeRecipeSerializer<>(SackToBackpackRecipe::new));
+
+    public static final RegistryObject<SackUpgradeRecipeSerializer<SackToLunchboxRecipe>> SACK_TO_LUNCHBOX = RECIPE_SERIALIZERS.register("sack_to_lunchbox", () -> new SackUpgradeRecipeSerializer<>(SackToLunchboxRecipe::new));
 }
