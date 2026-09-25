@@ -1,9 +1,5 @@
 package com.CuteNekoDragon.Core.client.event;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.client.util.ClientMailCache;
-import com.CuteNekoDragon.Core.client.util.ClientMailboxTracker;
-import com.CuteNekoDragon.Core.common.data.SVOParticles;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraftforge.api.distmarker.Dist;
@@ -11,8 +7,14 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.client.util.ClientMailCache;
+import com.CuteNekoDragon.Core.client.util.ClientMailboxTracker;
+import com.CuteNekoDragon.Core.common.data.SVOParticles;
+
 @Mod.EventBusSubscriber(modid = SVOCore.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class MailboxIndicatorHandler {
+
     private static int tickCounter = 0;
 
     @SubscribeEvent

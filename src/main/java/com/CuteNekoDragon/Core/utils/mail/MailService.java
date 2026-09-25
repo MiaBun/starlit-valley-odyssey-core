@@ -35,7 +35,8 @@ public final class MailService {
         PlayerMailData data = MailCapability.getOrDefault(player);
         data.addLetter(letter);
 
-        SVONetworkHandler.sendLetterToPlayer(player, new SyncMailDataPacket(data.getLetters(), data.isToastEnabled(), data.isIndicatorEnabled()));
+        SVONetworkHandler.sendLetterToPlayer(player,
+                new SyncMailDataPacket(data.getLetters(), data.isToastEnabled(), data.isIndicatorEnabled()));
         if (data.isToastEnabled()) {
             SVONetworkHandler.sendLetterToPlayer(player,
                     new NewMailToastPacket(letter.getNpcName(), letter.getTitle()));

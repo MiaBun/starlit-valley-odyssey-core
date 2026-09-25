@@ -21,8 +21,12 @@ public class RedExclamationParticle extends TextureSheetParticle {
     }
 
     public static class Provider implements ParticleProvider<SimpleParticleType> {
+
         private final SpriteSet sprites;
-        public Provider(SpriteSet sprites) { this.sprites = sprites; }
+
+        public Provider(SpriteSet sprites) {
+            this.sprites = sprites;
+        }
 
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z,

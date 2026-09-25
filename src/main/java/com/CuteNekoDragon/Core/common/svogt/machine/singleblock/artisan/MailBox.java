@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan;
 
-import com.CuteNekoDragon.Core.client.util.ClientMailboxTracker;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -22,6 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.BlockHitResult;
 
 import com.CuteNekoDragon.Core.client.util.ClientMailCache;
+import com.CuteNekoDragon.Core.client.util.ClientMailboxTracker;
 import com.CuteNekoDragon.Core.common.capability.MailCapability;
 import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
@@ -174,10 +174,10 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
                 MailCapability.getOrDefault(entityPlayer).setToastEnabled(value);
             }
         }).setTexture(
-                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                                new TextTexture("gui.svo_core.mailbox.toast_off")),
-                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                                new TextTexture("gui.svo_core.mailbox.toast_on")))
+                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                        new TextTexture("gui.svo_core.mailbox.toast_off")),
+                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                        new TextTexture("gui.svo_core.mailbox.toast_on")))
                 .setPressed(getToastEnabled(entityPlayer)));
 
         panel.addWidget(new LabelWidget(6, 44, "gui.svo_core.mailbox.indicator_setting"));
@@ -188,10 +188,10 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
                 ClientMailCache.setIndicatorEnabled(value);
             }
         }).setTexture(
-                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                                new TextTexture("gui.svo_core.mailbox.indicator_off")),
-                        new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                                new TextTexture("gui.svo_core.mailbox.indicator_on")))
+                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                        new TextTexture("gui.svo_core.mailbox.indicator_off")),
+                new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
+                        new TextTexture("gui.svo_core.mailbox.indicator_on")))
                 .setPressed(getIndicatorEnabled(entityPlayer)));
 
         return panel;
