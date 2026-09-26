@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "svo_core:sack_to_backpack",
   "key": {
     "A": {
       "item": "minecraft:string"
@@ -8,7 +8,6 @@
       "item": "svo_core:gray_sack"
     }
   },
-  "matchSize": false,
   "pattern": [
     "AAA",
     "ABA",
@@ -16,8 +15,6 @@
   ],
   "result": {
     "item": "sophisticatedbackpacks:backpack",
-    "nbt": {
-      "clothColor": 4673362
-    }
+    "nbt": "{clothColor:4673362}"
   }
 }

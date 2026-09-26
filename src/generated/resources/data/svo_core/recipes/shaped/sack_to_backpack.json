@@ -1,6 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "type": "svo_core:sack_to_backpack",
   "key": {
     "A": {
       "item": "minecraft:string"
@@ -16,6 +15,5 @@
   ],
   "result": {
     "item": "sophisticatedbackpacks:backpack"
-  },
-  "show_notification": true
+  }
 }

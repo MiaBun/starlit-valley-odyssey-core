@@ -8,9 +8,11 @@ import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
@@ -30,6 +32,8 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
     private final Advancement.Builder advancement = Advancement.Builder.advancement();
     @Nullable
     private String group;
+    @Nullable
+    private CompoundTag resultNbt;
 
     public SackUpgradeRecipeBuilder(RecipeSerializer<?> serializer, ItemLike result, int count) {
         this.serializer = serializer;
@@ -43,6 +47,22 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
 
     public static SackUpgradeRecipeBuilder shaped(RecipeSerializer<?> serializer, ItemLike result, int count) {
         return new SackUpgradeRecipeBuilder(serializer, result, count);
+    }
+
+    public static SackUpgradeRecipeBuilder shaped(RecipeSerializer<?> serializer, ItemStack result) {
+        SackUpgradeRecipeBuilder builder = new SackUpgradeRecipeBuilder(serializer, result.getItem(), result.getCount());
+        if (result.hasTag()) {
+            builder.nbt(result.getTag());
+        }
+        return builder;
+    }
+
+    public SackUpgradeRecipeBuilder nbt(CompoundTag tag) {
+        if (this.resultNbt == null) {
+            this.resultNbt = new CompoundTag();
+        }
+        this.resultNbt.merge(tag.copy());
+        return this;
     }
 
     public SackUpgradeRecipeBuilder pattern(String row) {
@@ -97,7 +117,8 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
                 .requirements(RequirementsStrategy.OR);
 
         consumer.accept(new Result(id, this.serializer, this.group == null ? "" : this.group, this.rows, this.key,
-                this.result, this.count, this.advancement, id.withPrefix("recipes/svo_core_upgrades/")));
+                this.result, this.count, this.resultNbt == null ? null : this.resultNbt.copy(),
+                this.advancement, id.withPrefix("recipes/svo_core_upgrades/")));
     }
 
     private void ensureValid(ResourceLocation id) {
@@ -134,12 +155,14 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
         private final Map<Character, Ingredient> key;
         private final Item result;
         private final int count;
+        @Nullable
+        private final CompoundTag resultNbt;
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
 
         Result(ResourceLocation id, RecipeSerializer<?> serializer, String group, List<String> pattern,
-               Map<Character, Ingredient> key, Item result, int count, Advancement.Builder advancement,
-               ResourceLocation advancementId) {
+               Map<Character, Ingredient> key, Item result, int count, @Nullable CompoundTag resultNbt,
+               Advancement.Builder advancement, ResourceLocation advancementId) {
             this.id = id;
             this.serializer = serializer;
             this.group = group;
@@ -147,6 +170,7 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
             this.key = key;
             this.result = result;
             this.count = count;
+            this.resultNbt = resultNbt;
             this.advancement = advancement;
             this.advancementId = advancementId;
         }
@@ -173,6 +197,9 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
             resultJson.addProperty("item", ForgeRegistries.ITEMS.getKey(this.result).toString());
             if (this.count > 1) {
                 resultJson.addProperty("count", this.count);
+            }
+            if (this.resultNbt != null && !this.resultNbt.isEmpty()) {
+                resultJson.addProperty("nbt", this.resultNbt.toString());
             }
             json.add("result", resultJson);
         }

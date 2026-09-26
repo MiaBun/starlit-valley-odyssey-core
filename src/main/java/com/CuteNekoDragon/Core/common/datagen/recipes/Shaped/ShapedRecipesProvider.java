@@ -78,16 +78,14 @@ public class ShapedRecipesProvider {
                                 .hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
                 .save(consumer, SVOCore.id("shaped/sack_to_toolbelt"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BACKPACK.get()) // TODO: proper recipe that includes
-                                                                                 // leather and cloth
+        SackUpgradeRecipeBuilder.shaped(SVORecipeSeralizers.SACK_TO_BACKPACK.get(), ModItems.BACKPACK.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
                 .define('A', Items.STRING)
                 .define('B', SVOItems.SACK)
-                .unlockedBy("has_sack",
-                        InventoryChangeTrigger.TriggerInstance
-                                .hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
+                .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance
+                        .hasItems(ItemPredicate.Builder.item().of(SVOTags.Items.SACK).build()))
                 .save(consumer, SVOCore.id("shaped/sack_to_backpack"));
 
         ShapeBasedRecipeBuilder
@@ -223,17 +221,17 @@ public class ShapedRecipesProvider {
 
         for (Map.Entry<DyeColor, ItemEntry<SackItem>> entry : DYED_SACKS.entrySet()) {
             DyeColor color = entry.getKey();
-            ItemEntry<SackItem> sackItem = entry.getValue();
-            ItemStack output = new ItemStack(ModItems.BACKPACK.get(), 1);
-            float[] dyeRgb = color.getTextureDiffuseColors();
-            int clothColor = ColorHelper.getColor(dyeRgb);
-            output.getOrCreateTag().putInt("clothColor", clothColor);
-            VanillaRecipeHelper.addShapedRecipe(consumer, SVOCore.id("sack_to_backpack_" + color.getName()), output,
-                    "AAA",
-                    "ABA",
-                    "AAA",
-                    'A', Items.STRING,
-                    'B', sackItem);
+            ItemStack output = new ItemStack(ModItems.BACKPACK.get());
+            output.getOrCreateTag().putInt("clothColor", ColorHelper.getColor(color.getTextureDiffuseColors()));
+
+            SackUpgradeRecipeBuilder.shaped(SVORecipeSeralizers.SACK_TO_BACKPACK.get(), output)
+                    .pattern("AAA")
+                    .pattern("ABA")
+                    .pattern("AAA")
+                    .define('A', Items.STRING)
+                    .define('B', entry.getValue())
+                    .unlockedBy("has_sack", InventoryChangeTrigger.TriggerInstance.hasItems(entry.getValue()))
+                    .save(consumer, SVOCore.id("shaped/sack_to_backpack_" + color.getName()));
         }
 
         for (WoodTypes wood : WoodTypes.values()) {

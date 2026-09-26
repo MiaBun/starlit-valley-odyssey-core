@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "tag": "svo_core:sack"
+            "items": [
+              "svo_core:purple_sack"
+            ]
           }
         ]
       },
@@ -13,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "svo_core:shaped/sack_to_backpack"
+        "recipe": "svo_core:shaped/sack_to_backpack_purple"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -24,10 +26,5 @@
       "has_the_recipe"
     ]
   ],
-  "rewards": {
-    "recipes": [
-      "svo_core:shaped/sack_to_backpack"
-    ]
-  },
-  "sends_telemetry_event": false
+  "sends_telemetry_event": true
 }
