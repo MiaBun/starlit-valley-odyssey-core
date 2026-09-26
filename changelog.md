@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.34]
 ### Changes
 - fixed recipe to upgrade sack into lunchbox, now it properly makes items stay and refunds incompatible items.
 - fixed recipe to upgrade sack into toolbelt, now it properly makes items stay and refunds incompatible items.
