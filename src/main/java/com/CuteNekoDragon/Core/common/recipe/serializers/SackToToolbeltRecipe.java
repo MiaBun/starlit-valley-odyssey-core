@@ -1,14 +1,15 @@
 package com.CuteNekoDragon.Core.common.recipe.serializers;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
-import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
+import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
+
 import java.util.List;
 
-public class SackToToolbeltRecipe  extends AbstractSackUpgradeRecipe{
+public class SackToToolbeltRecipe extends AbstractSackUpgradeRecipe {
 
     public SackToToolbeltRecipe(ShapedRecipe compose) {
         super(compose);

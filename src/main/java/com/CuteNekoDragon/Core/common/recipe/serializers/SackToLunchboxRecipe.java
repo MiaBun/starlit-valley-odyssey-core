@@ -1,14 +1,16 @@
 package com.CuteNekoDragon.Core.common.recipe.serializers;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
-import com.CuteNekoDragon.Core.common.item.LunchboxItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
 
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
+import com.CuteNekoDragon.Core.common.item.LunchboxItem;
+
 import java.util.List;
 
-public class SackToLunchboxRecipe extends AbstractSackUpgradeRecipe{
+public class SackToLunchboxRecipe extends AbstractSackUpgradeRecipe {
+
     public SackToLunchboxRecipe(ShapedRecipe compose) {
         super(compose);
     }

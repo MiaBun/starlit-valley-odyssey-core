@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.recipe.serializers;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
-import com.google.gson.JsonObject;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -11,6 +9,9 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
+
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
+import com.google.gson.JsonObject;
 
 public class KeepContentsSmithingRecipe extends SmithingTransformRecipe {
 
@@ -46,6 +47,7 @@ public class KeepContentsSmithingRecipe extends SmithingTransformRecipe {
     }
 
     public static class Serializer implements RecipeSerializer<KeepContentsSmithingRecipe> {
+
         @Override
         public KeepContentsSmithingRecipe fromJson(ResourceLocation id, JsonObject json) {
             Ingredient template = Ingredient.fromJson(GsonHelper.getNonNull(json, "template"));

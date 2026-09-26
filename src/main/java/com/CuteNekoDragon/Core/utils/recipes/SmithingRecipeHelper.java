@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.utils.recipes;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
@@ -11,6 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
 
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -34,7 +34,7 @@ public class SmithingRecipeHelper {
     }
 
     public static void makeSmithingRecipeKeep(Consumer<FinishedRecipe> consumer, ItemLike template, ItemLike base,
-                                          ItemLike addition, Item result) {
+                                              ItemLike addition, Item result) {
         new SmithingTransformRecipeBuilder(
                 SVORecipeSeralizers.SMITHING_KEEP_CONTENTS.get(),
                 Ingredient.of(template),

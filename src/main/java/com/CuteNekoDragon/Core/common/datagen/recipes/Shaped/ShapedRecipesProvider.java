@@ -1,9 +1,5 @@
 package com.CuteNekoDragon.Core.common.datagen.recipes.Shaped;
 
-import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
-import com.CuteNekoDragon.Core.common.recipe.builders.SackUpgradeRecipeBuilder;
-import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
-
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -21,11 +17,13 @@ import net.p3pp3rf1y.sophisticatedcore.util.ColorHelper;
 import net.p3pp3rf1y.sophisticatedstorage.init.ModBlocks;
 
 import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
 import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
 import com.CuteNekoDragon.Core.common.item.SVOSmithingTemplate;
 import com.CuteNekoDragon.Core.common.item.SackItem;
+import com.CuteNekoDragon.Core.common.recipe.builders.SackUpgradeRecipeBuilder;
 import com.CuteNekoDragon.Core.utils.WoodTypes;
 import com.tterrag.registrate.util.entry.ItemEntry;
 

@@ -1,7 +1,5 @@
 package com.CuteNekoDragon.Core.common.recipe.builders;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
@@ -17,6 +15,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -50,7 +51,8 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
     }
 
     public static SackUpgradeRecipeBuilder shaped(RecipeSerializer<?> serializer, ItemStack result) {
-        SackUpgradeRecipeBuilder builder = new SackUpgradeRecipeBuilder(serializer, result.getItem(), result.getCount());
+        SackUpgradeRecipeBuilder builder = new SackUpgradeRecipeBuilder(serializer, result.getItem(),
+                result.getCount());
         if (result.hasTag()) {
             builder.nbt(result.getTag());
         }
@@ -123,7 +125,8 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
 
     private void ensureValid(ResourceLocation id) {
         if (this.advancement.getCriteria().isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + id + " -- add at least one unlockedBy(...)");
+            throw new IllegalStateException(
+                    "No way of obtaining recipe " + id + " -- add at least one unlockedBy(...)");
         }
         if (this.rows.isEmpty()) {
             throw new IllegalStateException("No pattern is defined for recipe " + id);
@@ -137,17 +140,20 @@ public class SackUpgradeRecipeBuilder implements RecipeBuilder {
         }
         for (Character symbol : this.key.keySet()) {
             if (!usedSymbols.contains(symbol)) {
-                throw new IllegalStateException("Symbol '" + symbol + "' defined but not used in pattern for recipe " + id);
+                throw new IllegalStateException(
+                        "Symbol '" + symbol + "' defined but not used in pattern for recipe " + id);
             }
         }
         for (Character symbol : usedSymbols) {
             if (!this.key.containsKey(symbol)) {
-                throw new IllegalStateException("Symbol '" + symbol + "' used in pattern but not defined for recipe " + id);
+                throw new IllegalStateException(
+                        "Symbol '" + symbol + "' used in pattern but not defined for recipe " + id);
             }
         }
     }
 
     private static class Result implements FinishedRecipe {
+
         private final ResourceLocation id;
         private final RecipeSerializer<?> serializer;
         private final String group;

@@ -1,16 +1,15 @@
 package com.CuteNekoDragon.Core.common.recipe.serializers;
 
-import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
-import org.jetbrains.annotations.Nullable;
+
+import com.google.gson.JsonObject;
 
 import java.util.function.Function;
 
 public class SackUpgradeRecipeSerializer<T extends AbstractSackUpgradeRecipe> implements RecipeSerializer<T> {
-
 
     private final Function<ShapedRecipe, T> factory;
 
