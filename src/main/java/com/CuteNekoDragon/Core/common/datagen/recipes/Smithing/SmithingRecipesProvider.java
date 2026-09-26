@@ -106,41 +106,41 @@ public class SmithingRecipesProvider {
                 Items.DIAMOND, ModItems.DIAMOND_BACKPACK.get(),
                 ModItems.SMITHING_BACKPACK_UPGRADE_RECIPE_SERIALIZER.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), SVOItems.LUNCHBOX, Items.COPPER_INGOT,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, copperTemplate.get(), SVOItems.LUNCHBOX, Items.COPPER_INGOT,
                 SVOItems.DELUXE_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), SVOItems.DELUXE_LUNCHBOX,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, ironTemplate.get(), SVOItems.DELUXE_LUNCHBOX,
                 Items.IRON_INGOT,
                 SVOItems.SUPER_DELUXE_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_LUNCHBOX,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_LUNCHBOX,
                 Items.GOLD_INGOT,
                 SVOItems.PREMIUM_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), SVOItems.PREMIUM_LUNCHBOX,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, diamondTemplate.get(), SVOItems.PREMIUM_LUNCHBOX,
                 Items.DIAMOND,
                 SVOItems.ULTIMATE_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_LUNCHBOX,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_LUNCHBOX,
                 SVOItems.IRIDIUM_INGOT,
                 SVOItems.COLLECTORS_LUNCHBOX.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, copperTemplate.get(), SVOItems.TOOLBELT, Items.COPPER_INGOT,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, copperTemplate.get(), SVOItems.TOOLBELT, Items.COPPER_INGOT,
                 SVOItems.DELUXE_TOOLBELT.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, ironTemplate.get(), SVOItems.DELUXE_TOOLBELT,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, ironTemplate.get(), SVOItems.DELUXE_TOOLBELT,
                 Items.IRON_INGOT,
                 SVOItems.SUPER_DELUXE_TOOLBELT.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_TOOLBELT,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, goldTemplate.get(), SVOItems.SUPER_DELUXE_TOOLBELT,
                 Items.GOLD_INGOT,
                 SVOItems.PREMIUM_TOOLBELT.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, diamondTemplate.get(), SVOItems.PREMIUM_TOOLBELT,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, diamondTemplate.get(), SVOItems.PREMIUM_TOOLBELT,
                 Items.DIAMOND,
                 SVOItems.ULTIMATE_TOOLBELT.get());
 
-        SmithingRecipeHelper.makeSmithingRecipe(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_TOOLBELT,
+        SmithingRecipeHelper.makeSmithingRecipeKeep(consumer, iridiumTemplate.get(), SVOItems.ULTIMATE_TOOLBELT,
                 SVOItems.IRIDIUM_INGOT,
                 SVOItems.COLLECTORS_TOOLBELT.get());
 

@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.utils.recipes;
 
+import com.CuteNekoDragon.Core.common.data.SVORecipeSeralizers;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
@@ -21,6 +22,21 @@ public class SmithingRecipeHelper {
     public static void makeSmithingRecipe(Consumer<FinishedRecipe> consumer, ItemLike template, ItemLike base,
                                           ItemLike addition, Item result) {
         SmithingTransformRecipeBuilder.smithing(
+                Ingredient.of(template),
+                Ingredient.of(base),
+                Ingredient.of(addition),
+                RecipeCategory.COMBAT,
+                result)
+                .unlocks("has_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(addition.asItem())).getPath(),
+                        has(addition))
+                .save(consumer, SVOCore.id(
+                        "smithing/" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(result.asItem())).getPath()));
+    }
+
+    public static void makeSmithingRecipeKeep(Consumer<FinishedRecipe> consumer, ItemLike template, ItemLike base,
+                                          ItemLike addition, Item result) {
+        new SmithingTransformRecipeBuilder(
+                SVORecipeSeralizers.SMITHING_KEEP_CONTENTS.get(),
                 Ingredient.of(template),
                 Ingredient.of(base),
                 Ingredient.of(addition),

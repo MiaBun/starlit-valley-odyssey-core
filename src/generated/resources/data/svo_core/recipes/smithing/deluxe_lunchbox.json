@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:smithing_transform",
+  "type": "svo_core:smithing_keep_contents",
   "addition": {
     "item": "minecraft:copper_ingot"
   },
