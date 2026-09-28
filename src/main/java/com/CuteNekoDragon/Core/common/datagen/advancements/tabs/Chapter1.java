@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.advancements.AdvancementLangProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -34,8 +35,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
         Advancement root = Advancement.Builder.advancement()
                 .display(
                         new ItemStack(Items.STICK),
-                        Component.translatable("advancement.svo_core.chapter1.title"),
-                        Component.translatable("advancement.svo_core.chapter1.description"),
+                        AdvancementLangProvider.CHAPTER1.title().get(),
+                        AdvancementLangProvider.CHAPTER1.description().get(),
                         new ResourceLocation("minecraft", "textures/gui/advancements/backgrounds/stone.png"),
                         FrameType.TASK,
                         true,
@@ -50,8 +51,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(root)
                 .display(
                         new ItemStack(Items.CRAFTING_TABLE),
-                        Component.translatable("advancement.svo_core.chapter1.crafting_table.title"),
-                        Component.translatable("advancement.svo_core.chapter1.crafting_table.description"),
+                        AdvancementLangProvider.CRAFTING_TABLE.title().get(),
+                        AdvancementLangProvider.CRAFTING_TABLE.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -62,8 +63,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(crafting_table)
                 .display(
                         new ItemStack(SVOItems.SACK),
-                        Component.translatable("advancement.svo_core.chapter1.sack.title"),
-                        Component.translatable("advancement.svo_core.chapter1.sack.description"),
+                        AdvancementLangProvider.SACK.title().get(),
+                        AdvancementLangProvider.SACK.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -77,8 +78,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(crafting_table)
                 .display(
                         new ItemStack(Items.LEATHER_CHESTPLATE),
-                        Component.translatable("advancement.svo_core.chapter1.leather_armor.title"),
-                        Component.translatable("advancement.svo_core.chapter1.leather_armor.description"),
+                        AdvancementLangProvider.LEATHER_ARMOR.title().get(),
+                        AdvancementLangProvider.LEATHER_ARMOR.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -95,8 +96,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(crafting_table)
                 .display(
                         new ItemStack(WHITE_SLEEPING_BAG.asItem()),
-                        Component.translatable("advancement.svo_core.chapter1.sleeping_bag.title"),
-                        Component.translatable("advancement.svo_core.chapter1.sleeping_bag.description"),
+                        AdvancementLangProvider.SLEEPING_BAG.title().get(),
+                        AdvancementLangProvider.SLEEPING_BAG.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -110,8 +111,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(sleeping_bags)
                 .display(
                         new ItemStack(Items.WHITE_BED),
-                        Component.translatable("advancement.svo_core.chapter1.bed.title"),
-                        Component.translatable("advancement.svo_core.chapter1.bed.description"),
+                        AdvancementLangProvider.BED.title().get(),
+                        AdvancementLangProvider.BED.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -125,8 +126,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(crafting_table)
                 .display(
                         new ItemStack(Items.CHEST),
-                        Component.translatable("advancement.svo_core.chapter1.chests.title"),
-                        Component.translatable("advancement.svo_core.chapter1.chests.description"),
+                        AdvancementLangProvider.CHESTS.title().get(),
+                        AdvancementLangProvider.CHESTS.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -140,8 +141,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(chests)
                 .display(
                         new ItemStack(ModBlocks.CHEST_ITEM.get()),
-                        Component.translatable("advancement.svo_core.chapter1.chest_upgraded.title"),
-                        Component.translatable("advancement.svo_core.chapter1.chest_upgraded.description"),
+                        AdvancementLangProvider.CHEST_UPGRADED.title().get(),
+                        AdvancementLangProvider.CHEST_UPGRADED.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -155,8 +156,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(crafting_table)
                 .display(
                         new ItemStack(Items.WOODEN_PICKAXE),
-                        Component.translatable("advancement.svo_core.chapter1.mine_stone.title"),
-                        Component.translatable("advancement.svo_core.chapter1.mine_stone.description"),
+                        AdvancementLangProvider.MINE_STONE.title().get(),
+                        AdvancementLangProvider.MINE_STONE.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -169,8 +170,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(mine_stone)
                 .display(
                         new ItemStack(Items.STONE_PICKAXE),
-                        Component.translatable("advancement.svo_core.chapter1.getting_an_upgrade.title"),
-                        Component.translatable("advancement.svo_core.chapter1.getting_an_upgrade.description"),
+                        AdvancementLangProvider.GETTING_AN_UPGRADE.title().get(),
+                        AdvancementLangProvider.GETTING_AN_UPGRADE.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -181,8 +182,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(getting_an_upgrade)
                 .display(
                         new ItemStack(Items.CHAINMAIL_CHESTPLATE),
-                        Component.translatable("advancement.svo_core.chapter1.chainmail_armor.title"),
-                        Component.translatable("advancement.svo_core.chapter1.chainmail_armor.description"),
+                        AdvancementLangProvider.CHAINMAIL_ARMOR.title().get(),
+                        AdvancementLangProvider.CHAINMAIL_ARMOR.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -197,8 +198,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(getting_an_upgrade)
                 .display(
                         new ItemStack(SVOItems.TOOLBELT),
-                        Component.translatable("advancement.svo_core.chapter1.toolbelt.title"),
-                        Component.translatable("advancement.svo_core.chapter1.toolbelt.description"),
+                        AdvancementLangProvider.TOOLBELT.title().get(),
+                        AdvancementLangProvider.TOOLBELT.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -212,8 +213,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(getting_an_upgrade)
                 .display(
                         new ItemStack(Items.COPPER_INGOT),
-                        Component.translatable("advancement.svo_core.chapter1.finding_copper.title"),
-                        Component.translatable("advancement.svo_core.chapter1.finding_copper.description"),
+                        AdvancementLangProvider.FINDING_COPPER.title().get(),
+                        AdvancementLangProvider.FINDING_COPPER.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -224,8 +225,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(finding_copper)
                 .display(
                         new ItemStack(Items.FURNACE),
-                        Component.translatable("advancement.svo_core.chapter1.furnace.title"),
-                        Component.translatable("advancement.svo_core.chapter1.furnace.description"),
+                        AdvancementLangProvider.FURNACE.title().get(),
+                        AdvancementLangProvider.FURNACE.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -236,8 +237,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(finding_copper)
                 .display(
                         new ItemStack(SVOMachines.CHARKOAL_KILN.getItem()),
-                        Component.translatable("advancement.svo_core.chapter1.charcoal_kiln.title"),
-                        Component.translatable("advancement.svo_core.chapter1.charcoal_kiln.description"),
+                        AdvancementLangProvider.CHARCOAL_KILN.title().get(),
+                        AdvancementLangProvider.CHARCOAL_KILN.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -249,8 +250,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(finding_copper)
                 .display(
                         new ItemStack(Items.IRON_INGOT),
-                        Component.translatable("advancement.svo_core.chapter1.finding_iron.title"),
-                        Component.translatable("advancement.svo_core.chapter1.finding_iron.description"),
+                        AdvancementLangProvider.FINDING_IRON.title().get(),
+                        AdvancementLangProvider.FINDING_IRON.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)
@@ -261,8 +262,8 @@ public class Chapter1 implements ForgeAdvancementProvider.AdvancementGenerator {
                 .parent(finding_iron)
                 .display(
                         new ItemStack(SVOMachines.SPRUCE_MAIL_BOX.getItem()),
-                        Component.translatable("advancement.svo_core.chapter1.mailbox.title"),
-                        Component.translatable("advancement.svo_core.chapter1.mailbox.description"),
+                        AdvancementLangProvider.MAILBOX.title().get(),
+                        AdvancementLangProvider.MAILBOX.description().get(),
                         null,
                         FrameType.TASK,
                         true, true, false)

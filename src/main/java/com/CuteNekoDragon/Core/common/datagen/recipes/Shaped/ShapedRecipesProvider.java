@@ -221,6 +221,7 @@ public class ShapedRecipesProvider {
             DyeColor color = entry.getKey();
             ItemStack output = new ItemStack(ModItems.BACKPACK.get());
             output.getOrCreateTag().putInt("clothColor", ColorHelper.getColor(color.getTextureDiffuseColors()));
+            output.getOrCreateTag().putInt("borderColor", ColorHelper.getColor(color.getTextureDiffuseColors()));
 
             SackUpgradeRecipeBuilder.shaped(SVORecipeSeralizers.SACK_TO_BACKPACK.get(), output)
                     .pattern("AAA")

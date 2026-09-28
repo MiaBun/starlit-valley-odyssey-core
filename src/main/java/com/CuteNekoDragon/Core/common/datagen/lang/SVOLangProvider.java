@@ -20,63 +20,6 @@ public class SVOLangProvider {
         MessageLangProvider.init();
         TooltipLangProvider.init();
 
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.title", "Chapter 1");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.description", "Welcome to Starlit Valley!");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.title", "Craft a Crafting Table");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.crafting_table.description",
-                "The Beginning of your crafting journey");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.title", "Stone Age");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mine_stone.description",
-                "Mine Stone with your new Pickaxe");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.title", "Suit Up");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.leather_armor.description",
-                "Have any type of leather armor in the inventory");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.title", "Getting an Upgrade");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.getting_an_upgrade.description",
-                "Construct a better Pickaxe");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.title", "Cover me with Chains");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chainmail_armor.description",
-                "Have any type of chainmail armor in the inventory");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_copper.title", "Copper!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_copper.description", "Acquire Copper");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.furnace.title", "Smelt me some ores");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.furnace.description", "Construct a furnace");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.charcoal_kiln.title", "Kiln me some Coal!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.charcoal_kiln.description", "Construct a Charcoal Kiln");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.sack.title", "Sack them up!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.sack.description", "Construct a Sack");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chests.title", "Store them up!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chests.description", "Construct a Chest");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.title", "Improved chests!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.chest_upgraded.description",
-                "Construct a Sophisticated Storage Chest");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.sleeping_bag.title", "Where are my pj's?!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.sleeping_bag.description", "Construct a Sleeping Bag");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.bed.title", "Goodnight!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.bed.description", "Construct a Bed");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.toolbelt.title", "Belt these tools!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.toolbelt.description", "Construct a Toolbelt");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_iron.title", "Iron!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.finding_iron.description", "Acquire Iron");
-
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mailbox.title", "Mail me some Mail!");
-        REGISTRATE.addRawLang("advancement.svo_core.chapter1.mailbox.description", "Construct a Mailbox");
-
         REGISTRATE.addRawLang("tooltip.svo_core.quartz", "A clear crystal commonly found in caves and mines.");
         REGISTRATE.addRawLang("tooltip.svo_core.earth_crystal", "A resinous substance found near the surface.");
         REGISTRATE.addRawLang("tooltip.svo_core.frozen_tear", "A crystal fabled to be the frozen tears of a yeti.");

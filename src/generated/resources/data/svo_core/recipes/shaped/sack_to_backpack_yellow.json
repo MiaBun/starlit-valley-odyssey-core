@@ -15,6 +15,6 @@
   ],
   "result": {
     "item": "sophisticatedbackpacks:backpack",
-    "nbt": "{clothColor:16701501}"
+    "nbt": "{borderColor:16701501,clothColor:16701501}"
   }
 }
