@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -92,7 +93,7 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
 
         ModularUI ui = new ModularUI(totalWidth, totalHeight, this, entityPlayer)
                 .background(GuiTextures.BACKGROUND)
-                .widget(new LabelWidget(7, 6, "gui.svo_core.mailbox.title"));
+                .widget(new LabelWidget(7, 6, GUILangProvider.MAILBOX_TITLE.key()));
 
         WidgetGroup settingsPanel = buildSettingsPanel(entityPlayer);
         settingsPanel.setVisible(false);
@@ -139,7 +140,7 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
         }
 
         if (letters.isEmpty()) {
-            list.addWidget(new LabelWidget(4, 6, "gui.svo_core.mailbox.no_letters"));
+            list.addWidget(new LabelWidget(4, 6, GUILangProvider.MAILBOX_NO_LETTERS.key()));
         }
         ui.widget(list);
 
@@ -168,19 +169,19 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
     private WidgetGroup buildSettingsPanel(Player entityPlayer) {
         WidgetGroup panel = new WidgetGroup(7, 20, LIST_WIDTH + 4 + CONTENT_WIDTH, PANEL_HEIGHT);
         panel.setBackground(GuiTextures.BACKGROUND);
-        panel.addWidget(new LabelWidget(6, 6, "gui.svo_core.mailbox.toast_setting"));
+        panel.addWidget(new LabelWidget(6, 6, GUILangProvider.MAILBOX_NOTIFICATIONS.key()));
         panel.addWidget(new SwitchWidget(6, 20, 100, 18, (clickData, value) -> {
             if (!entityPlayer.level().isClientSide) {
                 MailCapability.getOrDefault(entityPlayer).setToastEnabled(value);
             }
         }).setTexture(
                 new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                        new TextTexture("gui.svo_core.mailbox.toast_off")),
+                        new TextTexture(GUILangProvider.MAILBOX_NOTIFICATIONS_OFF.key())),
                 new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                        new TextTexture("gui.svo_core.mailbox.toast_on")))
+                        new TextTexture(GUILangProvider.MAILBOX_NOTIFICATIONS_ON.key())))
                 .setPressed(getToastEnabled(entityPlayer)));
 
-        panel.addWidget(new LabelWidget(6, 44, "gui.svo_core.mailbox.indicator_setting"));
+        panel.addWidget(new LabelWidget(6, 44, GUILangProvider.MAILBOX_INDICATORS.key()));
         panel.addWidget(new SwitchWidget(6, 58, 100, 18, (clickData, value) -> {
             if (!entityPlayer.level().isClientSide) {
                 MailCapability.getOrDefault(entityPlayer).setIndicatorEnabled(value);
@@ -189,9 +190,9 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
             }
         }).setTexture(
                 new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                        new TextTexture("gui.svo_core.mailbox.indicator_off")),
+                        new TextTexture(GUILangProvider.MAILBOX_INDICATORS_OFF.key())),
                 new GuiTextureGroup(ResourceBorderTexture.BUTTON_COMMON,
-                        new TextTexture("gui.svo_core.mailbox.indicator_on")))
+                        new TextTexture(GUILangProvider.MAILBOX_INDICATORS_ON.key())))
                 .setPressed(getIndicatorEnabled(entityPlayer)));
 
         return panel;
@@ -199,12 +200,12 @@ public class MailBox extends MetaMachine implements IUIMachine, IMachineLife {
 
     private static void appendSelectedBody(List<Component> out, List<Letter> letters, int[] selected) {
         if (selected[0] < 0 || selected[0] >= letters.size()) {
-            out.add(Component.translatable("gui.svo_core.mailbox.select_a_letter"));
+            out.add(Component.translatable(GUILangProvider.MAILBOX_SELECT_A_LETTER.key()));
             return;
         }
         Letter letter = letters.get(selected[0]);
         out.add(letter.getTitle().copy().withStyle(ChatFormatting.BOLD));
-        out.add(Component.translatable("gui.svo_core.mailbox.from", letter.getNpcName())
+        out.add(Component.translatable(GUILangProvider.MAILBOX_FROM.key(), letter.getNpcName())
                 .withStyle(ChatFormatting.ITALIC, ChatFormatting.GRAY));
         out.add(Component.empty());
         out.addAll(letter.getBody());

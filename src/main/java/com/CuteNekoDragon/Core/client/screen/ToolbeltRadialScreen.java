@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.client.screen;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
@@ -28,7 +29,7 @@ public class ToolbeltRadialScreen extends Screen {
     private int hoveredIndex = SELECTION_NONE;
 
     public ToolbeltRadialScreen(ItemStack toolbeltStack) {
-        super(Component.translatable("gui.svo_core.toolbelt_radial"));
+        super(Component.translatable(GUILangProvider.TOOLBELT_RADIAL.key()));
         this.storageSize = ToolbeltItem.getStorageSize(toolbeltStack);
         this.storedItems = NonNullList.withSize(storageSize, ItemStack.EMPTY);
         if (toolbeltStack.hasTag() && toolbeltStack.getTag().contains(ToolbeltItem.TAG_Items)) {

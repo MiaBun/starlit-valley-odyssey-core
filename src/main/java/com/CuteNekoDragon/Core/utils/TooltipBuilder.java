@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.utils;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.tooltips.TooltipLangProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -26,10 +27,10 @@ public final class TooltipBuilder {
 
     public enum SVOTypes {
 
-        MINERAL("\uE001", "tooltip.svo_core.mineral_product"),
-        GEMSTONE("\uE002", "tooltip.svo_core.gemstone_product"),
-        SPECIAL_ITEM("\uE003", "tooltip.svo_core.special_item"),
-        BLACKSMITH_ITEM("\uE004", "tooltip.svo_core.blacksmith_item");
+        MINERAL("\uE001", TooltipLangProvider.MINERAL_PRODUCT.key()),
+        GEMSTONE("\uE002", TooltipLangProvider.GEMSTONE_PRODUCT.key()),
+        SPECIAL_ITEM("\uE003", TooltipLangProvider.SPECIAL_ITEM.key()),
+        BLACKSMITH_ITEM("\uE004", TooltipLangProvider.BLACKSMITH_ITEM.key());
 
         private final String glyph;
         private final String product_type;
@@ -71,7 +72,7 @@ public final class TooltipBuilder {
     public TooltipBuilder addCoins() {
         return addIcon("\uE000",
                 Component
-                        .translatable("tooltip.svo_core.coins",
+                        .translatable(TooltipLangProvider.COINS.key(),
                                 NumberFormat.getIntegerInstance(Locale.US).format(PriceUtil.getPrice(item)))
                         .withStyle(ChatFormatting.WHITE));
     }
@@ -97,7 +98,6 @@ public final class TooltipBuilder {
         return addLine(stack -> component);
     }
 
-    /** Escape hatch for anything not covered above, including stack-dependent text. */
     public TooltipBuilder addLine(Function<ItemStack, Component> lineProvider) {
         REGISTRY.get(item).add(lineProvider);
         return this;
@@ -107,7 +107,6 @@ public final class TooltipBuilder {
         return addLine(stack -> staticLine);
     }
 
-    // ---- Event hookup ----
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {
