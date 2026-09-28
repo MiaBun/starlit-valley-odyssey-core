@@ -1,6 +1,7 @@
 ## [Unreleased]
 ### Changes
 - refactored advancement lang keys
+- refactored tooltip lang keys
 - improved sack to backpack dye recipes
 
 ## [0.0.34]
