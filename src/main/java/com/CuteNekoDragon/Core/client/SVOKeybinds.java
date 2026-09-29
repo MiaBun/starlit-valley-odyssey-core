@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.client;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.keybinds.KeybindsLangProvider;
 import net.minecraft.client.KeyMapping;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -13,8 +14,8 @@ import com.mojang.blaze3d.platform.InputConstants;
 @Mod.EventBusSubscriber(modid = SVOCore.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SVOKeybinds {
 
-    public static KeyMapping OPEN_SKILLS = new KeyMapping("key.svo.skilltree.open", KeyConflictContext.IN_GAME,
-            InputConstants.Type.KEYSYM, InputConstants.KEY_Y, "key.categories.svo");
+    public static KeyMapping OPEN_SKILLS = new KeyMapping(KeybindsLangProvider.SKILLTREE_OPEN.key(), KeyConflictContext.IN_GAME,
+            InputConstants.Type.KEYSYM, InputConstants.KEY_Y, KeybindsLangProvider.CATEGORY.key());
 
     @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {

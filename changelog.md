@@ -3,6 +3,8 @@
 - refactored advancement lang keys
 - refactored tooltip lang keys
 - refactored gui lang keys
+- refactored keybinds lang keys
+- refactored external lang keys
 - improved sack to backpack dye recipes
 
 ## [0.0.34]

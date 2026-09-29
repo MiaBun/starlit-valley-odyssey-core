@@ -6,7 +6,8 @@ import static com.CuteNekoDragon.Core.utils.lang.LangUtil.entry;
 
 public final class KeybindsLangProvider {
 
-    // Lang Keys
+    public static LangEntry CATEGORY = keybind("category", "Starlit Valley: Odyssey");
+    public static LangEntry SKILLTREE_OPEN = keybind("skilltree.open", "Opens the Skills Menu");
 
     public static void init() {
 

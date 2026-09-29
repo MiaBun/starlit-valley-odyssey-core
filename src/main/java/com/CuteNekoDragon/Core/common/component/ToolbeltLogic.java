@@ -1,5 +1,6 @@
 package com.CuteNekoDragon.Core.common.component;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.messages.MessageLangProvider;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -71,7 +72,7 @@ public class ToolbeltLogic {
                 items.set(index, ItemStack.EMPTY);
             } else if (!handItem.isDamageableItem()) {
                 player.displayClientMessage(
-                        Component.translatable("message.svo_core.toolbelt_invalid_item"), true);
+                        Component.translatable(MessageLangProvider.TOOLBELT_INVALID_ITEM.key()), true);
                 return;
             } else {
                 player.getInventory().setItem(hotbarSlot, storedItem);

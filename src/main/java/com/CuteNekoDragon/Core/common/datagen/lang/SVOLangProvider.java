@@ -20,13 +20,5 @@ public class SVOLangProvider {
         MessageLangProvider.init();
         TooltipLangProvider.init();
 
-        REGISTRATE.addRawLang("message.svo_core.toolbelt_invalid_item", "Toolbelt Doesn't accept non-durable items.");
-
-        REGISTRATE.addRawLang("gtceu.charcoal_kiln", "Charcoal Kiln");
-        REGISTRATE.addRawLang("curios.identifier.lunchbox", "Lunchbox");
-        REGISTRATE.addRawLang("curios.identifier.toolbelt", "Toolbelt");
-
-        REGISTRATE.addRawLang("key.categories.svo", "Starlit Valley: Odyssey");
-        REGISTRATE.addRawLang("key.svo.skilltree.open", "Opens the Skills Menu");
     }
 }

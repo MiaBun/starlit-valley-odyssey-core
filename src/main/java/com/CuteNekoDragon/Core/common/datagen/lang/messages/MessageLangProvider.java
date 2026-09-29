@@ -6,7 +6,7 @@ import static com.CuteNekoDragon.Core.utils.lang.LangUtil.entry;
 
 public final class MessageLangProvider {
 
-    // Lang Keys
+    public static LangEntry TOOLBELT_INVALID_ITEM = message("toolbelt_invalid_item", "Toolbelt Doesn't accept non-durable items.");
 
     public static void init() {
 
