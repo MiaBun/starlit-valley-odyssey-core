@@ -1,12 +1,12 @@
 package com.CuteNekoDragon.Core.common.component;
 
-import com.CuteNekoDragon.Core.common.datagen.lang.messages.MessageLangProvider;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.messages.MessageLangProvider;
 import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;

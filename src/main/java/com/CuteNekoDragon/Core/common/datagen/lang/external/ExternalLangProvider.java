@@ -9,7 +9,5 @@ public final class ExternalLangProvider {
     public static final LangEntry CURIOS_LUNCHBOX = LangUtil.raw("curios.identifier.lunchbox", "Lunchbox");
     public static final LangEntry CURIOS_TOOLBELT = LangUtil.raw("curios.identifier.toolbelt", "Toolbelt");
 
-    public static void init() {
-
-    }
+    public static void init() {}
 }

@@ -1,10 +1,11 @@
 package com.CuteNekoDragon.Core.client.util;
 
-import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.toasts.Toast;
 import net.minecraft.client.gui.components.toasts.ToastComponent;
 import net.minecraft.network.chat.Component;
+
+import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 
 public class NewMailToast implements Toast {
 
@@ -47,7 +48,8 @@ public class NewMailToast implements Toast {
         var font = toastComponent.getMinecraft().font;
         guiGraphics.drawString(font, Component.translatable(GUILangProvider.MAILBOX_NEW_MAIL.key()),
                 6, 6, 0xFFFFD24A, false);
-        guiGraphics.drawString(font, Component.translatable(GUILangProvider.MAILBOX_FROM.key(), npcName), 6, 16, 0xFFFFFFFF,
+        guiGraphics.drawString(font, Component.translatable(GUILangProvider.MAILBOX_FROM.key(), npcName), 6, 16,
+                0xFFFFFFFF,
                 false);
 
         return (timeSinceLastVisible - firstRenderTime) < DISPLAY_TIME_MS ? Visibility.SHOW : Visibility.HIDE;

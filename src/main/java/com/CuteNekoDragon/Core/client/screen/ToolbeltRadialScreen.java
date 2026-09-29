@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.client.screen;
 
-import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.NonNullList;
@@ -8,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.ItemStack;
 
+import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import com.CuteNekoDragon.Core.common.item.ToolbeltItem;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.OpenToolbeltPacket;

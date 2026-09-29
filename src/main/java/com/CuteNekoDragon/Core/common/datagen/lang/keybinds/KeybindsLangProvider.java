@@ -9,9 +9,7 @@ public final class KeybindsLangProvider {
     public static LangEntry CATEGORY = keybind("category", "Starlit Valley: Odyssey");
     public static LangEntry SKILLTREE_OPEN = keybind("skilltree.open", "Opens the Skills Menu");
 
-    public static void init() {
-
-    }
+    public static void init() {}
 
     private static LangEntry keybind(String id, String text) {
         return entry("keybind", id, text);

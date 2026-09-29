@@ -20,9 +20,7 @@ public final class GUILangProvider {
 
     public static LangEntry TOOLBELT_RADIAL = mailbox("toolbelt_radial", "Toolbelt Radial");
 
-    public static void init() {
-
-    }
+    public static void init() {}
 
     private static LangEntry mailbox(String id, String text) {
         return entry("gui", "mailbox." + id, text);

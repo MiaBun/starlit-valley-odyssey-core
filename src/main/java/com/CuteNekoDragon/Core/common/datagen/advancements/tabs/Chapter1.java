@@ -1,12 +1,10 @@
 package com.CuteNekoDragon.Core.common.datagen.advancements.tabs;
 
-import com.CuteNekoDragon.Core.common.datagen.lang.advancements.AdvancementLangProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
@@ -22,6 +20,7 @@ import com.CuteNekoDragon.Core.common.data.SVOTags;
 import com.CuteNekoDragon.Core.common.data.blocks.SVOBlocks;
 import com.CuteNekoDragon.Core.common.data.items.SVOItems;
 import com.CuteNekoDragon.Core.common.data.svogt.SVOMachines;
+import com.CuteNekoDragon.Core.common.datagen.lang.advancements.AdvancementLangProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import java.util.function.Consumer;

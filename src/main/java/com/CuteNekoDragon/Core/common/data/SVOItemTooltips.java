@@ -133,7 +133,8 @@ public class SVOItemTooltips {
                 .addInfo(TooltipLangProvider.IRIDIUM_INGOT.key());
         TooltipBuilder.addTooltip(SVOItems.REFINED_QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM)
                 .addInfo(TooltipLangProvider.REFINED_QUARTZ.key());
-        TooltipBuilder.addTooltip(SVOItems.RADIOACTIVE_INGOT).addCoins().addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM)
+        TooltipBuilder.addTooltip(SVOItems.RADIOACTIVE_INGOT).addCoins()
+                .addGlyph(TooltipBuilder.SVOTypes.BLACKSMITH_ITEM)
                 .addInfo(TooltipLangProvider.RADIOACTIVE_INGOT.key());
 
         // Artisan Machines

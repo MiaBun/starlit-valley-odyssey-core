@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.common.svogt.machine.singleblock.artisan;
 
-import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
@@ -25,6 +24,7 @@ import com.CuteNekoDragon.Core.client.util.ClientMailCache;
 import com.CuteNekoDragon.Core.client.util.ClientMailboxTracker;
 import com.CuteNekoDragon.Core.common.capability.MailCapability;
 import com.CuteNekoDragon.Core.common.capability.PlayerMailData;
+import com.CuteNekoDragon.Core.common.datagen.lang.gui.GUILangProvider;
 import com.CuteNekoDragon.Core.network.SVONetworkHandler;
 import com.CuteNekoDragon.Core.network.packet.SyncMailDataPacket;
 import com.CuteNekoDragon.Core.utils.mail.Letter;

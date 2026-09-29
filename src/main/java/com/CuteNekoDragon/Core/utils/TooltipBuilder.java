@@ -1,6 +1,5 @@
 package com.CuteNekoDragon.Core.utils;
 
-import com.CuteNekoDragon.Core.common.datagen.lang.tooltips.TooltipLangProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -9,6 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import com.CuteNekoDragon.Core.common.datagen.lang.tooltips.TooltipLangProvider;
 
 import java.text.NumberFormat;
 import java.util.*;
@@ -106,7 +107,6 @@ public final class TooltipBuilder {
     public TooltipBuilder addLine(Component staticLine) {
         return addLine(stack -> staticLine);
     }
-
 
     @SubscribeEvent
     public static void onItemTooltip(ItemTooltipEvent event) {

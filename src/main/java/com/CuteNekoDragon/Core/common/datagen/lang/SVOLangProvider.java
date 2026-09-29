@@ -7,18 +7,14 @@ import com.CuteNekoDragon.Core.common.datagen.lang.keybinds.KeybindsLangProvider
 import com.CuteNekoDragon.Core.common.datagen.lang.messages.MessageLangProvider;
 import com.CuteNekoDragon.Core.common.datagen.lang.tooltips.TooltipLangProvider;
 
-import static com.CuteNekoDragon.Core.SVOCore.REGISTRATE;
-
 public class SVOLangProvider {
 
     public static void gatherData() {
-
         AdvancementLangProvider.init();
         ExternalLangProvider.init();
         GUILangProvider.init();
         KeybindsLangProvider.init();
         MessageLangProvider.init();
         TooltipLangProvider.init();
-
     }
 }
