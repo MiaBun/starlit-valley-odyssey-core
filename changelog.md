@@ -1,4 +1,4 @@
-## [Unreleased]
+## [0.0.35]
 ### Changes
 - refactored advancement lang keys
 - refactored tooltip lang keys
