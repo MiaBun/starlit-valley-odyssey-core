@@ -26,7 +26,7 @@ public record Glyph(ResourceLocation font, String chars, boolean tint, @Nullable
     }
 
     @SuppressWarnings("removal")
-    public static Glyph fromjson(JsonObject json) {
+    public static Glyph fromJson(JsonObject json) {
         String chars = GsonHelper.getAsString(json, "char");
         if (chars.isEmpty()) throw new JsonParseException("Glyph 'char' must not be empty");
         ResourceLocation font = json.has("font")
