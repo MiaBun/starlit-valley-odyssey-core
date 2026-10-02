@@ -1,13 +1,15 @@
 package com.CuteNekoDragon.Core.utils.tooltips;
 
+import com.CuteNekoDragon.Core.utils.tooltips.value.ValueDefinition;
 import net.minecraft.network.chat.TextColor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Map;
 
 public class TooltipStyle {
 
-    public TooltipStyle(List<String> order, Placement placement, boolean modItemsOnly, String separatorText, @Nullable TextColor separatorColor, String detailIndent, @Nullable TextColor detailColor, CustomTextSettings customText) {
+    public TooltipStyle(List<String> order, Placement placement, boolean modItemsOnly, String separatorText, @Nullable TextColor separatorColor, String detailIndent, @Nullable TextColor detailColor, CustomTextSettings customText, Map<String, ValueDefinition> values) {
         this.order = order;
         this.placement = placement;
         this.modItemsOnly = modItemsOnly;
@@ -16,6 +18,7 @@ public class TooltipStyle {
         this.detailIndent = detailIndent;
         this.detailColor = detailColor;
         this.customText = customText;
+        this.values = values;
     }
 
     public enum Placement { AFTER_NAME, END }
@@ -54,5 +57,6 @@ public class TooltipStyle {
     private final String detailIndent;
     @Nullable private final TextColor detailColor;
     private final CustomTextSettings customText;
+    private final Map<String, ValueDefinition> values;
 
 }

@@ -33,6 +33,10 @@ public class SVOCore {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, name);
     }
 
+    public static String key(String suffix) {
+        return "tooltip." + MOD_ID + "." + suffix;
+    }
+
     public SVOCore() {
         System.out.println("  //");
         System.out.println(" ('>");
