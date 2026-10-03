@@ -37,6 +37,10 @@ public class SVOCore {
         return "tooltip." + MOD_ID + "." + suffix;
     }
 
+    public static String nbtKey() {
+        return MOD_ID + "_tooltip";
+    }
+
     public SVOCore() {
         System.out.println("  //");
         System.out.println(" ('>");
