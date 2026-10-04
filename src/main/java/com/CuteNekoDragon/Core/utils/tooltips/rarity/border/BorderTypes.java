@@ -17,7 +17,7 @@ public final class BorderTypes {
     private static final Map<String, Factory> TYPES = new ConcurrentHashMap<>();
 
     static {
-
+        register("gradient", GradientBorder::fromJson);
     }
 
     private BorderTypes() {}
