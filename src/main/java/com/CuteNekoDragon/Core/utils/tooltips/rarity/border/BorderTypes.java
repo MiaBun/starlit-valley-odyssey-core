@@ -18,6 +18,7 @@ public final class BorderTypes {
 
     static {
         register("gradient", GradientBorder::fromJson);
+        register("animated", AnimatedGradientBorder::fromJson);
     }
 
     private BorderTypes() {}
