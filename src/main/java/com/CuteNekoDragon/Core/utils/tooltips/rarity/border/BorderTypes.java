@@ -19,6 +19,10 @@ public final class BorderTypes {
     static {
         register("gradient", GradientBorder::fromJson);
         register("animated", AnimatedGradientBorder::fromJson);
+        register("rainbow", RainbowBorder::fromJson);
+        register("glow", GlowBorder::fromJson);
+        register("corners", CornerBorder::fromJson);
+        register("layered", LayeredBorder::fromJson);
     }
 
     private BorderTypes() {}
