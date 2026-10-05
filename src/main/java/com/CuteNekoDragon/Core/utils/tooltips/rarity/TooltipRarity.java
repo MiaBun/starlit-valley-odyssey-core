@@ -17,8 +17,7 @@ import java.util.function.Supplier;
 public final class TooltipRarity {
     private final ResourceLocation id;
     private final Component name;
-    @Nullable
-    private final TextColor color;
+    @Nullable private final TextColor color;
     private final boolean recolorName;
     private final boolean showLabel;
     private final int priority;
@@ -35,6 +34,23 @@ public final class TooltipRarity {
         this.priority = b.priority;
         this.border = b.border;
         this.tag = TagKey.create(Registries.ITEM, new ResourceLocation(b.id.getNamespace(), "tooltip/rarity/" + b.id.getPath()));
+    }
+
+    public static Builder builder(ResourceLocation id) {
+        return new Builder(id);
+    }
+
+    public ResourceLocation id() { return id; }
+    public Component name() { return name; }
+    @Nullable public TextColor color() { return color; }
+    public boolean recolorName() { return recolorName; }
+    public boolean showLabel() { return showLabel; }
+    public int priority() { return priority; }
+    public TagKey<Item> tag() { return tag; }
+
+    @Nullable
+    public BorderRenderer border() {
+        return border == null ? null : border.get();
     }
 
     public static final class Builder {
