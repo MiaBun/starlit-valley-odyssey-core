@@ -209,6 +209,8 @@
   "itemGroup.svo_core": "Svo Core",
   "keybind.svo_core.category": "Starlit Valley: Odyssey",
   "keybind.svo_core.skilltree.open": "Opens the Skills Menu",
+  "keybind.svo_core.tooltip.next_page": "Tooltip: Next Page",
+  "keybind.svo_core.tooltip.prev_page": "Tooltip: Previous Page",
   "message.svo_core.toolbelt_invalid_item": "Toolbelt Doesn't accept non-durable items.",
   "tooltip.svo_core.aerinite": "These crystals are curiously light.",
   "tooltip.svo_core.alamite": "Its distinctive fluorescence makes it a favorite among rock collectors.",
