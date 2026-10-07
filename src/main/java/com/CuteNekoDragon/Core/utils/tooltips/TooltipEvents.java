@@ -3,12 +3,14 @@ package com.CuteNekoDragon.Core.utils.tooltips;
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarities;
 import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarity;
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipRenderer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -43,5 +45,17 @@ public final class TooltipEvents {
 
         int at = style.placement() == TooltipStyle.Placement.AFTER_NAME ? Math.min(1, tooltip.size()) : tooltip.size();
         tooltip.addAll(at, lines);
+    }
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void onRenderTooltipPre(RenderTooltipEvent.Pre event) {
+        ItemStack stack = event.getItemStack();
+        if(stack.isEmpty() || !TooltipStyle.current().appliesTo(stack)) return;
+        TooltipRarity rarity = TooltipRarities.get(stack);
+        if(rarity == null || rarity.border() == null) return;
+
+        event.setCanceled(true);
+        TooltipRenderer.render(event.getGraphics(), event.getFont(), event.getComponents(),
+                event.getX(), event.getY(), event.getScreenWidth(), event.getScreenHeight(),
+                stack, rarity.border());
     }
 }
