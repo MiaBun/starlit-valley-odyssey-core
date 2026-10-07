@@ -4,13 +4,16 @@ import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarities;
 import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarity;
 import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipRenderer;
+import com.CuteNekoDragon.Core.utils.tooltips.text.TooltipPager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderTooltipEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -57,5 +60,28 @@ public final class TooltipEvents {
         TooltipRenderer.render(event.getGraphics(), event.getFont(), event.getComponents(),
                 event.getX(), event.getY(), event.getScreenWidth(), event.getScreenHeight(),
                 stack, rarity.border());
+    }
+
+    @SubscribeEvent
+    public static void onKeyPressed(ScreenEvent.KeyPressed.Pre event) {
+        if (!TooltipPager.isActive() || TooltipKeys.NEXT_PAGE == null) return;
+
+        if (event.getScreen().getFocused() instanceof EditBox box && box.isFocused()) return;
+
+        if (TooltipKeys.NEXT_PAGE.matches(event.getKeyCode(), event.getScanCode())) {
+            TooltipPager.flip(1);
+            event.setCanceled(true);
+        } else if (TooltipKeys.PREV_PAGE.matches(event.getKeyCode(), event.getScanCode())) {
+            TooltipPager.flip(-1);
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onMouseScrolled(ScreenEvent.MouseScrolled.Pre event) {
+        if (!TooltipPager.isActive() || !Screen.hasControlDown()) return;
+        if (!TooltipStyle.current().customText().ctrlScrollFlips()) return;
+        TooltipPager.flip(event.getScrollDelta() > 0 ? -1 : 1);
+        event.setCanceled(true);
     }
 }
