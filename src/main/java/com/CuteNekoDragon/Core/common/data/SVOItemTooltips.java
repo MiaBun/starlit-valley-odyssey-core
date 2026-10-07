@@ -9,8 +9,7 @@ public class SVOItemTooltips {
 
     public static void ProvideTooltips() {
         // Foraged Minerals
-        TooltipBuilder.addTooltip(SVOItems.QUARTZ).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
-                .addInfo(TooltipLangProvider.QUARTZ.key());
+
         TooltipBuilder.addTooltip(SVOItems.EARTH_CRYSTAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo(TooltipLangProvider.EARTH_CRYSTAL.key());
         TooltipBuilder.addTooltip(SVOItems.FROZEN_TEAR).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)

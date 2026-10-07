@@ -1,12 +1,13 @@
 package com.CuteNekoDragon.Core.common.datagen.lang.tooltips;
 
 import com.CuteNekoDragon.Core.utils.lang.LangEntry;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 
 import static com.CuteNekoDragon.Core.utils.lang.LangUtil.entry;
 
 public final class TooltipLangProvider {
 
-    public static LangEntry QUARTZ = tooltip("quartz", "A clear crystal commonly found in caves and mines.");
     public static LangEntry EARTH_CRYSTAL = tooltip("earth_crystal", "A resinous substance found near the surface.");
     public static LangEntry FROZEN_TEAR = tooltip("frozen_tear", "A crystal fabled to be the frozen tears of a yeti.");
     public static LangEntry FIRE_QUARTZ = tooltip("fire_quartz", "A glowing red crystal commonly found near hot lava.");
@@ -95,9 +96,42 @@ public final class TooltipLangProvider {
     public static LangEntry SPECIAL_ITEM = tooltip("special_item", "Special Item");
     public static LangEntry BLACKSMITH_ITEM = tooltip("blacksmith_item", "Blacksmith Product");
 
+    // new tooltips
+    public static LangEntry QUARTZ = itemTooltip("quartz", "A clear crystal commonly found in caves and mines.");
+
     public static void init() {}
 
     private static LangEntry tooltip(String id, String text) {
         return entry("tooltip", id, text);
     }
+    public static final String PAGE_BREAK = "[page]";
+
+    public static LangEntry itemTooltip(String path, String... lines) {
+        return descTooltip("item", path, false, lines);
+    }
+
+    public static LangEntry itemTooltipShift(String path, String... lines) {
+        return descTooltip("item", path, true, lines);
+    }
+
+    public static LangEntry blockTooltip(String path, String... lines) {
+        return descTooltip("block", path, false, lines);
+    }
+
+    public static LangEntry blockTooltipShift(String path, String... lines) {
+        return descTooltip("block", path, true, lines);
+    }
+
+    public static LangEntry itemTooltip(RegistryEntry<?> entry, String... lines) {
+        return descTooltip(entry instanceof BlockEntry<?> ? "block" : "item", entry.getId().getPath(), false, lines);
+    }
+
+    public static LangEntry itemTooltipShift(RegistryEntry<?> entry, String... lines) {
+        return descTooltip(entry instanceof BlockEntry<?> ? "block" : "item", entry.getId().getPath(), true, lines);
+    }
+
+    private static LangEntry descTooltip(String category, String path, boolean shift, String... lines) {
+        return entry(category, path + (shift ? ".tooltip.shift" : ".tooltip"), String.join("\n", lines));
+    }
+
 }

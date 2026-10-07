@@ -17,6 +17,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 @SuppressWarnings("removal")
+@Deprecated
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public final class TooltipBuilder {
 
@@ -65,6 +66,7 @@ public final class TooltipBuilder {
     public static TooltipBuilder addTooltip(Item item) {
         return new TooltipBuilder(item);
     }
+
 
     public static TooltipBuilder addTooltip(Supplier<? extends Item> itemSupplier) {
         return addTooltip(itemSupplier.get());
