@@ -9,6 +9,7 @@ public class SVOItemTooltips {
 
     public static void ProvideTooltips() {
         // Foraged Minerals
+        /*
 
         TooltipBuilder.addTooltip(SVOItems.EARTH_CRYSTAL).addCoins().addGlyph(TooltipBuilder.SVOTypes.MINERAL)
                 .addInfo(TooltipLangProvider.EARTH_CRYSTAL.key());
@@ -137,7 +138,11 @@ public class SVOItemTooltips {
                 .addInfo(TooltipLangProvider.RADIOACTIVE_INGOT.key());
 
         // Artisan Machines
+
+         */
         TooltipBuilder.addTooltip(SVOMachines.CHARKOAL_KILN.getItem())
                 .addInfo(TooltipLangProvider.CHARCOAL_KILN.key());
+
     }
+
 }
