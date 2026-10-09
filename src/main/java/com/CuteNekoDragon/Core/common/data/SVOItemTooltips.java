@@ -140,8 +140,8 @@ public class SVOItemTooltips {
         // Artisan Machines
 
          */
-        TooltipBuilder.addTooltip(SVOMachines.CHARKOAL_KILN.getItem())
-                .addInfo(TooltipLangProvider.CHARCOAL_KILN.key());
+        //TooltipBuilder.addTooltip(SVOMachines.CHARKOAL_KILN.getItem())
+        //        .addInfo(TooltipLangProvider.CHARCOAL_KILN.key());
 
     }
 

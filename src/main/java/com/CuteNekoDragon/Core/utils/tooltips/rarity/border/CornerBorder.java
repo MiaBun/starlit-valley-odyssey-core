@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 
 public record CornerBorder(ResourceLocation texture, int size, int offset) implements BorderRenderer {
 
+    @SuppressWarnings("removal")
     public static CornerBorder fromJson(JsonObject json) {
         return new CornerBorder(new ResourceLocation(GsonHelper.getAsString(json, "texture")),
                 GsonHelper.getAsInt(json, "size", 8),

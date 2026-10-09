@@ -49,6 +49,7 @@ public final class DataValues {
         tables = Map.copyOf(loaded);
     }
 
+    @SuppressWarnings("removal")
     public static Map<String, Table> load(ResourceManager manager) {
         Map<String, Map<ResourceLocation, TooltipValue>> items = new HashMap<>();
         Map<String, Map<TagKey<Item>, TooltipValue>> tags = new HashMap<>();

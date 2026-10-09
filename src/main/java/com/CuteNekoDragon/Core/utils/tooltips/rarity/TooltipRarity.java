@@ -24,6 +24,7 @@ public final class TooltipRarity {
     private final Supplier<BorderRenderer> border;
     private final TagKey<Item> tag;
 
+    @SuppressWarnings("removal")
     private TooltipRarity(Builder b) {
         this.id = b.id;
         this.name = b.name != null ? b.name

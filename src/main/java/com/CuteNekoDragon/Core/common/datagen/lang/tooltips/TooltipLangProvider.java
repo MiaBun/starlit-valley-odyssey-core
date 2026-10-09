@@ -90,7 +90,10 @@ public final class TooltipLangProvider {
             "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.");
     public static LangEntry CINDER_SHARD = itemTooltip("cinder_shard", "You can feel a warm glow from within this stone.");
 
-    public static LangEntry CHARCOAL_KILN = tooltip("charcoal_kiln", "Turns 1 piece of log into one piece of coal.");
+    public static LangEntry CHARCOAL_KILN = blockTooltip("charcoal_kiln", "Turns 1 piece of log into one piece of coal.");
+    public static LangEntry CHARCOAL_KILN_SHIFT = blockTooltipShift("charcoal_kiln", "Artisan Machine that only consumes logs.");
+
+    public static LangEntry HOLD_SHIFT = tooltip("hold_shift", "Hold shift to read more");
 
     public static LangEntry COINS = tooltip("coins", "%s");
     public static LangEntry MINERAL_PRODUCT = tooltip("mineral_product", "Mineral Product");

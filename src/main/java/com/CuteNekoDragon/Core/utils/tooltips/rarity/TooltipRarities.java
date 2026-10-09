@@ -117,6 +117,7 @@ public final class TooltipRarities {
         byPriority = List.copyOf(sorted);
     }
 
+    @SuppressWarnings("removal")
     public static Map<ResourceLocation, TooltipRarity> load(ResourceManager manager) {
         Map<ResourceLocation, TooltipRarity> out = new HashMap<>();
         String dir = "tooltip/rarities";

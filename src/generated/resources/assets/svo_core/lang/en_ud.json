@@ -40,6 +40,8 @@
   "block.svo_core.blue_sleeping_bag": "bɐᗺ buıdǝǝןS ǝnןᗺ",
   "block.svo_core.brown_sleeping_bag": "bɐᗺ buıdǝǝןS uʍoɹᗺ",
   "block.svo_core.charcoal_kiln": "uןıʞ ןɐoɔɹɐɥƆ",
+  "block.svo_core.charcoal_kiln.tooltip": "˙ןɐoɔ ɟo ǝɔǝıd ǝuo oʇuı boן ɟo ǝɔǝıd Ɩ suɹn⟘",
+  "block.svo_core.charcoal_kiln.tooltip.shift": "˙sboן sǝɯnsuoɔ ʎןuo ʇɐɥʇ ǝuıɥɔɐW uɐsıʇɹⱯ",
   "block.svo_core.cherry_mail_box": "xoqןıɐW ʎɹɹǝɥƆ",
   "block.svo_core.crimson_mail_box": "xoqןıɐW uosɯıɹƆ",
   "block.svo_core.cyan_sleeping_bag": "bɐᗺ buıdǝǝןS uɐʎƆ",
@@ -272,9 +274,9 @@
   "keybind.svo_core.tooltip.prev_page": "ǝbɐԀ snoıʌǝɹԀ :dıʇןoo⟘",
   "message.svo_core.toolbelt_invalid_item": "˙sɯǝʇı ǝןqɐɹnp-uou ʇdǝɔɔɐ ʇ,usǝoᗡ ʇןǝqןoo⟘",
   "tooltip.svo_core.blacksmith_item": "ʇɔnpoɹԀ ɥʇıɯsʞɔɐןᗺ",
-  "tooltip.svo_core.charcoal_kiln": "˙ןɐoɔ ɟo ǝɔǝıd ǝuo oʇuı boן ɟo ǝɔǝıd Ɩ suɹn⟘",
   "tooltip.svo_core.coins": "%s",
   "tooltip.svo_core.gemstone_product": "ʇɔnpoɹԀ ǝuoʇsɯǝ⅁",
+  "tooltip.svo_core.hold_shift": "ǝɹoɯ pɐǝɹ oʇ ʇɟıɥs pןoH",
   "tooltip.svo_core.mineral_product": "ʇɔnpoɹԀ ןɐɹǝuıW",
   "tooltip.svo_core.special_item": "ɯǝʇI ןɐıɔǝdS"
 }
