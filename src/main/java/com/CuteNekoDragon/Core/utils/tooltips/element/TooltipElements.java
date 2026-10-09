@@ -2,11 +2,13 @@ package com.CuteNekoDragon.Core.utils.tooltips.element;
 
 import com.CuteNekoDragon.Core.utils.tooltips.TooltipStyle;
 
-import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.annotation.Nullable;
+
 public final class TooltipElements {
+
     private static final Map<String, TooltipElement> ELEMENTS = new ConcurrentHashMap<>();
 
     static {

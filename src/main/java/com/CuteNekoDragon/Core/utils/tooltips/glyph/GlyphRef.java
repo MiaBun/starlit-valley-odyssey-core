@@ -1,7 +1,9 @@
 package com.CuteNekoDragon.Core.utils.tooltips.glyph;
 
-import com.google.gson.JsonElement;
 import net.minecraft.resources.ResourceLocation;
+
+import com.google.gson.JsonElement;
+
 import javax.annotation.Nullable;
 
 public record GlyphRef(@Nullable ResourceLocation name, @Nullable Glyph inline) {

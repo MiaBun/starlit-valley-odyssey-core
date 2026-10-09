@@ -1,11 +1,13 @@
 package com.CuteNekoDragon.Core.utils.tooltips.text;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+
 public final class TooltipPager {
+
     private static final long RESET_AFTER_MS = 250;
     private static final long ACTIVE_WINDOW_MS = 150;
 

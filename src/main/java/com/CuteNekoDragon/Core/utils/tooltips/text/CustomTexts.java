@@ -1,13 +1,14 @@
 package com.CuteNekoDragon.Core.utils.tooltips.text;
 
-import com.CuteNekoDragon.Core.utils.tooltips.TooltipStyle;
-import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+
+import com.CuteNekoDragon.Core.utils.tooltips.TooltipStyle;
+import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ public final class CustomTexts {
 
     @FunctionalInterface
     public interface Provider {
+
         List<Component> lines(ItemStack stack);
     }
 

@@ -1,13 +1,14 @@
 package com.CuteNekoDragon.Core.utils.tooltips.rarity.border;
 
-import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
-import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipDraw;
-import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
-import com.google.gson.JsonObject;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipDraw;
+import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
+import com.google.gson.JsonObject;
 
 public record RainbowBorder(int bgTop, int bgBottom, float speed, float saturation, float brightness, int alpha)
         implements BorderRenderer {

@@ -1,12 +1,13 @@
 package com.CuteNekoDragon.Core.utils.tooltips.rarity.border;
 
-import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
-import com.google.gson.JsonObject;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
+import com.google.gson.JsonObject;
+import com.mojang.blaze3d.systems.RenderSystem;
 
 public record CornerBorder(ResourceLocation texture, int size, int offset) implements BorderRenderer {
 

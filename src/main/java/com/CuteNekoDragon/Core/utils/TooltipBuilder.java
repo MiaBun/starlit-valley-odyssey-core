@@ -67,7 +67,6 @@ public final class TooltipBuilder {
         return new TooltipBuilder(item);
     }
 
-
     public static TooltipBuilder addTooltip(Supplier<? extends Item> itemSupplier) {
         return addTooltip(itemSupplier.get());
     }

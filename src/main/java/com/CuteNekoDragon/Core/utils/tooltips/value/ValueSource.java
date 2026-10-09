@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 @FunctionalInterface
 public interface ValueSource {
+
     @Nullable
     TooltipValue get(ItemStack stack);
 

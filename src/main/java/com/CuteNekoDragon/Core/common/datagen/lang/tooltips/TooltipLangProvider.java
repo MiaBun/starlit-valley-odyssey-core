@@ -10,9 +10,12 @@ public final class TooltipLangProvider {
 
     public static LangEntry QUARTZ = itemTooltip("quartz", "A clear crystal commonly found in caves and mines.");
 
-    public static LangEntry EARTH_CRYSTAL = itemTooltip("earth_crystal", "A resinous substance found near the surface.");
-    public static LangEntry FROZEN_TEAR = itemTooltip("frozen_tear", "A crystal fabled to be the frozen tears of a yeti.");
-    public static LangEntry FIRE_QUARTZ = itemTooltip("fire_quartz", "A glowing red crystal commonly found near hot lava.");
+    public static LangEntry EARTH_CRYSTAL = itemTooltip("earth_crystal",
+            "A resinous substance found near the surface.");
+    public static LangEntry FROZEN_TEAR = itemTooltip("frozen_tear",
+            "A crystal fabled to be the frozen tears of a yeti.");
+    public static LangEntry FIRE_QUARTZ = itemTooltip("fire_quartz",
+            "A glowing red crystal commonly found near hot lava.");
     public static LangEntry EMERALD = itemTooltip("emerald", "A precious stone with a brilliant green color.");
     public static LangEntry AQUAMARINE = itemTooltip("aquamarine", "A shimmery blue-green gem.");
     public static LangEntry RUBY = itemTooltip("ruby",
@@ -25,14 +28,17 @@ public final class TooltipLangProvider {
             "A very rare and powerful substance with unknown origins.");
     public static LangEntry TIGERSEYE = itemTooltip("tigerseye",
             "A stripe of shimmering gold gives this gem a warm luster.");
-    public static LangEntry OPAL = itemTooltip("opal", "Its internal structure causes it to reflect a rainbow of light.");
+    public static LangEntry OPAL = itemTooltip("opal",
+            "Its internal structure causes it to reflect a rainbow of light.");
     public static LangEntry FIRE_OPAL = itemTooltip("fire_opal", "A rare variety of opal, named for its red spots.");
     public static LangEntry ALAMITE = itemTooltip("alamite",
             "Its distinctive fluorescence makes it a favorite among rock collectors.");
-    public static LangEntry BIXITE = itemTooltip("bixite", "A dark metallic Mineral sought after for its cubic structure.");
+    public static LangEntry BIXITE = itemTooltip("bixite",
+            "A dark metallic Mineral sought after for its cubic structure.");
     public static LangEntry BARYTE = itemTooltip("baryte", "The best specimens resemble a desert rose.");
     public static LangEntry AERINITE = itemTooltip("aerinite", "These crystals are curiously light.");
-    public static LangEntry CALCITE = itemTooltip("calcite", "This yellow crystal is speckled with shimmering nodules.");
+    public static LangEntry CALCITE = itemTooltip("calcite",
+            "This yellow crystal is speckled with shimmering nodules.");
     public static LangEntry DOLOMITE = itemTooltip("dolomite",
             "It can occur in coral reefs, often near an underwater volcano.");
     public static LangEntry ESPERITE = itemTooltip("esperite", "The crystals glow bright green when stimulated.");
@@ -52,7 +58,8 @@ public final class TooltipLangProvider {
     public static LangEntry NEKOITE = itemTooltip("nekoite", "The delicate shards form a tiny pink meadow.");
     public static LangEntry ORPIMENT = itemTooltip("orpiment",
             "Despite its high toxicity, this Mineral is widely used in manufacturing and folk medicine.");
-    public static LangEntry PETRIFIED_SLIME = itemTooltip("petrified_slime", "This little guy may be 100,000 years old.");
+    public static LangEntry PETRIFIED_SLIME = itemTooltip("petrified_slime",
+            "This little guy may be 100,000 years old.");
     public static LangEntry THUNDER_EGG = itemTooltip("thunder_egg",
             "According to legend, angry thunder spirits would throw these stones at one another.");
     public static LangEntry PYRITE = itemTooltip("pyrite", "Commonly known as \"Fool's Gold\".");
@@ -64,10 +71,13 @@ public final class TooltipLangProvider {
             "When polished, this stone becomes attractively luminous. Prized by ancient peoples for thousands of years.");
     public static LangEntry CELESTINE = itemTooltip("celestine", "Some early life forms had bones made from this.");
     public static LangEntry MARBLE = itemTooltip("marble", "A very popular material for sculptures and construction.");
-    public static LangEntry SANDSTONE = itemTooltip("sandstone", "A common type of stone with red and brown striations.");
-    public static LangEntry GRANITE = itemTooltip("granite", "A speckled Mineral that is commonly used in construction.");
+    public static LangEntry SANDSTONE = itemTooltip("sandstone",
+            "A common type of stone with red and brown striations.");
+    public static LangEntry GRANITE = itemTooltip("granite",
+            "A speckled Mineral that is commonly used in construction.");
     public static LangEntry BASALT = itemTooltip("basalt", "Forms near searing hot magma.");
-    public static LangEntry LIMESTONE = itemTooltip("limestone", "A very common type of stone. It's not worth very much.");
+    public static LangEntry LIMESTONE = itemTooltip("limestone",
+            "A very common type of stone. It's not worth very much.");
     public static LangEntry SOAPSTONE = itemTooltip("soapstone",
             "Because of its relatively soft consistency, this stone is very popular for carving.");
     public static LangEntry HERMATITE = itemTooltip("hermatite",
@@ -88,10 +98,13 @@ public final class TooltipLangProvider {
     public static LangEntry REFINED_QUARTZ = itemTooltip("refined_quartz", "A more pure form of quartz.");
     public static LangEntry RADIOACTIVE_INGOT = itemTooltip("radioactive_ingot",
             "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.");
-    public static LangEntry CINDER_SHARD = itemTooltip("cinder_shard", "You can feel a warm glow from within this stone.");
+    public static LangEntry CINDER_SHARD = itemTooltip("cinder_shard",
+            "You can feel a warm glow from within this stone.");
 
-    public static LangEntry CHARCOAL_KILN = blockTooltip("charcoal_kiln", "Turns 1 piece of log into one piece of coal.");
-    public static LangEntry CHARCOAL_KILN_SHIFT = blockTooltipShift("charcoal_kiln", "Artisan Machine that only consumes logs.");
+    public static LangEntry CHARCOAL_KILN = blockTooltip("charcoal_kiln",
+            "Turns 1 piece of log into one piece of coal.");
+    public static LangEntry CHARCOAL_KILN_SHIFT = blockTooltipShift("charcoal_kiln",
+            "Artisan Machine that only consumes logs.");
 
     public static LangEntry HOLD_SHIFT = tooltip("hold_shift", "Hold shift to read more");
 
@@ -108,6 +121,7 @@ public final class TooltipLangProvider {
     private static LangEntry tooltip(String id, String text) {
         return entry("tooltip", id, text);
     }
+
     public static final String PAGE_BREAK = "[page]";
 
     public static LangEntry itemTooltip(String path, String... lines) {
@@ -137,5 +151,4 @@ public final class TooltipLangProvider {
     private static LangEntry descTooltip(String category, String path, boolean shift, String... lines) {
         return entry(category, path + (shift ? ".tooltip.shift" : ".tooltip"), String.join("\n", lines));
     }
-
 }

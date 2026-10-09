@@ -1,9 +1,5 @@
 package com.CuteNekoDragon.Core.utils.tooltips.value;
 
-import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
@@ -13,9 +9,13 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
-import javax.annotation.Nullable;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +23,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Nullable;
+
 public final class DataValues {
+
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public record Table(Map<ResourceLocation, TooltipValue> items, List<Map.Entry<TagKey<Item>, TooltipValue>> tags) {}
@@ -53,7 +56,8 @@ public final class DataValues {
     public static Map<String, Table> load(ResourceManager manager) {
         Map<String, Map<ResourceLocation, TooltipValue>> items = new HashMap<>();
         Map<String, Map<TagKey<Item>, TooltipValue>> tags = new HashMap<>();
-        for (Map.Entry<ResourceLocation, Resource> e : manager.listResources("tooltip/values", p -> p.getPath().endsWith(".json")).entrySet()) {
+        for (Map.Entry<ResourceLocation, Resource> e : manager
+                .listResources("tooltip/values", p -> p.getPath().endsWith(".json")).entrySet()) {
             String path = e.getKey().getPath();
             String type = path.substring(path.lastIndexOf('/') + 1, path.length() - ".json".length());
             try (Reader reader = e.getValue().openAsReader()) {

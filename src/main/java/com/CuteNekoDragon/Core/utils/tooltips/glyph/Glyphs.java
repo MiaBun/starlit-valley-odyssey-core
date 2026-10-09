@@ -1,21 +1,23 @@
 package com.CuteNekoDragon.Core.utils.tooltips.glyph;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.GsonHelper;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
-import javax.annotation.Nullable;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import javax.annotation.Nullable;
 
 public final class Glyphs {
 
@@ -48,17 +50,19 @@ public final class Glyphs {
         data = Map.copyOf(glyphs);
         WARNED.clear();
     }
+
     @SuppressWarnings("removal")
     public static Map<ResourceLocation, Glyph> load(ResourceManager manager) {
         Map<ResourceLocation, Glyph> out = new HashMap<>();
-        for (Map.Entry<ResourceLocation, Resource> e
-                : manager.listResources("tooltip", p -> p.getPath().equals("tooltip/glyphs.json")).entrySet()) {
+        for (Map.Entry<ResourceLocation, Resource> e : manager
+                .listResources("tooltip", p -> p.getPath().equals("tooltip/glyphs.json")).entrySet()) {
             String ns = e.getKey().getNamespace();
             try (Reader reader = e.getValue().openAsReader()) {
                 JsonObject json = GsonHelper.parse(reader);
                 for (Map.Entry<String, JsonElement> entry : json.entrySet()) {
                     try {
-                        out.put(new ResourceLocation(ns, entry.getKey()), Glyph.fromJson(entry.getValue().getAsJsonObject()));
+                        out.put(new ResourceLocation(ns, entry.getKey()),
+                                Glyph.fromJson(entry.getValue().getAsJsonObject()));
                     } catch (Exception ex) {
                         LOGGER.error("Invalid tooltip glyph '{}' in {}", entry.getKey(), e.getKey(), ex);
                     }

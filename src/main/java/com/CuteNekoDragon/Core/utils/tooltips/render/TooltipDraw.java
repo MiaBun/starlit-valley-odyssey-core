@@ -3,13 +3,15 @@ package com.CuteNekoDragon.Core.utils.tooltips.render;
 import net.minecraft.client.gui.GuiGraphics;
 
 public final class TooltipDraw {
+
     public static final int VANILLA_BACKGROUND = 0xF0100010;
     public static final int VANILLA_BORDER_TOP = 0x505000FF;
     public static final int VANILLA_BORDER_BOTTOM = 0x5028007F;
 
     private TooltipDraw() {}
 
-    public static void vanillaFrame(GuiGraphics g, TooltipBounds b, int bgTop, int bgBottom, int borderTop, int borderBottom) {
+    public static void vanillaFrame(GuiGraphics g, TooltipBounds b, int bgTop, int bgBottom, int borderTop,
+                                    int borderBottom) {
         int x = b.x() - 3, y = b.y() - 3, w = b.width() + 6, h = b.height() + 6, z = b.z();
         // background
         g.fill(x, y - 1, x + w, y, z, bgTop);

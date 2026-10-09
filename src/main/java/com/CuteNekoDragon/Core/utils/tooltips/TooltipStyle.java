@@ -1,13 +1,5 @@
 package com.CuteNekoDragon.Core.utils.tooltips;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.utils.tooltips.element.TooltipElement;
-import com.CuteNekoDragon.Core.utils.tooltips.element.ValueElement;
-import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
-import com.CuteNekoDragon.Core.utils.tooltips.value.ValueDefinition;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceLocation;
@@ -16,15 +8,28 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.utils.tooltips.element.TooltipElement;
+import com.CuteNekoDragon.Core.utils.tooltips.element.ValueElement;
+import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
+import com.CuteNekoDragon.Core.utils.tooltips.value.ValueDefinition;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
 public class TooltipStyle {
 
-    public enum Placement { AFTER_NAME, END }
+    public enum Placement {
+        AFTER_NAME,
+        END
+    }
 
-    public record CustomTextSettings(int linesPerPage, int maxWidth, @Nullable TextColor color, boolean pageIndicator, float autoPageSeconds, boolean ctrlScrollFlips) {}
+    public record CustomTextSettings(int linesPerPage, int maxWidth, @Nullable TextColor color, boolean pageIndicator,
+                                     float autoPageSeconds, boolean ctrlScrollFlips) {}
 
     static final String DEFAULT_JSON = """
             {
@@ -54,9 +59,11 @@ public class TooltipStyle {
     private final Placement placement;
     private final boolean modItemsOnly;
     private final String separatorText;
-    @Nullable private final TextColor separatorColor;
+    @Nullable
+    private final TextColor separatorColor;
     private final String detailIndent;
-    @Nullable private final TextColor detailColor;
+    @Nullable
+    private final TextColor detailColor;
     private final CustomTextSettings customText;
     private final Map<String, ValueDefinition> values;
     private final Map<String, TooltipElement> valueElements;
@@ -67,8 +74,9 @@ public class TooltipStyle {
         for (JsonElement el : GsonHelper.getAsJsonArray(json, "order")) order.add(el.getAsString());
         this.order = Collections.unmodifiableList(order);
 
-        this.placement = "end".equals(GsonHelper.getAsString(json, "placement", "after_name").toLowerCase(Locale.ROOT))
-                ? Placement.END : Placement.AFTER_NAME;
+        this.placement = "end"
+                .equals(GsonHelper.getAsString(json, "placement", "after_name").toLowerCase(Locale.ROOT)) ?
+                        Placement.END : Placement.AFTER_NAME;
         this.modItemsOnly = GsonHelper.getAsBoolean(json, "mod_items_only", false);
 
         JsonObject sep = GsonHelper.getAsJsonObject(json, "separator", new JsonObject());
@@ -90,7 +98,8 @@ public class TooltipStyle {
 
         Map<String, ValueDefinition> values = new LinkedHashMap<>();
         Map<String, TooltipElement> elements = new LinkedHashMap<>();
-        for (Map.Entry<String, JsonElement> e : GsonHelper.getAsJsonObject(json, "values", new JsonObject()).entrySet()) {
+        for (Map.Entry<String, JsonElement> e : GsonHelper.getAsJsonObject(json, "values", new JsonObject())
+                .entrySet()) {
             ValueDefinition def = ValueDefinition.parse(e.getKey(), e.getValue().getAsJsonObject());
             values.put(def.id(), def);
             elements.put(def.id(), new ValueElement(def));
@@ -136,14 +145,39 @@ public class TooltipStyle {
         return (key != null && key.getNamespace().equals(SVOCore.MOD_ID)) || stack.is(styledTag);
     }
 
-    public List<String> order() { return order; }
-    public Placement placement() { return placement; }
-    public String separatorText() { return separatorText; }
-    @Nullable public TextColor separatorColor() { return separatorColor; }
-    public String detailIndent() { return detailIndent; }
-    @Nullable public TextColor detailColor() { return detailColor; }
-    public CustomTextSettings customText() { return customText; }
-    public Map<String, ValueDefinition> values() { return values; }
+    public List<String> order() {
+        return order;
+    }
+
+    public Placement placement() {
+        return placement;
+    }
+
+    public String separatorText() {
+        return separatorText;
+    }
+
+    @Nullable
+    public TextColor separatorColor() {
+        return separatorColor;
+    }
+
+    public String detailIndent() {
+        return detailIndent;
+    }
+
+    @Nullable
+    public TextColor detailColor() {
+        return detailColor;
+    }
+
+    public CustomTextSettings customText() {
+        return customText;
+    }
+
+    public Map<String, ValueDefinition> values() {
+        return values;
+    }
 
     @Nullable
     public TooltipElement valueElement(String id) {

@@ -1,13 +1,15 @@
 package com.CuteNekoDragon.Core.utils.tooltips.util;
 
+import net.minecraft.network.chat.TextColor;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import net.minecraft.network.chat.TextColor;
 
 import javax.annotation.Nullable;
 
 public final class Colors {
+
     private Colors() {}
 
     public static int argb(JsonElement el) {
@@ -46,10 +48,8 @@ public final class Colors {
     public static int lerp(int a, int b, float t) {
         int aa = a >>> 24, ar = (a >> 16) & 0xFF, ag = (a >> 8) & 0xFF, ab = a & 0xFF;
         int ba = b >>> 24, br = (b >> 16) & 0xFF, bg = (b >> 8) & 0xFF, bb = b & 0xFF;
-        return ((int) (aa + (ba - aa) * t) << 24)
-                | ((int) (ar + (br - ar) * t) << 16)
-                | ((int) (ag + (bg - ag) * t) << 8)
-                | (int) (ab + (bb - ab) * t);
+        return ((int) (aa + (ba - aa) * t) << 24) | ((int) (ar + (br - ar) * t) << 16) |
+                ((int) (ag + (bg - ag) * t) << 8) | (int) (ab + (bb - ab) * t);
     }
 
     public static int withAlpha(int argb, int alpha) {

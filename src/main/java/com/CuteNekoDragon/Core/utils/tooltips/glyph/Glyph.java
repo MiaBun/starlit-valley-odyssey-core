@@ -1,15 +1,16 @@
 package com.CuteNekoDragon.Core.utils.tooltips.glyph;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
 import javax.annotation.Nullable;
 
@@ -29,9 +30,8 @@ public record Glyph(ResourceLocation font, String chars, boolean tint, @Nullable
     public static Glyph fromJson(JsonObject json) {
         String chars = GsonHelper.getAsString(json, "char");
         if (chars.isEmpty()) throw new JsonParseException("Glyph 'char' must not be empty");
-        ResourceLocation font = json.has("font")
-                ? new ResourceLocation(GsonHelper.getAsString(json, "font"))
-                : defaultFont();
+        ResourceLocation font = json.has("font") ? new ResourceLocation(GsonHelper.getAsString(json, "font")) :
+                defaultFont();
         return new Glyph(font, chars, GsonHelper.getAsBoolean(json, "tint", false), Colors.text(json, "color"));
     }
 

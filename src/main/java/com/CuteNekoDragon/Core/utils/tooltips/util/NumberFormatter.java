@@ -7,11 +7,12 @@ import java.util.Locale;
 
 public final class NumberFormatter {
 
-    private static final String[] SUFFIXES = {"", "k", "M", "G", "T", "P", "E"};
+    private static final String[] SUFFIXES = { "", "k", "M", "G", "T", "P", "E" };
 
     private NumberFormatter() {}
 
     public enum Style {
+
         /** 1,234,567.89 */
         FULL,
         /** 1.2M */

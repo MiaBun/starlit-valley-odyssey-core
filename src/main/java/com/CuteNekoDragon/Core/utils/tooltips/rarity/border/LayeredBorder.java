@@ -1,16 +1,18 @@
 package com.CuteNekoDragon.Core.utils.tooltips.rarity.border;
 
-import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public record LayeredBorder(List<BorderRenderer> layers) implements BorderRenderer {
+
     public static LayeredBorder fromJson(JsonObject json) {
         List<BorderRenderer> layers = new ArrayList<>();
         for (JsonElement el : GsonHelper.getAsJsonArray(json, "layers")) {

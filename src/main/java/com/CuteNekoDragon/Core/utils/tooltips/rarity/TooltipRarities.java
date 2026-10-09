@@ -1,12 +1,5 @@
 package com.CuteNekoDragon.Core.utils.tooltips.rarity;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.utils.tooltips.rarity.border.BorderRenderer;
-import com.CuteNekoDragon.Core.utils.tooltips.rarity.border.BorderTypes;
-import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
-import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
-import com.google.gson.JsonObject;
-import com.mojang.logging.LogUtils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
@@ -17,9 +10,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.util.Lazy;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.utils.tooltips.rarity.border.BorderRenderer;
+import com.CuteNekoDragon.Core.utils.tooltips.rarity.border.BorderTypes;
+import com.CuteNekoDragon.Core.utils.tooltips.util.Colors;
+import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
+import com.google.gson.JsonObject;
+import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
-import javax.annotation.Nullable;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -30,7 +30,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Predicate;
 
+import javax.annotation.Nullable;
+
 public final class TooltipRarities {
+
     private static final Logger LOGGER = LogUtils.getLogger();
 
     private static final Map<ResourceLocation, TooltipRarity> CODE = new ConcurrentHashMap<>();
@@ -121,7 +124,8 @@ public final class TooltipRarities {
     public static Map<ResourceLocation, TooltipRarity> load(ResourceManager manager) {
         Map<ResourceLocation, TooltipRarity> out = new HashMap<>();
         String dir = "tooltip/rarities";
-        for (Map.Entry<ResourceLocation, Resource> e : manager.listResources(dir, p -> p.getPath().endsWith(".json")).entrySet()) {
+        for (Map.Entry<ResourceLocation, Resource> e : manager.listResources(dir, p -> p.getPath().endsWith(".json"))
+                .entrySet()) {
             ResourceLocation file = e.getKey();
             String path = file.getPath().substring(dir.length() + 1, file.getPath().length() - ".json".length());
             ResourceLocation id = new ResourceLocation(file.getNamespace(), path);
@@ -155,6 +159,4 @@ public final class TooltipRarities {
         }
         return b.build();
     }
-
-
 }

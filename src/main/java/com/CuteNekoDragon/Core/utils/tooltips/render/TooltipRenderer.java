@@ -1,12 +1,13 @@
 package com.CuteNekoDragon.Core.utils.tooltips.render;
 
-import com.CuteNekoDragon.Core.utils.tooltips.rarity.border.BorderRenderer;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.Util;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.utils.tooltips.rarity.border.BorderRenderer;
+import com.mojang.blaze3d.systems.RenderSystem;
 
 import java.util.List;
 
@@ -16,7 +17,8 @@ public final class TooltipRenderer {
 
     private TooltipRenderer() {}
 
-    public static void render(GuiGraphics g, Font font, List<ClientTooltipComponent> components, int mouseX, int mouseY, int screenWidth, int screenHeight, ItemStack stack, BorderRenderer border) {
+    public static void render(GuiGraphics g, Font font, List<ClientTooltipComponent> components, int mouseX, int mouseY,
+                              int screenWidth, int screenHeight, ItemStack stack, BorderRenderer border) {
         if (components.isEmpty()) return;
 
         int width = 0;

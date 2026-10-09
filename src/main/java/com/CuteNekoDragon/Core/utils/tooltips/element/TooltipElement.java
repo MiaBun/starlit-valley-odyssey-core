@@ -1,7 +1,8 @@
 package com.CuteNekoDragon.Core.utils.tooltips.element;
 
-import com.CuteNekoDragon.Core.utils.tooltips.TooltipContext;
 import net.minecraft.network.chat.Component;
+
+import com.CuteNekoDragon.Core.utils.tooltips.TooltipContext;
 
 import java.util.List;
 

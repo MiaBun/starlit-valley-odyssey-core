@@ -1,6 +1,8 @@
 ## [Unreleased]
 ### Changes
-- 
+- full refactor of the tooltip system, coins not yet displayed till next version.
+- refactored every tooltip lang key (outside of a few) to use the new system
+- added a hold shift tooltip to charcoal kiln
 
 ## [0.0.35]
 ### Changes

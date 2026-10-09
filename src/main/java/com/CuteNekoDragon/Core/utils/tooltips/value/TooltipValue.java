@@ -1,11 +1,13 @@
 package com.CuteNekoDragon.Core.utils.tooltips.value;
 
-import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
 import net.minecraft.network.chat.Component;
 
-import javax.annotation.Nullable;
+import com.CuteNekoDragon.Core.utils.tooltips.util.TextUtil;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public record TooltipValue(double amount, List<DetailLine> details) {
 
@@ -20,6 +22,7 @@ public record TooltipValue(double amount, List<DetailLine> details) {
     }
 
     public static final class Builder {
+
         private final double amount;
         private final List<DetailLine> details = new ArrayList<>();
 

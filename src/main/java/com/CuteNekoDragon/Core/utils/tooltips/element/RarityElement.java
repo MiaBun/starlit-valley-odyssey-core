@@ -1,14 +1,16 @@
 package com.CuteNekoDragon.Core.utils.tooltips.element;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+
 import com.CuteNekoDragon.Core.utils.tooltips.TooltipContext;
 import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarities;
 import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarity;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 
 import java.util.List;
 
 public final class RarityElement implements TooltipElement {
+
     @Override
     public boolean isVisible(TooltipContext ctx) {
         TooltipRarity r = TooltipRarities.get(ctx.stack());

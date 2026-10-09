@@ -1,8 +1,9 @@
 package com.CuteNekoDragon.Core.utils.tooltips.rarity.border;
 
-import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
+
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipBounds;
 
 import java.util.List;
 

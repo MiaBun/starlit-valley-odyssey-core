@@ -1,11 +1,5 @@
 package com.CuteNekoDragon.Core.utils.tooltips;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarities;
-import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarity;
-import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipRenderer;
-import com.CuteNekoDragon.Core.utils.tooltips.text.TooltipPager;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -19,6 +13,13 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import com.CuteNekoDragon.Core.SVOCore;
+import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarities;
+import com.CuteNekoDragon.Core.utils.tooltips.rarity.TooltipRarity;
+import com.CuteNekoDragon.Core.utils.tooltips.render.TooltipRenderer;
+import com.CuteNekoDragon.Core.utils.tooltips.text.TooltipPager;
+import com.mojang.blaze3d.systems.RenderSystem;
+
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = SVOCore.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -31,7 +32,7 @@ public final class TooltipEvents {
         ItemStack stack = event.getItemStack();
         if (stack.isEmpty()) return;
         TooltipStyle style = TooltipStyle.current();
-        if(!style.appliesTo(stack)) return;
+        if (!style.appliesTo(stack)) return;
 
         List<Component> tooltip = event.getToolTip();
 
@@ -49,12 +50,13 @@ public final class TooltipEvents {
         int at = style.placement() == TooltipStyle.Placement.AFTER_NAME ? Math.min(1, tooltip.size()) : tooltip.size();
         tooltip.addAll(at, lines);
     }
+
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onRenderTooltipPre(RenderTooltipEvent.Pre event) {
         ItemStack stack = event.getItemStack();
-        if(stack.isEmpty() || !TooltipStyle.current().appliesTo(stack)) return;
+        if (stack.isEmpty() || !TooltipStyle.current().appliesTo(stack)) return;
         TooltipRarity rarity = TooltipRarities.get(stack);
-        if(rarity == null || rarity.border() == null) return;
+        if (rarity == null || rarity.border() == null) return;
 
         event.setCanceled(true);
         TooltipRenderer.render(event.getGraphics(), event.getFont(), event.getComponents(),

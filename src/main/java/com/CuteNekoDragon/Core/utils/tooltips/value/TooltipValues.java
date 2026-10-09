@@ -1,16 +1,16 @@
 package com.CuteNekoDragon.Core.utils.tooltips.value;
 
-import com.CuteNekoDragon.Core.SVOCore;
-import com.mojang.logging.LogUtils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+
+import com.CuteNekoDragon.Core.SVOCore;
+import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -18,7 +18,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.Predicate;
 
+import javax.annotation.Nullable;
+
 public final class TooltipValues {
+
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final Set<String> WARNED = ConcurrentHashMap.newKeySet();
 

@@ -1,13 +1,13 @@
 package com.CuteNekoDragon.Core.utils.tooltips;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.utils.tooltips.element.TooltipElement;
 import com.CuteNekoDragon.Core.utils.tooltips.element.TooltipElements;
 import com.mojang.logging.LogUtils;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.item.ItemStack;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class TooltipBuilder {
+
     public static final String SEPARATOR = "separator";
     public static final String SHIFT_HINT = "shift_hint";
 
@@ -72,7 +73,8 @@ public final class TooltipBuilder {
                     lastWasSeparator = false;
                 }
             } else {
-                @SuppressWarnings("unchecked") List<Component> lines = (List<Component>) block;
+                @SuppressWarnings("unchecked")
+                List<Component> lines = (List<Component>) block;
                 out.addAll(lines);
                 lastWasSeparator = false;
             }
@@ -94,8 +96,7 @@ public final class TooltipBuilder {
 
     private static Component shiftHint() {
         return Component.translatable(SVOCore.key("hold_shift"),
-                        Component.translatable(SVOCore.key("shift")).withStyle(ChatFormatting.YELLOW))
+                Component.translatable(SVOCore.key("shift")).withStyle(ChatFormatting.YELLOW))
                 .withStyle(ChatFormatting.DARK_GRAY);
     }
-
 }

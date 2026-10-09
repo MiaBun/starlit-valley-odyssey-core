@@ -1,18 +1,20 @@
 package com.CuteNekoDragon.Core.utils.tooltips.element;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.world.item.ItemStack;
+
 import com.CuteNekoDragon.Core.SVOCore;
 import com.CuteNekoDragon.Core.utils.tooltips.TooltipContext;
 import com.CuteNekoDragon.Core.utils.tooltips.glyph.Glyph;
 import com.CuteNekoDragon.Core.utils.tooltips.value.TooltipValue;
 import com.CuteNekoDragon.Core.utils.tooltips.value.TooltipValues;
 import com.CuteNekoDragon.Core.utils.tooltips.value.ValueDefinition;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextColor;
-import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public final class ValueElement implements TooltipElement {
 
