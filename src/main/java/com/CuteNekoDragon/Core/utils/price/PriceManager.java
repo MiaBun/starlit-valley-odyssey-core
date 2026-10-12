@@ -20,6 +20,7 @@ public final class PriceManager extends SimpleJsonResourceReloadListener {
 
     private final Map<Item, PriceEntry> itemEntries = new HashMap<>();
     private final Map<TagKey<Item>, PriceEntry> tagEntries = new HashMap<>();
+    private final Map<ResourceLocation, PriceCategory> categories = new HashMap<>();
 
     public PriceManager(Gson gson, String directory) {
         super(gson, directory);
